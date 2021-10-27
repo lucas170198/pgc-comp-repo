@@ -1,0 +1,26 @@
+\usepackage[explicit]{titlesec}
+
+
+\newcommand*\chapterlabel{}
+\titleformat{\chapter}
+  {\gdef\chapterlabel{}
+   \normalfont\sffamily\Huge\bfseries\scshape}
+  {\gdef\chapterlabel{\thechapter\ }}{0pt}
+  {\begin{tikzpicture}[remember picture,overlay]
+    \node[yshift=-3cm] at (current page.north west)
+      {\begin{tikzpicture}[remember picture, overlay]
+        \draw[color=LightGray,fill=LightGray] (0,0) rectangle
+          (\paperwidth,3cm);
+        \node[anchor=east,xshift=1.016\paperwidth,rectangle,
+              rounded corners=7pt,inner sep=11pt,
+fill=Gray]              
+%fill=MidnightBlue]
+              {\color{white}\chapterlabel#1 \hspace{0.3cm}};
+       \end{tikzpicture}
+      };
+   \end{tikzpicture}
+  }
+\titlespacing*{\chapter}{0pt}{50pt}{15pt}
+
+
+

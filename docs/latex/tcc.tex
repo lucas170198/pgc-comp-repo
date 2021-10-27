@@ -1,0 +1,79 @@
+\documentclass[svgnames,12pt,oneside, openright,a4paper]{scrbook}
+\usepackage{tikz,blindtext} %%%% Usado para o titulo  de capitulos
+\usepackage[T1]{fontenc}
+\usepackage{palatino}
+\usepackage{chngpage,calc}
+\usepackage{hyperref}
+\usepackage{kpfonts}
+\usepackage[latin1]{inputenc}  %%% Acentos diretamente em Latex
+\usepackage{conf}
+\usepackage[portuguese, english, brazil]{babel} %%% Define o Idioma
+\usepackage{setspace}
+\onehalfspacing
+\newenvironment{palavraschaves}{\vspace{1cm}\textbf{Palavras Chaves: }}{}
+\newenvironment{keywords}{\vspace{1cm}\textbf{Keywords: }}{}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%Margens
+\addtolength{\parindent}{-0.2cm}
+\setlength{\textheight}{23cm}
+\setlength{\textwidth}{15.5cm}
+%%%%%%%%%%%%%%%%% Define o Titulo, o autor e o orientador%%%%%
+\newcommand{\titulo}{Compressão de Dados e Teoria da Informação}
+\newcommand{\orientador}{Profª Dr.ª Cristiane M. Sato}
+\newcommand{\autor}{Lucas Silva Amorim\xspace}
+\newcommand{\data}{30 de agosto de 2022}
+\newcommand{\membroa}{Prof. Dr. Circulando de Souza}
+\newcommand{\insta}{ Universidade Federal de .. }
+\newcommand{\membrob}{Prof. Dr. Recirculando de Souza }
+\newcommand{\instb}{ Universidade Federal de .. }
+\usepackage{amssymb,amsmath,theorem}
+
+%%%%%%Teoremas e outros Ambientes
+\input{teoremas}
+
+
+\begin{document}
+%%%Insere o Titulo
+\input{titulo}
+%%% Insere o Sumário
+ \tableofcontents
+%%%%%%%%%%%%%%%%%
+\chapter*{Agradecimento}
+Opcional. Agradeço a todos os que me ajudaram na elaboração deste trabalho...
+
+
+\chapter*{Resumo}
+
+Neste lugar vai um resumo do projeto e objetivos, apresentando os principais resultados;
+
+Conforme as normas NBR 14724:2002 da ABNT, o resumo é elemento obrigatório, constituído de uma seqüência de frases concisas e objetivas e não de uma simples enumeração de tópicos, não ultrapassando 500 palavras, seguido, logo abaixo, das palavras representativas do conteúdo do trabalho, isto é, palavras-chave e/ou descritores.
+
+\palavraschaves{TCC, Trabalho, Modelo}
+
+\chapter*{Abstract}
+Versão em língua estrangeira do resumo. Obrigatório, pela ABNT. O título é ABSTRACT, em inglês, RESUMEN, em espanhol castelhano, e RÉSUMÉ, em francês. Sugerimos Inglês.
+
+\keywords{aubergine,carrot, radish} %%Palavras Chaves em Inglês
+\chapter{Introdução}
+Esta pesquisa pretende mostrar que [ ... ] através de [ ... ] conforme concepções apresentadas por  [ ... ] . Para isso, articulamos o conceito de  [ ... ]  com o conceito de  [ ... ] . Fizemos pesquisas de recepção conforme  [ ... ] . Articulamos os resultados a partir de idéias de  [ ... ] . ``Neste primeiro parágrafo você deve deixar completamente claro o que pretende com o trabalho. A introdução é redigida depois de escrito todo o trabalho porque, no decorrer da pesquisa, algumas coisas podem ser modificadas em relação ao projeto original''. 
+``Depois, em vários parágrafos, você deve falar sobre a problematização, a contextualização histórica, a revisão bibliográfica, os objetivos, a justificativa, a metodologia. As conclusões, evidentemente, devem ficar no capítulo Considerações Finais, para que o leitor não perca o interesse pelo seu trabalho ?. Toda a introdução é feita sem subtítulos, em texto normal''.
+
+\chapter{Conceitos e definições fundamentais}
+Este capítulo apresenta algumas definições e conceitos fundametais para o entendimeto das técnicas de compressão que serão discutidas em capítulos posteriores.
+
+\section{Código}
+
+Um \textbf{código} \emph{C} mapeia uma \textbf{mensagem} \emph{M} para um conjunto de \textbf{palavras código} \emph{W}, onde \emph{M} $\subset \alpha$ e \emph{W} $\subset \beta$, isto é, \emph{C} : $\alpha \rightarrow \beta$. Chamamos de $\alpha$ o \textbf{alfabeto de origem} e $\beta$ o \textbf{alfabeto de palavras código}. Os elementos dos alfabetos $\alpha$ e $\beta$ podem ter um comprimento fixo ou variável. Códigos nos quais os alfabetos possuem um comprimento fixo são chamados de \textbf{códigos de comprimento fixo}, enquanto os que possuem alfabetos de comprimento variáveis são chamados \textbf{códigos de comprimento váriavel}. Provavelmente o exemplo mais conhecido de código de comprimento fixo é o código ASCII, que mapeia 64 simbolos alfa-númericos (ou 256 em sua versão extendida) para palavras código de 8 bits. Todavia, a compressão de dados utiliza apenas códigos de comprimento variável, mas especificamente códigos que variam o comprimento de acordo com a probabilidade associada à mensagem.
+
+Um código é \textbf{distinto} se pode ser representado como uma função \textbf{bijetora}, i.e, $\forall$ $m_1$, $m_2$ $\in$ $\alpha$, \emph{C($m_1$)} $\neq$ \emph{C($m_2$)}. Dado um código \emph{C}, com $\alpha$ := {$m_1, m_2,..., m_n$} e $\beta$ := {$w_1, w_2,...,w_n$}, chamamos \emph{C} \textbf{unicamente decodificável} quando \emph{C(S)} = $w_1w_2...w_n$ $\leftrightarrow$ \emph{$C^{-1}(W)$} = $m_1m_2...m_n$.
+
+%%%%%%%%%%%%%%%%%%%BIbliografia
+\begin{thebibliography}{9999}  
+\bibitem[HL]{D.S Hirschberg}HIRSCHBERG, D.S; LELEWER D.A;
+\emph{Data compression, }Computing Surveys 19.3, 1987.
+
+\bibitem[Ble]{Guy E. Blelloch}BLELLOCH G.E;
+\emph{Introdution to Data Compression, }Carnegie Mellon, 2013
+
+\end{thebibliography}
+
+\end{document}

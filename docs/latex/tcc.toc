@@ -1,0 +1,4 @@
+\babel@toc {brazil}{}
+\contentsline {chapter}{\numberline {1}Introdu\c c\~ao}{7}{chapter.1}
+\contentsline {chapter}{\numberline {2}Conceitos e defini\c c\~oes fundamentais}{8}{chapter.2}
+\contentsline {section}{\numberline {2.1}C\'odigo}{8}{section.2.1}

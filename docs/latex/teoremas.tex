@@ -1,0 +1,37 @@
+%% TEOREMAS E OUTROS AMBIENTES
+
+%%%%% TEOREMAS
+\newtheorem{teo}{Teorema}[chapter]
+\newtheorem{corol}[teo]{Corolário}
+\newtheorem{ddefi}[teo]{Definição}
+\newenvironment{definicao} % quadrado 
+  {\begin{shaded} \begin{ddefi}\rm}{\end{ddefi} \end{shaded}}
+\newenvironment{defi} % sem quadrado s
+  {\begin{ddefi}\rm}{\end{ddefi}}
+\newtheorem{prop}[teo]{Proposição}
+\newtheorem{propri}[teo]{Propriedade}
+\newtheorem{lema}[teo]{Lema}
+\newtheorem{obss}[teo]{Observação}
+\newtheorem{obss1}[teo]{Observações}
+\newenvironment{obs}
+  {\begin{obss}\rm}{\end{obss}}
+  \newenvironment{observacoes}
+  {\begin{obss1}\rm}{\end{obss1}}
+\newtheorem{conj}[teo]{Conjectura}
+%\newcounter{exemplocount}[chapter]
+\newenvironment{exx}
+  {\vspace{0.5cm} \refstepcounter{teo} \noindent  \textbf{Exemplo \arabic{chapter}.\arabic{teo}}}{\vspace{0.2cm} }
+\newenvironment{ex}
+  {\begin{exx}\rm}{\end{exx}}
+\theorembodyfont{\rm}
+
+
+
+% Demonstração (original hspace is 133mm)
+\newenvironment{proof}[1][Demonstra\c{c}\~ao]{\noindent\textbf{#1:} }{\hfill $\Box$ }
+
+
+
+
+
+
