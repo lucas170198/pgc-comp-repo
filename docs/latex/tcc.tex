@@ -64,8 +64,25 @@ Este capítulo apresenta algumas definições e conceitos fundametais para o entend
 
 Um \textbf{código} \emph{C} mapeia uma \textbf{mensagem} \emph{M} para um conjunto de \textbf{palavras código} \emph{W}, onde \emph{M} $\subset \alpha$ e \emph{W} $\subset \beta$, isto é, \emph{C} : $\alpha \rightarrow \beta$. Chamamos de $\alpha$ o \textbf{alfabeto de origem} e $\beta$ o \textbf{alfabeto de palavras código}. Os elementos dos alfabetos $\alpha$ e $\beta$ podem ter um comprimento fixo ou variável. Códigos nos quais os alfabetos possuem um comprimento fixo são chamados de \textbf{códigos de comprimento fixo}, enquanto os que possuem alfabetos de comprimento variáveis são chamados \textbf{códigos de comprimento váriavel}. Provavelmente o exemplo mais conhecido de código de comprimento fixo é o código ASCII, que mapeia 64 simbolos alfa-númericos (ou 256 em sua versão extendida) para palavras código de 8 bits. Todavia, a compressão de dados utiliza apenas códigos de comprimento variável, mas especificamente códigos que variam o comprimento de acordo com a probabilidade associada à mensagem.
 
-Um código é \textbf{distinto} se pode ser representado como uma função \textbf{bijetora}, i.e, $\forall$ $m_1$, $m_2$ $\in$ $\alpha$, \emph{C($m_1$)} $\neq$ \emph{C($m_2$)}. Dado um código \emph{C}, com $\alpha$ := {$m_1, m_2,..., m_n$} e $\beta$ := {$w_1, w_2,...,w_n$}, chamamos \emph{C} \textbf{unicamente decodificável} quando \emph{C(S)} = $w_1w_2...w_n$ $\leftrightarrow$ \emph{$C^{-1}(W)$} = $m_1m_2...m_n$.
+Um código é \textbf{distinto} se pode ser representado como uma função \textbf{bijetora}, i.e, $\forall$ $m_1$, $m_2$ $\in$ $\alpha$, \emph{C($m_1$)} $\neq$ \emph{C($m_2$)}. Dado um código \emph{C}, com $\alpha$ := {$m_1, m_2,..., m_n$} e $\beta$ := {$w_1, w_2,...,w_n$}, chamamos \emph{C} \textbf{unicamente decodificável} quando \emph{C(S)} = $w_1w_2...w_n$ $\leftrightarrow$ \emph{$C^{-1}(W)$} = $m_1m_2...m_n$. 
 
+O processo de transformar uma mensagem em palavras código é conhecido como \textbf{codificação}, e o algorítimo que executa tal processo é chamado \emph{encoder}. A \text{decodificação} realiza a operação inversa, revertendo as palavras código para a mensagem original. 
+
+\subsection{Código livre de prefixo}
+ Um \textbf{código livre de prefixo} é um código unicamente decodificável \emph{C'} tal que nenhuma palavra código de \emph{C'} é prefixo de outra palavra código, por exemplo, \emph{$\alpha$} := {1, 01, 000, 001}. Códigos livres de prefixo podem ser \emph{decodificados instantaneamente}, isto é, podemos decodificar uma mensagem sem precisar verificar o início da mensagem seguinte.
+
+\begin{teo}
+Todo código \textbf{livre de prefixo} é \textbf{unicamente decodificável}.
+
+\begin{proof}
+Seja C um código livre de prefixo e $S_n$ = $s_1...s_n$ uma mensagem codificada por C. Vamos provar por indução que o teorema é verdadeiro para todo n $\in$ $\mathbb{Z+}$
+
+\item \textbf{Casos base}: Quando n = 1, a mensagem S só possui uma palavra código, logo é unicamente decodificável. Se n = 2, então S possui uma palavra código $s_1$ que não pode ser prefixo de $s_2$ (pela própria definição de códigos livres de prefixo), o que claramente significa que S é unicamente decodificável.
+
+\item \textbf{Passo indutivo}: Seja k $\in$ $\mathbb{Z+}$, e suponha por hipótese de indução que o teorema vale para n $\leq$ k. Como $S_{k+1}$ é livre de prefixo, existe um prefixo de $S_{k+1}$, $S_j$ = $s_1...s_j$ (com j $\leq$ k + 1) que é unicamente decodificável (dado que ela não pode ser prefixo de nenhuma outra). a mensagem $S'_{k+1}$ = $s_{j+1}...s_{k+1}$ ainda é uma concatenação decodificável e |$S'_{k+1}$| $\leq$ |$S_{k+1}$|, o que significa que por hipótese de indução $S'_{k+1}$ é unicamente decodificável. Como $S_{k+1}$ = $S_j$ $S'_{k+1}$, segue que $S_{k+1}$ é unicamente decodificável.
+\end{proof}
+\end{teo}
+ 
 %%%%%%%%%%%%%%%%%%%BIbliografia
 \begin{thebibliography}{9999}  
 \bibitem[HL]{D.S Hirschberg}HIRSCHBERG, D.S; LELEWER D.A;

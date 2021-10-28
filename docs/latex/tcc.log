@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Debian) (preloaded format=pdflatex 2021.10.19)  27 OCT 2021 09:46
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Debian) (preloaded format=pdflatex 2021.10.19)  27 OCT 2021 23:21
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1455,7 +1455,7 @@ LaTeX Info: Redefining \nameref on input line 34.
 \openout4 = `tcc.out'.
 
  (./titulo.tex
-<logo-ufabc.pdf, id=19, 501.80574pt x 501.80574pt>
+<logo-ufabc.pdf, id=23, 501.80574pt x 501.80574pt>
 File: logo-ufabc.pdf Graphic file (type pdf)
 <use logo-ufabc.pdf>
 Package pdftex.def Info: logo-ufabc.pdf  used on input line 37.
@@ -1532,42 +1532,52 @@ chapter 1.
 
 ]
 chapter 2.
+
+Overfull \hbox (15.90355pt too wide) in paragraph at lines 69--70
+\T1/jkp/b/n/12 co-di-fi-ca-ção\T1/jkp/m/n/12 , e o al-go-rí-timo que exe-cuta t
+al pro-cesso é cha-mado \T1/jkp/m/it/12 en-co-der\T1/jkp/m/n/12 . A []
+ []
+
 [8
 
 
-] [9
+] [9] [10
 
 
 ]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 79.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 79.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 96.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 96.
  (./tcc.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 79.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 79.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 96.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 96.
 Package rerunfilecheck Info: File `tcc.out' has not changed.
-(rerunfilecheck)             Checksum: 0D8F4B8E2CC4207AF9632A7375D790F7;182.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 79.
+(rerunfilecheck)             Checksum: 0CA509D2A4470B3CE24071F66C3136D7;261.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 96.
  ) 
 Here is how much of TeX's memory you used:
- 20983 strings out of 492982
- 381760 string characters out of 6134895
- 534112 words of memory out of 5000000
- 24102 multiletter control sequences out of 15000+600000
- 96917 words of font info for 84 fonts, out of 8000000 for 9000
+ 21005 strings out of 492982
+ 382063 string characters out of 6134895
+ 536126 words of memory out of 5000000
+ 24114 multiletter control sequences out of 15000+600000
+ 108126 words of font info for 92 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  64i,10n,80p,8880b,1164s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/share/texlive/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/share/texliv
-e/texmf-dist/fonts/type1/public/kpfonts/jkpbn8a.pfb></usr/share/texlive/texmf-d
-ist/fonts/type1/public/kpfonts/jkpmi.pfb></usr/share/texlive/texmf-dist/fonts/t
-ype1/public/kpfonts/jkpmit8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/pub
-lic/kpfonts/jkpmn8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/kpfon
-ts/jkpssbn8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/kpfonts/jkps
-sbsc8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/kpfonts/jkpsy.pfb>
-</usr/share/texlive/texmf-dist/fonts/type1/public/kpfonts/jkpsyc.pfb>
-Output written on tcc.pdf (9 pages, 154920 bytes).
+e/texmf-dist/fonts/type1/public/kpfonts/jkpbit8a.pfb></usr/share/texlive/texmf-
+dist/fonts/type1/public/kpfonts/jkpbn8a.pfb></usr/share/texlive/texmf-dist/font
+s/type1/public/kpfonts/jkpmi.pfb></usr/share/texlive/texmf-dist/fonts/type1/pub
+lic/kpfonts/jkpmit8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/kpfo
+nts/jkpmn8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/kpfonts/jkpmn
+8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/kpfonts/jkpssbn8a.pfb>
+</usr/share/texlive/texmf-dist/fonts/type1/public/kpfonts/jkpssbsc8a.pfb></usr/
+share/texlive/texmf-dist/fonts/type1/public/kpfonts/jkpsy.pfb></usr/share/texli
+ve/texmf-dist/fonts/type1/public/kpfonts/jkpsyc.pfb></usr/share/texlive/texmf-d
+ist/fonts/type1/public/amsfonts/symbols/msam10.pfb></usr/share/texlive/texmf-di
+st/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
+Output written on tcc.pdf (10 pages, 195179 bytes).
 PDF statistics:
- 115 PDF objects out of 1000 (max. 8388607)
- 93 compressed objects within 1 object stream
- 20 named destinations out of 1000 (max. 500000)
- 42 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 142 PDF objects out of 1000 (max. 8388607)
+ 114 compressed objects within 2 object streams
+ 23 named destinations out of 1000 (max. 500000)
+ 50 words of extra memory for PDF output out of 10000 (max. 10000000)
 
