@@ -3,3 +3,4 @@
 \contentsline {chapter}{\numberline {2}Conceitos e defini\c c\~oes fundamentais}{8}{chapter.2}
 \contentsline {section}{\numberline {2.1}C\'odigo}{8}{section.2.1}
 \contentsline {subsection}{\numberline {2.1.1}C\'odigos unicamente decodific\'aveis e livres de prefixo}{8}{subsection.2.1.1}
+\contentsline {section}{\numberline {2.2}Rela\c c\~oes fundamentais com a Teoria da Informa\c c\~ao}{9}{section.2.2}

@@ -86,14 +86,21 @@ Seja C um código livre de prefixo e $S_n$ = $s_1...s_n$ uma mensagem codificada 
 \end{proof}
 \end{teo}
 
- 
+\section{Relações fundamentais com a Teoria da Informação}
+A codificação é comumente divida em duas componenetes diferentes: \emph{modelo} e \emph{codificador}. O \emph{modelo} identifica a distribuição de probabilidade das mensagens baseado em sua semântica e estrutura. O \emph{codificador} toma vantagem de um possível \emph{bias} apontado pela modelagem, e usa uma estratégia gulosa em relação a probabilidade associada às mensagens para reduzir seu tamanho. (substituindo as mensagens que ocorrem com maior frequência por símbolos menores).
+
+Desta forma, é evidente que os algoritmos de compressão sempre devem tomar vantagem de alguma distribuição de probabilidades "desbalanceada" sobre as mensagens para efetivamente reduzir o tamanho destas, ou seja, a compressão é fortemente relacionada com a probabilidade. Nesta seção, vamos construir o embasamento teórico necessário para entender a relação entre as probabilidades associadas e o comprimento das mensagens, e consequentemente criar uma noção dos parametros que devem ser maximizados para alcançar uma codificação eficiente.
+
 %%%%%%%%%%%%%%%%%%%BIbliografia
 \begin{thebibliography}{9999}  
 \bibitem[HL]{D.S Hirschberg}HIRSCHBERG, D.S; LELEWER D.A;
 \emph{Data compression, }Computing Surveys 19.3, 1987.
 
 \bibitem[Ble]{Guy E. Blelloch}BLELLOCH G.E;
-\emph{Introdution to Data Compression, }Carnegie Mellon, 2013
+\emph{Introduction to Data Compression, } Carnegie Mellon, 2013
+
+\bibitem[BT]{Dimitri P. Bertsekas} BERTSEKAS D.P; TSITSIKLIS J.N;
+\emph{Introduction to Probability} M.I.T, Lecture Notes Course 6.041-6.431, 2000
 
 \end{thebibliography}
 

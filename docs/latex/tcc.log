@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Debian) (preloaded format=pdflatex 2021.10.19)  15 NOV 2021 13:38
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Debian) (preloaded format=pdflatex 2021.10.19)  16 NOV 2021 08:00
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1455,7 +1455,7 @@ LaTeX Info: Redefining \nameref on input line 34.
 \openout4 = `tcc.out'.
 
  (./titulo.tex
-<logo-ufabc.pdf, id=23, 501.80574pt x 501.80574pt>
+<logo-ufabc.pdf, id=27, 501.80574pt x 501.80574pt>
 File: logo-ufabc.pdf Graphic file (type pdf)
 <use logo-ufabc.pdf>
 Package pdftex.def Info: logo-ufabc.pdf  used on input line 37.
@@ -1539,20 +1539,20 @@ chapter 2.
 
 
 ]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 100.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 100.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 107.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 107.
  (./tcc.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 100.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 100.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 107.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 107.
 Package rerunfilecheck Info: File `tcc.out' has not changed.
-(rerunfilecheck)             Checksum: DFF2E307E69D7A115407146773AE5E44;294.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 100.
+(rerunfilecheck)             Checksum: 691D3A26BC132357370306B63BB33BBA;400.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 107.
  ) 
 Here is how much of TeX's memory you used:
- 21013 strings out of 492982
- 382163 string characters out of 6134895
- 537126 words of memory out of 5000000
- 24122 multiletter control sequences out of 15000+600000
+ 21024 strings out of 492982
+ 382336 string characters out of 6134895
+ 537169 words of memory out of 5000000
+ 24131 multiletter control sequences out of 15000+600000
  146634 words of font info for 100 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  64i,10n,80p,8880b,1164s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -1569,10 +1569,10 @@ ve/texmf-dist/fonts/type1/public/kpfonts/jkpsy.pfb></usr/share/texlive/texmf-di
 st/fonts/type1/public/kpfonts/jkpsyc.pfb></usr/share/texlive/texmf-dist/fonts/t
 ype1/public/amsfonts/symbols/msam10.pfb></usr/share/texlive/texmf-dist/fonts/ty
 pe1/public/amsfonts/symbols/msbm10.pfb>
-Output written on tcc.pdf (10 pages, 204510 bytes).
+Output written on tcc.pdf (10 pages, 207077 bytes).
 PDF statistics:
- 146 PDF objects out of 1000 (max. 8388607)
- 117 compressed objects within 2 object streams
- 23 named destinations out of 1000 (max. 500000)
- 50 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 153 PDF objects out of 1000 (max. 8388607)
+ 124 compressed objects within 2 object streams
+ 25 named destinations out of 1000 (max. 500000)
+ 58 words of extra memory for PDF output out of 10000 (max. 10000000)
 
