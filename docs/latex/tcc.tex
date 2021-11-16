@@ -89,20 +89,27 @@ Seja C um código livre de prefixo e $S_n$ = $s_1...s_n$ uma mensagem codificada 
 \section{Relações fundamentais com a Teoria da Informação}
 A codificação é comumente divida em duas componenetes diferentes: \emph{modelo} e \emph{codificador}. O \emph{modelo} identifica a distribuição de probabilidade das mensagens baseado em sua semântica e estrutura. O \emph{codificador} toma vantagem de um possível \emph{bias} apontado pela modelagem, e usa uma estratégia gulosa em relação a probabilidade associada às mensagens para reduzir seu tamanho. (substituindo as mensagens que ocorrem com maior frequência por símbolos menores).
 
-Desta forma, é evidente que os algoritmos de compressão sempre devem tomar vantagem de alguma distribuição de probabilidades "desbalanceada" sobre as mensagens para efetivamente reduzir o tamanho destas, ou seja, a compressão é fortemente relacionada com a probabilidade. Nesta seção, vamos construir o embasamento teórico necessário para entender a relação entre as probabilidades associadas e o comprimento das mensagens, e consequentemente criar uma noção dos parametros que devem ser maximizados para alcançar uma codificação eficiente.
+Desta forma, é evidente que os algoritmos de compressão sempre devem tomar vantagem de alguma distribuição de probabilidades "desbalanceada" sobre as mensagens para efetivamente reduzir o tamanho destas, portanto, a compressão é fortemente relacionada com a probabilidade. Nesta seção, vamos construir o embasamento teórico necessário para entender a relação entre as probabilidades associadas e o comprimento das mensagens, e consequentemente criar uma noção dos parametros que devem ser maximizados para alcançar uma codificação eficiente.
 
 \subsection{Distribuição de Probabilidade e Esperança}
 Dado um experimento e um espaço amostral $\Omega$, uma \textbf{variável aleatória} \emph{X} associa um número real a cada um dos possíveis resultados em $\Omega$. Em outras palavras, \emph{X} é uma função que mapeia os elementos do espaço amostral para números reais. Quando a imagem de \emph{X} pode assumir um número finito de valores, dizemos que \emph{X} é uma \textbf{variável aleatória discreta}.
 
 Podemos descrever melhor uma variável aleatória, atribuindo probabilidades sobre os valores que esta pode assumir. Esses valores são atribuídos pela \textbf{função de densidade de probabilidade}, denotada por \emph{$p_X$}. Portanto, a probabilidade do evento \{ \emph{X} = \emph{x} \} é a função de distribuição de probabilidade aplicada a x, \emph{i.e}, \emph{$p_X(x)$}.
 \begin{equation*}
-p_X(x) = P({X = x})
+p_X(x) = P(\{X = x\})
 \end{equation*}
 
-Note que, a variável aleatória pode assumir qualquer um dos valores no espaço amostral que possuem uma probabilidade $\emph{P} > 0$.
+Note que, a variável aleatória pode assumir qualquer um dos valores no espaço amostral que possuem uma probabilidade $\emph{P} > 0$, portato
 \begin{equation*}
-\sum_{x}^{}p_X(x) = 1
+\sum_{x}^{}p_X(x) = 1.
 \end{equation*}
+
+O \textbf{valor experado} (ou \textbf{esperança}) da variável aleatória \emph{X} é definido como
+\begin{equation*}
+\textbf{E}[\ X]\ = \sum_{x}^{} xp_X(x).
+\end{equation*}
+
+\subsection{Entropia}
 %%%%%%%%%%%%%%%%%%%BIbliografia
 \begin{thebibliography}{9999}  
 \bibitem[HL]{D.S Hirschberg}HIRSCHBERG, D.S; LELEWER D.A;
