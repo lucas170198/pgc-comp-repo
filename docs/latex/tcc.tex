@@ -62,7 +62,7 @@ Este capítulo apresenta algumas definições e conceitos fundametais para o entend
 
 \section{Código}
 
-Um \textbf{código} \emph{C} mapeia uma \textbf{mensagem} \emph{m} $\in$ \emph{M} para uma cadeia de \textbf{palavras código} em \emph{$W^+$},onde \emph{M} é chamado \textbf{alfabeto de origem} e \emph{$W^+$} \textbf{alfabeto de palavras código}. Vamos utiliar a notação $\emph{A}^+$ para se referir ao conjunto que contém todas as cadeias de \emph{A}, isto é, $\emph{A}^+ = \bigcup_{i \geq 1}^{}A^{i} : A^i = (a_1,...,a_i), a \in A $. Deste modo, podemos representar um código como uma função \textbf{\emph{C} : $\emph{M} \rightarrow \emph{W}^+$}.
+Um \textbf{código} \emph{C} mapeia uma \textbf{mensagem} \emph{m} $\in$ \emph{M} para uma cadeia de \textbf{palavras código} em \emph{$W^+$},onde \emph{M} é chamado \textbf{alfabeto de origem} e \emph{$W^+$} \textbf{alfabeto de palavras código}. Vamos utiliar a notação $\emph{A}^+$ para se referir ao conjunto que contém todas as cadeias de \emph{A}, \emph{i.e}, $\emph{A}^+ = \bigcup_{i \geq 1}^{}A^{i} : A^i = (a_1,...,a_i), a \in A $. Deste modo, podemos representar um código como uma função \textbf{\emph{C} : $\emph{M} \rightarrow \emph{W}^+$}.
 
 Os elementos dos alfabetos de origem e de palavras código podem ter um comprimento fixo ou variável. Códigos nos quais os alfabetos possuem um comprimento fixo são chamados de \textbf{códigos de comprimento fixo}, enquanto os que possuem alfabetos de comprimento variáveis são chamados \textbf{códigos de comprimento váriavel}. Provavelmente o exemplo mais conhecido de código de comprimento fixo seja código ASCII, que mapeia 64 simbolos alfa-númericos (ou 256 em sua versão extendida) para palavras código de 8 bits. Todavia, a compressão de dados utiliza apenas códigos de comprimento variável, mas especificamente códigos que variam o comprimento de acordo com a probabilidade associada à mensagem (o tema será melhor detalhado em seções posteriores). 
 
@@ -70,9 +70,9 @@ Os elementos dos alfabetos de origem e de palavras código podem ter um comprimen
 \subsection{Códigos unicamente decodificáveis e livres de prefixo}
 Um código é \textbf{distinto} se pode ser representado como uma função \textbf{bijetora}, i.e, $\forall$ $m_1$, $m_2$ $\in$ M, \emph{C($m_1$)} $\neq$ \emph{C($m_2$)}. Um código é dito \textbf{unicamente decodificável} quando \emph{C(m)} = $w^n$ $\leftrightarrow$ \emph{$C^{-1}(w^n)$} = \emph{m}, com \emph{m} $\in$ \emph{M} e \emph{$w^n$} $\in$ $W^+$.
 
-Vamos definir \emph{$C^+$} como a \textbf{codificação} correspondente ao código \emph{C}, tal que $C^+(m^n) = C(m_1)C(m_2)...C(m_n) : m^n = m_1m_2...m_n$, isto é \emph{$C^+ : M^+ \rightarrow W^+$}. A função de \textbf{decodificação} \emph{$D^+ : W^+ \rightarrow M^+$} se refere a operação inversa da codificação, de modo que dado um código \textbf{unicamente decodificável} \emph{C}, $D^+(C^+(m^n)) = m^n$. 
+Vamos definir \emph{$C^+$} como a \textbf{codificação} correspondente ao código \emph{C}, tal que $C^+(m^n) = C(m_1)C(m_2)...C(m_n) : m^n = m_1m_2...m_n$, \emph{i.e}, \emph{$C^+ : M^+ \rightarrow W^+$}. A função de \textbf{decodificação} \emph{$D^+ : W^+ \rightarrow M^+$} se refere a operação inversa da codificação, de modo que dado um código \textbf{unicamente decodificável} \emph{C}, $D^+(C^+(m^n)) = m^n$. 
 
-Um \textbf{código livre de prefixo} é um código \emph{C'} em que $\nexists w_1^n, w_2^n \in W^+$ $|$ $w_1^n$ é \textbf{prefixo} de $w_2^n$, por exemplo, o conjunto de palavras código \emph{$W^+$} := $\{1, 01, 000, 001\}$ não possui nenhuma cadeia que é prefixo de outra dentro do conjunto. Códigos livres de prefixo podem ser \emph{decodificados instantaneamente}, isto é, podemos decodificar uma palavra código sem precisar verificar o início da seguinte.
+Um \textbf{código livre de prefixo} é um código \emph{C'} em que $\nexists w_1^n, w_2^n \in W^+$ $|$ $w_1^n$ é \textbf{prefixo} de $w_2^n$, por exemplo, o conjunto de palavras código \emph{$W^+$} := $\{1, 01, 000, 001\}$ não possui nenhuma cadeia que é prefixo de outra dentro do conjunto. Códigos livres de prefixo podem ser \emph{decodificados instantaneamente}, ou seja, podemos decodificar uma palavra código sem precisar verificar o início da seguinte.
 
 \begin{teo}
 Todo código \textbf{livre de prefixo} é \textbf{unicamente decodificável}.
@@ -91,6 +91,18 @@ A codificação é comumente divida em duas componenetes diferentes: \emph{modelo} 
 
 Desta forma, é evidente que os algoritmos de compressão sempre devem tomar vantagem de alguma distribuição de probabilidades "desbalanceada" sobre as mensagens para efetivamente reduzir o tamanho destas, ou seja, a compressão é fortemente relacionada com a probabilidade. Nesta seção, vamos construir o embasamento teórico necessário para entender a relação entre as probabilidades associadas e o comprimento das mensagens, e consequentemente criar uma noção dos parametros que devem ser maximizados para alcançar uma codificação eficiente.
 
+\subsection{Distribuição de Probabilidade e Esperança}
+Dado um experimento e um espaço amostral $\Omega$, uma \textbf{variável aleatória} \emph{X} associa um número real a cada um dos possíveis resultados em $\Omega$. Em outras palavras, \emph{X} é uma função que mapeia os elementos do espaço amostral para números reais. Quando a imagem de \emph{X} pode assumir um número finito de valores, dizemos que \emph{X} é uma \textbf{variável aleatória discreta}.
+
+Podemos descrever melhor uma variável aleatória, atribuindo probabilidades sobre os valores que esta pode assumir. Esses valores são atribuídos pela \textbf{função de densidade de probabilidade}, denotada por \emph{$p_X$}. Portanto, a probabilidade do evento \{ \emph{X} = \emph{x} \} é a função de distribuição de probabilidade aplicada a x, \emph{i.e}, \emph{$p_X(x)$}.
+\begin{equation*}
+p_X(x) = P({X = x})
+\end{equation*}
+
+Note que, a variável aleatória pode assumir qualquer um dos valores no espaço amostral que possuem uma probabilidade $\emph{P} > 0$.
+\begin{equation*}
+\sum_{x}^{}p_X(x) = 1
+\end{equation*}
 %%%%%%%%%%%%%%%%%%%BIbliografia
 \begin{thebibliography}{9999}  
 \bibitem[HL]{D.S Hirschberg}HIRSCHBERG, D.S; LELEWER D.A;
