@@ -1,0 +1,52 @@
+% ----------------------------------------------------------
+% Introdução 
+% Capítulo sem numeração, mas presente no Sumário
+% ----------------------------------------------------------
+
+\chapter*[Introdução]{Introdução}
+\addcontentsline{toc}{chapter}{Introdução}
+
+Este documento segue as normas estabelecidas pela~\citeonline[3.1-3.2]{NBR6028:2003}.
+
+\section*{Figuras}\label{sec:figuras}
+\addcontentsline{toc}{section}{figuras}
+
+As normas da~\citeonline[3.1-3.2]{NBR6028:2003} especificam que o caption da figura deve vir abaixo da mesma.
+
+A Figura~\ref{fig:log} ilustra...
+
+\begin{figure}[htpb]
+   \centering
+   \includegraphics[scale=.3]{figs/logo}
+   \caption{Breve explicação sobre a figura. Deve vir abaixo da mesma.}
+   \label{fig:log}
+\end{figure}
+
+\section*{Tabelas}\label{sec:tabelas}
+\addcontentsline{toc}{section}{tabelas}
+
+A Tabela~\ref{tab:tabela} apresenta os resultados...
+
+\begin{table}[htpb]
+   \centering
+   \caption{Breve explicação sobre a tabela. Deve vir acima da mesma.}\label{tab:tabela}
+   \begin{tabular}{|l|c|c|c|c|c|c|r|}
+        \hline
+        \small{XX} & \small{FF} & \small{PP} & \small{YY} & \small{Yr} & \small{xY} & \small{Yx} & \small{ZZ} \\ \hline
+               615 &    18      &     2558   &    0,9930  &    0,9930  &    0,9930  &    0,9930  &    0,9930  \\ \hline
+               615 &    18      &     2558   &    0,9930  &    0,9930  &    0,9930  &    0,9930  &    0,9930  \\ \hline
+               615 &    18      &     2558   &    0,9930  &    0,9930  &    0,9930  &    0,9930  &    0,9930  \\ \hline
+               615 &    18      &     2558   &    0,9930  &    0,9930  &    0,9930  &    0,9930  &    0,9930  \\ \hline
+               615 &    18      &     2558   &    0,9930  &    0,9930  &    0,9930  &    0,9930  &    0,9930  \\ \hline
+   \end{tabular}
+\end{table}
+
+\section*{Motivação}\label{sec:motivacao}
+\addcontentsline{toc}{section}{Motivação}
+
+\lipsum[35]
+
+\section*{Objetivos}\label{sec:objetivos}
+\addcontentsline{toc}{section}{Objetivos}
+
+\lipsum[36]

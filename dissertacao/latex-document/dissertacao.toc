@@ -1,0 +1,20 @@
+\changetocdepth {4}
+\babel@toc {brazil}{}
+\setlength {\cftchapterindent }{\cftlastnumwidth } \setlength {\cftchapternumwidth }{2em}
+\setlength {\cftchapterindent }{\cftlastnumwidth } \setlength {\cftchapternumwidth }{2em}
+\contentsline {chapter}{Introdução}{1}{chapter*.6}%
+\contentsline {section}{figuras}{1}{section*.7}%
+\contentsline {section}{tabelas}{1}{section*.9}%
+\contentsline {section}{Motivação}{1}{section*.11}%
+\contentsline {section}{Objetivos}{2}{section*.12}%
+\contentsline {part}{\partnumberline {I}\MakeTextUppercase {Fundamentação Teórica}}{3}{part.1}%
+\setlength {\cftchapterindent }{0em} \setlength {\cftchapternumwidth }{\cftlastnumwidth }
+\contentsline {chapter}{\chapternumberline {1}\MakeTextUppercase {Conceitos e definições fundamentais}}{5}{chapter.1}%
+\contentsline {section}{\numberline {1.1}Código}{5}{section.1.1}%
+\contentsline {subsection}{\numberline {1.1.1}Códigos unicamente decodificáveis e livres de prefixo}{5}{subsection.1.1.1}%
+\contentsline {section}{\numberline {1.2}Relações fundamentais com a Teoria da Informação}{6}{section.1.2}%
+\contentsline {subsection}{\numberline {1.2.1}Distribuição de Probabilidade e Esperança}{6}{subsection.1.2.1}%
+\contentsline {subsection}{\numberline {1.2.2}Entropia}{7}{subsection.1.2.2}%
+\vspace {\cftbeforechapterskip }
+\setlength {\cftchapterindent }{\cftlastnumwidth } \setlength {\cftchapternumwidth }{2em}
+\contentsline {chapter}{\MakeTextUppercase {Refer\^encias}}{9}{section*.16}%
