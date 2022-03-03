@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2021) (preloaded format=pdflatex 2022.2.24)  3 MAR 2022 16:42
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2021) (preloaded format=pdflatex 2022.2.24)  3 MAR 2022 19:49
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1179,37 +1179,38 @@ Package rerunfilecheck Info: File `dissertacao.brf' has not changed.
 (rerunfilecheck)             Checksum: FBCC8C030F242BE6555D5F6F72F127F3;106.
  ) 
 Here is how much of TeX's memory you used:
- 18734 strings out of 478994
- 288485 string characters out of 5858184
+ 18741 strings out of 478994
+ 288569 string characters out of 5858184
  910564 words of memory out of 5000000
- 35601 multiletter control sequences out of 15000+600000
- 519270 words of font info for 195 fonts, out of 8000000 for 9000
+ 35603 multiletter control sequences out of 15000+600000
+ 519490 words of font info for 197 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  86i,13n,88p,858b,501s stack positions out of 5000i,500n,10000p,200000b,80000s
-{/usr/local/texlive/2021/texmf-dist/fonts/enc/dvips/lm/lm-ec.enc}{/usr/local/
-texlive/2021/texmf-dist/fonts/enc/dvips/lm/lm-mathsy.enc}{/usr/local/texlive/20
-21/texmf-dist/fonts/enc/dvips/lm/lm-mathit.enc}{/usr/local/texlive/2021/texmf-d
-ist/fonts/enc/dvips/lm/lm-mathex.enc}{/usr/local/texlive/2021/texmf-dist/fonts/
-enc/dvips/lm/lm-rm.enc}{/usr/local/texlive/2021/texmf-dist/fonts/enc/dvips/lm/l
+{/usr/local/texlive/2021/texmf-dist/fonts/enc/dvips/lm/lm-rm.enc}{/usr/local/
+texlive/2021/texmf-dist/fonts/enc/dvips/lm/lm-ec.enc}{/usr/local/texlive/2021/t
+exmf-dist/fonts/enc/dvips/lm/lm-mathsy.enc}{/usr/local/texlive/2021/texmf-dist/
+fonts/enc/dvips/lm/lm-mathit.enc}{/usr/local/texlive/2021/texmf-dist/fonts/enc/
+dvips/lm/lm-mathex.enc}{/usr/local/texlive/2021/texmf-dist/fonts/enc/dvips/lm/l
 m-ts1.enc}</usr/local/texlive/2021/texmf-dist/fonts/type1/public/lm/lmbx12.pfb>
 </usr/local/texlive/2021/texmf-dist/fonts/type1/public/lm/lmbxi10.pfb></usr/loc
 al/texlive/2021/texmf-dist/fonts/type1/public/lm/lmex10.pfb></usr/local/texlive
 /2021/texmf-dist/fonts/type1/public/lm/lmmi12.pfb></usr/local/texlive/2021/texm
 f-dist/fonts/type1/public/lm/lmmi8.pfb></usr/local/texlive/2021/texmf-dist/font
 s/type1/public/lm/lmr10.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/pub
-lic/lm/lmr12.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/lm/lmr8
-.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/lm/lmri10.pfb></usr
-/local/texlive/2021/texmf-dist/fonts/type1/public/lm/lmri12.pfb></usr/local/tex
-live/2021/texmf-dist/fonts/type1/public/lm/lmss12.pfb></usr/local/texlive/2021/
-texmf-dist/fonts/type1/public/lm/lmss17.pfb></usr/local/texlive/2021/texmf-dist
-/fonts/type1/public/lm/lmssbx10.pfb></usr/local/texlive/2021/texmf-dist/fonts/t
-ype1/public/lm/lmsy10.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/publi
-c/lm/lmsy8.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/
-symbols/msbm10.pfb>
-Output written on dissertacao.pdf (17 pages, 543233 bytes).
+lic/lm/lmr12.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/lm/lmr6
+.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/lm/lmr8.pfb></usr/l
+ocal/texlive/2021/texmf-dist/fonts/type1/public/lm/lmri10.pfb></usr/local/texli
+ve/2021/texmf-dist/fonts/type1/public/lm/lmri12.pfb></usr/local/texlive/2021/te
+xmf-dist/fonts/type1/public/lm/lmss12.pfb></usr/local/texlive/2021/texmf-dist/f
+onts/type1/public/lm/lmss17.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1
+/public/lm/lmssbx10.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/
+lm/lmsy10.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/lm/lmsy8.p
+fb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm
+10.pfb>
+Output written on dissertacao.pdf (17 pages, 549582 bytes).
 PDF statistics:
- 258 PDF objects out of 1000 (max. 8388607)
- 218 compressed objects within 3 object streams
- 41 named destinations out of 1000 (max. 500000)
- 63630 words of extra memory for PDF output out of 74296 (max. 10000000)
+ 267 PDF objects out of 1000 (max. 8388607)
+ 226 compressed objects within 3 object streams
+ 42 named destinations out of 1000 (max. 500000)
+ 63638 words of extra memory for PDF output out of 74296 (max. 10000000)
 

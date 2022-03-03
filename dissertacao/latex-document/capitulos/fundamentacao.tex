@@ -5,7 +5,7 @@ Este capítulo apresenta algumas definições e conceitos fundametais para o ent
 
 \section{Código}
 
-Um \textbf{código} \emph{C} mapeia uma \textbf{mensagem} \emph{m} $\in$ \emph{M} para uma cadeia de \textbf{palavras código} em \emph{$W^+$},onde \emph{M} é chamado \textbf{alfabeto de origem} e \emph{$W^+$} \textbf{alfabeto de palavras código}. Vamos utilizar a notação $\emph{A}^+$ para se referir ao conjunto que contém todas as cadeias de \emph{A}, \emph{i.e}, $\emph{A}^+ = \bigcup_{i \geq 1}^{}A^{i} : A^i = (a_1,...,a_i), a \in A $. Deste modo, podemos representar um código como uma função \textbf{\emph{C} : $\emph{M} \rightarrow \emph{W}^+$}.
+Um \textbf{código} \emph{C} mapeia uma \textbf{mensagem} \emph{m} $\in$ \emph{M} para uma cadeia de \textbf{palavras código} em \emph{$W^+$},onde \emph{M} é chamado \textbf{alfabeto de origem} e \emph{$W^+$} \textbf{alfabeto de palavras código}. Vamos utilizar a notação $\emph{A}^+$ para se referir ao conjunto que contém todas as cadeias de \emph{A}, \emph{i.e}, $\emph{A}^+ = \bigcup_{i \geq 1}^{}A^{i} : A^i = (a_1,...,a_i), a \in A $. Deste modo, podemos representar um código como uma função \textbf{\emph{C} : $\emph{M} \rightarrow \emph{W}^+$}.  O \textbf{comprimento} da palavra código \emph{w}, definido pela função \emph{l}(\emph{w}), representa o número de bits de \emph{w}
 
 Os elementos dos alfabetos de origem e de palavras código podem ter um comprimento fixo ou variável. Códigos nos quais os alfabetos possuem um comprimento fixo são chamados de \textbf{códigos de comprimento fixo}, enquanto os que possuem alfabetos de comprimento variáveis são chamados \textbf{códigos de comprimento variável}. Provavelmente o exemplo mais conhecido de código de comprimento fixo seja código ASCII, que mapeia 64 símbolos alfa-numéricos (ou 256 em sua versão estendida) para palavras código de 8 bits. Todavia, a compressão de dados utiliza apenas códigos de comprimento variável, mas especificamente códigos que variam o comprimento de acordo com a probabilidade associada à mensagem (o tema será melhor detalhado em seções posteriores). 
 
@@ -51,15 +51,27 @@ O \textbf{valor esperado} (ou \textbf{esperança}) da variável aleatória \emph
 \textbf{E}[\ X]\ = \sum_{x}^{} xp_X(x).
 \end{equation*}
 
+\subsection{Comprimento médio do código}
+Seja \emph{p} a distribuição de probabilidade associada ao alfabeto de origem \emph{M}. Assuma que \emph{C} é um código tal que \emph{C(m)} = \emph{w}, definimos o \textbf{tamanho médio} de \emph{C} como:
+\begin{equation*}
+l_a (C) = \sum_{m \in M, w \in W^+}^{} p(m) l(w)
+\end{equation*}
+
+É possível notar que a função $l_a$ é delimitada pelo menor e maior comprimentos de palavras códigos em \emph{W}.  
+
+Um código \emph{C} livre de prefixo é \textbf{ótimo} se $l_a(C)$ é mínimo, isto é, para qualquer código livre de prefixo \emph{C'} temos que
+\begin{equation*}
+l_a(C) \leq l_a(C')
+\end{equation*}
+
 \subsection{Entropia}
 A \textbf{Entropia de Shannon} aplica as noções de Entropia física (que representa a aleatoriedade de um sistema) à Teoria da Informação. Dado um sistema \emph{S}, um estado \emph{s} $\in$ \emph{S} e a função \emph{p} sendo a distribuição de probabilidade associada a \emph{S}, definimos \textbf{Entropia} como:
 \begin{equation*}
-H(s) = \sum_{s \in S}^{} p(s) \log_2 \frac{1}{p(s)}
+H(S) = \sum_{s \in S}^{} p(s) \log_2 \frac{1}{p(s)}
 \end{equation*}
 
 Podemos notar através desta definição que a Entropia de um sistema é inversamente proporcional a sua função de distribuição de probabilidade, em outras palavras, quanto mais "imprevisível" (no sentido de ter probabilidades bem distribuídas entre os seus diferentes estados) um sistema, maior a sua entropia.
-A mesma definição pode ser aplicada a Teoria da Informação, "substituindo" o estado \emph{s} pela mensagem \emph{m}
-
+A mesma definição pode ser aplicada a Teoria da Informação, "substituindo" o estado \emph{s} pela mensagem \emph{m}.
 
 % --- Guardando para exemplo
 % A formatação das referências bibliográficas conforme as regras da ABNT são um

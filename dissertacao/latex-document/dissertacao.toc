@@ -14,7 +14,8 @@
 \contentsline {subsection}{\numberline {1.1.1}Códigos unicamente decodificáveis e livres de prefixo}{5}{subsection.1.1.1}%
 \contentsline {section}{\numberline {1.2}Relações fundamentais com a Teoria da Informação}{6}{section.1.2}%
 \contentsline {subsection}{\numberline {1.2.1}Distribuição de Probabilidade e Esperança}{6}{subsection.1.2.1}%
-\contentsline {subsection}{\numberline {1.2.2}Entropia}{7}{subsection.1.2.2}%
+\contentsline {subsection}{\numberline {1.2.2}Comprimento médio do código}{7}{subsection.1.2.2}%
+\contentsline {subsection}{\numberline {1.2.3}Entropia}{7}{subsection.1.2.3}%
 \vspace {\cftbeforechapterskip }
 \setlength {\cftchapterindent }{\cftlastnumwidth } \setlength {\cftchapternumwidth }{2em}
 \contentsline {chapter}{\MakeTextUppercase {Refer\^encias}}{9}{section*.16}%
