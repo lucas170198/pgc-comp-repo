@@ -52,6 +52,13 @@ O \textbf{valor esperado} (ou \textbf{esperança}) da variável aleatória \emph
 \end{equation*}
 
 \subsection{Entropia}
+A \textbf{Entropia de Shannon} aplica as noções de Entropia física (que representa a aleatoriedade de um sistema) à Teoria da Informação. Dado um sistema \emph{S}, um estado \emph{s} $\in$ \emph{S} e a função \emph{p} sendo a distribuição de probabilidade associada a \emph{S}, definimos \textbf{Entropia} como:
+\begin{equation*}
+H(s) = \sum_{s \in S}^{} p(s) \log_2 \frac{1}{p(s)}
+\end{equation*}
+
+Podemos notar através desta definição que a Entropia de um sistema é inversamente proporcional a sua função de distribuição de probabilidade, em outras palavras, quanto mais "imprevisível" (no sentido de ter probabilidades bem distribuídas entre os seus diferentes estados) um sistema, maior a sua entropia.
+A mesma definição pode ser aplicada a Teoria da Informação, "substituindo" o estado \emph{s} pela mensagem \emph{m}
 
 
 % --- Guardando para exemplo
