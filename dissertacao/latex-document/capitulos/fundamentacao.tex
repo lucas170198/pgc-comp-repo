@@ -1,5 +1,5 @@
 % ---
-\chapter{Conceitos e definições fundamentais}
+\chapter{Conceitos e definições fundamentais}equation
 % ---
 Este capítulo apresenta algumas definições e conceitos fundametais para o entendimento das técnicas de compressão que serão discutidas em capítulos posteriores.
 
@@ -37,38 +37,38 @@ Desta forma, é evidente que os algoritmos de compressão sempre devem tomar van
 Dado um experimento e um espaço amostral $\Omega$, uma \textbf{variável aleatória} \emph{X} associa um número real a cada um dos possíveis resultados em $\Omega$. Em outras palavras, \emph{X} é uma função que mapeia os elementos do espaço amostral para números reais. Quando a imagem de \emph{X} pode assumir um número finito de valores, dizemos que \emph{X} é uma \textbf{variável aleatória discreta}.
 
 Podemos descrever melhor uma variável aleatória, atribuindo probabilidades sobre os valores que esta pode assumir. Esses valores são atribuídos pela \textbf{função de densidade de probabilidade}, denotada por \emph{$p_X$}. Portanto, a probabilidade do evento \{ \emph{X} = \emph{x} \} é a função de distribuição de probabilidade aplicada a x, \emph{i.e}, \emph{$p_X(x)$}.
-\begin{equation*}
+\begin{equation}
 p_X(x) = P(\{X = x\})
-\end{equation*}
+\end{equation}
 
 Note que, a variável aleatória pode assumir qualquer um dos valores no espaço amostral que possuem uma probabilidade $\emph{P} > 0$, portanto
-\begin{equation*}
+\begin{equation}
 \sum_{x}^{}p_X(x) = 1.
-\end{equation*}
+\end{equation}
 
 O \textbf{valor esperado} (ou \textbf{esperança}) da variável aleatória \emph{X} é definido como
-\begin{equation*}
+\begin{equation}
 \textbf{E}[\ X]\ = \sum_{x}^{} xp_X(x).
-\end{equation*}
+\end{equation}
 
 \subsection{Comprimento médio do código}
 Seja \emph{p} a distribuição de probabilidade associada ao alfabeto de origem \emph{M}. Assuma que \emph{C} é um código tal que \emph{C(m)} = \emph{w}, definimos o \textbf{tamanho médio} de \emph{C} como:
-\begin{equation*}
+\begin{equation}
 l_a (C) = \sum_{m \in M, w \in W^+}^{} p(m) l(w)
-\end{equation*}
+\end{equation}
 
 É possível notar que a função $l_a$ é delimitada pelo menor e maior comprimentos de palavras códigos em \emph{W}.  
 
 Um código \emph{C} livre de prefixo é \textbf{ótimo} se $l_a(C)$ é mínimo, isto é, para qualquer código livre de prefixo \emph{C'} temos que
-\begin{equation*}
+\begin{equation}
 l_a(C) \leq l_a(C')
-\end{equation*}
+\end{equation}
 
 \subsection{Entropia}
 A \textbf{Entropia de Shannon} aplica as noções de Entropia física (que representa a aleatoriedade de um sistema) à Teoria da Informação. Dado um sistema \emph{S}, um estado \emph{s} $\in$ \emph{S} e a função \emph{p} sendo a distribuição de probabilidade associada a \emph{S}, definimos \textbf{Entropia} como:
-\begin{equation*}
+\begin{equation}
 H(S) = \sum_{s \in S}^{} p(s) \log_2 \frac{1}{p(s)}
-\end{equation*}
+\end{equation}
 
 Podemos notar através desta definição que a Entropia de um sistema é inversamente proporcional a sua função de distribuição de probabilidade, em outras palavras, quanto mais "imprevisível" (no sentido de ter probabilidades bem distribuídas entre os seus diferentes estados) um sistema, maior a sua entropia.
 A mesma definição pode ser aplicada a Teoria da Informação, "substituindo" o estado \emph{s} pela mensagem \emph{m}.
