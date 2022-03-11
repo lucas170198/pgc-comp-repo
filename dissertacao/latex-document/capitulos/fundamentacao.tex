@@ -57,21 +57,42 @@ Seja \emph{p} a distribuição de probabilidade associada ao alfabeto de origem 
 l_a (C) = \sum_{m \in M, w \in W^+}^{} p(m) l(w)
 \end{equation}
 
-É possível notar que a função $l_a$ é delimitada pelo menor e maior comprimentos de palavras códigos em \emph{W}.  
-
 Um código \emph{C} livre de prefixo é \textbf{ótimo} se $l_a(C)$ é mínimo, isto é, para qualquer código livre de prefixo \emph{C'} temos que
 \begin{equation}
 l_a(C) \leq l_a(C')
 \end{equation}
 
 \subsection{Entropia}
-A \textbf{Entropia de Shannon} aplica as noções de Entropia física (que representa a aleatoriedade de um sistema) à Teoria da Informação. Dado um sistema \emph{S}, um estado \emph{s} $\in$ \emph{S} e a função \emph{p} sendo a distribuição de probabilidade associada a \emph{S}, definimos \textbf{Entropia} como:
+A \textbf{Entropia de Shannon} aplica as noções de Entropia física (que representa a aleatoriedade de um sistema) à Teoria da Informação. Dado um sistema \emph{S} e a função \emph{p} sendo a distribuição de probabilidade associada a \emph{S}, definimos \textbf{Entropia} como:
 \begin{equation}
 H(S) = \sum_{s \in S}^{} p(s) \log_2 \frac{1}{p(s)}
 \end{equation}
 
-Podemos notar através desta definição que a Entropia de um sistema é inversamente proporcional a sua função de distribuição de probabilidade, em outras palavras, quanto mais "imprevisível" (no sentido de ter probabilidades bem distribuídas entre os seus diferentes estados) um sistema, maior a sua entropia.
-A mesma definição pode ser aplicada a Teoria da Informação, "substituindo" o estado \emph{s} pela mensagem \emph{m}.
+Por esta definição temos que quanto menor o \emph{bias} da função de distribuição de probabilidade relacionada ao sistema, maior a sua entropia. Em outras palavras, a entropia de um sistema esta intimamente ligada a sua  "desordem". 
+
+Shannon (incluir referencia papper do shannon) aplica o mesmo conceito de entropia no contexto da teoria da informação, "substituindo" o conjunto de estados \emph{S} pelo conjunto de mensagem \emph{M}, isto é, \emph{M} é interpretado como um conjunto de possíveis mensagens, tendo como \emph{p(m)} a probabilidade de $m \in M$.
+Baseado na mesma premissa, Shannon mede a informação contida em uma mensagem da seguinte forma:
+\begin{equation}
+\emph{i(s)} = \log_2 \frac{1}{p(s)}.
+\end{equation}
+
+\subsection{Comprimento de Código e Entropia}
+Nas secções anteriores, o comprimento médio de um código  foi definido em função da distribuição de probabilidade associada ao seu alfabeto de origem.
+Da mesma forma, as noções de \textbf{Entropia} relacionada a um conjunto de mensagens, tem ligação direta com as probabilidades associadas a estas. 
+A seguir, será mostrado como podemos relacionar o comprimento médio de um código a sua entropia através da \textbf{Desigualdade de Kraft-McMillan} , e por consequência estabelecer uma relação direta entre \textbf{a Entropia de um conjunto de mensagens e a otimalidade do código associada a estas mensagens}.
+
+\begin{lemma}[Desigualdade de Kraft-McMillan]  \textbf{Parte (a) McMillan} . Para todo código unicamente decodificável \textbf{\emph{C} : $\emph{M} \rightarrow \emph{W}^+$} .
+\begin{equation*}
+\sum_{w \in W^+}^{}2^{-l(w)} \leq 1.
+\end{equation*}
+
+\textbf{Parte (b) Kraft}. Para qualquer conjunto \emph{L} de comprimento códigos que satisfaça:
+\begin{equation*}
+\sum_{l \in L}^{} 2^{-l} \leq 1.
+\end{equation*}
+$\exists C$ livre de contexto : $ |\emph{C(w)}| =  \emph{l(w)} \forall w \in W^+$.
+
+\end{lemma}
 
 % --- Guardando para exemplo
 % A formatação das referências bibliográficas conforme as regras da ABNT são um

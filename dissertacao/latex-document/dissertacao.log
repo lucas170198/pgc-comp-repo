@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2021) (preloaded format=pdflatex 2022.2.24)  10 MAR 2022 19:50
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2021) (preloaded format=pdflatex 2022.2.24)  10 MAR 2022 21:59
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1154,19 +1154,19 @@ l.23 S
 <to be read again> 
                    \relax 
 l.40 \begin{equation}
-                      [6]) [7] (./dissertacao.brf)
+                      [6] [7]) [8] (./dissertacao.brf)
 \tf@brf=\write5
 \openout5 = `dissertacao.brf'.
 
- [8
+
+bibitemlist
+
+AED: lastpage setting LastPage
+[9
 
 
 
 ]
-bibitemlist
-
-AED: lastpage setting LastPage
-[9]
 \tf@toc=\write6
 \openout6 = `dissertacao.toc'.
 
@@ -1179,11 +1179,11 @@ Package rerunfilecheck Info: File `dissertacao.brf' has not changed.
 (rerunfilecheck)             Checksum: FBCC8C030F242BE6555D5F6F72F127F3;106.
  ) 
 Here is how much of TeX's memory you used:
- 18747 strings out of 478994
- 288653 string characters out of 5858184
+ 18759 strings out of 478994
+ 288787 string characters out of 5858184
  910564 words of memory out of 5000000
- 35603 multiletter control sequences out of 15000+600000
- 519490 words of font info for 197 fonts, out of 8000000 for 9000
+ 35604 multiletter control sequences out of 15000+600000
+ 519952 words of font info for 201 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  86i,13n,88p,858b,501s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/local/texlive/2021/texmf-dist/fonts/enc/dvips/lm/lm-rm.enc}{/usr/local/
@@ -1207,10 +1207,10 @@ onts/type1/public/lm/lmss17.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1
 lm/lmsy10.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/lm/lmsy8.p
 fb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm
 10.pfb>
-Output written on dissertacao.pdf (17 pages, 549769 bytes).
+Output written on dissertacao.pdf (17 pages, 556244 bytes).
 PDF statistics:
- 274 PDF objects out of 1000 (max. 8388607)
- 233 compressed objects within 3 object streams
- 48 named destinations out of 1000 (max. 500000)
- 63638 words of extra memory for PDF output out of 74296 (max. 10000000)
+ 282 PDF objects out of 1000 (max. 8388607)
+ 241 compressed objects within 3 object streams
+ 51 named destinations out of 1000 (max. 500000)
+ 63646 words of extra memory for PDF output out of 74296 (max. 10000000)
 
