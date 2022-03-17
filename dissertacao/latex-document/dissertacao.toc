@@ -19,4 +19,4 @@
 \contentsline {subsection}{\numberline {1.2.4}Comprimento de Código e Entropia}{8}{subsection.1.2.4}%
 \vspace {\cftbeforechapterskip }
 \setlength {\cftchapterindent }{\cftlastnumwidth } \setlength {\cftchapternumwidth }{2em}
-\contentsline {chapter}{\MakeTextUppercase {Refer\^encias}}{9}{section*.16}%
+\contentsline {chapter}{\MakeTextUppercase {Refer\^encias}}{11}{section*.16}%

@@ -37,34 +37,34 @@ Desta forma, é evidente que os algoritmos de compressão sempre devem tomar van
 Dado um experimento e um espaço amostral $\Omega$, uma \textbf{variável aleatória} \emph{X} associa um número real a cada um dos possíveis resultados em $\Omega$. Em outras palavras, \emph{X} é uma função que mapeia os elementos do espaço amostral para números reais. Quando a imagem de \emph{X} pode assumir um número finito de valores, dizemos que \emph{X} é uma \textbf{variável aleatória discreta}.
 
 Podemos descrever melhor uma variável aleatória, atribuindo probabilidades sobre os valores que esta pode assumir. Esses valores são atribuídos pela \textbf{função de densidade de probabilidade}, denotada por \emph{$p_X$}. Portanto, a probabilidade do evento \{ \emph{X} = \emph{x} \} é a função de distribuição de probabilidade aplicada a x, \emph{i.e}, \emph{$p_X(x)$}.
-\begin{equation}
+\begin{equation} \label{eq:dist_prob_def}
 p_X(x) = P(\{X = x\})
 \end{equation}
 
 Note que, a variável aleatória pode assumir qualquer um dos valores no espaço amostral que possuem uma probabilidade $\emph{P} > 0$, portanto
-\begin{equation}
+\begin{equation} \label{eq:dist_prob_sum}
 \sum_{x}^{}p_X(x) = 1.
 \end{equation}
 
 O \textbf{valor esperado} (ou \textbf{esperança}) da variável aleatória \emph{X} é definido como
-\begin{equation}
+\begin{equation} \label{eq:exp_val}
 \textbf{E}[\ X]\ = \sum_{x}^{} xp_X(x).
 \end{equation}
 
 \subsection{Comprimento médio do código}
 Seja \emph{p} a distribuição de probabilidade associada ao alfabeto de origem \emph{M}. Assuma que \emph{C} é um código tal que \emph{C(m)} = \emph{w}, definimos o \textbf{tamanho médio} de \emph{C} como:
-\begin{equation}
+\begin{equation} \label{eq:code_len}
 l_a (C) = \sum_{m \in M, w \in W^+}^{} p(m) l(w)
 \end{equation}
 
 Um código \emph{C} livre de prefixo é \textbf{ótimo} se $l_a(C)$ é mínimo, isto é, para qualquer código livre de prefixo \emph{C'} temos que
-\begin{equation}
+\begin{equation} \label{eq:code_len_optimal}
 l_a(C) \leq l_a(C')
 \end{equation}
 
 \subsection{Entropia}
 A \textbf{Entropia de Shannon} aplica as noções de Entropia física (que representa a aleatoriedade de um sistema) à Teoria da Informação. Dado um sistema \emph{S} e a função \emph{p} sendo a distribuição de probabilidade associada a \emph{S}, definimos \textbf{Entropia} como:
-\begin{equation}
+\begin{equation} \label{eq:entropy}
 H(S) = \sum_{s \in S}^{} p(s) \log_2 \frac{1}{p(s)}
 \end{equation}
 
@@ -72,7 +72,7 @@ Por esta definição temos que quanto menor o \emph{bias} da função de distrib
 
 Shannon (incluir referencia papper do shannon) aplica o mesmo conceito de entropia no contexto da teoria da informação, "substituindo" o conjunto de estados \emph{S} pelo conjunto de mensagem \emph{M}, isto é, \emph{M} é interpretado como um conjunto de possíveis mensagens, tendo como \emph{p(m)} a probabilidade de $m \in M$.
 Baseado na mesma premissa, Shannon mede a informação contida em uma mensagem da seguinte forma:
-\begin{equation}
+\begin{equation} \label{label:info_quantity}
 \emph{i(s)} = \log_2 \frac{1}{p(s)}.
 \end{equation}
 
@@ -100,11 +100,39 @@ $\exists C$ livre de contexto : $ |\emph{C(w)}| =  \emph{l(w)} ~,~\forall w \in 
 \begin{equation*}
 H(M) \leq l_a(C)
 \end{equation*}
+
+\begin{proof}
+Queremos provar que $H(M) - l_a(C) \leq 0$, dado que  $H(M) \leq l_a(C) \Leftrightarrow H(M) - l_a(C) \leq 0$.
+
+Substituindo a equação~\ref{eq:entropy} em \emph{H(M)} e~\ref{eq:code_len} em \emph{$l_a(C)$}, temos:
+
+\begin{align*}
+H(M) - l_a(C) &= \sum_{m \in M}^{}p(s) \log_2 \frac{1}{p(m)}  - \sum_{m \in M, w \in W^+}^{}p(m) l(w) \\
+&= \sum_{m \in M, w \in W^+}^{}p(m) \left(  \log_2 \frac{1}{p(m)} - l(w) \right) \\
+&= \sum_{m \in M, w \in W^+}^{}p(m) \left(  \log_2 \frac{1}{p(m)} - \log_2 2^{l(w)} \right) \\
+&= \sum_{m \in M, w \in W^+}^{}p(m) \log_2 \frac{2^{-l(w)}}{p(m)}
+\end{align*}
+
+A \textbf{Desigualdade de Jansen} afirma que se uma função \emph{f(x)} é côncava, então $\sum_{i}{}p_i~f(x_i) \leq f(\sum_{i}{}p_i~x_i)$. Como a função $\log_2$ é côncava, podemos aplicar a Desigualdade de Jansen ao resultado obtido anteriormente.
+
+\begin{equation*}
+\sum_{m \in M, w \in W^+}^{}p(m) \log_2 \frac{2^{-l(w)}}{p(m)}  \leq \log_2(\sum_{m \in M, w \in W^+}{}2^{-l(w)})
+\end{equation*}
+
+Agora aplicamos a desigualdade de Kraft-McMillan, e concluímos que:
+
+\begin{equation*}
+H(M) - l_a(C) \leq \log_2(\sum_{m \in M, w \in W^+}{}2^{-l(w)}) \Rightarrow H(M) - l_a(C) \leq 0.
+\end{equation*}
+
+
+\end{proof}
+
 \end{lemma}
 
-\begin{lemma}[Entropia como limite superior para o comprimento médio de um código livre de prefixo ótimo] Dado um conjunto de mensagens \emph{M} associado a uma distribuição de probabilidades \emph{p} e um código livre de prefixo ótimo \emph{C'}.
+\begin{lemma}[Entropia como limite superior para o comprimento médio de um código livre de prefixo ótimo] Dado um conjunto de mensagens \emph{M} associado a uma distribuição de probabilidades \emph{p} e um código livre de prefixo ótimo \emph{C}.
 \begin{equation*}
-l_a(C') \leq H(M) + 1
+l_a(C) \leq H(M) + 1
 \end{equation*}
 \end{lemma}
 
