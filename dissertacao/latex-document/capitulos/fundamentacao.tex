@@ -10,11 +10,13 @@ Um \textbf{código} \emph{C} mapeia uma \textbf{mensagem} \emph{m} $\in$ \emph{M
 Os elementos dos alfabetos de origem e de palavras código podem ter um comprimento fixo ou variável. Códigos nos quais os alfabetos possuem um comprimento fixo são chamados de \textbf{códigos de comprimento fixo}, enquanto os que possuem alfabetos de comprimento variáveis são chamados \textbf{códigos de comprimento variável}. Provavelmente o exemplo mais conhecido de código de comprimento fixo seja código ASCII, que mapeia 64 símbolos alfa-numéricos (ou 256 em sua versão estendida) para palavras código de 8 bits. Todavia, a compressão de dados utiliza apenas códigos de comprimento variável, mas especificamente códigos que variam o comprimento de acordo com a probabilidade associada à mensagem (o tema será melhor detalhado em seções posteriores). 
 
 \subsection{Códigos unicamente decodificáveis e livres de prefixo}
-Um código é \textbf{distinto} se pode ser representado como uma função \textbf{bijetora}, i.e, $\forall$ $m_1$, $m_2$ $\in$ M, \emph{C($m_1$)} $\neq$ \emph{C($m_2$)}. Um código é dito \textbf{unicamente decodificável} quando \emph{C(m)} = $w^n$ $\leftrightarrow$ \emph{$C^{-1}(w^n)$} = \emph{m}, com \emph{m} $\in$ \emph{M} e \emph{$w^n$} $\in$ $W^+$.
+Um código é \textbf{distinto} se pode ser representado como uma função \textbf{bijetora}, i.e, $\forall$ $m_1$, $m_2$ $\in$ M, \emph{C($m_1$)} $\neq$ \emph{C($m_2$)}. Um código é dito \textbf{unicamente decodificável} quando \emph{C(m)} = $w$ $\leftrightarrow$ \emph{$C^{-1}(w)$} = \emph{m}, com \emph{m} $\in$ \emph{M} e \emph{$w$} $\in$ $W^+$.
 
 Vamos definir \emph{$C^+$} como a \textbf{codificação} correspondente ao código \emph{C}, tal que $C^+(m^n) = C(m_1)C(m_2)...C(m_n) : m^n = m_1m_2...m_n$, \emph{i.e}, \emph{$C^+ : M^+ \rightarrow W^+$}. A função de \textbf{decodificação} \emph{$D^+ : W^+ \rightarrow M^+$} se refere a operação inversa da codificação, de modo que dado um código \textbf{unicamente decodificável} \emph{C}, $D^+(C^+(m^n)) = m^n$.
 
-Um \textbf{código livre de prefixo} é um código \emph{C'} em que $\nexists w_1^n, w_2^n \in W^+$ $|$ $w_1^n$ é \textbf{prefixo} de $w_2^n$, por exemplo, o conjunto de palavras código \emph{$W^+$} := $\{1, 01, 000, 001\}$ não possui nenhuma cadeia que é prefixo de outra dentro do conjunto. Códigos livres de prefixo podem ser \emph{decodificados instantaneamente}, ou seja, podemos decodificar uma palavra código sem precisar verificar o início da seguinte.
+Um \textbf{código livre de prefixo} é um código \emph{C'} em que $\nexists w_1, w_2 \in W^+$ $|$ $w_1$ é \textbf{prefixo} de $w_2$, por exemplo, o conjunto de palavras código \emph{$W^+$} := $\{1, 01, 000, 001\}$ não possui nenhuma cadeia que é prefixo de outra dentro do conjunto. Códigos livres de prefixo podem ser \emph{decodificados instantaneamente}, ou seja, podemos decodificar uma palavra código sem precisar verificar o início da seguinte.
+
+Um código livre de prefixo pode ser modelado por uma arvore binária. Imagine que cada mensagem $\emph{m} \in \emph{M}$ é uma folha. A palavra código \emph{C'(m)} é o caminho \emph{p} da raiz até a folha correspondente a \emph{m}, de maneira em que, para cada nó percorrido concatene um bit à \emph{p} (0 quando o nó está à esquerda e 1 quando está à direita). Chamamos tal árvore de \textbf{árvore do código livre de prefixo}.
 
 \begin{theorem}
 Todo código \textbf{livre de prefixo} é \textbf{unicamente decodificável}.
@@ -134,7 +136,56 @@ H(M) - l_a(C) \leq \log_2(\sum_{m \in M, w \in W^+}{}2^{-l(w)}) \Rightarrow H(M)
 \begin{equation*}
 l_a(C) \leq H(M) + 1
 \end{equation*}
+
+\begin{proof}
+$\left \lceil{x}\right \rceil $
+\end{proof}
 \end{lemma}
+
+\section{Códigos de Huffman}
+O \textbf{algoritmo de Huffman} (desenvolvido por David Huffman em 1952) é um dos componentes mais utilizados em algoritmos de compressão sem perda, servindo como base para algoritmos como o GZIP (utilizado amplamente na web).
+Os códigos gerados a partir do algoritmos de Huffman são chamados \textbf{Códigos de Huffman}.
+
+O código de Huffman é descrito em termos de como ele gera uma árvore de código livre de prefixo. Considere o conjunto de mensagens \emph{M}, com $p_i$ sendo a probabilidade associada a $m_i$
+
+\begin{itemize}
+	\item Crie uma floresta de árvores uma para cada mensagem do código. Faça com que o peso de cada vértice seja $w_i = p_i$ (onde o $p_i$ representa a probabilidade associada à $m_i$).
+	\item Faça até que a floresta possua uma única árvore
+	\begin{itemize}
+		\item Selecione duas árvores com os pesos $w_1$ e $w_2$, de maneira que estes sejam os menores pesos.
+		\item Crie uma nova árvore a partir das duas selecionadas anteriormente, onde a raiz é um novo nó com o peso $w_1 + w_2$ e faça das duas árvore selecionadas os seus filhos. (por convenção o nó com menor peso fica à esquerda)
+	\end{itemize}
+\end{itemize}
+
+\begin{algorithm}
+\caption{Algoritmo de Huffman} \label{alg:huff}
+\begin{algorithmic}
+	\State $Forest \gets \emph{[]}$\\
+	\ForAll{$m_i \in M$} \Comment{Inicializando floresta}
+		\State $T \gets newTree()$
+		\State $node \gets newNode()$
+		\State $node.weight \gets p_i$ \Comment{$w_i = p_i$}
+		\State $T.root \gets node$
+		\State $Forest.append(T)$
+	\EndFor \\
+	
+	\While{$Forest.size > 1$}
+		\State $T1 \gets ExtractMin(Forest)$ \Comment{Extrai a árvore cujo o peso da raiz é mínimo}
+		\State $T2 \gets ExtractMin(Forest)$
+		\State $HTree \gets newTree()$
+		\State $HTree.root \gets newNode()$ \\
+		\State $HTree.root.left \gets T1.root$
+		\State $HTree.root.right \gets T2.root$
+		\State $HTree.root.weight \gets T1.root.weight + T2.root.weight$
+		\State Forrest.append(HTree) 
+	\EndWhile
+	
+\end{algorithmic}
+\end{algorithm}
+
+\subsection{Análise Assintótica}
+Seja \emph{n} o tamanho do conjunto de mensagens \emph{M}. Para que o algoritmo percorra toda a floresta, formada por uma árvore para cada $\emph{m} \in \emph{M}$, serão necessárias \emph{n} interações.
+Considerando que as funções \emph{ExtractMin()} e \emph{.append()} foram construídas a partir de uma fila de prioridades de \textbf{heap}, o algoritmo será executado em  $O(n \log_2 n)$.
 
 % --- Guardando para exemplo
 % A formatação das referências bibliográficas conforme as regras da ABNT são um
