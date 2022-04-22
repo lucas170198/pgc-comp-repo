@@ -83,18 +83,51 @@ Nas secções anteriores, o comprimento médio de um código  foi definido em fu
 Da mesma forma, as noções de \textbf{Entropia} relacionada a um conjunto de mensagens, tem ligação direta com as probabilidades associadas a estas. 
 A seguir, será mostrado como podemos relacionar o comprimento médio de um código a sua entropia através da \textbf{Desigualdade de Kraft-McMillan} , e por consequência estabelecer uma relação direta entre \textbf{a Entropia de um conjunto de mensagens e a otimalidade do código associada a estas mensagens}.
 
-\begin{lemma}[Desigualdade de Kraft-McMillan]  \textbf{Parte (a) McMillan} . Para todo código unicamente decodificável \textbf{\emph{C} : $\emph{M} \rightarrow \emph{W}^+$} .
+\begin{lemma}[Desigualdade de Kraft-McMillan]  \textbf{McMillan} . Para todo código binário unicamente decodificável \textbf{\emph{C} : $\emph{M} \rightarrow \emph{W}^+$} .
 \begin{equation*}
 \sum_{w \in W^+}^{}2^{-l(w)} \leq 1.
 \end{equation*}
 
-\textbf{Parte (b) Kraft}. Para qualquer conjunto \emph{L} de comprimento códigos que satisfaça:
+\textbf{Kraft}. Para qualquer conjunto \emph{L} de comprimento códigos que satisfaça:
+\begin{align*}
+\sum_{l \in L}^{} 2^{-l} \leq 1.
+\end{align*}
+$\exists C$ binário livre de prefixo : $ |C(w_i)|$ = $l_i$ ~,~$\forall w \in W^+$.
+
+\begin{proof}
+
+\item \textbf{Desigualdade de Kraft}
+Sem perda de generalidade, suponha que os elementos de \emph{L} estão ordenados de maneira em que:
+\begin{align*}
+l_1 \leq l_2 \leq ... \leq l_n
+\end{align*}
+Agora vamos construir um código livre de prefixo em uma ordem crescente de tamanho, de maneira em que $l(w_i) = l_i$. Sabemos que, um código é livre de prefixo se e somente se ,existe uma palavra código $w_j$ que não contém nenhuma das palavras código anteriores $(w_1, w_2, w_{j-1})$ como prefixo.
+Sem as restrições de prefixo, uma palavra código de tamanho $l_j$ poderia ser construída de $2^{l_j}$ maneiras diferentes. Com a restrição apresentada anteriormente, considerando uma palavra $w_k$ anterior a $w_j$ (i.e, $k < j$), existem $2^{l_j - l_k}$ possíveis palavras código seriam prefixo de $w_k$, e que portanto não podem pertencer ao código. Vale notar que o conjunto de palavras código "proibidas" (devido a restrição apresentada anteriormente) são excludentes entre si, pois se duas palavras código menores que j fossem prefixo da mesma palavra código, elas seriam prefixos entre si. 
+
+A partir dessas premissas, sabemos que o total de palavras código de tamanho j que possuiriam prefixo é:
+\begin{equation*}
+\sum_{i=1}^{j-1} 2^{l_j - l_i}
+\end{equation*}
+
+A construção do código livre de prefixo é possível se e somente se, existir uma palavra código de tamanho $j > 1$ que não está contida no conjunto das que possuem prefixo:
+\begin{equation*}
+2^{l_j} > \sum_{i=1}^{j-1} 2^{l_j - l_i}
+\end{equation*}
+
+Levando em consideração a primeira palavra código $j_1$:
+\begin{align*}
+&2^{l_j} \leq \sum_{i=1}^{j-1} 2^{l_j - l_i} + 1  =  2^{l_j} \leq \sum_{i=1}^{j} 2^{l_j - l_i}  \\ &=  1 \geq \sum_{i=1}^{j} 2^{l_j - l_i}  =  \sum_{i=1}^{j} 2^{l_j - l_i} \leq 1 
+\end{align*}
+
+Se aplicarmos essa lógica para a maior palavra código, isto é j = n, chegamos em:
 \begin{equation*}
 \sum_{l \in L}^{} 2^{-l} \leq 1.
 \end{equation*}
-$\exists C$ livre de contexto : $ |\emph{C(w)}| =  \emph{l(w)} ~,~\forall w \in W^+$.
 
-\begin{proof}
+Note que os argumentos utilizados para a construção da prova possuem dupla-equivalência, portando concluem a prova nos dois sentidos.
+
+\item \textbf{Desigualdade de McMillan}
+
 \end{proof}
 \end{lemma}
 
@@ -138,7 +171,27 @@ l_a(C) \leq H(M) + 1
 \end{equation*}
 
 \begin{proof}
-$\left \lceil{x}\right \rceil $
+Sem perda de generalidade, para cada mensagem $m \in M$ faça \emph{l(m)} = $\left \lceil{\log_2 \frac{1}{p(m)} }\right \rceil $. Temos que:
+\begin{align*}
+\sum_{m \in M}^{} 2^{-l(m)} &= \sum_{m \in M}^{} 2^{-\left \lceil{\log_2 \frac{1}{p(m)} }\right \rceil} \\
+&\leq \sum_{m \in M}^{} 2^{-{\log_2 \frac{1}{p(m)} }} \\
+&= \sum_{m \in M}^{} p(s) \\
+&= 1
+\end{align*}
+
+De acordo com a desigualdade de Kraft-McMillan existe um código livre de prefixo \emph{C'} como palavras código de tamanho \emph{l(m)}, portanto:
+\begin{align*}
+l_a(C') &=  \sum_{m \in M', w \in W'^+}^{}p(m) l(w) \\
+&=  \sum_{m \in M', w \in W'^+}^{}p(m) \left \lceil{\log_2 \frac{1}{p(m)} }\right \rceil \\
+&\leq \sum_{m \in M', w \in W'^+}^{}p(m) (1 + \log_2 \frac{1}{p(m)}) \\
+&= 1 +  \sum_{m \in M', w \in W'^+}^{}p(m) \log_2 \frac{1}{p(m)} \\
+&= 1 + H(M)
+\end{align*}
+
+Pela definição de código livre de prefixo ótimo, $l_a(C) \leq l_a(C')$, isto é:
+\begin{equation*}
+l_a(C) \leq H(M) + 1 
+\end{equation*}
 \end{proof}
 \end{lemma}
 
