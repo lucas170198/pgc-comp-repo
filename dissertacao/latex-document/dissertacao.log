@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2021) (preloaded format=pdflatex 2022.2.24)  22 APR 2022 20:38
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2021) (preloaded format=pdflatex 2022.2.24)  27 APR 2022 18:14
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -915,25 +915,25 @@ Writing index file dissertacao.idx
 (./capitulos/introducao.aux) (./capitulos/fundamentacao.aux))
 \openout1 = `dissertacao.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 97.
-LaTeX Font Info:    ... okay on input line 97.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 97.
-LaTeX Font Info:    ... okay on input line 97.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 97.
-LaTeX Font Info:    ... okay on input line 97.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 97.
-LaTeX Font Info:    ... okay on input line 97.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 97.
-LaTeX Font Info:    ... okay on input line 97.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 97.
-LaTeX Font Info:    ... okay on input line 97.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 97.
-LaTeX Font Info:    ... okay on input line 97.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 97.
-LaTeX Font Info:    ... okay on input line 97.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 97.
-LaTeX Font Info:    ... okay on input line 97.
-Package hyperref Info: Link coloring ON on input line 97.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 98.
+LaTeX Font Info:    ... okay on input line 98.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 98.
+LaTeX Font Info:    ... okay on input line 98.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 98.
+LaTeX Font Info:    ... okay on input line 98.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 98.
+LaTeX Font Info:    ... okay on input line 98.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 98.
+LaTeX Font Info:    ... okay on input line 98.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 98.
+LaTeX Font Info:    ... okay on input line 98.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 98.
+LaTeX Font Info:    ... okay on input line 98.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 98.
+LaTeX Font Info:    ... okay on input line 98.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 98.
+LaTeX Font Info:    ... okay on input line 98.
+Package hyperref Info: Link coloring ON on input line 98.
 
 (/usr/local/texlive/2021/texmf-dist/tex/latex/hyperref/nameref.sty
 Package: nameref 2021-04-02 v2.47 Cross-referencing by name of section
@@ -949,15 +949,15 @@ Package: gettitlestring 2019/12/15 v1.6 Cleanup title references (HO)
 )
 Redoing nameref's sectioning
 Redoing nameref's label
-LaTeX Info: Redefining \nameref on input line 97.
-LaTeX Info: Redefining \ref on input line 97.
-LaTeX Info: Redefining \pageref on input line 97.
-LaTeX Info: Redefining \nameref on input line 97.
+LaTeX Info: Redefining \nameref on input line 98.
+LaTeX Info: Redefining \ref on input line 98.
+LaTeX Info: Redefining \pageref on input line 98.
+LaTeX Info: Redefining \nameref on input line 98.
 \myptabbox=\box60
 \myptabboxwidth=\skip276
 Package lastpage Info: Please have a look at the pageslts package at
 (lastpage)             https://www.ctan.org/pkg/pageslts
-(lastpage)             ! on input line 97.
+(lastpage)             ! on input line 98.
 (/usr/local/texlive/2021/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
 \scratchcounter=\count367
@@ -984,14 +984,14 @@ Package caption Info: Begin \AtBeginDocument code.
 Package caption Info: subfig package v1.3 is loaded.
 Package caption Info: float package is loaded.
 Package caption Info: End \AtBeginDocument code.
-LaTeX Info: Redefining \microtypecontext on input line 97.
+LaTeX Info: Redefining \microtypecontext on input line 98.
 Package microtype Info: Generating PDF output.
 Package microtype Info: Character protrusion enabled (level 2).
 Package microtype Info: Using default protrusion set `alltext'.
 Package microtype Info: Automatic font expansion enabled (level 2),
 (microtype)             stretch: 20, shrink: 20, step: 1, non-selected.
 Package microtype Info: Using default expansion set `alltext-nott'.
-LaTeX Info: Redefining \showhyphens on input line 97.
+LaTeX Info: Redefining \showhyphens on input line 98.
 Package microtype Info: No adjustment of tracking.
 Package microtype Info: No adjustment of interword spacing.
 Package microtype Info: No adjustment of character kerning.
@@ -1037,35 +1037,35 @@ logo.png>]
 
 ])
 LaTeX Font Info:    Trying to load font information for OT1+lmr on input line 1
-12.
+13.
  (/usr/local/texlive/2021/texmf-dist/tex/latex/lm/ot1lmr.fd
 File: ot1lmr.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
 LaTeX Font Info:    Trying to load font information for OML+lmm on input line 1
-12.
+13.
 
 (/usr/local/texlive/2021/texmf-dist/tex/latex/lm/omllmm.fd
 File: omllmm.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
 LaTeX Font Info:    Trying to load font information for OMS+lmsy on input line 
-112.
+113.
 
 (/usr/local/texlive/2021/texmf-dist/tex/latex/lm/omslmsy.fd
 File: omslmsy.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
 LaTeX Font Info:    Trying to load font information for OMX+lmex on input line 
-112.
+113.
 
 (/usr/local/texlive/2021/texmf-dist/tex/latex/lm/omxlmex.fd
 File: omxlmex.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <12> on input line 112.
+(Font)              <12> on input line 113.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <8> on input line 112.
+(Font)              <8> on input line 113.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <6> on input line 112.
-LaTeX Font Info:    Trying to load font information for U+msa on input line 112
+(Font)              <6> on input line 113.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 113
 .
 
 (/usr/local/texlive/2021/texmf-dist/tex/latex/amsfonts/umsa.fd
@@ -1074,7 +1074,7 @@ File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 (/usr/local/texlive/2021/texmf-dist/tex/latex/microtype/mt-msa.cfg
 File: mt-msa.cfg 2006/02/04 v1.1 microtype config. file: AMS symbols (a) (RS)
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 112
+LaTeX Font Info:    Trying to load font information for U+msb on input line 113
 .
 
 (/usr/local/texlive/2021/texmf-dist/tex/latex/amsfonts/umsb.fd
@@ -1084,13 +1084,13 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 File: mt-msb.cfg 2005/06/01 v1.0 microtype config. file: AMS symbols (b) (RS)
 )
 LaTeX Font Info:    Trying to load font information for U+rsfs on input line 11
-2.
+3.
 
 (/usr/local/texlive/2021/texmf-dist/tex/latex/jknapltx/ursfs.fd
 File: ursfs.fd 1998/03/24 rsfs font definition file (jk)
 )
 LaTeX Font Info:    Trying to load font information for TS1+lmr on input line 1
-12.
+13.
 
 (/usr/local/texlive/2021/texmf-dist/tex/latex/lm/ts1lmr.fd
 File: ts1lmr.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
@@ -1098,7 +1098,7 @@ File: ts1lmr.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
  been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.112 
+l.113 
        [1
 
 
@@ -1149,7 +1149,7 @@ Package pdftex.def Info: figs/logo.png  used on input line 20.
  been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.170 \include{capitulos/introducao}
+l.171 \include{capitulos/introducao}
                                      [1
 
 
@@ -1157,12 +1157,12 @@ l.170 \include{capitulos/introducao}
  been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.170 \include{capitulos/introducao}
+l.171 \include{capitulos/introducao}
                                      [2]pdfTeX warning (ext4): destination with
  the same identifier (name{page.3}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.173 \part{Fundamentação Teórica}
+l.174 \part{Fundamentação Teórica}
                                       [3
 
 
@@ -1171,7 +1171,7 @@ l.173 \part{Fundamentação Teórica}
  been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.173 \part{Fundamentação Teórica}
+l.174 \part{Fundamentação Teórica}
                                       [4]
 \openout2 = `capitulos/fundamentacao.aux'.
 
@@ -1187,23 +1187,26 @@ l.20
  been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.40 
-      [6] [7] [8] [9] [10]
+l.42 \end{equation}
+                    [6] [7] [8] [9] [10] [11] [12
+
+]
 Package hyperref Info: bookmark level for unknown algorithm defaults to 0 on in
-put line 214.
- [11]) [12] (./dissertacao.brf)
+put line 233.
+ [13] [14]) [15]
+(./dissertacao.brf)
 \tf@brf=\write5
 \openout5 = `dissertacao.brf'.
 
-
-bibitemlist
-
-AED: lastpage setting LastPage
-[13
+ [16
 
 
 
 ]
+bibitemlist
+
+AED: lastpage setting LastPage
+[17]
 \tf@toc=\write6
 \openout6 = `dissertacao.toc'.
 
@@ -1212,17 +1215,20 @@ AED: lastpage setting LastPage
 
 LaTeX Warning: There were undefined references.
 
+
+LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
+
 Package rerunfilecheck Info: File `dissertacao.brf' has not changed.
 (rerunfilecheck)             Checksum: FBCC8C030F242BE6555D5F6F72F127F3;106.
  ) 
 Here is how much of TeX's memory you used:
- 19417 strings out of 478994
- 298396 string characters out of 5858184
- 925137 words of memory out of 5000000
- 36192 multiletter control sequences out of 15000+600000
- 522465 words of font info for 224 fonts, out of 8000000 for 9000
+ 19441 strings out of 478994
+ 298618 string characters out of 5858184
+ 923183 words of memory out of 5000000
+ 36189 multiletter control sequences out of 15000+600000
+ 523513 words of font info for 234 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 86i,13n,88p,858b,518s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 86i,13n,88p,858b,522s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/local/texlive/2021/texmf-dist/fonts/enc/dvips/lm/lm-mathsy.enc}{/usr/lo
 cal/texlive/2021/texmf-dist/fonts/enc/dvips/lm/lm-mathit.enc}{/usr/local/texliv
 e/2021/texmf-dist/fonts/enc/dvips/lm/lm-rm.enc}{/usr/local/texlive/2021/texmf-d
@@ -1245,10 +1251,10 @@ lmssbx10.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/lm/lmsy10.p
 fb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/lm/lmsy6.pfb></usr/lo
 cal/texlive/2021/texmf-dist/fonts/type1/public/lm/lmsy8.pfb></usr/local/texlive
 /2021/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on dissertacao.pdf (21 pages, 600747 bytes).
+Output written on dissertacao.pdf (25 pages, 607421 bytes).
 PDF statistics:
- 330 PDF objects out of 1000 (max. 8388607)
- 283 compressed objects within 3 object streams
- 62 named destinations out of 1000 (max. 500000)
- 65718 words of extra memory for PDF output out of 74296 (max. 10000000)
+ 355 PDF objects out of 1000 (max. 8388607)
+ 303 compressed objects within 4 object streams
+ 67 named destinations out of 1000 (max. 500000)
+ 63678 words of extra memory for PDF output out of 74296 (max. 10000000)
 
