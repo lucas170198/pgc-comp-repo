@@ -1,4 +1,3 @@
-
 class Node:
     def __init__(self, weigth, data=''):
         self.left = None
@@ -35,12 +34,11 @@ def _maxheapfy_bottomup(heap, pos):
     heap[pos] = newitem
 
 
-
 def _maxheapfy_topdown(heap):
     endpos = len(heap)
     pos = 0
     newitem = heap[pos]
-    
+
     childpos = 2*pos + 1    # leftmost child position
     while childpos < endpos:
         # Set childpos to index of greater child
@@ -48,7 +46,6 @@ def _maxheapfy_topdown(heap):
         if rightpos < endpos and heap[childpos] < heap[rightpos]:
             childpos = rightpos
 
-        
         heap[pos] = heap[childpos]
         pos = childpos
         childpos = 2*pos + 1

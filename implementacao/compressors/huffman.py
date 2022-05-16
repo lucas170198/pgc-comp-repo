@@ -1,4 +1,4 @@
-from utils import Node
+from utils import Node, PriorityQueue
 
 
 def _frequency_dictionary(text):
@@ -12,27 +12,23 @@ def _frequency_dictionary(text):
 
 
 def _build_huff_tree(text_freq):
-    florest = []
+    florest = PriorityQueue()
 
     # Building florest
     for data, weigth in text_freq.items():
         root = Node(weigth, data)
-        florest.append(root)
+        florest.queue_add(root)
 
-    # TODO: Build an HeapQ to a more efficient, the Timsort is n log n
-    florest.sort(reverse=True)  # Transform it on a priority key
-
-    while len(florest) > 1:
-        t1 = florest.pop()
-        t2 = florest.pop()
+    while len(florest.queue) > 1:
+        t1 = florest.dequeue()
+        t2 = florest.dequeue()
 
         root = Node(t1.weigth + t2.weigth)
         root.left = t1
         root.right = t2
-        florest.append(root)
-        florest.sort()
+        florest.queue_add(root)
 
-    return florest[0]
+    return florest.dequeue()
 
 
 def _build_code_table(h_tree, path=""):
@@ -55,7 +51,7 @@ def encode(text):
     return (encoded_string, code_table)
 
 
-def reverse_code_table(code_table):
+def _reverse_code_table(code_table):
     reversed = {}
     for key, value in code_table.items():
         reversed[value] = key
@@ -65,7 +61,7 @@ def reverse_code_table(code_table):
 def decode(encoded_text, code_table):
     buffer = ""
     decoded_text = ""
-    inverse_code = reverse_code_table(code_table)
+    inverse_code = _reverse_code_table(code_table)
 
     for s in encoded_text:
         symbol = inverse_code[buffer] if buffer in inverse_code else ""
@@ -80,7 +76,3 @@ def decode(encoded_text, code_table):
     decoded_text += last_symbol or ""
 
     return decoded_text
-
-
-encoded_tuple = encode("aaa bb")
-print(decode(encoded_tuple[0], encoded_tuple[1]))
