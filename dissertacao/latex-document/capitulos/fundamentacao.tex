@@ -1,5 +1,5 @@
 % ---
-\chapter{Conceitos e definições fundamentais}
+\chapter{Conceitos e definições fundamentais em compressão de dados}
 % ---
 Este capítulo apresenta algumas definições e conceitos fundametais para o entendimento das técnicas de compressão que serão discutidas em capítulos posteriores.
 
@@ -223,8 +223,14 @@ l_a(C) \leq H(M) + 1
 \chapter{Algoritmos de compressão sem perda}
 % ---
 
-\section{Códigos de Huffman}
-O \textbf{algoritmo de Huffman} (desenvolvido por David Huffman em 1952) é um dos componentes mais utilizados em algoritmos de compressão sem perda, servindo como base para algoritmos como o GZIP (utilizado amplamente na web).
+Baseado no conteúdo apresentado no capítulo anterior, os algoritmos de compressão podem ser vistos como um ramo da teoria da informação e seu objetivo primário é minimizar a quantidade de dados necessários para representar uma determinada informação.
+
+Os algoritmos de compressão podem ser categorizadas em duas diferentes classes: os de compressão \textbf{com perda} e \textbf{sem perda}. Os \textbf{algoritmos de compressão sem perda} admitem uma baixa porcentagem de perda de informações durante a codificação para obter maior performance, muito uteis na transmissão de dados em streaming por exemplo. Nos \textbf{algoritmos de compressão com perda} o processo de codificação deve ser capaz de recuperar os dados em sua totalidade, geralmente utilizados em casos onde não pode haver perda de informações (como por exemplo, compressão de arquivos de texto).
+
+Os algoritmos de compressão ser perda podem possuem dois principais métodos de implementação, codificação \text{baseada em entropia} e \textbf{baseada em dicionários}. Codificação baseada em entropia 
+
+\section{Código de Huffman}
+O \textbf{algoritmo de Huffman} (desenvolvido por David Huffman em 1952) é um dos componentes mais utilizados em algoritmos de compressão sem perda, servindo como base para algoritmos como o Deflate (utilizado amplamente na web).
 Os códigos gerados a partir do algoritmos de Huffman são chamados \textbf{Códigos de Huffman}.
 
 O código de Huffman é descrito em termos de como ele gera uma árvore de código livre de prefixo. Considere o conjunto de mensagens \emph{M}, com $p_i$ sendo a probabilidade associada a $m_i$
