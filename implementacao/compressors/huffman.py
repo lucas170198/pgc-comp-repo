@@ -1,4 +1,6 @@
-from utils import Node, PriorityQueue
+from utils import Node, PriorityQueue, _TextCompressor, CompressionMode, reverse_dict
+import json
+import os
 
 
 def _frequency_dictionary(text):
@@ -39,7 +41,7 @@ def _build_code_table(h_tree, path=""):
     return {**_build_code_table(h_tree.left, path + "0"), **_build_code_table(h_tree.right, path + "1")}
 
 
-def encode(text):
+def _huffencode(text):
     freqs = _frequency_dictionary(text)
     huff_tree = _build_huff_tree(freqs)
     code_table = _build_code_table(huff_tree)
@@ -51,17 +53,10 @@ def encode(text):
     return (encoded_string, code_table)
 
 
-def _reverse_code_table(code_table):
-    reversed = {}
-    for key, value in code_table.items():
-        reversed[value] = key
-    return reversed
-
-
-def decode(encoded_text, code_table):
+def _huffdecode(encoded_text, code_table):
     buffer = ""
     decoded_text = ""
-    inverse_code = _reverse_code_table(code_table)
+    inverse_code = reverse_dict(code_table)
 
     for s in encoded_text:
         symbol = inverse_code[buffer] if buffer in inverse_code else ""
@@ -76,3 +71,43 @@ def decode(encoded_text, code_table):
     decoded_text += last_symbol or ""
 
     return decoded_text
+
+class HuffmanCompressor(_TextCompressor):
+    def __init__(self, filename, mode='e'):
+        fullpath = os.path.join(os.getcwd(), filename)
+        super().__init__(fullpath, mode)
+        self.filename = filename
+    
+    def _opentextfile(self):
+        with open(self.fullpath + ".txt", "r") as file:
+            self.text = file.read()
+
+    def encode(self):
+        if self.compmode is not CompressionMode.ENCODE:
+            raise Exception("This method is not allowed on this mode")
+        
+        self._opentextfile()
+
+        encodedtext, table = _huffencode(self.text)
+        with open(self.fullpath + ".huff", "w") as outfile:
+            outfile.write(encodedtext)
+
+        with open(self.fullpath + ".meta", "w") as outtable:
+            outtable.write(json.dumps(table))
+
+         
+    
+    def decode(self):
+        if self.compmode is not CompressionMode.DECODE:
+            raise Exception("This method is note allowed on this mode")
+        
+        encodedtext = ""
+        codetable = {}
+        with open(self.fullpath + ".huff", "r") as huff:
+            encodedtext = huff.read()
+        
+        with open(self.fullpath + ".meta", "r") as meta:
+            contents = meta.read()
+            codetable = json.loads(contents)
+        
+        print(_huffdecode(encodedtext, codetable))

@@ -1,3 +1,6 @@
+from enum import Enum
+
+######################### Tree implementation 
 class Node:
     def __init__(self, weigth, data=''):
         self.left = None
@@ -19,7 +22,7 @@ class Node:
         return "NodeClass(data=" + str(self.data) + ", w=" + str(self.weigth) + ")"
 
 
-# Heap Priprity queue:
+# ################### Heap Priprity queue
 def _maxheapfy_bottomup(heap, pos):
     newitem = heap[pos]
 
@@ -84,3 +87,26 @@ class PriorityQueue:
 
     def is_empty(self):
         return not self.queue
+
+# Compressor utils
+# TODO: use list conprehension
+def reverse_dict(dict):
+    reversed = {}
+    for key, value in dict.items():
+        reversed[value] = key
+    return reversed 
+
+class CompressionMode(Enum):
+    ENCODE = 'e'
+    DECODE = 'd'
+
+class _TextCompressor:
+    def __init__(self, path, mode):
+        self.fullpath = path
+        self.compmode = CompressionMode(mode)
+
+    def encode(self):
+        pass
+
+    def decode(self):
+        pass
