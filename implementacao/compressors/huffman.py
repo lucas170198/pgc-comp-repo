@@ -1,4 +1,5 @@
-from utils import Node, PriorityQueue, _TextCompressor, CompressionMode, reverse_dict
+import re
+from utils import Node, PriorityQueue, _TextCompressor, reverse_dict
 import json
 import os
 
@@ -72,35 +73,47 @@ def _huffdecode(encoded_text, code_table):
 
     return decoded_text
 
+# Convert bytes
+def _str_to_bytes(text):
+    barr = bytearray()
+    for b in re.findall(r'\d{1,8}', text):
+        barr.append(int(b, 2))
+    return bytes(barr)
+
 class HuffmanCompressor(_TextCompressor):
     def __init__(self, filename, mode='e'):
         fullpath = os.path.join(os.getcwd(), filename)
         super().__init__(fullpath, mode)
         self.filename = filename
     
-    def _opentextfile(self):
-        with open(self.fullpath + ".txt", "r") as file:
-            self.text = file.read()
+    #TODO: Use some better lib
+    def _print_stats(self, encodedtext, table):
+        # avarage symbol size
+        codesizes = list(map(len, table.values()))
+        originalsize = len(self.text)
+        newsize = len(encodedtext) // 8
+        print("Avarage code size: {size:.2f}".format(size= sum(codesizes) / len(codesizes)))
+        print("Original text size (bytes): {size}".format(size=originalsize))
+        print("Compressed text size (bytes): {size}".format(size=newsize))
+        print("Compression rate: {rate:.2f} %".format(rate=(100 - (newsize / originalsize) * 100)))
 
     def encode(self):
-        if self.compmode is not CompressionMode.ENCODE:
-            raise Exception("This method is not allowed on this mode")
-        
-        self._opentextfile()
-
+        super().encode()
         encodedtext, table = _huffencode(self.text)
-        with open(self.fullpath + ".huff", "w") as outfile:
-            outfile.write(encodedtext)
+        bintext = _str_to_bytes(encodedtext)
+        self._print_stats(encodedtext, table)
+
+        #TODO: Try Catch to acid operation
+        with open(self.fullpath + ".huff", "wb") as outfile:
+            outfile.write(bintext)
 
         with open(self.fullpath + ".meta", "w") as outtable:
             outtable.write(json.dumps(table))
 
          
-    
+    #TODO: Decode bytes
     def decode(self):
-        if self.compmode is not CompressionMode.DECODE:
-            raise Exception("This method is note allowed on this mode")
-        
+        super().decode()
         encodedtext = ""
         codetable = {}
         with open(self.fullpath + ".huff", "r") as huff:

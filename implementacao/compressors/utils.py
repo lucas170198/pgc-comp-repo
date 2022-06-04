@@ -16,7 +16,7 @@ class Node:
 
     # TODO: Implement print inorder
     def __str__(self):
-        return self.__repr__() + "\n" + str(self.right) + " | " + str(self.left) + "\n"
+        return self.__repr__()
 
     def __repr__(self):
         return "NodeClass(data=" + str(self.data) + ", w=" + str(self.weigth) + ")"
@@ -29,7 +29,7 @@ def _maxheapfy_bottomup(heap, pos):
     while pos > 0:
         parentpos = (pos - 1) // 2
         parent = heap[parentpos]
-        if parent < newitem:
+        if parent > newitem:
             heap[pos] = parent
             pos = parentpos
             continue
@@ -105,8 +105,17 @@ class _TextCompressor:
         self.fullpath = path
         self.compmode = CompressionMode(mode)
 
+    def _opentextfile(self):
+        with open(self.fullpath + ".txt", "r") as file:
+            self.text = file.read()
+
     def encode(self):
-        pass
+        if self.compmode is not CompressionMode.ENCODE:
+            raise Exception("This method is not allowed on this mode")
+        
+        self._opentextfile()
+        
 
     def decode(self):
-        pass
+        if self.compmode is not CompressionMode.DECODE:
+            raise Exception("This method is note allowed on this mode")
