@@ -1,4 +1,3 @@
-from curses import window
 from typing import Tuple, NewType
 
 
@@ -64,5 +63,3 @@ def decode(tokens):
         decodedtoken += decodedtoken[subtstrstart:substrend]
 
     return decodedtoken
-
-"Meu comp"
