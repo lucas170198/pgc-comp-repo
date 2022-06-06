@@ -1,7 +1,4 @@
-import re
-from utils import Node, PriorityQueue, _TextCompressor, reverse_dict
-import json
-import os
+from utils import Node, PriorityQueue, _TextCompressor, CompressionStats, reverse_dict
 
 
 def _frequency_dictionary(text):
@@ -58,6 +55,7 @@ def _huffdecode(encoded_text, code_table):
     buffer = ""
     decoded_text = ""
     inverse_code = reverse_dict(code_table)
+    print(inverse_code)
 
     for s in encoded_text:
         symbol = inverse_code[buffer] if buffer in inverse_code else ""
@@ -68,59 +66,29 @@ def _huffdecode(encoded_text, code_table):
             buffer = buffer + s
 
     # When buffer is increased on the last iteration
-    last_symbol = inverse_code[buffer]
-    decoded_text += last_symbol or ""
+    if(buffer in inverse_code):
+        last_symbol = inverse_code[buffer]
+        decoded_text += last_symbol or ""
 
     return decoded_text
 
-# Convert bytes
-def _str_to_bytes(text):
-    barr = bytearray()
-    for b in re.findall(r'\d{1,8}', text):
-        barr.append(int(b, 2))
-    return bytes(barr)
 
 class HuffmanCompressor(_TextCompressor):
-    def __init__(self, filename, mode='e'):
-        fullpath = os.path.join(os.getcwd(), filename)
-        super().__init__(fullpath, mode)
-        self.filename = filename
-    
-    #TODO: Use some better lib
-    def _print_stats(self, encodedtext, table):
-        # avarage symbol size
-        codesizes = list(map(len, table.values()))
-        originalsize = len(self.text)
-        newsize = len(encodedtext) // 8
-        print("Avarage code size: {size:.2f}".format(size= sum(codesizes) / len(codesizes)))
-        print("Original text size (bytes): {size}".format(size=originalsize))
-        print("Compressed text size (bytes): {size}".format(size=newsize))
-        print("Compression rate: {rate:.2f} %".format(rate=(100 - (newsize / originalsize) * 100)))
+    def __init__(self, text):
+        super().__init__(text)
+        self.codetable = {}
+        self.encodedtext = ""
 
     def encode(self):
         super().encode()
-        encodedtext, table = _huffencode(self.text)
-        bintext = _str_to_bytes(encodedtext)
-        self._print_stats(encodedtext, table)
+        encodedtext, table = _huffencode(self.originaltext)
+        self.encodedtext = encodedtext
+        self.codetable = table
+        self.stats = CompressionStats(self.originaltext, self.encodedtext, self.codetable)
+        print(str(self.stats))
 
-        #TODO: Try Catch to acid operation
-        with open(self.fullpath + ".huff", "wb") as outfile:
-            outfile.write(bintext)
-
-        with open(self.fullpath + ".meta", "w") as outtable:
-            outtable.write(json.dumps(table))
-
-         
-    #TODO: Decode bytes
     def decode(self):
-        super().decode()
-        encodedtext = ""
-        codetable = {}
-        with open(self.fullpath + ".huff", "r") as huff:
-            encodedtext = huff.read()
-        
-        with open(self.fullpath + ".meta", "r") as meta:
-            contents = meta.read()
-            codetable = json.loads(contents)
-        
-        print(_huffdecode(encodedtext, codetable))
+        if self.encodedtext and self.codetable:
+            print(_huffdecode(self.encodedtext, self.codetable))
+        else:
+            raise Exception("No text to decode")

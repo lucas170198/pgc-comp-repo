@@ -1,6 +1,8 @@
 from enum import Enum
 
-######################### Tree implementation 
+# Tree implementation
+
+
 class Node:
     def __init__(self, weigth, data=''):
         self.left = None
@@ -90,32 +92,48 @@ class PriorityQueue:
 
 # Compressor utils
 # TODO: use list conprehension
+
+
 def reverse_dict(dict):
     reversed = {}
     for key, value in dict.items():
         reversed[value] = key
-    return reversed 
+    return reversed
 
-class CompressionMode(Enum):
-    ENCODE = 'e'
-    DECODE = 'd'
+stats_text = """Average code size: {csize}
+Orignal size (byte): {osize}
+New size (bytes): {nsize}
+Compression rate (%): {crate}"""
+
+class CompressionStats:
+
+    def _avg_code(self):
+        codesizes = list(map(len,  self.codetable.values()))
+        return sum(codesizes) / len(codesizes)
+
+    def _compression_rate(self):
+        return 100 - (self.compressedtextsize / self.originaltextsize) * 100
+
+    def __init__(self, originaltext, compressedtext, codetable):
+        self.originaltextsize = len(originaltext)
+        self.compressedtextsize = len(compressedtext) // 8
+        self.codetable = codetable
+        self.avgcode = self._avg_code()
+        self.comprate = self._compression_rate()
+
+    def __str__(self) -> str:
+        return stats_text.format(csize=self.avgcode, osize=self.originaltextsize, nsize=self.compressedtextsize, crate=self.comprate)
+
 
 class _TextCompressor:
-    def __init__(self, path, mode):
-        self.fullpath = path
-        self.compmode = CompressionMode(mode)
-
-    def _opentextfile(self):
-        with open(self.fullpath + ".txt", "r") as file:
-            self.text = file.read()
+    def __init__(self, text):
+        self.originaltext = text
+        self.stats = None
 
     def encode(self):
-        if self.compmode is not CompressionMode.ENCODE:
-            raise Exception("This method is not allowed on this mode")
-        
-        self._opentextfile()
-        
+        if not self.originaltext:
+            raise Exception("No text to encode")
+        pass
 
     def decode(self):
-        if self.compmode is not CompressionMode.DECODE:
-            raise Exception("This method is note allowed on this mode")
+        pass
