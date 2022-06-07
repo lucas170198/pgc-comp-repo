@@ -115,7 +115,7 @@ class CompressionStats:
 
     def __init__(self, originaltext, compressedtext):
         self.originaltextsize = len(originaltext)
-        self.compressedtextsize = len(compressedtext) // 8
+        self.compressedtextsize = len(compressedtext)
 
     def __str__(self) -> str:
         return stats_text.format(csize=self._avg_code(), osize=self.originaltextsize, nsize=self.compressedtextsize, crate=self._compression_rate())

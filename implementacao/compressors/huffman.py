@@ -1,4 +1,4 @@
-from mimetypes import init
+import re
 from utils import Node, PriorityQueue, _TextCompressor, CompressionStats, reverse_dict
 
 
@@ -96,7 +96,8 @@ class HuffmanCompressor(_TextCompressor):
         encodedtext, table = _huffencode(self.originaltext)
         self.encodedtext = encodedtext
         self.codetable = table
-        self.stats = HuffmanStats(self.originaltext, self.encodedtext, self.codetable)
+        bytesencoded = re.findall(r'\d{1,8}', self.encodedtext)
+        self.stats = HuffmanStats(self.originaltext, bytesencoded, self.codetable)
         print(str(self.stats))
 
     def decode(self):
