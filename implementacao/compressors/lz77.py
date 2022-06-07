@@ -1,4 +1,5 @@
 from typing import Tuple, NewType
+from utils import _TextCompressor, CompressionStats
 
 
 Token = NewType("TokenType", Tuple[int, int, str])
@@ -35,7 +36,7 @@ def _find_best_match_seq(dictionary, lookaheadbuffer):
     return besttoken
 
 
-def encode(text):
+def _lz77_encode(text):
     window = 0
     encoded_dict = []
 
@@ -51,7 +52,7 @@ def encode(text):
     
     return encoded_dict
 
-def decode(tokens):
+def _lz77_decode(tokens):
     decodedtoken = ""
     for token in tokens:
         lookahead, size, char = token
@@ -63,3 +64,35 @@ def decode(tokens):
         decodedtoken += decodedtoken[subtstrstart:substrend]
 
     return decodedtoken
+
+class Lz77Stats(CompressionStats):
+    def __init__(self, originaltext, compressedtext):
+        super().__init__(originaltext, compressedtext)
+    
+    def _avg_code(self):
+        super()._avg_code()
+        raise Exception("Implement me")
+
+    
+
+
+class Lz77Compressor(_TextCompressor):
+    def __init__(self, text):
+        super().__init__(text)
+        self.tokens = []
+    
+    def encode(self):
+        super().encode()
+        self.tokens = _lz77_encode(self.originaltext)
+        self.stats = None #TODO
+        print(str(self.stats))
+    
+    def decode(self):
+        super().decode()
+        if self.tokens:
+            print(_lz77_decode(self.tokens))
+        else:
+            raise Exception("No token to decode.")
+
+        
+

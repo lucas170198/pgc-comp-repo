@@ -108,22 +108,17 @@ Compression rate (%): {crate}"""
 class CompressionStats:
 
     def _avg_code(self):
-        codesizes = list(map(len,  self.codetable.values()))
-        return sum(codesizes) / len(codesizes)
-
+        pass
+        
     def _compression_rate(self):
         return 100 - (self.compressedtextsize / self.originaltextsize) * 100
 
-    def __init__(self, originaltext, compressedtext, codetable):
+    def __init__(self, originaltext, compressedtext):
         self.originaltextsize = len(originaltext)
         self.compressedtextsize = len(compressedtext) // 8
-        self.codetable = codetable
-        self.avgcode = self._avg_code()
-        self.comprate = self._compression_rate()
 
     def __str__(self) -> str:
-        return stats_text.format(csize=self.avgcode, osize=self.originaltextsize, nsize=self.compressedtextsize, crate=self.comprate)
-
+        return stats_text.format(csize=self._avg_code(), osize=self.originaltextsize, nsize=self.compressedtextsize, crate=self._compression_rate())
 
 class _TextCompressor:
     def __init__(self, text):

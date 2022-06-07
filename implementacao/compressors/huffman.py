@@ -1,3 +1,4 @@
+from mimetypes import init
 from utils import Node, PriorityQueue, _TextCompressor, CompressionStats, reverse_dict
 
 
@@ -72,6 +73,17 @@ def _huffdecode(encoded_text, code_table):
 
     return decoded_text
 
+class HuffmanStats(CompressionStats):
+    def __init__(self, originaltext, compressedtext, codetable):
+        super().__init__(originaltext, compressedtext)
+        self.codetable = codetable
+        self.avgcode = self._avg_code()
+    
+    def _avg_code(self):
+        super()._avg_code()
+        codesizes = list(map(len,  self.codetable.values()))
+        return sum(codesizes) / len(codesizes)
+
 
 class HuffmanCompressor(_TextCompressor):
     def __init__(self, text):
@@ -84,10 +96,11 @@ class HuffmanCompressor(_TextCompressor):
         encodedtext, table = _huffencode(self.originaltext)
         self.encodedtext = encodedtext
         self.codetable = table
-        self.stats = CompressionStats(self.originaltext, self.encodedtext, self.codetable)
+        self.stats = HuffmanStats(self.originaltext, self.encodedtext, self.codetable)
         print(str(self.stats))
 
     def decode(self):
+        super().decode()
         if self.encodedtext and self.codetable:
             print(_huffdecode(self.encodedtext, self.codetable))
         else:
