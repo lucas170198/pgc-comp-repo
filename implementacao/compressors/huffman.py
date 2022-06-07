@@ -40,7 +40,7 @@ def _build_code_table(h_tree, path=""):
     return {**_build_code_table(h_tree.left, path + "0"), **_build_code_table(h_tree.right, path + "1")}
 
 
-def _huffencode(text):
+def _huffman_encode(text):
     freqs = _frequency_dictionary(text)
     huff_tree = _build_huff_tree(freqs)
     code_table = _build_code_table(huff_tree)
@@ -52,7 +52,7 @@ def _huffencode(text):
     return (encoded_string, code_table)
 
 
-def _huffdecode(encoded_text, code_table):
+def _huffman_decode(encoded_text, code_table):
     buffer = ""
     decoded_text = ""
     inverse_code = reverse_dict(code_table)
@@ -73,16 +73,11 @@ def _huffdecode(encoded_text, code_table):
 
     return decoded_text
 
+#TODO: Count the code table also
 class HuffmanStats(CompressionStats):
     def __init__(self, originaltext, compressedtext, codetable):
         super().__init__(originaltext, compressedtext)
         self.codetable = codetable
-        self.avgcode = self._avg_code()
-    
-    def _avg_code(self):
-        super()._avg_code()
-        codesizes = list(map(len,  self.codetable.values()))
-        return sum(codesizes) / len(codesizes)
 
 
 class HuffmanCompressor(_TextCompressor):
@@ -93,7 +88,7 @@ class HuffmanCompressor(_TextCompressor):
 
     def encode(self):
         super().encode()
-        encodedtext, table = _huffencode(self.originaltext)
+        encodedtext, table = _huffman_encode(self.originaltext)
         self.encodedtext = encodedtext
         self.codetable = table
         bytesencoded = re.findall(r'\d{1,8}', self.encodedtext)
@@ -103,6 +98,6 @@ class HuffmanCompressor(_TextCompressor):
     def decode(self):
         super().decode()
         if self.encodedtext and self.codetable:
-            print(_huffdecode(self.encodedtext, self.codetable))
+            print(_huffman_decode(self.encodedtext, self.codetable))
         else:
             raise Exception("No text to decode")

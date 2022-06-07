@@ -108,7 +108,7 @@ Compression rate (%): {crate}"""
 class CompressionStats:
 
     def _avg_code(self):
-        pass
+        return (self.compressedtextsize / self.originaltextsize) * 8
         
     def _compression_rate(self):
         return 100 - (self.compressedtextsize / self.originaltextsize) * 100

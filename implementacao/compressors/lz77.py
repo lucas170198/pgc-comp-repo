@@ -75,10 +75,6 @@ def _tokens_to_bytes(tokens):
 class Lz77Stats(CompressionStats):
     def __init__(self, originaltext, compressedtext):
         super().__init__(originaltext, compressedtext)
-    
-    def _avg_code(self):
-        super()._avg_code()
-        return (self.compressedtextsize / self.originaltextsize) * 8
 
 class Lz77Compressor(_TextCompressor):
     def __init__(self, text):
