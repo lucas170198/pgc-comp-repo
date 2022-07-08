@@ -1,5 +1,6 @@
 import re
 from compressors.utils import Node, PriorityQueue, _TextCompressor, CompressionStats, reverse_dict, frequency_dictionary
+from functools import reduce
 
 
 def _build_huff_tree(text_freq):
@@ -63,12 +64,19 @@ def _huffman_decode(encoded_text, code_table):
 
     return decoded_text
 
-#TODO: Count the code table also
-class HuffmanStats(CompressionStats):
-    def __init__(self, originaltext, compressedtext, codetable):
-        super().__init__(originaltext, compressedtext)
-        self.codetable = codetable
+def _group_bits(bit_stream):
+    return re.findall(r'\d{1,8}', bit_stream)
 
+class HuffmanStats(CompressionStats):
+    def _count_codes_size(self, symbols):
+        bits_stream = reduce(lambda x, y : x + y, symbols, "")
+        bytes_stream = _group_bits(bits_stream)
+        return len(bytes_stream)
+
+    def __init__(self, originaltext, compressedtext, codetable):
+        table_size = self._count_codes_size(codetable.values()) + len(codetable) # Count the 0's and 1's as bits, and the symbols as chars
+        self.originaltextsize = len(originaltext)
+        self.compressedtextsize = len(compressedtext) + table_size
 
 class HuffmanCompressor(_TextCompressor):
     def __init__(self, text):
@@ -81,7 +89,7 @@ class HuffmanCompressor(_TextCompressor):
         encodedtext, table = _huffman_encode(self.originaltext)
         self.encodedtext = encodedtext
         self.codetable = table
-        bytesencoded = re.findall(r'\d{1,8}', self.encodedtext)
+        bytesencoded = _group_bits(self.encodedtext)
         self.stats = HuffmanStats(self.originaltext, bytesencoded, self.codetable)
         print(str(self.stats))
 

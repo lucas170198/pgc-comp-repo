@@ -1,6 +1,7 @@
 from decimal import Decimal
 from compressors.utils import _TextCompressor, CompressionStats, frequency_dictionary
 from functools import reduce
+import sys
 
 def _single_value_encoded(last_interval_prob):
     "Define the final encoded value, using the last iteration result"
@@ -12,7 +13,7 @@ def _single_value_encoded(last_interval_prob):
 
 def _proccess_intervals(prob_table, curr_min, curr_max):
     "Decide in with interval a symbol is inserted according with the current limits"
-    
+
     prob_ranges = {}
     line_range = curr_max - curr_min
 
@@ -43,7 +44,6 @@ def _ac_encode(text):
     #Proccess each char to restring the actual limits
     for symbol in text:
         interval_prob = _proccess_intervals(prob_table, curr_min_interval, curr_max_interval)
-        print(symbol)     
         curr_min_interval = interval_prob[symbol][0]
         curr_max_interval = interval_prob[symbol][1]
     
@@ -71,3 +71,34 @@ def _ac_decode(encoded_value, prob_table, original_text_size):
         curr_max_interval = interval_prob[symbol][1]
     
     return decoded_text
+
+class ArithmeticStats(CompressionStats):
+    def __init__(self, originaltext, prob_tab):
+        prob_tab_size = len(prob_tab) * (1 + 8) # Count keys as chars and prob vals as doubles  
+        self.originaltextsize = len(originaltext)
+        self.compressedtextsize = 8 + prob_tab_size + 4 # Count prob table, compressed value and textsize
+
+class ArithmeticCompressor(_TextCompressor):
+    def __init__(self, text):
+        super().__init__(text)
+        self.prob_table = {}
+        self.encoded_value = None
+        self.textsize = 0
+    
+    def encode(self):
+        super().encode()
+        value, probs, textsize = _ac_encode(self.originaltext)
+        self.encoded_value = value
+        self.prob_table = probs
+        self.textsize = textsize
+        self.stats = ArithmeticStats(self.originaltext, self.prob_table)
+        print(str(self.stats))
+
+    def decode(self):
+        super().decode()
+
+        if self.encoded_value and self.prob_table and self.textsize > 0:
+            print(_ac_decode(self.encoded_value, self.prob_table, self.textsize))
+        
+        else:
+            raise Exception("No text to decode")

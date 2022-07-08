@@ -101,7 +101,7 @@ def frequency_dictionary(text):
     return freqs
 
 stats_text = """Average code size: {csize}
-Orignal size (byte): {osize}
+Orignal size (bytes): {osize}
 New size (bytes): {nsize}
 Compression rate (%): {crate}"""
 
