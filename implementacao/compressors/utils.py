@@ -1,8 +1,4 @@
-from enum import Enum
-
 # Tree implementation
-
-
 class Node:
     def __init__(self, weigth, data=''):
         self.left = None
@@ -91,14 +87,18 @@ class PriorityQueue:
         return not self.queue
 
 # Compressor utils
-# TODO: use list conprehension
-
-
 def reverse_dict(dict):
     reversed = {}
     for key, value in dict.items():
         reversed[value] = key
     return reversed
+
+def frequency_dictionary(text):
+    freqs = {}
+    for character in text:
+        freqs[character] = freqs.get(character, 0) + 1
+        
+    return freqs
 
 stats_text = """Average code size: {csize}
 Orignal size (byte): {osize}

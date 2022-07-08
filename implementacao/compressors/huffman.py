@@ -1,15 +1,5 @@
 import re
-from utils import Node, PriorityQueue, _TextCompressor, CompressionStats, reverse_dict
-
-
-def _frequency_dictionary(text):
-    freqs = {}
-    for character in text:
-        if character in freqs:
-            freqs[character] += 1
-        else:
-            freqs[character] = 1
-    return freqs
+from compressors.utils import Node, PriorityQueue, _TextCompressor, CompressionStats, reverse_dict, frequency_dictionary
 
 
 def _build_huff_tree(text_freq):
@@ -41,7 +31,7 @@ def _build_code_table(h_tree, path=""):
 
 
 def _huffman_encode(text):
-    freqs = _frequency_dictionary(text)
+    freqs = frequency_dictionary(text)
     huff_tree = _build_huff_tree(freqs)
     code_table = _build_code_table(huff_tree)
 

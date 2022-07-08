@@ -1,4 +1,4 @@
-from utils import _TextCompressor, CompressionStats, reverse_dict
+from compressors.utils import _TextCompressor, CompressionStats, reverse_dict
 
 class EncriptyTable:
     def __init__(self, text):
