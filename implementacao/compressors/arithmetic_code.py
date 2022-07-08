@@ -1,7 +1,6 @@
 from decimal import Decimal
 from compressors.utils import _TextCompressor, CompressionStats, frequency_dictionary
 from functools import reduce
-import sys
 
 def _single_value_encoded(last_interval_prob):
     "Define the final encoded value, using the last iteration result"
@@ -74,9 +73,12 @@ def _ac_decode(encoded_value, prob_table, original_text_size):
 
 class ArithmeticStats(CompressionStats):
     def __init__(self, originaltext, prob_tab):
-        prob_tab_size = len(prob_tab) * (1 + 8) # Count keys as chars and prob vals as doubles  
+        DOUBLE_BYTES_SIZE = 8
+        CHAR_BYTES_SIZE = 1
+        INT_BYTES_SIZE = 4
+        prob_tab_size = len(prob_tab) * (CHAR_BYTES_SIZE + DOUBLE_BYTES_SIZE) # Count keys as chars and prob vals as doubles  
         self.originaltextsize = len(originaltext)
-        self.compressedtextsize = 8 + prob_tab_size + 4 # Count prob table, compressed value and textsize
+        self.compressedtextsize = DOUBLE_BYTES_SIZE + prob_tab_size + INT_BYTES_SIZE # Count prob table, compressed value and textsize
 
 class ArithmeticCompressor(_TextCompressor):
     def __init__(self, text):
