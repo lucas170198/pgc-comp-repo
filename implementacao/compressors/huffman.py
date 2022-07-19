@@ -1,26 +1,27 @@
 import re
-from compressors.utils import Node, PriorityQueue, _TextCompressor, CompressionStats, reverse_dict, frequency_dictionary
+from compressors.utils import Node, _TextCompressor, CompressionStats, reverse_dict, frequency_dictionary
 from functools import reduce
+import heapq
 
 
 def _build_huff_tree(text_freq):
-    florest = PriorityQueue()
+    florest = []
 
     # Building florest
     for data, weigth in text_freq.items():
         root = Node(weigth, data)
-        florest.queue_add(root)
+        heapq.heappush(florest, root)
 
-    while len(florest.queue) > 1:
-        t1 = florest.dequeue()
-        t2 = florest.dequeue()
+    while len(florest) > 1:
+        t1 = heapq.heappop(florest)
+        t2 = heapq.heappop(florest)
 
         root = Node(t1.weigth + t2.weigth)
         root.left = t1
         root.right = t2
-        florest.queue_add(root)
+        heapq.heappush(florest, root)
 
-    return florest.dequeue()
+    return florest[0]
 
 
 def _build_code_table(h_tree, path=""):
@@ -40,14 +41,13 @@ def _huffman_encode(text):
     for char in text:
         encoded_string += code_table[char]
 
-    return (encoded_string, code_table)
+    return (encoded_string, code_table, huff_tree, freqs)
 
 
 def _huffman_decode(encoded_text, code_table):
     buffer = ""
     decoded_text = ""
     inverse_code = reverse_dict(code_table)
-    print(inverse_code)
 
     for s in encoded_text:
         symbol = inverse_code[buffer] if buffer in inverse_code else ""
@@ -82,20 +82,28 @@ class HuffmanCompressor(_TextCompressor):
     def __init__(self, text):
         super().__init__(text)
         self.codetable = {}
+        self.huff_tree = None
+        self.prob_table = None
         self.encodedtext = ""
 
     def encode(self):
         super().encode()
-        encodedtext, table = _huffman_encode(self.originaltext)
+        encodedtext, table, tree, freqs = _huffman_encode(self.originaltext)
         self.encodedtext = encodedtext
         self.codetable = table
+        self.huff_tree = tree
+        self.prob_table = freqs
         bytesencoded = _group_bits(self.encodedtext)
         self.stats = HuffmanStats(self.originaltext, bytesencoded, self.codetable)
         print(str(self.stats))
 
-    def decode(self):
+    def decode(self, print_output=False):
         super().decode()
         if self.encodedtext and self.codetable:
-            print(_huffman_decode(self.encodedtext, self.codetable))
+            decoded_text = _huffman_decode(self.encodedtext, self.codetable)
+            if print_output:
+                print(decoded_text)
+                
+            return decoded_text
         else:
             raise Exception("No text to decode")

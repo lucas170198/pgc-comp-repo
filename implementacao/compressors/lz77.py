@@ -84,7 +84,6 @@ def _tokens_to_bytes(tokens):
         b_arr += newbytes
     return b_arr
 
-#TODO: Decode should decode from compressedtext, not from tokens
 class Lz77Stats(CompressionStats):
     def __init__(self, originaltext, compressedtext):
         super().__init__(originaltext, compressedtext)
