@@ -86,7 +86,7 @@ class HuffmanCompressor(_TextCompressor):
         self.prob_table = None
         self.encodedtext = ""
 
-    def encode(self):
+    def encode(self, print_stats=False):
         super().encode()
         encodedtext, table, tree, freqs = _huffman_encode(self.originaltext)
         self.encodedtext = encodedtext
@@ -95,7 +95,9 @@ class HuffmanCompressor(_TextCompressor):
         self.prob_table = freqs
         bytesencoded = _group_bits(self.encodedtext)
         self.stats = HuffmanStats(self.originaltext, bytesencoded, self.codetable)
-        print(str(self.stats))
+
+        if print_stats:
+            print(str(self.stats))
 
     def decode(self, print_output=False):
         super().decode()
@@ -103,7 +105,7 @@ class HuffmanCompressor(_TextCompressor):
             decoded_text = _huffman_decode(self.encodedtext, self.codetable)
             if print_output:
                 print(decoded_text)
-                
+
             return decoded_text
         else:
             raise Exception("No text to decode")
