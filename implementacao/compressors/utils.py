@@ -56,13 +56,12 @@ class CompressionStats:
         return stats_text.format(csize=self._avg_code(), osize=self.originaltextsize, nsize=self.compressedtextsize, crate=self._compression_rate())
 
 class _TextCompressor:
-    def __init__(self, text):
-        self.originaltext = text
+    def __init__(self):
+        self.originaltext = None
         self.stats = None
 
-    def encode(self):
-        if not self.originaltext:
-            raise Exception("No text to encode")
+    def encode(self, text):
+        self.originaltext = text
         pass
 
     def decode(self):

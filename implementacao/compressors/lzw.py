@@ -65,13 +65,13 @@ class LzwStats(CompressionStats):
         self.originaltextsize = len(original_text)
 
 class LzwCompressor(_TextCompressor):
-    def __init__(self, text):
-        super().__init__(text)
+    def __init__(self):
+        super().__init__()
         self.codetable = {}
         self.encodedbytes = []
     
-    def encode(self):
-        super().encode()
+    def encode(self, text):
+        super().encode(text)
         bootdict, encoded = _lzw_encode(self.originaltext)
         self.codetable = bootdict
         self.encodedbytes = encoded

@@ -79,15 +79,15 @@ class HuffmanStats(CompressionStats):
         self.compressedtextsize = len(compressedtext) + table_size
 
 class HuffmanCompressor(_TextCompressor):
-    def __init__(self, text):
-        super().__init__(text)
+    def __init__(self):
+        super().__init__()
         self.codetable = {}
         self.huff_tree = None
         self.prob_table = None
         self.encodedtext = ""
 
-    def encode(self, print_stats=False):
-        super().encode()
+    def encode(self, text, print_stats=False):
+        super().encode(text=text)
         encodedtext, table, tree, freqs = _huffman_encode(self.originaltext)
         self.encodedtext = encodedtext
         self.codetable = table

@@ -90,13 +90,13 @@ class Lz77Stats(CompressionStats):
 
 
 class Lz77Compressor(_TextCompressor):
-    def __init__(self, text):
-        super().__init__(text)
+    def __init__(self):
+        super().__init__()
         self.tokens = []
         self.compressedtext = []
 
-    def encode(self):
-        super().encode()
+    def encode(self, text):
+        super().encode(text)
         self.tokens = _lz77_encode(self.originaltext)
         self.compressedtext = _tokens_to_bytes(self.tokens)
         self.stats = Lz77Stats(self.originaltext, self.compressedtext)

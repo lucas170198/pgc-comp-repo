@@ -81,14 +81,14 @@ class ArithmeticStats(CompressionStats):
         self.compressedtextsize = DOUBLE_BYTES_SIZE + prob_tab_size + INT_BYTES_SIZE # Count prob table, compressed value and textsize
 
 class ArithmeticCompressor(_TextCompressor):
-    def __init__(self, text):
-        super().__init__(text)
+    def __init__(self):
+        super().__init__()
         self.prob_table = {}
         self.encoded_value = None
         self.textsize = 0
     
-    def encode(self):
-        super().encode()
+    def encode(self, text):
+        super().encode(text)
         value, probs, textsize = _ac_encode(self.originaltext)
         self.encoded_value = value
         self.prob_table = probs
