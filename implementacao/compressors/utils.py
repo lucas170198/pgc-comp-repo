@@ -28,10 +28,10 @@ def reverse_dict(dict):
         reversed[value] = key
     return reversed
 
-def frequency_dictionary(text):
+def frequency_dictionary(vals):
     freqs = {}
-    for character in text:
-        freqs[character] = freqs.get(character, 0) + 1
+    for symbol in vals:
+        freqs[symbol] = freqs.get(symbol, 0) + 1
         
     return freqs
 

@@ -1,6 +1,7 @@
 from typing import Tuple, NewType
 from compressors.utils import _TextCompressor, CompressionStats
 
+#TODO: Use bytes to decode
 
 Token = NewType("TokenType", Tuple[int, int, str])
 
