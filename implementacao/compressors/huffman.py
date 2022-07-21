@@ -1,5 +1,5 @@
 import re
-from compressors.utils import Node, _TextCompressor, CompressionStats, reverse_dict, frequency_dictionary
+from compressors.utils import Node, _TextCompressor, CompressionStats, reverse_dict, frequency_dictionary, group_bits
 from functools import reduce
 import heapq
 
@@ -65,13 +65,10 @@ def _huffman_decode(encoded_text, code_table):
 
     return decoded_text
 
-def _group_bits(bit_stream):
-    return re.findall(r'\d{1,8}', bit_stream)
-
 class HuffmanStats(CompressionStats):
     def _count_codes_size(self, symbols):
         bits_stream = reduce(lambda x, y : x + y, symbols, "")
-        bytes_stream = _group_bits(bits_stream)
+        bytes_stream = group_bits(bits_stream)
         return len(bytes_stream)
 
     def __init__(self, originaltext, compressedtext, codetable):
@@ -94,7 +91,7 @@ class HuffmanCompressor(_TextCompressor):
         self.codetable = table
         self.huff_tree = tree
         self.prob_table = freqs
-        bytesencoded = _group_bits(self.encodedtext)
+        bytesencoded = group_bits(self.encodedtext)
         self.stats = HuffmanStats(self.originaltext, bytesencoded, self.codetable)
 
         if print_stats:
