@@ -4,40 +4,45 @@ from compressors.utils import _TextCompressor, CompressionStats
 
 Token = NewType("TokenType", Tuple[int, int, str])
 
+# To bytes to store token numbers
+MAX_OFFSET = 2047 # Offset 11 bits
+MAX_LENGTH = 31 # Length 5 bits
 
 def _token_is_null(token):
     return not (token[0] or token[1])
 
 
 def _find_first_match(dictionary, target):
-    start = 0
-    end = len(target) - 1
+    dict_size = len(dictionary)
+    end = dict_size - 1
+    start = dict_size - len(target)
+    gobackpointer = 0
 
-    while end < len(dictionary):
+    while start >= 0:
+        gobackpointer = dict_size - start
+        if gobackpointer > MAX_OFFSET:
+            break
+
         if dictionary[start:end+1] == target:
-            return start
-        start += 1
-        end += 1
+            return gobackpointer
 
+        start -=1
+        end -= 1
 
 def _find_best_match_seq(dictionary, lookaheadbuffer):
 
     labpointer = 0
     gobackpointer = 0
-    MAX_TOKEN_ELEM_SIZE = 255 #Token 
     besttoken = Token((0, 0, lookaheadbuffer[0]))
 
-    while labpointer < len(lookaheadbuffer) \
-            and labpointer < MAX_TOKEN_ELEM_SIZE\
-            and gobackpointer < MAX_TOKEN_ELEM_SIZE:
+    while labpointer < len(lookaheadbuffer) and labpointer < MAX_LENGTH:
 
-        matchpointer = _find_first_match(
+        gobackpointer = _find_first_match(
             dictionary, lookaheadbuffer[:labpointer+1])
 
-        if not matchpointer:
+        if not gobackpointer:
             return besttoken
 
-        gobackpointer = len(dictionary) - matchpointer
         labpointer += 1
 
         besttoken = Token((gobackpointer, labpointer, ""))
@@ -78,10 +83,26 @@ def _lz77_decode(tokens):
 
 
 def _tokens_to_bytes(tokens):
+    size_bits = 5
+    
     b_arr = bytearray()
+
     for t in tokens:
-        newbytes = bytearray(0) + bytearray(t[2].encode()) if _token_is_null(t) else bytearray(t[0:2])
-        b_arr += newbytes
+        offset, size, char = t
+
+        if _token_is_null(t):
+            b_arr.append(0)
+            b_arr += bytearray(char.encode())
+            continue
+
+        two_bytes_offset_size = (offset << size_bits) + size
+
+        # append two last bytes
+        mask = 0b11111111
+        offset_byte = (two_bytes_offset_size >> 8) & mask
+        size_byte = (two_bytes_offset_size) & mask
+        b_arr.append(size_byte)
+        b_arr.append(offset_byte)
     return b_arr
 
 class Lz77Stats(CompressionStats):
@@ -95,12 +116,13 @@ class Lz77Compressor(_TextCompressor):
         self.tokens = []
         self.compressedtext = []
 
-    def encode(self, text):
+    def encode(self, text, print_stats=False):
         super().encode(text)
         self.tokens = _lz77_encode(self.originaltext)
         self.compressedtext = _tokens_to_bytes(self.tokens)
         self.stats = Lz77Stats(self.originaltext, self.compressedtext)
-        print(str(self.stats))
+        if print_stats:
+            print(str(self.stats))
 
     def decode(self):
         super().decode()
