@@ -3,8 +3,6 @@ from functools import reduce
 from compressors.utils import frequency_dictionary, reverse_dict, group_bits, _TextCompressor, CompressionStats
 import re
 
-#TODO: Convertion to bytes
-
 def _build_huffword_code(seq):
     freqs = frequency_dictionary(seq)
     huff_tree = canonical.build_huff_tree(freqs)

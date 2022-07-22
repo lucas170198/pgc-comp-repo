@@ -1,15 +1,13 @@
 from typing import Tuple, NewType
 from compressors.utils import _TextCompressor, CompressionStats
 
-#TODO: Use bytes to decode
-
 Token = NewType("TokenType", Tuple[int, int, str])
 
 # To bytes to store token numbers
 MAX_OFFSET = 2047 # Offset 11 bits
 MAX_LENGTH = 31 # Length 5 bits
 
-def _token_is_null(token):
+def token_is_null(token):
     return not (token[0] or token[1])
 
 
@@ -59,7 +57,7 @@ def _lz77_encode(text):
         token = _find_best_match_seq(
             dictionary=text[:window], lookaheadbuffer=text[window:])
         encoded_dict.append(token)
-        if not _token_is_null(token):
+        if not token_is_null(token):
             _, size, _ = token
             window += size
             continue
@@ -73,7 +71,7 @@ def _lz77_decode(tokens):
     decodedtoken = ""
     for token in tokens:
         lookahead, size, char = token
-        if _token_is_null(token):
+        if token_is_null(token):
             decodedtoken += char
             continue
         subtstrstart = len(decodedtoken) - lookahead
@@ -83,17 +81,17 @@ def _lz77_decode(tokens):
     return decodedtoken
 
 
-def _tokens_to_bytes(tokens):
+def tokens_to_bytes(tokens):
     size_bits = 5
     
     b_arr = bytearray()
 
     for t in tokens:
-        offset, size, char = t
+        offset, size, s = t
 
-        if _token_is_null(t):
+        if token_is_null(t):
             b_arr.append(0)
-            b_arr += bytearray(char.encode())
+            b_arr += bytearray(s.encode())
             continue
 
         two_bytes_offset_size = (offset << size_bits) + size
@@ -120,7 +118,7 @@ class Lz77Compressor(_TextCompressor):
     def encode(self, text, print_stats=False):
         super().encode(text)
         self.tokens = _lz77_encode(self.originaltext)
-        self.compressedtext = _tokens_to_bytes(self.tokens)
+        self.compressedtext = tokens_to_bytes(self.tokens)
         self.stats = Lz77Stats(self.originaltext, self.compressedtext)
         if print_stats:
             print(str(self.stats))

@@ -1,9 +1,7 @@
-import re
 from compressors.utils import Node, _TextCompressor, CompressionStats, reverse_dict, frequency_dictionary, group_bits
 from functools import reduce
 import heapq
 
-# TODO convertion to bytes
 
 def build_huff_tree(text_freq):
     florest = []
