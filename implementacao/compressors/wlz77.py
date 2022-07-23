@@ -19,8 +19,6 @@ def wlz77_decode(tokens):
         endpos = startpos + size
         for pos in range(startpos, endpos):
             decoded_words.append(decoded_words[pos])
-        
-        print(decoded_words)
 
     return ''.join(decoded_words)
 
@@ -36,8 +34,8 @@ class WLz77Compressor(_TextCompressor):
         self.compressedtext = []
     
     def encode(self, text, print_stats=False):
-        self.originaltext = text
-        self.tokens = wlz77_encode(text)
+        super().encode(text)
+        self.tokens = wlz77_encode(self.originaltext)
         self.compressedtext = canonical.tokens_to_bytes(self.tokens)
         self.stats = WLz77Stats(self.originaltext, self.compressedtext)
         if print_stats:

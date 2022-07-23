@@ -1,3 +1,4 @@
+from collections import deque
 from typing import Tuple, NewType
 from compressors.utils import _TextCompressor, CompressionStats
 
@@ -5,63 +6,77 @@ Token = NewType("TokenType", Tuple[int, int, str])
 
 # To bytes to store token numbers
 MAX_OFFSET = 2047 # Offset 11 bits
-MAX_LENGTH = 31 # Length 5 bits
+MAX_LENGTH = 30 # Length 5 bits
 
 def token_is_null(token):
     return not (token[0] or token[1])
 
 
-def _find_first_match(dictionary, target):
+def _substring_match_size(dict,target):
+    pointer = 0
+    while pointer < len(target) and pointer < len(dict) and pointer <= MAX_LENGTH:
+        if dict[pointer] == target[pointer]:
+            pointer += 1
+            continue
+        break
+    return pointer
+
+def _find_best_match_seq(dictionary, lookaheadbuffer, memoized_chars):
+    start_symbol = lookaheadbuffer[0]
     dict_size = len(dictionary)
-    end = dict_size - 1
-    start = dict_size - len(target)
-    gobackpointer = 0
+    best_token = Token((0, 0, lookaheadbuffer[0]))
 
-    while start >= 0:
-        gobackpointer = dict_size - start
-        if gobackpointer > MAX_OFFSET:
+    if (start_symbol not in memoized_chars) or not dictionary:
+        return best_token
+    
+    # removing invalid symbols
+    starts = list(memoized_chars[start_symbol])
+    for s in starts:
+        if dict_size - s > MAX_OFFSET:
+            memoized_chars[start_symbol].popleft()
+    
+    for start in memoized_chars[start_symbol]:
+        if best_token[1] == MAX_LENGTH:
             break
+        size = _substring_match_size(dictionary[start:], lookaheadbuffer)
+        if size > best_token[1]:
+            goback = dict_size - start
+            best_token = Token((goback, size, ""))
+    
+    return best_token
 
-        if dictionary[start:end+1] == target:
-            return gobackpointer
+def _insert_symbols(symbol_dict, new_symbols, old_window_size):
+    for i, symbol in enumerate(new_symbols):
+        if symbol not in symbol_dict:
+            symbol_dict[symbol] = deque()
 
-        start -=1
-        end -= 1
-
-def _find_best_match_seq(dictionary, lookaheadbuffer):
-
-    labpointer = 0
-    gobackpointer = 0
-    besttoken = Token((0, 0, lookaheadbuffer[0]))
-
-    while labpointer < len(lookaheadbuffer) and labpointer < MAX_LENGTH:
-
-        gobackpointer = _find_first_match(
-            dictionary, lookaheadbuffer[:labpointer+1])
-
-        if not gobackpointer:
-            return besttoken
-
-        labpointer += 1
-
-        besttoken = Token((gobackpointer, labpointer, ""))
-
-    return besttoken
-
+        symbol_dict[symbol].append(i + old_window_size - 1)
 
 def _lz77_encode(text):
     window = 0
     encoded_dict = []
+    memoized_chars = {}
+    table_size = 0
 
     while window < len(text):
         token = _find_best_match_seq(
-            dictionary=text[:window], lookaheadbuffer=text[window:])
+            dictionary=text[:window], lookaheadbuffer=text[window:], memoized_chars=memoized_chars)
         encoded_dict.append(token)
         if not token_is_null(token):
             _, size, _ = token
+            new_symbols_start = window
             window += size
+            _insert_symbols(memoized_chars, text[new_symbols_start : window], new_symbols_start + 1)
+            table_size += size
             continue
+        
+        # Inserting one symbol
+        new_symbol = text[window]
+        if new_symbol not in memoized_chars:
+            memoized_chars[new_symbol] = deque()
 
+        memoized_chars[new_symbol].append(window)
+        table_size += 1
         window += 1
 
     return encoded_dict
