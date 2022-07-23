@@ -1,3 +1,5 @@
+import re
+
 # Tree implementation
 class Node:
     def __init__(self, weigth, data=''):
@@ -21,6 +23,9 @@ def print_tree(node, level=0):
         print(' ' * 10 * level + '-> ' + "(" + node.data + "," + str(node.weigth) + ")")
         print_tree(node.right, level + 1)
 
+def group_bits(bit_stream):
+    return re.findall(r'\d{1,8}', bit_stream)
+
 # Compressor utils
 def reverse_dict(dict):
     reversed = {}
@@ -28,10 +33,10 @@ def reverse_dict(dict):
         reversed[value] = key
     return reversed
 
-def frequency_dictionary(text):
+def frequency_dictionary(vals):
     freqs = {}
-    for character in text:
-        freqs[character] = freqs.get(character, 0) + 1
+    for symbol in vals:
+        freqs[symbol] = freqs.get(symbol, 0) + 1
         
     return freqs
 

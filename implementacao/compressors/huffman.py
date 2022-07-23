@@ -1,10 +1,9 @@
-import re
-from compressors.utils import Node, _TextCompressor, CompressionStats, reverse_dict, frequency_dictionary
+from compressors.utils import Node, _TextCompressor, CompressionStats, reverse_dict, frequency_dictionary, group_bits
 from functools import reduce
 import heapq
 
 
-def _build_huff_tree(text_freq):
+def build_huff_tree(text_freq):
     florest = []
 
     # Building florest
@@ -24,18 +23,18 @@ def _build_huff_tree(text_freq):
     return florest[0]
 
 
-def _build_code_table(h_tree, path=""):
+def build_code_table(h_tree, path=""):
     if(not h_tree):
         return {}
     if(h_tree.is_leaf()):
         return {h_tree.data: path}
-    return {**_build_code_table(h_tree.left, path + "0"), **_build_code_table(h_tree.right, path + "1")}
+    return {**build_code_table(h_tree.left, path + "0"), **build_code_table(h_tree.right, path + "1")}
 
 
 def _huffman_encode(text):
     freqs = frequency_dictionary(text)
-    huff_tree = _build_huff_tree(freqs)
-    code_table = _build_code_table(huff_tree)
+    huff_tree = build_huff_tree(freqs)
+    code_table = build_code_table(huff_tree)
 
     encoded_string = ""
     for char in text:
@@ -64,13 +63,10 @@ def _huffman_decode(encoded_text, code_table):
 
     return decoded_text
 
-def _group_bits(bit_stream):
-    return re.findall(r'\d{1,8}', bit_stream)
-
 class HuffmanStats(CompressionStats):
     def _count_codes_size(self, symbols):
         bits_stream = reduce(lambda x, y : x + y, symbols, "")
-        bytes_stream = _group_bits(bits_stream)
+        bytes_stream = group_bits(bits_stream)
         return len(bytes_stream)
 
     def __init__(self, originaltext, compressedtext, codetable):
@@ -93,7 +89,7 @@ class HuffmanCompressor(_TextCompressor):
         self.codetable = table
         self.huff_tree = tree
         self.prob_table = freqs
-        bytesencoded = _group_bits(self.encodedtext)
+        bytesencoded = group_bits(self.encodedtext)
         self.stats = HuffmanStats(self.originaltext, bytesencoded, self.codetable)
 
         if print_stats:
