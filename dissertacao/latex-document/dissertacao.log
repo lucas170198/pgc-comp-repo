@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2021) (preloaded format=pdflatex 2022.2.24)  27 APR 2022 18:14
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2021) (preloaded format=pdflatex 2022.2.24)  25 JUL 2022 09:06
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -912,7 +912,8 @@ Writing index file dissertacao.idx
 \c@theorem=\count364
 \c@corollary=\count365
 (./dissertacao.aux (./pretextual/capa.aux) (./pretextual/resumos.aux)
-(./capitulos/introducao.aux) (./capitulos/fundamentacao.aux))
+(./capitulos/introducao.aux) (./capitulos/fundamentacao.aux)
+(./capitulos/algoritmos.aux))
 \openout1 = `dissertacao.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 98.
@@ -1120,11 +1121,11 @@ l.18 \end{resumo}
 
 ]) (./dissertacao.toc
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <14.4> on input line 10.
+(Font)              <14.4> on input line 5.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <10> on input line 10.
+(Font)              <10> on input line 5.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <7> on input line 10.
+(Font)              <7> on input line 5.
 ) [5
 
 
@@ -1134,19 +1135,8 @@ LaTeX Font Info:    External font `lmex10' loaded for size
 \openout2 = `capitulos/introducao.aux'.
 
 
-(./capitulos/introducao.tex
-
-LaTeX Warning: Citation `NBR6028:2003' on page 1 undefined on input line 9.
-
-
-LaTeX Warning: Citation `NBR6028:2003' on page 1 undefined on input line 14.
-
-File: figs/logo.png Graphic file (type png)
-<use figs/logo.png>
-Package pdftex.def Info: figs/logo.png  used on input line 20.
-(pdftex.def)             Requested size: 25.49867pt x 25.09798pt.
-)pdfTeX warning (ext4): destination with the same identifier (name{page.1}) has
- been already used, duplicate ignored
+(./capitulos/introducao.tex)pdfTeX warning (ext4): destination with the same id
+entifier (name{page.1}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
 l.171 \include{capitulos/introducao}
@@ -1157,18 +1147,18 @@ l.171 \include{capitulos/introducao}
  been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.171 \include{capitulos/introducao}
-                                     [2]pdfTeX warning (ext4): destination with
- the same identifier (name{page.3}) has been already used, duplicate ignored
+l.174 \part
+           {Fundamentação Teórica} [2
+
+
+
+]pdfTeX warning (ext4): destination with the same identifier (name{page.3}) has
+ been already used, duplicate ignored
 <to be read again> 
                    \relax 
 l.174 \part{Fundamentação Teórica}
-                                      [3
-
-
-
-]pdfTeX warning (ext4): destination with the same identifier (name{page.4}) has
- been already used, duplicate ignored
+                                      [3]pdfTeX warning (ext4): destination wit
+h the same identifier (name{page.4}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
 l.174 \part{Fundamentação Teórica}
@@ -1179,61 +1169,79 @@ l.174 \part{Fundamentação Teórica}
  identifier (name{page.5}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.20 
+l.37 
       [5
 
 
-]pdfTeX warning (ext4): destination with the same identifier (name{page.6}) has
- been already used, duplicate ignored
+]
+<figs/prefixtree.png, id=113, 332.24126pt x 221.82875pt>
+File: figs/prefixtree.png Graphic file (type png)
+<use figs/prefixtree.png>
+Package pdftex.def Info: figs/prefixtree.png  used on input line 47.
+(pdftex.def)             Requested size: 249.18031pt x 166.37114pt.
+pdfTeX warning (ext4): destination with the same identifier (name{page.6}) has 
+been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.42 \end{equation}
-                    [6] [7] [8] [9] [10] [11] [12
+l.58 
+      [6 <./figs/prefixtree.png>]
+./capitulos/fundamentacao.tex:62: Undefined control sequence.
+l.62 ...ma variável aleatória é chamada \textvf
+                                                  {discreta} quando os valor...
+
+? 
+[7] [8] [9] [10] [11]) [12] [13
+
+
+
+] [14]
+\openout2 = `capitulos/algoritmos.aux'.
+
+ (./capitulos/algoritmos.tex
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [15
+
 
 ]
 Package hyperref Info: bookmark level for unknown algorithm defaults to 0 on in
-put line 233.
- [13] [14]) [15]
-(./dissertacao.brf)
+put line 18.
+
+[16] [17]) [18] (./dissertacao.brf)
 \tf@brf=\write5
 \openout5 = `dissertacao.brf'.
 
- [16
+
+bibitemlist
+
+AED: lastpage setting LastPage
+[19
 
 
 
 ]
-bibitemlist
-
-AED: lastpage setting LastPage
-[17]
 \tf@toc=\write6
 \openout6 = `dissertacao.toc'.
 
  (./dissertacao.aux (./pretextual/capa.aux) (./pretextual/resumos.aux)
-(./capitulos/introducao.aux) (./capitulos/fundamentacao.aux))
-
-LaTeX Warning: There were undefined references.
-
-
-LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
-
+(./capitulos/introducao.aux) (./capitulos/fundamentacao.aux)
+(./capitulos/algoritmos.aux))
 Package rerunfilecheck Info: File `dissertacao.brf' has not changed.
-(rerunfilecheck)             Checksum: FBCC8C030F242BE6555D5F6F72F127F3;106.
+(rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
  ) 
 Here is how much of TeX's memory you used:
- 19441 strings out of 478994
- 298618 string characters out of 5858184
- 923183 words of memory out of 5000000
- 36189 multiletter control sequences out of 15000+600000
- 523513 words of font info for 234 fonts, out of 8000000 for 9000
+ 19447 strings out of 478994
+ 298848 string characters out of 5858184
+ 939211 words of memory out of 5000000
+ 36185 multiletter control sequences out of 15000+600000
+ 523475 words of font info for 234 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 86i,13n,88p,858b,522s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 86i,13n,88p,763b,518s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/local/texlive/2021/texmf-dist/fonts/enc/dvips/lm/lm-mathsy.enc}{/usr/lo
-cal/texlive/2021/texmf-dist/fonts/enc/dvips/lm/lm-mathit.enc}{/usr/local/texliv
-e/2021/texmf-dist/fonts/enc/dvips/lm/lm-rm.enc}{/usr/local/texlive/2021/texmf-d
-ist/fonts/enc/dvips/lm/lm-ec.enc}{/usr/local/texlive/2021/texmf-dist/fonts/enc/
-dvips/lm/lm-mathex.enc}{/usr/local/texlive/2021/texmf-dist/fonts/enc/dvips/lm/l
+cal/texlive/2021/texmf-dist/fonts/enc/dvips/lm/lm-rm.enc}{/usr/local/texlive/20
+21/texmf-dist/fonts/enc/dvips/lm/lm-mathit.enc}{/usr/local/texlive/2021/texmf-d
+ist/fonts/enc/dvips/lm/lm-mathex.enc}{/usr/local/texlive/2021/texmf-dist/fonts/
+enc/dvips/lm/lm-ec.enc}{/usr/local/texlive/2021/texmf-dist/fonts/enc/dvips/lm/l
 m-ts1.enc}</usr/local/texlive/2021/texmf-dist/fonts/type1/public/lm/lmbx12.pfb>
 </usr/local/texlive/2021/texmf-dist/fonts/type1/public/lm/lmbxi10.pfb></usr/loc
 al/texlive/2021/texmf-dist/fonts/type1/public/lm/lmex10.pfb></usr/local/texlive
@@ -1249,12 +1257,11 @@ nts/type1/public/lm/lmss12.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/
 public/lm/lmss17.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/lm/
 lmssbx10.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/lm/lmsy10.p
 fb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/lm/lmsy6.pfb></usr/lo
-cal/texlive/2021/texmf-dist/fonts/type1/public/lm/lmsy8.pfb></usr/local/texlive
-/2021/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on dissertacao.pdf (25 pages, 607421 bytes).
+cal/texlive/2021/texmf-dist/fonts/type1/public/lm/lmsy8.pfb>
+Output written on dissertacao.pdf (27 pages, 610675 bytes).
 PDF statistics:
- 355 PDF objects out of 1000 (max. 8388607)
- 303 compressed objects within 4 object streams
- 67 named destinations out of 1000 (max. 500000)
- 63678 words of extra memory for PDF output out of 74296 (max. 10000000)
+ 344 PDF objects out of 1000 (max. 8388607)
+ 290 compressed objects within 3 object streams
+ 69 named destinations out of 1000 (max. 500000)
+ 63651 words of extra memory for PDF output out of 74296 (max. 10000000)
 
