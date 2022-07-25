@@ -6,11 +6,10 @@ Token = NewType("TokenType", Tuple[int, int, str])
 
 # To bytes to store token numbers
 MAX_OFFSET = 2047 # Offset 11 bits
-MAX_LENGTH = 30 # Length 5 bits
+MAX_LENGTH = 30 # Length 5 bits'
 
 def token_is_null(token):
     return not (token[0] or token[1])
-
 
 def _substring_match_size(dict,target):
     pointer = 0
