@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2021) (preloaded format=pdflatex 2022.2.24)  25 JUL 2022 09:06
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2021) (preloaded format=pdflatex 2022.2.24)  30 JUL 2022 19:32
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -914,6 +914,14 @@ Writing index file dissertacao.idx
 (./dissertacao.aux (./pretextual/capa.aux) (./pretextual/resumos.aux)
 (./capitulos/introducao.aux) (./capitulos/fundamentacao.aux)
 (./capitulos/algoritmos.aux))
+Runaway argument?
+{5C3337365C3337375C3030 
+./dissertacao.tex:98: File ended while scanning use of \BKM@entry.
+<inserted text> 
+                \par 
+l.98 \begin{document}
+                     
+? 
 \openout1 = `dissertacao.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 98.
@@ -935,7 +943,6 @@ LaTeX Font Info:    ... okay on input line 98.
 LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 98.
 LaTeX Font Info:    ... okay on input line 98.
 Package hyperref Info: Link coloring ON on input line 98.
-
 (/usr/local/texlive/2021/texmf-dist/tex/latex/hyperref/nameref.sty
 Package: nameref 2021-04-02 v2.47 Cross-referencing by name of section
 
@@ -1119,14 +1126,7 @@ l.18 \end{resumo}
 
 ] [4
 
-]) (./dissertacao.toc
-LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <14.4> on input line 5.
-LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <10> on input line 5.
-LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <7> on input line 5.
-) [5
+]) (./dissertacao.toc) [5
 
 
 ] [6
@@ -1174,7 +1174,7 @@ l.37
 
 
 ]
-<figs/prefixtree.png, id=113, 332.24126pt x 221.82875pt>
+<figs/prefixtree.png, id=85, 332.24126pt x 221.82875pt>
 File: figs/prefixtree.png Graphic file (type png)
 <use figs/prefixtree.png>
 Package pdftex.def Info: figs/prefixtree.png  used on input line 47.
@@ -1184,20 +1184,15 @@ been already used, duplicate ignored
 <to be read again> 
                    \relax 
 l.58 
-      [6 <./figs/prefixtree.png>]
-./capitulos/fundamentacao.tex:62: Undefined control sequence.
-l.62 ...ma variável aleatória é chamada \textvf
-                                                  {discreta} quando os valor...
-
-? 
-[7] [8] [9] [10] [11]) [12] [13
+      [6 <./figs/prefixtree.png>] [7] [8] [9] [10] [11]) [12] [13
 
 
 
 ] [14]
 \openout2 = `capitulos/algoritmos.aux'.
 
- (./capitulos/algoritmos.tex
+
+(./capitulos/algoritmos.tex
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [15
@@ -1207,34 +1202,60 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 Package hyperref Info: bookmark level for unknown algorithm defaults to 0 on in
 put line 18.
 
-[16] [17]) [18] (./dissertacao.brf)
+[16]
+
+LaTeX Warning: Reference `lemma:dist_prob_avg_size' on page 17 undefined on inp
+ut line 71.
+
+[17]
+
+LaTeX Warning: Reference `fig:lz77' on page 18 undefined on input line 86.
+
+
+LaTeX Warning: Reference `alg:huff' on page 18 undefined on input line 87.
+
+<figs/lz77fam.png, id=173, 450.68375pt x 155.58125pt>
+File: figs/lz77fam.png Graphic file (type png)
+<use figs/lz77fam.png>
+Package pdftex.def Info: figs/lz77fam.png  used on input line 92.
+(pdftex.def)             Requested size: 338.01196pt x 116.68564pt.
+[18 <./figs/lz77fam.png>]) [19] (./dissertacao.brf)
 \tf@brf=\write5
 \openout5 = `dissertacao.brf'.
 
-
-bibitemlist
-
-AED: lastpage setting LastPage
-[19
+ [20
 
 
 
 ]
+bibitemlist
+
+Package lastpage Warning: Rerun to get the references right on input line 223.
+
+
+AED: lastpage setting LastPage
+[21]
 \tf@toc=\write6
 \openout6 = `dissertacao.toc'.
 
  (./dissertacao.aux (./pretextual/capa.aux) (./pretextual/resumos.aux)
 (./capitulos/introducao.aux) (./capitulos/fundamentacao.aux)
 (./capitulos/algoritmos.aux))
+
+LaTeX Warning: There were undefined references.
+
+
+LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
+
 Package rerunfilecheck Info: File `dissertacao.brf' has not changed.
 (rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
  ) 
 Here is how much of TeX's memory you used:
- 19447 strings out of 478994
- 298848 string characters out of 5858184
- 939211 words of memory out of 5000000
- 36185 multiletter control sequences out of 15000+600000
- 523475 words of font info for 234 fonts, out of 8000000 for 9000
+ 19419 strings out of 478994
+ 298322 string characters out of 5858184
+ 937387 words of memory out of 5000000
+ 36165 multiletter control sequences out of 15000+600000
+ 510555 words of font info for 211 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  86i,13n,88p,763b,518s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/local/texlive/2021/texmf-dist/fonts/enc/dvips/lm/lm-mathsy.enc}{/usr/lo
@@ -1258,10 +1279,10 @@ public/lm/lmss17.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/lm/
 lmssbx10.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/lm/lmsy10.p
 fb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/lm/lmsy6.pfb></usr/lo
 cal/texlive/2021/texmf-dist/fonts/type1/public/lm/lmsy8.pfb>
-Output written on dissertacao.pdf (27 pages, 610675 bytes).
+Output written on dissertacao.pdf (29 pages, 649525 bytes).
 PDF statistics:
- 344 PDF objects out of 1000 (max. 8388607)
- 290 compressed objects within 3 object streams
- 69 named destinations out of 1000 (max. 500000)
- 63651 words of extra memory for PDF output out of 74296 (max. 10000000)
+ 353 PDF objects out of 1000 (max. 8388607)
+ 295 compressed objects within 3 object streams
+ 76 named destinations out of 1000 (max. 500000)
+ 57536 words of extra memory for PDF output out of 61914 (max. 10000000)
 
