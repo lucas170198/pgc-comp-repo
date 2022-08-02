@@ -8,7 +8,7 @@ Os algoritmos de compressão podem ser categorizadas em duas diferentes classes:
 
 \pagebreak
 
-\section{Código de Huffman}
+\section{Código de Huffman} \label{sec:huff}
 O \textbf{algoritmo de Huffman} (desenvolvido por David Huffman em 1952) é um dos componentes mais utilizados em algoritmos de compressão sem perda, servindo como base para algoritmos como o Deflate (utilizado amplamente na web).
 Os códigos gerados a partir do algoritmos de Huffman são chamados \textbf{Códigos de Huffman}.
 
@@ -23,7 +23,7 @@ O código de Huffman é descrito em termos de como ele gera uma árvore de códi
 		\State $node \gets newNode()$
 		\State $node.weight \gets p_i$ \Comment{$w_i = p_i$}
 		\State $T.root \gets node$
-		\State $Forest.append(T)$ \Comment{Adiciona um nova arvore mna floresta}
+		\State $Forest.append(T)$ \Comment{Adiciona um nova arvore na floresta}
 	\EndFor \\
 	
 	\While{$Forest.size > 1$}
@@ -39,7 +39,7 @@ O código de Huffman é descrito em termos de como ele gera uma árvore de códi
 \end{algorithmic}
 \end{algorithm}
 
-\subsection{Análise Assintótica}
+\subsection{Análise assintótica}
 Seja \emph{n} o tamanho do conjunto de mensagens \emph{M}. Para que o algoritmo percorra toda a floresta, formada por uma árvore para cada $\emph{m} \in \emph{M}$, serão necessárias \emph{n} interações.
 Considerando que as funções \emph{ExtractMin()} e \emph{.append()} foram construídas a partir de uma fila de prioridades de \textbf{heap}, o algoritmo será executado em  $O(n \log_2 n)$.
 
@@ -79,3 +79,47 @@ l_a(T) &= l_a(T') + p_x(k + 1) + py(k + 1) - p_z k \\
 Sabemos pela hipótese de indução que $l_a(T')$ é mínimo, pois \emph{T'} tem o tamanho \emph{n} e foi gerada pelo algoritmo de Huffman. Note que independente da ordem que forem inseridos, os nós \emph{x} e \emph{y} irão adicionar a constante $p_z = p_x + p_y$ no peso médio do código. Como $l_a(T')$ é mínimo para um conjunto de mensagens de tamanho \emph{n} e seu nó de menor peso tem distribuição de probabilidade $p_z$, $l_a(T)$ também é mínimo para o conjunto de mensagens \emph{M} e logo \emph{T} é ótimo e livre de prefixo. 
 \end{proof}
 \end{theorem}
+
+\section{Lempel-Ziv 77 (LZ77)}
+
+\subsection{Algoritmos de Lempel-Ziv}
+Nos anos de 1977 e 1978, Jacob Ziv e Abraham Lempel publicaram dois artigos apresentando os algoritmos (\textbf{LZ77} e \textbf{LZ88}) que futuramente serviriam como base para toda uma família de algoritmos de compressão (conforme mostrado na Figura~\ref{fig:lz77}), chamados de algoritmos de Lempel-Ziv.
+Os algoritmos de Lempel-Ziv realizam o processo de compressão baseado em um \textbf{dicionário} de símbolos vistos anteriormente (diferente do \nameref{alg:huff}, que utiliza a probabilidade associada a cada símbolo). 
+Ambos tem um funcionamento parecido, que se resume em substituir partes da entrada por referências à partes iguais anteriormente processadas, e diferem na maneira em que procuram por repetições a serem substiruídas. 
+
+\begin{figure}[h]
+   \centering
+   \includegraphics[scale=0.75]{figs/lz77fam.png}
+    \caption{Familia de algoritmos Lempel Ziv}
+    \label{fig:lz77}
+ \end{figure}
+
+\subsection{Descrição do LZ77}
+O LZ77 e suas variações utilizam a técnica de \emph{janela deslizante} para encontrar cadeias de símbolos correspondentes. A janela é dividida em duas partes separadas por um \emph{cursor} (que se move conforme novos símbolos são codificados).
+
+Os elementos à esquerda do cursor são chamados \emph{dictionary} e contém todos os elementos codificados, já os elementos à direita do \emph{cursor} são chamados de \emph{lookahead buffer}.
+A ideia geral do algoritmo é substituir os símbolos do \emph{lookahead buffer} por \emph{tokens}, onde cada \emph{token} é constituído por uma tupla que ``aponta'' para a maior cadeia de elementos no \emph{dictionary} que correspondem aos elementos que estão no início do \emph{lookahead buffer}.
+
+\begin{algorithm}[H]
+\caption{Algoritmo Lempel-Ziv 77} \label{alg:lz77}
+\begin{algorithmic}
+
+	\State $cursor \gets 0$
+	\State $tokens \gets []$
+
+	\While{$cursor < M.size()$}
+		\State $position, len \gets findBestMatch(M, cursor)$
+		\If{$len > 0$}
+			$tokens.append([position, len, null])$
+			\State $cursor \gets cursor + len$
+		\Else
+			$tokens.append((0, 0, M[cursor]))$
+			\State $cursor \gets cursor + 1$
+		\EndIf
+	\EndWhile
+\end{algorithmic}
+\end{algorithm}
+
+
+
+
