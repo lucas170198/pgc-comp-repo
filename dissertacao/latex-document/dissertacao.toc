@@ -21,6 +21,9 @@
 \contentsline {section}{\numberline {2.2}Lempel-Ziv 77 (LZ77)}{18}{section.2.2}%
 \contentsline {subsection}{\numberline {2.2.1}Algoritmos de Lempel-Ziv}{18}{subsection.2.2.1}%
 \contentsline {subsection}{\numberline {2.2.2}Descrição do LZ77}{18}{subsection.2.2.2}%
+\contentsline {subsection}{\numberline {2.2.3}Função ``\emph {findLongestMatch}'' }{19}{subsection.2.2.3}%
+\contentsline {subsection}{\numberline {2.2.4}Melhorias na performance da função ``\emph {findLongestMatch}'' }{19}{subsection.2.2.4}%
+\contentsline {section}{\numberline {2.3}Compressão baseada em palavras}{20}{section.2.3}%
 \vspace {\cftbeforechapterskip }
 \setlength {\cftchapterindent }{\cftlastnumwidth } \setlength {\cftchapternumwidth }{2em}
 \contentsline {chapter}{\MakeTextUppercase {Refer\^encias}}{21}{section*.16}%

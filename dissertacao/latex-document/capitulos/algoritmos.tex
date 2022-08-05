@@ -97,8 +97,8 @@ Ambos tem um funcionamento parecido, que se resume em substituir partes da entra
 \subsection{Descrição do LZ77}
 O LZ77 e suas variações utilizam a técnica de \emph{janela deslizante} para encontrar cadeias de símbolos correspondentes. A janela é dividida em duas partes separadas por um \emph{cursor} (que se move conforme novos símbolos são codificados).
 
-Os elementos à esquerda do cursor são chamados \emph{dictionary} e contém todos os elementos codificados, já os elementos à direita do \emph{cursor} são chamados de \emph{lookahead buffer}.
-A ideia geral do algoritmo é substituir os símbolos do \emph{lookahead buffer} por \emph{tokens}, onde cada \emph{token} é constituído por uma tupla que ``aponta'' para a maior cadeia de elementos no \emph{dictionary} que correspondem aos elementos que estão no início do \emph{lookahead buffer}.
+Os elementos à esquerda do cursor são chamados \emph{dicionário} e contém todos os elementos codificados, já os elementos à direita do \emph{cursor} são chamados de \emph{lookahead buffer}.
+A ideia geral do algoritmo é substituir os símbolos do \emph{lookahead buffer} por \emph{tokens}, onde cada \emph{token} é constituído por uma tupla que ``aponta'' para a maior cadeia de elementos no \emph{dicionário} que correspondem aos elementos que estão no início do \emph{lookahead buffer}.
 
 \begin{algorithm}[H]
 \caption{Algoritmo Lempel-Ziv 77} \label{alg:lz77}
@@ -108,17 +108,39 @@ A ideia geral do algoritmo é substituir os símbolos do \emph{lookahead buffer}
 	\State $tokens \gets []$
 
 	\While{$cursor < M.size()$}
-		\State $position, len \gets findBestMatch(M, cursor)$
-		\If{$len > 0$}
-			$tokens.append([position, len, null])$
+		\State $position, len \gets findLongestMatch(M, cursor)$ \Comment{Retorna a posição e tamanho da maior cadeia correspondente}
+		\If{$len > 0$} \Comment{Cria novo token, que aponta para a cadeia encontrada}
+			\State $tokens.append([position, len, null])$
 			\State $cursor \gets cursor + len$
 		\Else
-			$tokens.append((0, 0, M[cursor]))$
+			\State $tokens.append((0, 0, M[cursor]))$ \Comment{Token vazio}
 			\State $cursor \gets cursor + 1$
 		\EndIf
 	\EndWhile
 \end{algorithmic}
 \end{algorithm}
+
+\subsection{Função ``\emph{findLongestMatch}'' }
+O \emph{LZ77} possui um processo de decodificação muito eficiente, porém consome muitos recursos computacionais na codificação. 
+Isto é, ele é mais eficiente para casos onde pretende-se decodificar o arquivo múltiplas vezes, ou ainda decodifica-lo numa máquina com menor poder computacional. O ``gargalo'' da compressão está na técnica de busca pelo \emph{dicionário} para encontrar a sequência de caracteres correspondentes mais longa.
+
+O método convencional utilizado na busca é a \textbf{busca linear}, que consiste em comparar cada posição no dicionário com o \emph{lookahead buffer} e selecionar a maior correspondência encontrada. 
+Tome \emph{N} como o tamanho do dicionário e \emph{M} como o tamanho do \emph{lookahead buffer}, no pior caso, a busca linear é realizada em tempo \emph{O(NM)}. 
+A busca será executada $M + N$ vezes, isto é, a complexidade geral do algoritmo é $O( N^{2}M + M^{2}N)$.
+
+\subsection{Melhorias na performance da função ``\emph{findLongestMatch}'' }
+
+Uma das possíveis abordagens para melhorar a busca linear é utilizar estruturas de dados auxiliares, que indexam os símbolos do dicionário para tornar a busca mais rápida.
+(TODO: Citacao do artigo) testa diferentes estruturas de dados (arvores trie, hash tables, arvores binárias de busca entre outros). Para este projeto utilizaremos a \textbf{lista ligada} como estrutura de dados auxiliar (principalmente por possuir uma implementação mais simples). 
+
+Para construir uma estrutura de dados auxiliar com lista ligada, podemos criar uma lista para cada símbolo no dicionário contendo os indicies onde tal símbolo pode ser encontrado.  
+Para limitar a janela de busca, podemos construir a lista como uma \emph{fila}, onde ao atingirmos a capacidade máxima da janela de busca, removemos o menor indicie (que estaria no inicio da fila). Note que, o tamanho máximo da lista depende da quantidade de bits que queremos utilizar para construir o \emph{token}.
+
+Encontramos a maior cadeira de símbolos correspondentes, comparando o \emph{lookahead buffer} com sequencias iniciadas a partir de indicies contidos na lista correspondente ao primeiro símbolo do \emph{lookahead buffer}.
+Neste caso, o pior caso ocorrerá quando todos os símbolos no dicionário forem iguais, pois todos os símbolos do dicionário seriam checados (levando a uma performance igual a da busca linear).
+Entretanto, para uma base de dados de texto real com grande quantidade de dados isso raramente aconteceria, e apenas uma quantidade $K \ll N$ de possíveis cadeias seriam checadas.
+
+\section{Compressão baseada em palavras}
 
 
 
