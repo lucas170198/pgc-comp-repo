@@ -15,13 +15,27 @@ combinações de $A$. Ou seja,
   \ a_i \in A \ \forall i \in \{1,\dotsc,n\} 
   \Big\}
 \end{equation*}
-Para simplicidade de notação, utilizaremos $a_1a_2\dotsm a_n$ para
+Por simplicidade de notação, utilizaremos $a_1a_2\dotsm a_n$ para
 denotar a sequência $(a_1,a_2,\dotsc, a_n)$ quando não houver
 ambiguidade.
-  
+
 Um \textbf{alfabeto} $A$ é um conjunto finito. Chamaremos os elementos
 de $A$ de \textbf{símbolos} ou \textbf{letras} e os elementos de $A^+$
 de \textbf{cadeias} ou \textbf{palavras}.
+
+Um \textbf{código} $C$ mapeia cada símbolo $m \in M$ para uma cadeia
+em $W^+$. Mais precisamente, um código é uma função injetora de um
+conjunto $M$ para $W^+$. O conjunto $M$ é chamado de \textbf{alfabeto
+  de origem} e $W$ é chamado de\textbf{alfabeto código}. Chamaremos
+cada cadeia na imagem de $C$ de \textbf{palavra-código}.
+
+Dentro deste
+contexto, definimos o \textbf{comprimento} da palavra-código \emph{w}
+como \emph{l}(\emph{w}), um \textbf{inteiro positivo} que representa o
+tamanho da cadeia que compõe a palavra-código \emph{w}.  Tome como
+exemplo o alfabeto de origem \emph{M} = \{a, b, c\} e o alfabeto
+código \emph{W} = \{0, 1\} composto somente por valores binários,
+poderíamos definir o código \emph{C} da seguinte forma:
 
 \begin{table}[!h]
    \centering
