@@ -33,23 +33,23 @@ Dentro deste contexto, definimos o \textbf{comprimento} de uma palavra
 $w\in W^+$, denotado por $l(w)$, como o inteiro positivo que
 representa o tamanho da sequência $w$.
 
-Tome como exemplo o alfabeto de origem
-\emph{M} = \{a, b, c\} e o alfabeto código \emph{W} = \{0, 1\}
-composto somente por valores binários, poderíamos definir o código
-\emph{C} da seguinte forma:
+Tome como exemplo o alfabeto de origem $M = \{a, b, c\}$ e o alfabeto
+código $W = \{0, 1\}$ composto somente por valores binários,
+poderíamos definir um código $C$ da seguinte forma:
 
 \begin{table}[!h]
    \centering
    \caption{Tabela do código C} \label{tab:vcode}
    \begin{tabular}{|l|c|c|c|c|c|c|r|}
         \hline
-        \small{mensagem de origem} & \small{palavra-código} \\ \hline
+        \small{alfabeto de origem} & \small{palavra-código} \\ \hline
               a &   1   \\ \hline
               b &   01  \\ \hline
               c &   00  \\ \hline
   \end{tabular}
 \end{table}
-Isto é, o código \emph{C} pode ser representado como uma função \textbf{\emph{C} : $\emph{M} \rightarrow \emph{W}^+$}. Neste exemplo, o \textbf{comprimento} da palavra-código associado à mensagem ``a''~é dado por $\emph{l(C(a))} = 1$.
+Neste exemplo, o \textbf{comprimento} da palavra-código associado à
+letra ``b''~é dado por $l(C(b)) = l(01) = 2$.
 
 As palavras-código associadas a cada mensagem podem ter um tamanho \emph{fixo} ou \emph{variável}.
 Códigos nos quais os alfabetos possuem um comprimento fixo são chamados de \textbf{códigos de comprimento fixo}, enquanto os que possuem alfabetos de comprimento variáveis são chamados \textbf{códigos de comprimento variável}. 
