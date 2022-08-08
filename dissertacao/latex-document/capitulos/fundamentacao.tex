@@ -1,12 +1,24 @@
 % ---
 \chapter{Conceitos, definições e resultados fundamentais em compressão de dados}
 % ---
-Este capítulo apresenta algumas definições e conceitos fundamentais para o entendimento das técnicas de compressão que serão discutidas em capítulos posteriores.
+Este capítulo apresenta algumas definições, conceitos e resultados fundamentais para o entendimento das técnicas de compressão que serão discutidas em capítulos posteriores.
 
 % -- Definições básicas de código
 \section{Código}
 
-Dado um conjunto \emph{A},  usaremos a notação $\emph{A}^+$ para definir o conjunto que contém todas as cadeias formadas pelas possíveis combinações de \emph{A}.
+Dado um conjunto $A$, usaremos a notação $A^+$ para definir o conjunto
+que contém todas as cadeias não-vazias formadas pelas possíveis
+combinações de $A$. Ou seja,
+\begin{equation*}
+  \emph{A}^+ = \Big\{
+  (a_1,a_2,\dotsc, a_n) \colon n\in\mathbb{N}, \ n>0,
+  \ a_i \in A \ \forall i \in \{1,\dotsc,n\} 
+  \Big\}
+\end{equation*}
+Para simplicidade de notação, utilizaremos $a_1a_2\dotsm a_n$ para
+denotar a sequência $(a_1,a_2,\dotsc, a_n)$ quando não houver
+ambiguidade.
+  
 Um \textbf{código} \emph{C} mapeia uma \textbf{mensagem} \emph{m} $\in$ \emph{M} para uma \textbf{cadeia de códigos} do alfabeto \emph{W} (onde \emph{M} é o \textbf{alfabeto de origem} e \emph{W} \textbf{alfabeto código}).
 Chamaremos essa cadeia de códigos de \textbf{palavra-código}, denotada por \emph{w} .
 Dentro deste contexto, definimos o \textbf{comprimento} da palavra-código \emph{w} como \emph{l}(\emph{w}), um \textbf{inteiro positivo} que representa o tamanho da cadeia que compõe a palavra-código \emph{w}.
