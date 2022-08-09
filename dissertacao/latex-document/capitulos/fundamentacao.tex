@@ -82,16 +82,35 @@ $w_1\dotsm w_k = v_1\dotsm v_k$. Ou seja, um código $C\colon M\to W^+$
 é livre de prefixo se vale que, para quaisquer $m,m' \in M$ distintos,
 $C(m)$ não é prefixo de $C(m')$.
 
-Por exemplo, o código que possuí sua imagem no conjunto de palavras-código \emph{$W^+$} := $\{1, 01, 000, 001\}$ não possui nenhuma cadeia que é prefixo de outra, portanto é considerado um \textbf{código livre de prefixo}.
-Códigos livres de prefixo podem ser \emph{decodificados instantaneamente}, pois, ao processar uma cadeia de sequência de palavras-código podemos decodificar cada uma delas sem precisar verificar o início da seguinte.
+Por exemplo, o código que possui sua imagem no conjunto de
+palavras-código \emph{$W^+$} := $\{1, 01, 000, 001\}$ não possui
+nenhuma cadeia que é prefixo de outra, portanto é considerado um
+\textbf{código livre de prefixo}.  Códigos livres de prefixo não
+apenas são unicamente decodificáveis como podem ser
+\emph{decodificados instantaneamente}, pois, ao processar uma cadeia
+de sequência de palavras-código podemos decodificar cada uma delas sem
+precisar verificar o início da seguinte.
 
-Um código livre de prefixo em que \emph{W} := \{0, 1\} pode ser modelado por uma \textbf{arvore binária}. 
-Imagine que cada mensagem $\emph{m} \in \emph{M}$ é uma folha. A palavra-código \emph{C(m)} é o caminho \emph{p} da raiz até a folha \emph{m}, de maneira em que, para cada nó percorrido concatenamos um bit a \emph{p} ("0" quando o nó está a esquerda e "1" quando está a direita), tal árvore é chamada \textbf{árvore do código livre de prefixo}. Tomando como exemplo o código representado pela Tabela~\ref{tab:vcode} (claramente um código livre de prefixo), podemos representá-lo por uma árvore livre de prefixo da seguinte forma:
+Todo código $C\colon M\to W^+$ pode ser representado por uma árvore
+$T(C)$ onde
+\begin{itemize}
+\item as arestas são rotuladas por símbolos de $W$ e,
+\item cada símbolo $m \in M$ é associado a um nó $v(m)$ da árvore,
+\item para cada símbolo $m\in M$, a palavra-código $C(m)$ é obtida
+  pelo caminho da raiz até $v(m)$ através da concatenação dos rótulos
+  das arestas do caminho
+\item cada folha da árvore é $v(m)$ para algum $m\in M$.
+\end{itemize}
+Note que, se $C$ é um código livre de prefixo, todos os símbolos em
+$M$ são mapeados para folhas, pois se $v(m)$ está no caminho da folha
+até $v(m')$ ($v(m)$ é ancestral de $m'$), então $C(m)$ é prefixo de
+$C(m')$. A árvore a seguir representa o código da
+Tabela~\ref{tab:vcode} (claramente um código livre de prefixo).
 
 \begin{figure}[h]
    \centering
    \includegraphics[scale=0.75]{figs/prefixtree.png}
-    \caption{Árvore livre de prefixo}
+    \caption{Árvore de um código livre de prefixo}
     \label{fig:prefixt}
  \end{figure}
 % ----------------------------------------------------------------------------
