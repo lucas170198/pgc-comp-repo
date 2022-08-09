@@ -26,7 +26,7 @@ de \textbf{cadeias} ou \textbf{palavras}.
 Um \textbf{código} $C$ mapeia cada símbolo $m \in M$ para uma cadeia
 em $W^+$. Mais precisamente, um código é uma função injetora de um
 conjunto $M$ para $W^+$. O conjunto $M$ é chamado de \textbf{alfabeto
-  de origem} e $W$ é chamado de\textbf{alfabeto código}. Chamaremos
+  de origem} e $W$ é chamado de \textbf{alfabeto código}. Chamaremos
 cada cadeia na imagem de $C$ de \textbf{palavra-código}.
 
 Dentro deste contexto, definimos o \textbf{comprimento} de uma palavra
@@ -59,6 +59,15 @@ Todavia, no contexto de compressão de dados procuramos construir códigos que p
 \subsection{Códigos unicamente decodificáveis e livres de prefixo}
 
 %Um código é \textbf{distinto} se pode ser representado como uma função \textbf{bijetora}, i.e, $\forall$ $m_1$, $m_2$ $\in$ M, \emph{C($m_1$)} $\neq$ \emph{C($m_2$)}.
+Dado um alfabeto de origem $M$, chamamos as palavras em $M^+$ de
+\textbf{mensagens}. De fato, queremos codificar e decodificar
+mensanges utilizando códigos e não somente símbolos isolados. Podemos
+estender código para mensagens naturalmente da forma a seguir. Dado um
+código $C\colon M\to W^+$, defina \textbf{código estendido} $C^+: M^+\to W^+$ por
+\begin{equation*}
+  C^+(m_1m_2\dotsc m_k) = (C(m_1),C(m_2),\dotsc,  C(m_k)),\text{ para todo }m_1m_2\dotsc m_k\in M^+.
+\end{equation*}
+
 Um código é dito \textbf{unicamente decodificável} se qualquer palavra-código pode ser identificada quando imersa em uma sequência de palavras-código.
 
 Um \textbf{código livre de prefixo} é um código unicamente decodificável em que nenhuma palavra-código é prefixo de outra. 
