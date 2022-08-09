@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2021) (preloaded format=pdflatex 2022.2.24)  4 AUG 2022 22:54
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2021) (preloaded format=pdflatex 2022.2.24)  8 AUG 2022 21:24
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -913,7 +913,7 @@ Writing index file dissertacao.idx
 \c@corollary=\count365
 (./dissertacao.aux (./pretextual/capa.aux) (./pretextual/resumos.aux)
 (./capitulos/introducao.aux) (./capitulos/fundamentacao.aux)
-(./capitulos/algoritmos.aux))
+(./capitulos/algoritmos.aux) (./capitulos/aplicacao.aux))
 \openout1 = `dissertacao.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 98.
@@ -1126,6 +1126,17 @@ LaTeX Font Info:    External font `lmex10' loaded for size
 (Font)              <10> on input line 5.
 LaTeX Font Info:    External font `lmex10' loaded for size
 (Font)              <7> on input line 5.
+
+Overfull \hbox (46.44156pt too wide) in paragraph at lines 15--15
+ [][] [][][]\T1/lmss/bx/n/14.4 (-20) ALGORITMOS DE COM-PRES-SÃO E PRE-PROCESSAM
+ENTO[][] 
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 15--15
+ []  
+ []
+
 LaTeX Font Info:    Font shape `T1/lmss/m/it' in size <12> not available
 (Font)              Font shape `T1/lmss/m/sl' tried instead on input line 24.
 ) [5
@@ -1136,9 +1147,8 @@ LaTeX Font Info:    Font shape `T1/lmss/m/it' in size <12> not available
 ]
 \openout2 = `capitulos/introducao.aux'.
 
-
-(./capitulos/introducao.tex)pdfTeX warning (ext4): destination with the same id
-entifier (name{page.1}) has been already used, duplicate ignored
+ (./capitulos/introducao.tex)pdfTeX warning (ext4): destination with the same i
+dentifier (name{page.1}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
 l.171 \include{capitulos/introducao}
@@ -1176,7 +1186,7 @@ l.37
 
 
 ]
-<figs/prefixtree.png, id=124, 332.24126pt x 221.82875pt>
+<figs/prefixtree.png, id=136, 332.24126pt x 221.82875pt>
 File: figs/prefixtree.png Graphic file (type png)
 <use figs/prefixtree.png>
 Package pdftex.def Info: figs/prefixtree.png  used on input line 47.
@@ -1202,47 +1212,59 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 
 ]
 Package hyperref Info: bookmark level for unknown algorithm defaults to 0 on in
-put line 18.
+put line 19.
 
 [16] [17]
-<figs/lz77fam.png, id=204, 450.68375pt x 155.58125pt>
+<figs/lz77fam.png, id=216, 450.68375pt x 155.58125pt>
 File: figs/lz77fam.png Graphic file (type png)
 <use figs/lz77fam.png>
-Package pdftex.def Info: figs/lz77fam.png  used on input line 92.
+Package pdftex.def Info: figs/lz77fam.png  used on input line 103.
 (pdftex.def)             Requested size: 338.01196pt x 116.68564pt.
  [18 <./figs/lz77fam.png>]
 LaTeX Font Info:    Font shape `T1/lmss/m/it' in size <14.4> not available
-(Font)              Font shape `T1/lmss/m/sl' tried instead on input line 123.
- [19]) [20] (./dissertacao.brf)
+(Font)              Font shape `T1/lmss/m/sl' tried instead on input line 135.
+ [19] [20] [21] [22
+
+]) [23] [24
+
+
+
+] [25]
+[26]
+\openout2 = `capitulos/aplicacao.aux'.
+
+ (./capitulos/aplicacao.tex) [27
+
+] (./dissertacao.brf)
 \tf@brf=\write5
 \openout5 = `dissertacao.brf'.
 
-
-bibitemlist
-
-AED: lastpage setting LastPage
-[21
+ [28
 
 
 
 ]
+bibitemlist
+
+AED: lastpage setting LastPage
+[29]
 \tf@toc=\write6
 \openout6 = `dissertacao.toc'.
 
  (./dissertacao.aux (./pretextual/capa.aux) (./pretextual/resumos.aux)
 (./capitulos/introducao.aux) (./capitulos/fundamentacao.aux)
-(./capitulos/algoritmos.aux))
+(./capitulos/algoritmos.aux) (./capitulos/aplicacao.aux))
 Package rerunfilecheck Info: File `dissertacao.brf' has not changed.
 (rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
  ) 
 Here is how much of TeX's memory you used:
- 19510 strings out of 478994
- 299686 string characters out of 5858184
- 939478 words of memory out of 5000000
- 36218 multiletter control sequences out of 15000+600000
- 530218 words of font info for 245 fonts, out of 8000000 for 9000
+ 19553 strings out of 478994
+ 300243 string characters out of 5858184
+ 942035 words of memory out of 5000000
+ 36225 multiletter control sequences out of 15000+600000
+ 531179 words of font info for 253 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 86i,13n,88p,763b,518s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 86i,13n,88p,1148b,518s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/local/texlive/2021/texmf-dist/fonts/enc/dvips/lm/lm-mathsy.enc}{/usr/lo
 cal/texlive/2021/texmf-dist/fonts/enc/dvips/lm/lm-rm.enc}{/usr/local/texlive/20
 21/texmf-dist/fonts/enc/dvips/lm/lm-mathit.enc}{/usr/local/texlive/2021/texmf-d
@@ -1265,10 +1287,10 @@ lmssbx10.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/lm/lmsso12.
 pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/lm/lmsy10.pfb></usr/
 local/texlive/2021/texmf-dist/fonts/type1/public/lm/lmsy6.pfb></usr/local/texli
 ve/2021/texmf-dist/fonts/type1/public/lm/lmsy8.pfb>
-Output written on dissertacao.pdf (29 pages, 682762 bytes).
+Output written on dissertacao.pdf (37 pages, 691727 bytes).
 PDF statistics:
- 396 PDF objects out of 1000 (max. 8388607)
- 336 compressed objects within 4 object streams
- 79 named destinations out of 1000 (max. 500000)
- 67800 words of extra memory for PDF output out of 74296 (max. 10000000)
+ 458 PDF objects out of 1000 (max. 8388607)
+ 390 compressed objects within 4 object streams
+ 92 named destinations out of 1000 (max. 500000)
+ 67832 words of extra memory for PDF output out of 74296 (max. 10000000)
 

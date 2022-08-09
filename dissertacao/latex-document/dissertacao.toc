@@ -12,7 +12,7 @@
 \contentsline {subsection}{\numberline {1.2.2}Comprimento médio do código}{7}{subsection.1.2.2}%
 \contentsline {subsection}{\numberline {1.2.3}Entropia}{8}{subsection.1.2.3}%
 \contentsline {subsection}{\numberline {1.2.4}Comprimento de Código e Entropia}{8}{subsection.1.2.4}%
-\contentsline {part}{\partnumberline {II}\MakeTextUppercase {Algoritmos}}{13}{part.2}%
+\contentsline {part}{\partnumberline {II}\MakeTextUppercase {Algoritmos de compressão e pre-processamento}}{13}{part.2}%
 \setlength {\cftchapterindent }{0em} \setlength {\cftchapternumwidth }{\cftlastnumwidth }
 \contentsline {chapter}{\chapternumberline {2}\MakeTextUppercase {Algoritmos de compressão sem perda}}{15}{chapter.2}%
 \contentsline {section}{\numberline {2.1}Código de Huffman}{16}{section.2.1}%
@@ -24,6 +24,11 @@
 \contentsline {subsection}{\numberline {2.2.3}Função ``\emph {findLongestMatch}'' }{19}{subsection.2.2.3}%
 \contentsline {subsection}{\numberline {2.2.4}Melhorias na performance da função ``\emph {findLongestMatch}'' }{19}{subsection.2.2.4}%
 \contentsline {section}{\numberline {2.3}Compressão baseada em palavras}{20}{section.2.3}%
+\contentsline {subsection}{\numberline {2.3.1}Huffword}{20}{subsection.2.3.1}%
+\contentsline {subsection}{\numberline {2.3.2}WLZ77}{21}{subsection.2.3.2}%
+\setlength {\cftchapterindent }{0em} \setlength {\cftchapternumwidth }{\cftlastnumwidth }
+\contentsline {chapter}{\chapternumberline {3}\MakeTextUppercase {Clusterização de dados aplicada a textos}}{23}{chapter.3}%
+\contentsline {part}{\partnumberline {III}\MakeTextUppercase {Aplicação: Melhoria na compressão de dados textuais em larga escala através da Clusterização}}{25}{part.3}%
 \vspace {\cftbeforechapterskip }
 \setlength {\cftchapterindent }{\cftlastnumwidth } \setlength {\cftchapternumwidth }{2em}
-\contentsline {chapter}{\MakeTextUppercase {Refer\^encias}}{21}{section*.16}%
+\contentsline {chapter}{\MakeTextUppercase {Refer\^encias}}{29}{section*.17}%
