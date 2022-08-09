@@ -65,10 +65,15 @@ mensanges utilizando códigos e não somente símbolos isolados. Podemos
 estender código para mensagens naturalmente da forma a seguir. Dado um
 código $C\colon M\to W^+$, defina \textbf{código estendido} $C^+: M^+\to W^+$ por
 \begin{equation*}
-  C^+(m_1m_2\dotsc m_k) = (C(m_1),C(m_2),\dotsc,  C(m_k)),\text{ para todo }m_1m_2\dotsc m_k\in M^+.
+  C^+(m_1m_2\dotsc m_k) =
+ \textrm{concat}(C(m1),C(m_2),\dotsc,C(m_k), \text{ para todo }m_1m_2\dotsc m_k\in M^+, onde 
 \end{equation*}
+$\textrm{concat}(\cdot)$ é a função de concatenação de sequências.
 
-Um código é dito \textbf{unicamente decodificável} se qualquer palavra-código pode ser identificada quando imersa em uma sequência de palavras-código.
+
+Um código $C\colon M\to W^+$ é dito \textbf{unicamente decodificável}
+se $C^+$ é uma função injetora. Ou seja, toda mensagem é mapeada para
+uma palavra única.
 
 Um \textbf{código livre de prefixo} é um código unicamente decodificável em que nenhuma palavra-código é prefixo de outra. 
 Por exemplo, o código que possuí sua imagem no conjunto de palavras-código \emph{$W^+$} := $\{1, 01, 000, 001\}$ não possui nenhuma cadeia que é prefixo de outra, portanto é considerado um \textbf{código livre de prefixo}.
