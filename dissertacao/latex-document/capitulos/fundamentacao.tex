@@ -75,7 +75,13 @@ Um código $C\colon M\to W^+$ é dito \textbf{unicamente decodificável}
 se $C^+$ é uma função injetora. Ou seja, toda mensagem é mapeada para
 uma palavra única.
 
-Um \textbf{código livre de prefixo} é um código unicamente decodificável em que nenhuma palavra-código é prefixo de outra. 
+Um \textbf{código livre de prefixo} é um código em que nenhuma
+palavra-código é prefixo de outra. Uma palavra $w_1\dotsm w_k$ é
+\textbf{prefixo} de uma palavra $v_1\dotsm v_\ell$ se $k\leq \ell$ e
+$w_1\dotsm w_k = v_1\dotsm v_k$. Ou seja, um código $C\colon M\to W^+$
+é livre de prefixo se vale que, para quaisquer $m,m' \in M$ distintos,
+$C(m)$ não é prefixo de $C(m')$.
+
 Por exemplo, o código que possuí sua imagem no conjunto de palavras-código \emph{$W^+$} := $\{1, 01, 000, 001\}$ não possui nenhuma cadeia que é prefixo de outra, portanto é considerado um \textbf{código livre de prefixo}.
 Códigos livres de prefixo podem ser \emph{decodificados instantaneamente}, pois, ao processar uma cadeia de sequência de palavras-código podemos decodificar cada uma delas sem precisar verificar o início da seguinte.
 
