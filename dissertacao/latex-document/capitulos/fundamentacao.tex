@@ -123,7 +123,13 @@ Isso significa que, a codificação está diretamente ligada às probabilidades 
 
 Nesta seção, vamos construir o embasamento teórico necessário para entender a relação entre as probabilidades associadas e o comprimento das mensagens, e consequentemente criar uma noção dos parâmetros que devem ser maximizados ou minimizados para alcançar uma codificação eficiente.
 
-\subsection{Distribuição de Probabilidade e Esperança}
+\subsection{Conceitos básicos em Probabilidade}
+Neste texto, iremos trabalhar com espaços de probabilidade finitos,
+pois lidamos com alfabetos de origem finitos. Um \textbf{espaço de
+  probabilidade finito} é um par $(\Omega, P)$, onde $\Omega$ é um
+conjunto finito e $P\colon \Omega \to \mathbb{R}_{\geq 0}$ tal que
+$\sum_{\omega \in \Omega} P(\omega) = 1$.
+
 Dado um experimento e um espaço amostral $\Omega$, uma \textbf{variável aleatória} \emph{X} associa um número real a cada um dos possíveis resultados em $\Omega$. Em outras palavras, \emph{X} é uma função que mapeia os elementos do espaço amostral para números reais. Uma variável aleatória é chamada \textbf{discreta} quando os valores dos experimentos associados a ela são números finitos ou ao menos infinitos que podem ser contados.
 Podemos descrever melhor uma variável aleatória, atribuindo probabilidades sobre os valores que esta pode assumir. Esses valores são atribuídos pela \textbf{função de densidade de probabilidade}, denotada por \emph{$p_X$}. Portanto, a probabilidade do evento \{ \emph{X} = \emph{x} \} é a função de distribuição de probabilidade aplicada a x, \emph{i.e}, \emph{$p_X(x)$}.
 \begin{equation} \label{eq:dist_prob_def}
