@@ -172,11 +172,19 @@ l_a (C) = \sum_{m \in M}^{} p(m) l(C(m)) = \mathbf{E}[l\circ C].
 \end{equation}
 
 Estamos interessados em códigos unicamente decodificáveis com o menor
-comprimento médio possível. Um código $C$ unicamente
+comprimento médio possível. Dada um espaço de probabilidade $(M, P)$ e
+um alfabeto código $W$, Um código $C: M \to W^+$ unicamente
 decodificável é \textbf{ótimo} se $l_a(C)$ é mínimo, isto é, para
 qualquer código unicamente decodificável \emph{C'} temos que
 \begin{equation} \label{eq:code_len_optimal}
 l_a(C) \leq l_a(C').
+\end{equation}
+Assim, temos o seguinte problema de otimização
+\begin{equation} \label{eq:prog_code_len}
+  \begin{array}{rl}
+    \min & l_a(C)\\
+    \text{sujeito a} &C: M \to W^+ \text{ é um código unicamente decodificável}
+  \end{array}
 \end{equation}
 
 
