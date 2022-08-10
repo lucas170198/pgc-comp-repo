@@ -3,8 +3,10 @@
 % ---
 
 Os algoritmos de compressão podem ser categorizadas em duas diferentes classes: os de compressão \textbf{com perda} e \textbf{sem perda}. 
-Os \textbf{algoritmos de compressão sem perda} admitem uma baixa porcentagem de perda de informações durante a codificação para obter maior performance, muito uteis na transmissão de dados em streaming por exemplo. 
-Nos \textbf{algoritmos de compressão com perda} o processo de codificação deve ser capaz de recuperar os dados em sua totalidade, geralmente utilizados em casos onde não pode haver perda de informações (como por exemplo, compressão de arquivos de texto).
+Os \textbf{algoritmos de compressão com perda} admitem uma baixa porcentagem de perda de informações durante a codificação para obter maior performance, muito uteis na transmissão de dados em streaming por exemplo. 
+Nos \textbf{algoritmos de compressão sem perda} o processo de codificação deve ser capaz de recuperar os dados em sua totalidade, geralmente utilizados em casos onde não pode haver perda de informações (como por exemplo, compressão de arquivos de texto).
+
+Neste capítulo serão apresentados dois dos principais algoritmos de compressão sem perda (\textbf{Código de Huffman} e \textbf{Lempel-Ziv 77}), bem como algumas variações uteis para o propósito do presente trabalho.
 
 \pagebreak
 
@@ -13,7 +15,7 @@ O \textbf{algoritmo de Huffman} (desenvolvido por David Huffman em 1952) é um d
 Os códigos gerados a partir do algoritmos de Huffman são chamados \textbf{Códigos de Huffman}.
 
 O código de Huffman é descrito em termos de como ele gera uma árvore de código livre de prefixo. 
-Considere o conjunto de mensagens \emph{M}, com $p_i$ sendo a probabilidade associada a $m_i$
+Considere o conjunto de símbolos $M$, com $p_i$ sendo a probabilidade associada a $m_i$
 
 \begin{algorithm}[H]
 \caption{Algoritmo de Huffman} \label{alg:huff}
@@ -41,26 +43,26 @@ Considere o conjunto de mensagens \emph{M}, com $p_i$ sendo a probabilidade asso
 \end{algorithm}
 
 \subsection{Análise assintótica}
-Seja \emph{n} o tamanho do conjunto de mensagens \emph{M}. 
-Para que o algoritmo percorra toda a floresta, formada por uma árvore para cada $\emph{m} \in \emph{M}$, serão necessárias \emph{n} interações.
+Seja $n$ o tamanho do conjunto de símbolos $M$. 
+Para que o algoritmo percorra toda a floresta, formada por uma árvore para cada $m \in M$, serão necessárias $n$ interações.
 Considerando que as funções \emph{ExtractMin()} e \emph{.append()} foram construídas a partir de uma fila de prioridades de \textbf{heap}, o algoritmo será executado em  $O(n \log_2 n)$.
 
 \subsection{Corretude}
 O teorema a seguir (escrito por Huffman TODO REF ARTIGO) mostra  que os códigos de Huffman são ótimos e livres de prefixo.
 
 
-\begin{lemma} \label{lemma:dist_prob_avg_size} Seja \emph{C} um código ótimo livre de prefixo, com $\{ p_1, p_2,..., p_n\}$ sendo a distribuição de probabilidades associada ao código. 
+\begin{lemma} \label{lemma:dist_prob_avg_size} Seja $C$ um código ótimo livre de prefixo, com $\{ p_1, p_2,..., p_n\}$ sendo a distribuição de probabilidades associada ao código. 
 Se $p_i > p_j$ então $l(w_i) \leq l(w_j)$
 
 \begin{proof} 
-Assuma que $l(c_i) > l(c_j)$. 
-Agora vamos construi um novo código \emph{C'}, trocando $w_i$ por $w_j$. Dado $l_a$ como o comprimento médio do código \emph{C}, o código \emph{C'} terá o seguinte comprimento:
+Para efeito de contradição, assuma que $l(w_i) > l(w_j)$. 
+Agora construa um novo código $C'$, trocando $w_i$ por $w_j$. Dado $l_a$ como o comprimento médio do código $C$, o código $C'$ terá o seguinte comprimento:
 \begin{align*}
 l'_a &= l_a + p_j(l(w_i) - l(w_j)) + p_i(l(w_j) - l(w_i)) \\
 &= l_a + (p_j - p_i)(l(w_i) - l(w_j)) 
 \end{align*}
 
-Pelas suposições feitas anteriormente o termo $(p_j - p_i)(l(w_i) - l(w_j))$ seria negativo, contradizendo o fato do código \emph{C} ser um código ótimo e livre de prefixo (pois neste caso $l'_a > l_a$).
+Pelas suposições feitas anteriormente o termo $(p_j - p_i)(l(w_i) - l(w_j))$ seria negativo, contradizendo o fato do código $C$ ser um código ótimo e livre de prefixo (pois neste caso $l'_a > l_a$).
 
 \textbf{Nota*} : Perceba que em uma árvore de Huffman, o tamanho da palavra código $w_i$ também representa seu nível na árvore.
 \end{proof}
@@ -69,34 +71,34 @@ Pelas suposições feitas anteriormente o termo $(p_j - p_i)(l(w_i) - l(w_j))$ s
 \begin{theorem} O algoritmo de Huffman gera um código ótimo livre de prefixo.
 \begin{proof}
 A prova se dará por indução sobre o número de mensagens pertencentes ao código. 
-Vamos mostrar que se o Algoritmo de Huffman gera um código livre de prefixo ótimo para qualquer distribuição de probabilidades com \emph{n} mensagens, então o mesmo ocorre para \emph{n + 1} mensagens.
+Vamos mostrar que se o Algoritmo de Huffman gera um código livre de prefixo ótimo para qualquer distribuição de probabilidades com $n$ símbolos, então o mesmo ocorre para $n + 1$ símbolos.
 
 \item \textbf{Caso Base.} Para n = 2 o teorema é trivialmente satisfeito considerando um código que atribui um bit pra cada mensagem do código.
 
-\item \textbf{Passo indutivo}. Pelo lema \ref{lemma:dist_prob_avg_size} sabemos que as menores probabilidades estão nos menores níveis da árvore de Huffman (por ser uma árvore completa binário, o seu menor nível deve possuir ao menos dois nós). 
+\item \textbf{Passo indutivo}. Pelo lema \ref{lemma:dist_prob_avg_size} sabemos que as menores probabilidades estão nos menores níveis da árvore de Huffman (por ser uma árvore binária completa, o seu menor nível deve possuir ao menos dois nós). 
 Já que esses nós possuiriam o mesmo tamanho, podemos muda-los de posição sem afetar o tamanho médio do código, concluindo assim que estes são nós \textbf{irmãos}.\\
-Agora defina um conjunto de mensagens \emph{M} de tamanho \emph{n + 1} onde T é a árvore de prefixo ótima construída a partir do Algoritmo de Huffman aplicado em \emph{M}.
-Vamos chamar os dois nós de menor probabilidade na árvore de \emph{x} e \emph{y} (que pelo argumento anterior, são nós irmãos). 
-Construiremos uma nova árvore \emph{T'} a partir de \emph{T} removendo os nós \emph{x} e \emph{y}, fazendo assim que o pai destes nós, que chamaremos de \emph{z}, seja o de menor probabilidade (de acordo com a definição do Algoritmo de Huffman, $p_z = p_y + p_x$).
- Considere \emph{k} como a profundidade de \emph{z}, temos:
+Agora defina um conjunto de símbolos $M$ de tamanho $n + 1$ onde $T$ é a árvore de prefixo ótima construída a partir do Algoritmo de Huffman aplicado em $M$.
+Vamos chamar os dois nós de menor probabilidade na árvore de $x$ e $y$ (que pelo argumento anterior, são nós irmãos). 
+Construiremos uma nova árvore $T'$ a partir de $T$ removendo os nós $x$ e $y$, fazendo assim que o pai destes nós, que chamaremos de $z$, seja o de menor probabilidade (de acordo com a definição do Algoritmo de Huffman, $p_z = p_y + p_x$).
+ Considere $k$ como a profundidade de $z$, temos:
 
 \begin{align*}
 l_a(T) &= l_a(T') + p_x(k + 1) + py(k + 1) - p_z k \\
 &= l_a(T') + p_x + p_y
 \end{align*}
 
-Sabemos pela hipótese de indução que $l_a(T')$ é mínimo, pois \emph{T'} tem o tamanho \emph{n} e foi gerada pelo algoritmo de Huffman. 
-Note que independente da ordem que forem inseridos, os nós \emph{x} e \emph{y} irão adicionar a constante $p_z = p_x + p_y$ no peso médio do código. 
-Como $l_a(T')$ é mínimo para um conjunto de mensagens de tamanho \emph{n} e seu nó de menor peso tem distribuição de probabilidade $p_z$, $l_a(T)$ também é mínimo para o conjunto de mensagens \emph{M} e logo \emph{T} é ótimo e livre de prefixo. 
+Sabemos pela hipótese de indução que $l_a(T')$ é mínimo, pois $T'$ tem o tamanho $n$ e foi gerada pelo algoritmo de Huffman. 
+Note que independente da ordem que forem inseridos, os nós $x$ e $y$ irão adicionar a constante $p_z = p_x + p_y$ no peso médio do código. 
+Como $l_a(T')$ é mínimo para um conjunto de símbolos de tamanho $n$ e seu nó de menor peso tem distribuição de probabilidade $p_z$, $l_a(T)$ também é mínimo para o conjunto de símbolos $M$ e logo $T$ é ótimo e livre de prefixo. 
 \end{proof}
 \end{theorem}
 
 \section{Lempel-Ziv 77 (LZ77)}
 
 \subsection{Algoritmos de Lempel-Ziv}
-Nos anos de 1977 e 1978, Jacob Ziv e Abraham Lempel publicaram dois artigos apresentando os algoritmos (\textbf{LZ77} e \textbf{LZ88}) que futuramente serviriam como base para toda uma família de algoritmos de compressão (conforme mostrado na Figura~\ref{fig:lz77}), chamados de algoritmos de Lempel-Ziv.
-Os algoritmos de Lempel-Ziv realizam o processo de compressão baseado em um \textbf{dicionário} de símbolos vistos anteriormente (diferente do \nameref{alg:huff}, que utiliza a probabilidade associada a cada símbolo). 
-Ambos tem um funcionamento parecido, que se resume em substituir partes da entrada por referências à partes iguais anteriormente processadas, e diferem na maneira em que procuram por repetições a serem substiruídas. 
+Nos anos de 1977 e 1978, Jacob Ziv e Abraham Lempel publicaram dois artigos apresentando os algoritmos (\textbf{LZ77} e \textbf{LZ88}) que serviriam como base para uma família de algoritmos de compressão (conforme mostrado na Figura~\ref{fig:lz77}), chamados de algoritmos de \textbf{Lempel-Ziv}.
+Os algoritmos de Lempel-Ziv realizam o processo de compressão baseado em um \textbf{dicionário} de mensagens vistas anteriormente (diferente do \nameref{alg:huff}, que utiliza a probabilidade associada a cada mensagem). 
+Tanto o LZ77 quanto o LZ78 tem um funcionamento parecido, que se resume em substituir partes da entrada por referências à partes iguais anteriormente processadas, e diferem na maneira em que procuram por repetições a serem substituídas. 
 
 \begin{figure}[h]
    \centering
@@ -106,11 +108,15 @@ Ambos tem um funcionamento parecido, que se resume em substituir partes da entra
  \end{figure}
 
 \subsection{Descrição do LZ77}
-O LZ77 e suas variações utilizam a técnica de \emph{janela deslizante} para encontrar cadeias de símbolos correspondentes. 
-A janela é dividida em duas partes separadas por um \emph{cursor} (que se move conforme novos símbolos são codificados).
+O LZ77 e suas variações utilizam a técnica de \emph{janela deslizante} para encontrar mensagens correspondentes. 
+A janela é dividida em duas partes separadas por um \emph{cursor} (que se move conforme novas mensagens são codificadas).
 
-Os elementos à esquerda do cursor são chamados \emph{dicionário} e contém todos os elementos codificados, já os elementos à direita do \emph{cursor} são chamados de \emph{lookahead buffer}.
-A ideia geral do algoritmo é substituir os símbolos do \emph{lookahead buffer} por \emph{tokens}, onde cada \emph{token} é constituído por uma tupla que ``aponta'' para a maior cadeia de elementos no \emph{dicionário} que correspondem aos elementos que estão no início do \emph{lookahead buffer}.
+A mensagem à esquerda do cursor é chamada de \textbf{dicionário}, e contém todos os símbolos já codificadas. Já a mensagem à direita do \emph{cursor} é chamada de \textbf{lookahead buffer}.
+A ideia geral do algoritmo é substituir as mensagens do \emph{lookahead buffer} por \textbf{tokens}, onde cada \emph{token} é constituído por uma \emph{tupla} que ``aponta'' para a maior mensagem correspondente a cadeia no início do \emph{lookahead buffer}.
+
+A \emph{tupla} que constitui os \emph{tokens} é formada por três valores:
+Um valor inteiro que indica quantas posições para trás o \emph{cursor} deve retornar até encontrar o início da cadeia, e um caracter
+(preenchido com $m_{cursor}$ caso não exista nenhuma mensagem correspondente seja encontrada, chamado \emph{token vazio}), ou \emph{nulo} caso contrário.
 
 \begin{algorithm}[H]
 \caption{Algoritmo Lempel-Ziv 77} \label{alg:lz77}
@@ -135,10 +141,10 @@ A ideia geral do algoritmo é substituir os símbolos do \emph{lookahead buffer}
 \subsection{Função ``\emph{findLongestMatch}'' }
 O \emph{LZ77} possui um processo de decodificação muito eficiente, porém consome muitos recursos computacionais na codificação. 
 Isto é, ele é mais eficiente para casos onde pretende-se decodificar o arquivo múltiplas vezes, ou ainda decodifica-lo numa máquina com menor poder computacional. 
-O ``gargalo'' da compressão está na técnica de busca pelo \emph{dicionário} para encontrar a sequência de caracteres correspondentes mais longa.
+O ``gargalo'' da compressão está na técnica de busca pelo \emph{dicionário} para encontrar a mensagem correspondentes mais longa.
 
 O método convencional utilizado na busca é a \textbf{busca linear}, que consiste em comparar cada posição no dicionário com o \emph{lookahead buffer} e selecionar a maior correspondência encontrada. 
-Tome \emph{N} como o tamanho do dicionário e \emph{M} como o tamanho do \emph{lookahead buffer}, no pior caso, a busca linear é realizada em tempo \emph{O(NM)}. 
+Tome $N$ como o tamanho do dicionário e $M$ como o tamanho do \emph{lookahead buffer}, no pior caso, a busca linear é realizada em tempo $O(NM)$. 
 A busca será executada $M + N$ vezes, isto é, a complexidade geral do algoritmo é $O( N^{2}M + M^{2}N)$.
 
 \subsection{Melhorias na performance da função ``\emph{findLongestMatch}'' }
@@ -147,17 +153,18 @@ Uma das possíveis abordagens para melhorar a busca linear é utilizar estrutura
 (TODO: Citacao do artigo) testa diferentes estruturas de dados (arvores trie, hash tables, arvores binárias de busca entre outros). 
 Para este projeto utilizaremos a \textbf{lista ligada} como estrutura de dados auxiliar (principalmente por possuir uma implementação mais simples). 
 
-Para construir uma estrutura de dados auxiliar com lista ligada, podemos criar uma lista para cada símbolo no dicionário contendo os indicies onde tal símbolo pode ser encontrado.  
-Para limitar a janela de busca, podemos construir a lista como uma \emph{fila}, onde ao atingirmos a capacidade máxima da janela de busca, removemos o menor indicie (que estaria no inicio da fila). Note que, o tamanho máximo da lista depende da quantidade de bits que queremos utilizar para construir o \emph{token}.
+Para construir uma estrutura de dados auxiliar com lista ligada, podemos criar uma lista para cada símbolo no dicionário, que contenha os indicies onde o símbolo pode ser encontrado.  
+Para limitar a janela de busca, podemos construir a lista como uma \emph{fila}, onde ao atingirmos a capacidade máxima da janela de busca, removemos o menor indicie (que estaria no inicio da fila). N
+ote que, o tamanho máximo da lista depende da quantidade de bits que queremos utilizar para construir o \emph{token}.
 
-Encontramos a maior cadeira de símbolos correspondentes, comparando o \emph{lookahead buffer} com sequencias iniciadas a partir de indicies contidos na lista correspondente ao primeiro símbolo do \emph{lookahead buffer}.
-Neste caso, o pior caso ocorrerá quando todos os símbolos no dicionário forem iguais, pois todos os símbolos do dicionário seriam checados (levando a uma performance igual a da busca linear).
-Entretanto, para uma base de dados de texto real com grande quantidade de dados isso raramente aconteceria, e apenas uma quantidade $K \ll N$ de possíveis cadeias seriam checadas.
+Encontramos a maior mensagem correspondente, comparando o \emph{lookahead buffer} com as cadeias de símbolos iniciadas a partir de indicies contidos na lista que corresponde ao primeiro símbolo do \emph{lookahead buffer}.
+Neste contexto, o pior caso ocorrerá quando todos os mensagens no dicionário forem iguais, pois todos as posições no dicionário seriam checados (levando a uma performance equivalente a da busca linear).
+Entretanto, para uma base de dados de texto real com grande quantidade de dados isso raramente aconteceria, e apenas uma quantidade $K \ll N$ de possíveis mensagens seriam checadas.
 
 \section{Compressão baseada em palavras}
 A implementação padrão para a maioria dos algoritmos de compressão utiliza como \emph{alfabeto de origem} elementos de 8 bits (também conhecidos como \textbf{\emph{caracteres}}).
 Tal método limita a correlação de cadeias mais longas, e tem sua eficiência limitada quando aplicado a grande quantidade de dados. 
-Em contrapartida, se definirmos os símbolos do \emph{alfabeto de origem} como uma sequência caracteres, poderíamos tirar vantagem de longas correspondências entre os símbolos e talvez obter melhores resultados na compressão.
+Em contrapartida, se definirmos cada mensagem do \emph{alfabeto de origem} como uma sequência caracteres, poderíamos tirar vantagem de longas correspondências e talvez obter melhores resultados na compressão.
 
 Quando a natureza dos dados é previamente conhecida, podemos tomar vantagem da sua estrutura para definir os símbolos de uma maneira mais eficiente. 
 Em especial, linguagens ``faladas'' possuem uma estrutura hierárquica bem definida, que vai desde o agrupamento de letras em sílabas, silabas em palavras, palavras em frases e assim por diante. 
@@ -165,17 +172,66 @@ Em especial, linguagens ``faladas'' possuem uma estrutura hierárquica bem defin
 Neste contexto, definiremos uma \textbf{\emph{palavra}} como uma sequência maximal de \emph{caracteres} alfanuméricos, divididos por sequências de caracteres não alfanuméricos chamados \emph{separadores} (baseado na definição feita por Bentley et al. TODO referencia).
 A compressão baseada em palavras é uma modificação dos algoritmos de compressão clássicos, que considera cada palavra como um símbolo (i.e, o \emph{alfabeto de origem} passa a ser composto por \emph{palavras}, não por \emph{caracteres}).
 
-\subsection{Huffword}
-O método de compressão \emph{Huffword} é uma modificação da implementação canônica do \emph{código de Huffman} desenvolvido por Moffat e Zobel (Incluir referencia) em 1994 que utiliza \emph{palavras} em seu alfabeto de origem.
+\subsection{Huffword} \label{sub:huffw}
+O método de compressão \emph{Huffword} é uma modificação da implementação canônica do \emph{código de Huffman}. 
+Desenvolvido por Moffat e Zobel (Incluir referencia) em 1994, ele utiliza \emph{palavras} em seu alfabeto de origem.
 
 O algoritmo funciona de maneira bem similar à implementação canônica, o arquivo é pré-processado separando as \emph{palavras} e os \emph{separadores} como duas entradas distintas.
 Depois o algoritmo de Huffman canônico é aplicado a cada uma das partes, sendo que as probabilidades agora estão associadas as palavras e não mais aos caracteres. 
-A codificação associada a entrada também é armazenada em duas \emph{strings} distintas, assim como as tabelas de códigos.
+A codificação associada a entrada também é armazenada em duas \emph{strings} distintas, assim como as tabelas de códigos também são destintas.
  
  \subsection{WLZ77}
  (TODO REF ARTIGO) implementa a versão do LZ77 baseado em palavras (também chamado WLZ77) aplicando uma ideia semelhante à apresentada anteriormente . 
- O arquivo é pré-processado para obter uma lista de \emph{palavras} e \emph{separadores}, e então o algoritmo canônico é aplicado (agora considerando cada palavra como um símbolo unitário).
+ O arquivo é pré-processado para obter uma lista de \emph{palavras} e \emph{separadores}. 
+ Ao contrário do ~\nameref{sub:huffw} as palavras e separadores são processados simultaneamente pela implementação canônica do LZ77, gerando uma sequência única de \emph{tokens}.
  
+ Vale notar que, neste caso, o último elemento da \emph{tupla} no token não é mais um caractere e sim uma palavra. Isso significa que para o caso dos \emph{tokens vazios}, o tamanho do \emph{token} irá variar de acordo com o tamanho da palavra.
+ 
+ 
+ % ---
  \chapter{Clusterização de dados aplicada a textos}
+ % ---
+ 
+ O processo de clusterização de dados consiste em agrupar os objetos (que compõe o conjunto de dados) em $n$ diferentes \textbf{agrupamentos} (clusters), de maneira em que os objetos de um mesmo grupo sejam similares e os de grupos diferentes dissimilares.
+ Para isto, faz-se essencial uma definição clara da similaridade entre os objetos, que pode variar dependendo da natureza do dado em análise.
+ 
+ Podemos construir o processo de clusterização de diferentes maneiras: Na \textbf{clusterização sem sobreposição} cada objeto deve pertencer a exatamente um cluster. 
+ Em contrapartida podemos agrupar os objetos permitindo algumas sobreposições. Podemos ainda clusterizar dados por \textbf{hierarquia}, onde os dados são organizados de maneira hierárquica (quase como uma árvore binária).
+ 
+ \pagebreak
+ 
+ \section{Similaridade de dados textuais}
+ Conforme introduzido anteriormente, definir uma métrica de similaridade entre os objetos é essencial para o funcionamento dos algoritmos de clusterização.
+ Para o propósito deste texto, iremos explorar técnicas que extraem essa similaridades em dados textuais.
+ 
+ Para uma base dados com dados textuais, definiremos como ``texto bruto'' o conteúdo de cada registro na base de dados. 
+ Também adotaremos a notação documento para se referir a uma partição dos dados (por exemplo, uma linha da tabela).
+ Estenderemos a definição de \emph{palavras} e \emph{separadores} utilizadas no capítulo anterior.
+ 
+ \subsection{Representação ``mochila de palavras''}
+ Analise de texto é umas das aplicação mais exploradas no campo dos sistemas inteligentes.
+Porém, pode ser uma tarefa difícil utilizar texto bruto como entrada para os algoritmos de \emph{machine learning}. Geralmente, tais algoritmos ``lidam melhor'' com características numéricas.
+ 
+ Em geral, o processo de transformar documentos em vetores de características numéricas é conhecido como \textbf{vetorização}. 
+ A seguir definiremos uma estratégia de vetorização chamada \textbf{mochila de palavras}, que consiste em descrever documentos pela ocorrência das palavras, sem levar em conta a sua posição no documento.
+  
+ A estratégia é dividida em três etapas: tokenização, contagem e normalização.
+ A \textbf{tokenização} separa o texto bruto em unidades menores, no nosso caso transformando o texto bruto em uma lista de \emph{palavras} (tokens).
+ Na \textbf{contagem} contamos a ocorrência dos tokens em cada documento.
+ Por último, a \textbf{normalização} e adição de peso aos tokens ocorre de acordo com a contagem realizada anteriormente (atribuindo menor peso aos tokens que estão presentes na maioria dos documentos).
+ 
+ \subsection{Uso de \emph{stop words}}
+ \subsection{Tf-idf}
+ 
+ \section{Redução de Dimensionalidade}
+ \subsection{PCA}
+ 
+ \section{Clusterização K-means}
+ 
+ \subsection{Método de Elbow}
+ 
+ 
+ 
+ 
 
 

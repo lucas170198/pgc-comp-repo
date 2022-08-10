@@ -28,6 +28,14 @@
 \contentsline {subsection}{\numberline {2.3.2}WLZ77}{21}{subsection.2.3.2}%
 \setlength {\cftchapterindent }{0em} \setlength {\cftchapternumwidth }{\cftlastnumwidth }
 \contentsline {chapter}{\chapternumberline {3}\MakeTextUppercase {Clusterização de dados aplicada a textos}}{23}{chapter.3}%
+\contentsline {section}{\numberline {3.1}Similaridade de dados textuais}{24}{section.3.1}%
+\contentsline {subsection}{\numberline {3.1.1}Representação ``mochila de palavras''}{24}{subsection.3.1.1}%
+\contentsline {subsection}{\numberline {3.1.2}Uso de \emph {stop words}}{24}{subsection.3.1.2}%
+\contentsline {subsection}{\numberline {3.1.3}Tf-idf}{24}{subsection.3.1.3}%
+\contentsline {section}{\numberline {3.2}Redução de Dimensionalidade}{24}{section.3.2}%
+\contentsline {subsection}{\numberline {3.2.1}PCA}{24}{subsection.3.2.1}%
+\contentsline {section}{\numberline {3.3}Clusterização K-means}{24}{section.3.3}%
+\contentsline {subsection}{\numberline {3.3.1}Método de Elbow}{24}{subsection.3.3.1}%
 \contentsline {part}{\partnumberline {III}\MakeTextUppercase {Aplicação: Melhoria na compressão de dados textuais em larga escala através da Clusterização}}{25}{part.3}%
 \vspace {\cftbeforechapterskip }
 \setlength {\cftchapterindent }{\cftlastnumwidth } \setlength {\cftchapternumwidth }{2em}
