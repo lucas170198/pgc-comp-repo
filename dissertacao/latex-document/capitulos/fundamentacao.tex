@@ -141,14 +141,21 @@ função que mapeia os elementos do espaço amostral para números
 reais. Uma variável aleatória é chamada \textbf{discreta} quando os
 valores dos experimentos associados a ela são números finitos ou ao
 menos infinitos que podem ser contados.
-\begin{equation} \label{eq:dist_prob_def}
-p_X(x) = P(\{X = x\})
-\end{equation}
 
-Note que, a variável aleatória pode assumir qualquer um dos valores no espaço amostral que possuem uma probabilidade $\emph{P} > 0$, portanto
-\begin{equation} \label{eq:dist_prob_sum}
-\sum_{x ~\in ~im_X}^{}p_X(x) = 1.
+Podemos descrever melhor uma variável aleatória $X$, atribuindo
+probabilidades sobre os valores que esta pode assumir. Esses valores
+são atribuídos pela \textbf{função de massa de probabilidade},
+denotada por $p_X$, definida para cada $x\in\mathbb{R}$ como
+\begin{equation} \label{eq:dist_prob_def}
+p_X(x) = P(\{\omega\in \Omega: X(\omega) = x\}).
 \end{equation}
+Por simplicidade, de notação utilizamos $P(X=x)$ para denotar
+$P(\{\omega\in \Omega: X(\omega) = x\})$. Note que a pré-imagem de $X$
+é o espaço amostral e, portanto,
+\begin{equation} \label{eq:dist_prob_sum}
+\sum_{x ~\in ~im_X}^{}p_X(x) = 1,
+\end{equation}
+onde $im_X$ denota a imagem de $X$.
 
 O \textbf{valor esperado} (ou \textbf{esperança}) da variável aleatória \emph{X} é definido como
 \begin{equation} \label{eq:exp_val}
