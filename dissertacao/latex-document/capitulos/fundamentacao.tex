@@ -189,17 +189,21 @@ Assim, temos o seguinte problema de otimização
 
 
 \subsection{Entropia}
-A \textbf{entropia de Shannon} aplica as noções de entropia física (que representa a aleatoriedade de um sistema) à Teoria da Informação. Dado um espaço de probabilidade \emph{X} e a função \emph{p} sendo a distribuição de probabilidade associada a \emph{X}, definimos \textbf{entropia} como:
+A \textbf{entropia de Shannon} aplica as noções de entropia física
+(que representa a aleatoriedade de um sistema) à Teoria da
+Informação. Dada uma variável aleatória $X$ com distribuição de
+probabilidade $p$, definimos \textbf{entropia} de $X$ como
 \begin{equation} \label{eq:entropy}
-H(X, p) = \sum_{x \in X}^{} p(x) \log_2 \frac{1}{p(x)}
+H(X, p, b) = \sum_{x \in im_X}^{} p(x) \log_b \frac{1}{p(x)},
 \end{equation}
+onde $b$ é comumente tomado como $2$, mas pode assumir valores inteiros maiores do que~$2$.
 
-Por esta definição temos que quanto menor o \emph{bias} da função de distribuição de probabilidade relacionada ao sistema, maior a sua entropia. Em outras palavras, a entropia de um sistema esta intimamente ligada a sua  "desordem". 
+Por esta definição temos que quanto menor o enviesamento da função de distribuição de probabilidade relacionada ao sistema, maior a sua entropia. Em outras palavras, a entropia de um sistema esta intimamente ligada a sua ``desordem''.
 
-Shannon (incluir referencia papper do Shannon) aplica o mesmo conceito de entropia no contexto da Teoria da Informação, "substituindo" o conjunto de estados \emph{S} pelo conjunto de mensagem \emph{M}, isto é, \emph{M} é interpretado como um conjunto de possíveis mensagens, tendo como \emph{p(m)} a probabilidade de $m \in M$.
-Baseado na mesma premissa, Shannon mede a informação contida em uma mensagem da seguinte forma:
+Shannon~\ref{} aplica o mesmo conceito de entropia no contexto da Teoria da Informação, ``substituindo'' o conjunto de estados pelo conjunto de símbolos $M$, isto é, $M$ é interpretado como um conjunto de possíveis símbolos, tendo como $p(m)$ a probabilidade de cada $m \in M$.
+Baseado na mesma premissa, Shannon mede a informação de cada símbolo da seguinte forma
 \begin{equation} \label{label:info_quantity}
-\emph{i(m)} = \log_2 \frac{1}{p(m)}.
+\emph{i(m,b)} = \log_b \frac{1}{p(m)}.
 \end{equation}
 
 \subsection{Comprimento de Código e Entropia}
