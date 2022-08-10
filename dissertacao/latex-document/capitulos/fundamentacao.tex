@@ -144,8 +144,8 @@ menos infinitos que podem ser contados.
 
 Podemos descrever melhor uma variável aleatória $X$, atribuindo
 probabilidades sobre os valores que esta pode assumir. Esses valores
-são atribuídos pela \textbf{função de massa de probabilidade},
-denotada por $p_X$, definida para cada $x\in\mathbb{R}$ como
+são atribuídos pela \textbf{distribuição de probabilidade}, denotada
+por $p_X$, definida para cada $x\in\mathbb{R}$ como
 \begin{equation} \label{eq:dist_prob_def}
 p_X(x) = P(\{\omega\in \Omega: X(\omega) = x\}).
 \end{equation}
@@ -164,15 +164,21 @@ O \textbf{valor esperado} (ou \textbf{esperança}) da variável aleatória $X$ �
 %--------------------------------------
 % ------------------------------ Entropia
 \subsection{Comprimento médio do código}
-Seja \emph{p} a distribuição de probabilidade associada ao alfabeto de origem \emph{M}. Assuma que \emph{C} é um código tal que \emph{C(m)} = \emph{w}, definimos o \textbf{tamanho médio} de \emph{C} como:
+Seja $p$ a distribuição de probabilidade associada ao alfabeto de
+origem $M$. Seja $C: M \to W^+$ um código. Definimos o
+\textbf{comprimento/tamanho médio} de $C$ como:
 \begin{equation} \label{eq:code_len}
-l_a (C) = \sum_{m \in M}^{} p(m) l(C(m))
+l_a (C) = \sum_{m \in M}^{} p(m) l(C(m)) = \mathbf{E}[l\circ C].
 \end{equation}
 
-Um código \emph{C} unicamente decodificável é \textbf{ótimo} se $l_a(C)$ é mínimo, isto é, para qualquer código unicamente decodificável \emph{C'} temos que:
+Estamos interessados em códigos unicamente decodificáveis com o menor
+comprimento médio possível. Um código $C$ unicamente
+decodificável é \textbf{ótimo} se $l_a(C)$ é mínimo, isto é, para
+qualquer código unicamente decodificável \emph{C'} temos que
 \begin{equation} \label{eq:code_len_optimal}
-l_a(C) \leq l_a(C')
+l_a(C) \leq l_a(C').
 \end{equation}
+
 
 \subsection{Entropia}
 A \textbf{entropia de Shannon} aplica as noções de entropia física (que representa a aleatoriedade de um sistema) à Teoria da Informação. Dado um espaço de probabilidade \emph{X} e a função \emph{p} sendo a distribuição de probabilidade associada a \emph{X}, definimos \textbf{entropia} como:
