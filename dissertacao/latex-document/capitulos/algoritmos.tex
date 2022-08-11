@@ -44,7 +44,7 @@ Considere o conjunto de símbolos $M$, com $p_i$ sendo a probabilidade associada
 
 \subsection{Análise assintótica}
 Seja $n$ o tamanho do conjunto de símbolos $M$. 
-Para que o algoritmo percorra toda a floresta, formada por uma árvore para cada $m \in M$, serão necessárias $n$ interações.
+Para que o algoritmo percorra toda a floresta, formada por uma árvore para cada $m \in M$, serão necessárias $n$ interações (onde $n$ é o tamanho do conjto $M$).
 Considerando que as funções \emph{ExtractMin()} e \emph{.append()} foram construídas a partir de uma fila de prioridades de \textbf{heap}, o algoritmo será executado em  $O(n \log_2 n)$.
 
 \subsection{Corretude}
@@ -73,7 +73,7 @@ Pelas suposições feitas anteriormente o termo $(p_j - p_i)(l(w_i) - l(w_j))$ s
 A prova se dará por indução sobre o número de mensagens pertencentes ao código. 
 Vamos mostrar que se o Algoritmo de Huffman gera um código livre de prefixo ótimo para qualquer distribuição de probabilidades com $n$ símbolos, então o mesmo ocorre para $n + 1$ símbolos.
 
-\item \textbf{Caso Base.} Para n = 2 o teorema é trivialmente satisfeito considerando um código que atribui um bit pra cada mensagem do código.
+\item \textbf{Caso Base.} Para n = 2 o teorema é trivialmente satisfeito considerando um código que atribui um bit pra cada símbolo do código.
 
 \item \textbf{Passo indutivo}. Pelo lema \ref{lemma:dist_prob_avg_size} sabemos que as menores probabilidades estão nos menores níveis da árvore de Huffman (por ser uma árvore binária completa, o seu menor nível deve possuir ao menos dois nós). 
 Já que esses nós possuiriam o mesmo tamanho, podemos muda-los de posição sem afetar o tamanho médio do código, concluindo assim que estes são nós \textbf{irmãos}.\\
@@ -96,8 +96,8 @@ Como $l_a(T')$ é mínimo para um conjunto de símbolos de tamanho $n$ e seu nó
 \section{Lempel-Ziv 77 (LZ77)}
 
 \subsection{Algoritmos de Lempel-Ziv}
-Nos anos de 1977 e 1978, Jacob Ziv e Abraham Lempel publicaram dois artigos apresentando os algoritmos (\textbf{LZ77} e \textbf{LZ88}) que serviriam como base para uma família de algoritmos de compressão (conforme mostrado na Figura~\ref{fig:lz77}), chamados de algoritmos de \textbf{Lempel-Ziv}.
-Os algoritmos de Lempel-Ziv realizam o processo de compressão baseado em um \textbf{dicionário} de mensagens vistas anteriormente (diferente do \nameref{alg:huff}, que utiliza a probabilidade associada a cada mensagem). 
+Nos anos de 1977 e 1978, Jacob Ziv e Abraham Lempel publicaram dois artigos apresentando os algoritmos \textbf{LZ77} e \textbf{LZ88}, que serviriam como base para uma família de algoritmos de compressão (conforme mostrado na Figura~\ref{fig:lz77}), chamados de algoritmos de \textbf{Lempel-Ziv}.
+Os algoritmos de Lempel-Ziv realizam o processo de compressão baseado em um \textbf{dicionário} de mensagens vistas anteriormente (diferente do \nameref{alg:huff}, que utiliza a probabilidade associada a cada símbolo). 
 Tanto o LZ77 quanto o LZ78 tem um funcionamento parecido, que se resume em substituir partes da entrada por referências à partes iguais anteriormente processadas, e diferem na maneira em que procuram por repetições a serem substituídas. 
 
 \begin{figure}[h]
@@ -112,11 +112,15 @@ O LZ77 e suas variações utilizam a técnica de \emph{janela deslizante} para e
 A janela é dividida em duas partes separadas por um \emph{cursor} (que se move conforme novas mensagens são codificadas).
 
 A mensagem à esquerda do cursor é chamada de \textbf{dicionário}, e contém todos os símbolos já codificadas. Já a mensagem à direita do \emph{cursor} é chamada de \textbf{lookahead buffer}.
-A ideia geral do algoritmo é substituir as mensagens do \emph{lookahead buffer} por \textbf{tokens}, onde cada \emph{token} é constituído por uma \emph{tupla} que ``aponta'' para a maior mensagem correspondente a cadeia no início do \emph{lookahead buffer}.
+A ideia geral do algoritmo é substituir as mensagens do \emph{lookahead buffer} por \textbf{tokens}, onde cada \emph{token} é constituído por uma \emph{tupla} que ``aponta''  para a maior mensagem correspondente a cadeia no início do \emph{lookahead buffer}.
 
 A \emph{tupla} que constitui os \emph{tokens} é formada por três valores:
-Um valor inteiro que indica quantas posições para trás o \emph{cursor} deve retornar até encontrar o início da cadeia, e um caracter
-(preenchido com $m_{cursor}$ caso não exista nenhuma mensagem correspondente seja encontrada, chamado \emph{token vazio}), ou \emph{nulo} caso contrário.
+Um valor inteiro que indica quantas posições para trás o \emph{cursor} deve retornar até encontrar o início da cadeia, 
+um segundo valor inteiro indicando o tamanho da cadeia,
+e um caracter (preenchido com $m_{cursor}$ ou $null$ para \textbf{tokens não vazios}).
+
+Os \emph{tolkens} podem ser vazios, quando não encontramos nenhuma mensagem correspondente, neste caso, os dois primeiros valores da \emph{tupla} são preenchidos com zeros.
+Por exemplo, se durante a compressão de um texto encontrássemos o símbolo ``a'' pela primeira vez (isso é, não existe correspondência pra ele no \emph{dicionário}), a saída seria o \emph{token vazio} $(0, 0, ``a'')$.
 
 \begin{algorithm}[H]
 \caption{Algoritmo Lempel-Ziv 77} \label{alg:lz77}
@@ -143,7 +147,7 @@ O \emph{LZ77} possui um processo de decodificação muito eficiente, porém cons
 Isto é, ele é mais eficiente para casos onde pretende-se decodificar o arquivo múltiplas vezes, ou ainda decodifica-lo numa máquina com menor poder computacional. 
 O ``gargalo'' da compressão está na técnica de busca pelo \emph{dicionário} para encontrar a mensagem correspondentes mais longa.
 
-O método convencional utilizado na busca é a \textbf{busca linear}, que consiste em comparar cada posição no dicionário com o \emph{lookahead buffer} e selecionar a maior correspondência encontrada. 
+O método convencional utilizado é a \textbf{busca linear}, que consiste em comparar cada posição no dicionário com o \emph{lookahead buffer} e selecionar a maior correspondência encontrada. 
 Tome $N$ como o tamanho do dicionário e $M$ como o tamanho do \emph{lookahead buffer}, no pior caso, a busca linear é realizada em tempo $O(NM)$. 
 A busca será executada $M + N$ vezes, isto é, a complexidade geral do algoritmo é $O( N^{2}M + M^{2}N)$.
 
@@ -154,17 +158,17 @@ Uma das possíveis abordagens para melhorar a busca linear é utilizar estrutura
 Para este projeto utilizaremos a \textbf{lista ligada} como estrutura de dados auxiliar (principalmente por possuir uma implementação mais simples). 
 
 Para construir uma estrutura de dados auxiliar com lista ligada, podemos criar uma lista para cada símbolo no dicionário, que contenha os indicies onde o símbolo pode ser encontrado.  
-Para limitar a janela de busca, podemos construir a lista como uma \emph{fila}, onde ao atingirmos a capacidade máxima da janela de busca, removemos o menor indicie (que estaria no inicio da fila). N
-ote que, o tamanho máximo da lista depende da quantidade de bits que queremos utilizar para construir o \emph{token}.
+Para limitar a janela de busca, podemos construir a lista como uma \emph{fila}, onde ao atingirmos a capacidade máxima da janela de busca, removemos o menor indicie (que estaria no inicio da fila). 
+Note que, o tamanho máximo da lista depende da quantidade de bits que queremos utilizar para construir o \emph{token}.
 
 Encontramos a maior mensagem correspondente, comparando o \emph{lookahead buffer} com as cadeias de símbolos iniciadas a partir de indicies contidos na lista que corresponde ao primeiro símbolo do \emph{lookahead buffer}.
-Neste contexto, o pior caso ocorrerá quando todos os mensagens no dicionário forem iguais, pois todos as posições no dicionário seriam checados (levando a uma performance equivalente a da busca linear).
+Neste contexto, o pior caso ocorrerá quando todos os símbolos no dicionário forem iguais, pois todos as posições no dicionário seriam checadas (levando a uma performance equivalente a da busca linear).
 Entretanto, para uma base de dados de texto real com grande quantidade de dados isso raramente aconteceria, e apenas uma quantidade $K \ll N$ de possíveis mensagens seriam checadas.
 
 \section{Compressão baseada em palavras}
 A implementação padrão para a maioria dos algoritmos de compressão utiliza como \emph{alfabeto de origem} elementos de 8 bits (também conhecidos como \textbf{\emph{caracteres}}).
 Tal método limita a correlação de cadeias mais longas, e tem sua eficiência limitada quando aplicado a grande quantidade de dados. 
-Em contrapartida, se definirmos cada mensagem do \emph{alfabeto de origem} como uma sequência caracteres, poderíamos tirar vantagem de longas correspondências e talvez obter melhores resultados na compressão.
+Em contrapartida, se definirmos cada símbolo do \emph{alfabeto de origem} como uma sequência caracteres, poderíamos tirar vantagem de longas correspondências e talvez obter melhores resultados na compressão.
 
 Quando a natureza dos dados é previamente conhecida, podemos tomar vantagem da sua estrutura para definir os símbolos de uma maneira mais eficiente. 
 Em especial, linguagens ``faladas'' possuem uma estrutura hierárquica bem definida, que vai desde o agrupamento de letras em sílabas, silabas em palavras, palavras em frases e assim por diante. 
@@ -196,41 +200,107 @@ A codificação associada a entrada também é armazenada em duas \emph{strings}
  Para isto, faz-se essencial uma definição clara da similaridade entre os objetos, que pode variar dependendo da natureza do dado em análise.
  
  Podemos construir o processo de clusterização de diferentes maneiras: Na \textbf{clusterização sem sobreposição} cada objeto deve pertencer a exatamente um cluster. 
- Em contrapartida podemos agrupar os objetos permitindo algumas sobreposições. Podemos ainda clusterizar dados por \textbf{hierarquia}, onde os dados são organizados de maneira hierárquica (quase como uma árvore binária).
+ Em contrapartida podemos agrupar os objetos permitindo algumas sobreposições. 
+ Podemos ainda clusterizar dados por \textbf{hierarquia}, onde os dados são organizados em níveis (quase como uma árvore).
+ 
+ \begin{figure}[H]
+   \centering
+   \includegraphics[scale=0.50]{figs/cluster_h.png}
+    \caption{Exemplo de agrupamento hierárquico}
+    \label{fig:clusterh}
+ \end{figure}
  
  \pagebreak
  
- \section{Similaridade de dados textuais}
+ \section{Similaridade em dados textuais}
  Conforme introduzido anteriormente, definir uma métrica de similaridade entre os objetos é essencial para o funcionamento dos algoritmos de clusterização.
- Para o propósito deste texto, iremos explorar técnicas que extraem essa similaridades em dados textuais.
+ Para o propósito deste projeto, iremos explorar técnicas que extraem essa similaridades em dados textuais.
  
- Para uma base dados com dados textuais, definiremos como ``texto bruto'' o conteúdo de cada registro na base de dados. 
- Também adotaremos a notação documento para se referir a uma partição dos dados (por exemplo, uma linha da tabela).
- Estenderemos a definição de \emph{palavras} e \emph{separadores} utilizadas no capítulo anterior.
+ Para uma base dados textual,  utilizaremos o termo \textbf{``texto bruto''}  para se referir ao conteúdo de cada registro na base de dados. 
+ Também adotaremos o termo \textbf{documento} para partições dos dados (por exemplo, uma linha da tabela).
+ Estenderemos a definição de \emph{palavras} e \emph{separadores} utilizadas no capítulo anterior, definidas sob um ponto de vista linguístico (não relacionados diretamente a notações de conjuntos definida no capítulo ~\ref{chapter:fund}).
  
- \subsection{Representação ``mochila de palavras''}
- Analise de texto é umas das aplicação mais exploradas no campo dos sistemas inteligentes.
-Porém, pode ser uma tarefa difícil utilizar texto bruto como entrada para os algoritmos de \emph{machine learning}. Geralmente, tais algoritmos ``lidam melhor'' com características numéricas.
+ \subsection{Vetorização TF-IDF}
+Analise de texto é umas das aplicação mais exploradas no campo dos sistemas inteligentes.
+Porém, pode ser uma tarefa difícil utilizar texto bruto como entrada para os algoritmos de \emph{machine learning}. 
+Geralmente, tais algoritmos ``lidam melhor'' com características numéricas.
  
- Em geral, o processo de transformar documentos em vetores de características numéricas é conhecido como \textbf{vetorização}. 
- A seguir definiremos uma estratégia de vetorização chamada \textbf{mochila de palavras}, que consiste em descrever documentos pela ocorrência das palavras, sem levar em conta a sua posição no documento.
-  
- A estratégia é dividida em três etapas: tokenização, contagem e normalização.
- A \textbf{tokenização} separa o texto bruto em unidades menores, no nosso caso transformando o texto bruto em uma lista de \emph{palavras} (tokens).
- Na \textbf{contagem} contamos a ocorrência dos tokens em cada documento.
- Por último, a \textbf{normalização} e adição de peso aos tokens ocorre de acordo com a contagem realizada anteriormente (atribuindo menor peso aos tokens que estão presentes na maioria dos documentos).
- 
- \subsection{Uso de \emph{stop words}}
- \subsection{Tf-idf}
- 
+O processo de transformar documentos em vetores de características numéricas é conhecido como \textbf{vetorização}. 
+Em geral, procuramos uma medida que atribua pesos a cada palavra, de acordo com a sua ``importância'' no documento.
+
+Poderíamos atribuir pesos as palavras de maneira direta e intuitiva, atrelando o peso diretamente a frequência em que aquela palavra ocorre em um documento.
+Chamamos esta medida de \textbf{TF} (\emph{term frequency}).
+
+\begin{equation}\label{eq:tf}
+tf(t, d) = \frac{count(t \in d)}{count(d)}
+\end{equation}
+
+Onde $t$ é a palavra (ou termo) alvo da medição, e $d$ é o documento que contém a palavra $t$  e pertence a coleção de documentos $D$.
+
+Entretanto, algumas palavras (como ``and'' ou ``him'' no inglês) adicionam pouca ou nenhuma informação relevante para o texto em si, apesar de sua alta frequência, essas palavras são conhecidas como \textbf{\emph{stop words}}.
+Remover as \emph{stop words} pode diminuir ruídos nos dados utilizados para o modelo de classificação, sendo um recurso muito importante para a construção de clusters com maior significado semântico.
+
+Para compensar este fator, o \textbf{IDF} (\emph{inverse document frequency}) pondera o quão ``incomum'' é um determinado termo entre diferentes documentos, atribuindo valores baixos a termos que se repetem muito em diferentes documentos.
+
+\begin{equation}\label{eq:idf}
+idf(t, D) = \log \frac{len(D)}{count(d \in D : t \in d)}
+\end{equation}
+
+
+A métrica \textbf{TF-IDF} multiplica as equações~\ref{eq:idf} e ~\ref{eq:tf}, de maneira que a informação da frequência de um termo é ponderada pela sua ``exclusividade'' entre os documentos.
+Obtemos assim uma métrica que aproxima a zero os símbolos menos relevantes, e atribuí valores maiores a símbolos ``mais relevantes''.
+
+\begin{equation}
+tfidf(t, d, D) = tf(t, d) \times idf(t, D)
+\end{equation}
+
  \section{Redução de Dimensionalidade}
+ Em casos em que a base de dados possuem uma quantidade elevadas de dimensões, 
+reduzir a dimensionalidade significa procurar variáveis que possuem dependência entre si.
+No geral, busca-se manter apenas características relevantes aos dados, reduzindo sua complexidade e o poder computacional necessário para processar estes dados.
+
  \subsection{PCA}
+ PCA (ou \emph{principal component analysis}) é formada por um procedimento algébrico, 
+ que reduz as variáveis correlacionadas em um conjunto de variáveis não relacionadas (linearmente) chamadas \emph{principal components} (PCs), iterativamente.
+ 
+No contexto da clusterização, o PCA é utilizado principalmente para transformar dados com muitas dimensões em uma representação com menores dimensões (usualmente duas dimensões, facilitando a análise gráfica dos dados).
+ 
  
  \section{Clusterização K-means}
+O método de clusterização \emph{k-means} (ou algoritmo de Lloyd's) é um algoritmo iterativo que particiona os dados em $k$ clusters, definidos por \textbf{pontos centrais} (onde $k$ é uma das entradas para o algoritmo).
+A ideia em geral é encontrar os melhores $k$ pontos centrais, isto é, posicionar estes pontos de maneira a minimizar a distância dos dados aos pontos centrais mais próximos. 
+Podemos definir o k-means da seguinte forma:
+ \begin{enumerate}
+ 	\item Escolha os $k$ primeiros pontos centrais. A escolha pode ser \textbf{aleatória}, ou utilizando o \emph{k-means++} (algoritmo para inicializar os pontos centrais).
+	\item Calcule a distância de cada dado em relação a cada ponto central.
+	\item Atribua cada dado ao ponto central mais próximo.
+	\item Calcule a distância média entre os pontos e seus respectivos centros para cada cluster, e obtenha novas localizações para os pontos centrais (de maneira a minimizar a distância média).
+	\item Repita os passos 2, 3, e 4 até que os clusters não mudem, ou atingir o número máximo de iterações.
+\end{enumerate}
  
- \subsection{Método de Elbow}
+ \begin{figure}[H]
+   \centering
+   \includegraphics[scale=0.40]{figs/kmeans.png}
+    \caption{Exemplo de clusterzacao k-means}
+    \label{fig:kmeans}
+ \end{figure}
  
  
+ \subsection{Método de elbow}
+ O resultado do \emph{k-means} é diretamente afetado pelo número de clusters definidos na inicialização do algoritmo.
+ Existem diversas formas para determinar o número ``ideal'' de clusters, uma delas é o \textbf{método de elbow}.
+ 
+ Neste método, executa-se o \emph{k-means} para um range pré-definido de valores em $k$. 
+ Depois disso, calcula-se a soma das distâncias quadráticas (também chamada de \textbf{inércia}) de cada ponto para o seu respectivo ponto central.
+ 0 resultado para cada $k$ é plotado em um gráfico de linha (conforme mostra a figura~\ref{fig:elbow}).
+ Seleciona-se o número de clusters que corresponde ao ``cotovelo'' (elbow) do gráfico.
+ 
+\begin{figure}[H]
+   \centering
+   \includegraphics[scale=0.40]{figs/elbowex.png}
+    \caption{Método de elbow}
+    \label{fig:elbow}
+\end{figure}
  
  
 
