@@ -211,20 +211,58 @@ Nas seções anteriores, o comprimento médio de um código  foi definido em fun
 Da mesma forma, as noções de \textbf{entropia} relacionada a um conjunto de mensagens, têm ligação direta com as probabilidades associadas a estas. 
 A seguir, será mostrado como podemos relacionar o comprimento médio de um código a sua entropia através da \textbf{Desigualdade de Kraft-McMillan} , e por consequência estabelecer uma relação direta entre \textbf{a entropia de um conjunto de mensagens e a otimalidade do código associada a estas mensagens}.
 
-\begin{lemma}[Desigualdade de Kraft-McMillan] 
-\textbf{Kraft.}. Para qualquer conjunto \emph{L} de comprimento códigos que satisfaça:
-\begin{align*}
-\sum_{l \in L}^{} 2^{-l} \leq 1.
-\end{align*}
-Existe ao menos um código livre de prefixo tal que, $|w_i|$ = $l_i$ ~,~$\forall w \in W^+$.
+\begin{theorem}[Desigualdade de Kraft-McMillan]
+  \label{thm:kraftmc}
+  Sejam $M$ e $W$ conjuntos finitos tais que $|W|\leq 2$. Seja $b :=
+  |W|$. Para todo código unicamente decodificável $C: M \to W^+$, vale
+  que
+  \begin{equation}
+    \label{eq:cond_kraft_nec}
+    \sum_{m\in M} b^{-l(C(m))} \leq 1.
+  \end{equation}
+  Além disso, para toda função $f: M\to\mathbb{N}$ tal que
+  que satisfaça
+  \begin{equation}
+    \label{eq:cond_kraft_suf}
+    \sum_{m \in M} b^{-f(m)} \leq 1,
+  \end{equation}
+  existe um código livre de prefixo (e, portanto, unicamente
+  decodificável) tal que $l(C(m)) = f(m)$ para todo $m\in M$.
+\end{theorem}
 
-\textbf{Kraft-McMillan.} Para todo código binário unicamente decodificável \textbf{\emph{C} : $\emph{M} \rightarrow \emph{W}^+$} .
-\begin{equation*}
-\sum_{w \in W^+}^{}2^{-l(w)} \leq 1.
+Antes de apresentar a demonstração do teorema~\ref{thm:kraftmc}, vamos
+explorar as suas consequências para comprimentos de códigos
+ótimos. Uma de suas consequências principais é que o valor da solução
+ótima para o problema de otimização~\ref{eq:prog_code_len}
+\begin{equation*} 
+  \begin{array}{rl}
+    \min & l_a(C) = \sum_{m\in M} p(m) l(C(m))\\
+    \text{sujeito a} &C: M \to W^+ \text{ é um código unicamente decodificável}
+  \end{array}
 \end{equation*}
+é igual ao valor ótimo do seguinte problema de otimização
+\begin{equation*} 
+  \begin{array}{rl}
+    \min & \sum_{m\in M} p(m) f(m)\\
+    \text{sujeito a} &\sum_{m \in M} b^{-f(m)} \leq 1\\
+    & f:M\to\mathbb{N}
+  \end{array}
+\end{equation*}
+Além disso, se $f^*$ é uma solução ótima para o problema acima, então
+existe um código $C^*: M \to W^+$ livre de prefixo para o qual $f^*$
+determina os comprimentos de suas palavras-código. Portanto, podemos
+concluir que dentro os códigos unicamente decodificáveis de
+comprimento médio ótimo sempre existe um que é livre de prefixo.
+ 
+Vamos ver, em capítulos posteriores, que o algoritmo de Huffman produz
+um código livre de prefixo que é ótimo dentre os códigos livres de
+prefixo. A discussão acima mostra que tal código também é ótimo dentre
+todos os códigos unicamente decodificáveis.
 
+A seguir apresentamos a demonstração da Desigualdade de
+Kraft-McMillan.
 
-\begin{proof}
+\begin{proof}[Prova do Teorema~\ref{thm:kraftmc}]
 
 \item \textbf{Desigualdade de Kraft}
 Sem perda de generalidade, suponha que os elementos de \emph{L} estão ordenados de maneira em que:
@@ -290,7 +328,7 @@ Note que a desigualdade é valida para qualquer $k > 0$ inteiro. Aproximando \em
 \end{equation*}
 
 \end{proof}
-\end{lemma}
+
 
 \begin{lemma}[Entropia como limite inferior para o comprimento médio] Dado um conjunto de mensagens \emph{M} associado a uma distribuição de probabilidades \emph{p} e um código unicamente decodificável \emph{C}.
 \begin{equation*}
