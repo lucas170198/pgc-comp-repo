@@ -403,28 +403,31 @@ como queríamos demonstrar.
 \end{proof}
 
 
-\begin{proof}[Prova do Lema~\ref{lem:entropia_sup}]
-Sem perda de generalidade, para cada mensagem $m \in M$ faça \emph{l(m)} = $\left \lceil{\log_2 \frac{1}{p(m)} }\right \rceil $. Temos que:
-\begin{align*}
-\sum_{m \in M}^{} 2^{-l(m)} &= \sum_{m \in M}^{} 2^{-\left \lceil{\log_2 \frac{1}{p(m)} }\right \rceil} \\
-&\leq \sum_{m \in M}^{} 2^{-{\log_2 \frac{1}{p(m)} }} \\
-&= \sum_{m \in M}^{} p(m) \\
-&= 1
-\end{align*}
+  \begin{proof}[Prova do Lema~\ref{lem:entropia_sup}]
+    Seja $(M,p)$ um espaço de probabilidade finit. Podemos assumir que
+    $p(m)>0$ para todo $M$, pois elementos de $M$ com probabilidade
+    zero podem ser ignorados.
 
-De acordo com a desigualdade de Kraft-McMillan existe um código livre de prefixo \emph{C'}  com palavras-código de tamanho \emph{l(m)}, portanto:
+    Seja $f:M\to\mathbb{N}$ definida como $f(m) = \left \lceil{\log_b
+      \frac{1}{p(m)} }\right \rceil$ para todo $m\in M$. Temos que
 \begin{align*}
-l_a(C') &=  \sum_{m \in M', w \in W'^+}^{}p(m) l(w) \\
-&=  \sum_{m \in M', w \in W'^+}^{}p(m) \left \lceil{\log_2 \frac{1}{p(m)} }\right \rceil \\
-&\leq \sum_{m \in M', w \in W'^+}^{}p(m) (1 + \log_2 \frac{1}{p(m)}) \\
-&= 1 +  \sum_{m \in M', w \in W'^+}^{}p(m) \log_2 \frac{1}{p(m)} \\
-&= 1 + H(M)
+  \sum_{m \in M}^{} b^{-f(m)} &=
+  \sum_{m \in M}^{} b^{-\left \lceil{\log_b \frac{1}{p(m)} }\right \rceil} \\
+  &\leq \sum_{m \in M}^{} b^{-{\log_b \frac{1}{p(m)} }} \\
+  &= \sum_{m \in M}^{} p(m) \\
+  &= 1
 \end{align*}
-
-Pela definição de código livre de prefixo ótimo, $l_a(C) \leq l_a(C')$, isto é:
-\begin{equation*}
-l_a(C) \leq H(M, p) + 1 
-\end{equation*}
+Ou seja, $f$ satisfaz a condição~\eqref{eq:cond_kraft_suf}. De acordo
+com a desigualdade de Kraft-McMillan existe um código livre de prefixo
+$C$ com palavras-código de tamanho dado por $f$, portanto
+\begin{align*}
+  l_a(C) &=
+  \sum_{m \in M} p(m) f(m) \\
+  &=  \sum_{m \in M} p(m) \left \lceil{\log_2 \frac{1}{p(m)} }\right \rceil \\
+&\leq \sum_{m \in M}^{}p(m) \left(1 + \log_2 \frac{1}{p(m)}\right) \\
+&= 1 +  \sum_{m \in M}^{}p(m) \log_2 \frac{1}{p(m)} \\
+&= 1 + H(M,p,b).
+\end{align*}
 \end{proof}
 
 
