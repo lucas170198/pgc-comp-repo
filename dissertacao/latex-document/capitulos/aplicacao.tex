@@ -1,1 +1,52 @@
-TODO
+\chapter{Clusterização como pré-processamento na compressão de textos}
+Em uma sociedade cada vez informatizada, a quantidade de dados textuais produzidas é cada vez maior e consequentemente a demanda para o armazenamento de grandes volumes de dados cresce.
+Apesar dos avanços de hardware para armazenamento que tivemos nas últimas décadas (hardwares cada vez menores com maior capacidade de armazenamento),
+a \emph{compressão de dados} ainda se mostra uma arma poderosa para aumentar a capacidade de armazenamento de informação com menor custo.
+
+Nos capítulos anteriores, construímos a estrutura teórica necessária para compreender a \emph{compressão de texto} e sua relação com a \emph{teoria da informação}.
+Fica claro que os algoritmos apresentados, tomam vantagem de alguma redundância presente na mensagem para representar a informação de maneira mais eficiente.
+Isto é, a \textbf{eficiência} destes algoritmos está intimamente ligada com a \textbf{entropia} do texto a ser comprimido,
+ nos dando um indício de que \textbf{minimizar} a entropia, pode ser uma forma de \textbf{maximizar} a \textbf{taxa de compressão}.
+ 
+O capítulo~\ref{cap:clus} apresenta uma técnica para organizar o texto em \emph{grupos de mensagens similares} (\textbf{clusterização}), o que significa diminuir a variação de termos dentro de cada cluster (ou reduzir a sua \textbf{entropia}).
+Neste capítulo, exploraremos de maneira empírica a relação entre a entropia associada a um texto e a taxa de compressão dos algoritmos apresentados no capítulo~\ref{cap:comp}.
+
+A implementação descrita a seguir utiliza a \textbf{clusterização} como pré-processamento de uma base de dados textual, visando uma melhora na performance dos algoritmos de compressão \emph{sem perda}.
+Foram realizados experimentos utilizando ou não o pré-processamento, afim de medir o impacto do processo nos diversos tipos de algoritmos testados (que serão listados em seções posteriores) comprando as diferentes perfomances obtidas.
+
+\pagebreak
+
+\section{Base de dados analisada}
+tecnologia utilizada
+descrever a base de dados utilizada, e o porque.
+Descrever as características gerais e grupos iniciais;
+pre tratamento das informações;
+
+\section{Compressão de textos}
+Tecnologias / linguagem utilizada
+Detalhes da implementacao, diagrama de classes etc
+Incluir código
+
+\section{Partição de dados}
+\subsection{Partição aleatória}
+explicar o racional por traz da particao de dados
+\subsection{Clusterizacao}
+Tecnologia e implementação
+Mostrar parametros
+mostrar gráficos
+
+\section{Resultados}
+\subsection{Metodologia}
+Explicar sobre a extassao de medidas de comparacao
+
+\subsection{Resultados pré clusterizacao}
+
+\subsection{Resultados pós clusterizacao}
+
+\section{Conclusao}
+
+\section{Trabalhos relacionados e melhorias}
+
+
+
+

@@ -12,7 +12,7 @@
 \contentsline {subsection}{\numberline {1.2.2}Comprimento médio do código}{7}{subsection.1.2.2}%
 \contentsline {subsection}{\numberline {1.2.3}Entropia}{8}{subsection.1.2.3}%
 \contentsline {subsection}{\numberline {1.2.4}Comprimento de Código e Entropia}{8}{subsection.1.2.4}%
-\contentsline {part}{\partnumberline {II}\MakeTextUppercase {Algoritmos de compressão e pre-processamento}}{13}{part.2}%
+\contentsline {part}{\partnumberline {II}\MakeTextUppercase {Algoritmos de compressão e clusterização}}{13}{part.2}%
 \setlength {\cftchapterindent }{0em} \setlength {\cftchapternumwidth }{\cftlastnumwidth }
 \contentsline {chapter}{\chapternumberline {2}\MakeTextUppercase {Algoritmos de compressão sem perda}}{15}{chapter.2}%
 \contentsline {section}{\numberline {2.1}Código de Huffman}{16}{section.2.1}%
@@ -34,7 +34,20 @@
 \contentsline {subsection}{\numberline {3.2.1}PCA}{25}{subsection.3.2.1}%
 \contentsline {section}{\numberline {3.3}Clusterização K-means}{25}{section.3.3}%
 \contentsline {subsection}{\numberline {3.3.1}Método de elbow}{26}{subsection.3.3.1}%
-\contentsline {part}{\partnumberline {III}\MakeTextUppercase {Aplicação: Melhoria na compressão de dados textuais em larga escala através da Clusterização}}{27}{part.3}%
+\contentsline {part}{\partnumberline {III}\MakeTextUppercase {Aplicação: Melhoria na compressão de dados textuais através da Clusterização}}{27}{part.3}%
+\setlength {\cftchapterindent }{0em} \setlength {\cftchapternumwidth }{\cftlastnumwidth }
+\contentsline {chapter}{\chapternumberline {4}\MakeTextUppercase {Clusterização como pré-processamento na compressão de textos}}{29}{chapter.4}%
+\contentsline {section}{\numberline {4.1}Base de dados analisada}{30}{section.4.1}%
+\contentsline {section}{\numberline {4.2}Compressão de textos}{30}{section.4.2}%
+\contentsline {section}{\numberline {4.3}Partição de dados}{30}{section.4.3}%
+\contentsline {subsection}{\numberline {4.3.1}Partição aleatória}{30}{subsection.4.3.1}%
+\contentsline {subsection}{\numberline {4.3.2}Clusterizacao}{30}{subsection.4.3.2}%
+\contentsline {section}{\numberline {4.4}Resultados}{30}{section.4.4}%
+\contentsline {subsection}{\numberline {4.4.1}Metodologia}{30}{subsection.4.4.1}%
+\contentsline {subsection}{\numberline {4.4.2}Resultados pré clusterizacao}{30}{subsection.4.4.2}%
+\contentsline {subsection}{\numberline {4.4.3}Resultados pós clusterizacao}{30}{subsection.4.4.3}%
+\contentsline {section}{\numberline {4.5}Conclusao}{30}{section.4.5}%
+\contentsline {section}{\numberline {4.6}Trabalhos relacionados e melhorias}{30}{section.4.6}%
 \vspace {\cftbeforechapterskip }
 \setlength {\cftchapterindent }{\cftlastnumwidth } \setlength {\cftchapternumwidth }{2em}
 \contentsline {chapter}{\MakeTextUppercase {Refer\^encias}}{31}{section*.20}%
