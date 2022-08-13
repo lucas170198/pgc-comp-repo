@@ -345,7 +345,7 @@ b$.
 \end{lemma}
 
 Po outro lado, veremos também que um código de comprimento médio ótimo
-tem valor no máximo a entropia+1.
+tem valor no máximo a entropia somada com $1$.
 
 \begin{lemma}[Entropia como limite superior]
   \label{lem:entropia_sup}
@@ -359,28 +359,46 @@ tem valor no máximo a entropia+1.
   A seguir apresentamos as demonstrações dos lemas acima.
   
   \begin{proof}[Prova do Lema~\ref{lem:entropia_inf}]
-Queremos provar que $H(M, p) - l_a(C) \leq 0$, dado que  $H(M, p) \leq l_a(C) \Leftrightarrow H(M, p) - l_a(C) \leq 0$.
+    Seja $C:M\to W^+$ um código unicamente decodificável e seja $b :=
+    |W|$. Seja $p$ uma função de probabilidade para $M$. Queremos
+    provar que $H(M, p,b) - l_a(C) \leq 0$.
 
-Substituindo a equação~\ref{eq:entropy} em \emph{H(M, p)} e~\ref{eq:code_len} em \emph{$l_a(C)$}, temos:
+    Substituindo $H(M,p, b)$ e $l_a(C)$ por suas definições
+    (equação~\eqref{eq:entropy} e equação~\eqref{eq:code_len}, resp),
+    temos
+    \begin{align*}
+      H(M, p, b) - l_a(C)
+      &=
+      \sum_{m \in M} p(m) \log_b \frac{1}{p(m)}
+      - \sum_{m \in M}^{}p(m) l((C(m))) \\
+      &=
+      \sum_{m \in M} p(m) \left(
+      \log_b \frac{1}{p(m)} - l(C(m))
+      \right) \\
+      &=
+      \sum_{m \in M} p(m) \left(
+      \log_b \frac{1}{p(m)} - \log_b b^{l((C(m)))}
+      \right) \\
+      &= \sum_{m \in M}^{}p(m) \log_b \left(\frac{b^{-l(C(m))}}{p(m)}\right)
+    \end{align*}
 
-\begin{align*}
-H(M, p) - l_a(C) &= \sum_{m \in M}^{}p(s) \log_2 \frac{1}{p(m)}  - \sum_{m \in M, w \in W^+}^{}p(m) l(w) \\
-&= \sum_{m \in M, w \in W^+}^{}p(m) \left(  \log_2 \frac{1}{p(m)} - l(w) \right) \\
-&= \sum_{m \in M, w \in W^+}^{}p(m) \left(  \log_2 \frac{1}{p(m)} - \log_2 2^{l(w)} \right) \\
-&= \sum_{m \in M, w \in W^+}^{}p(m) \log_2 \frac{2^{-l(w)}}{p(m)}
-\end{align*}
-
-A \textbf{Desigualdade de Jansen} afirma que se uma função \emph{f(x)} é côncava, então $\sum_{i}{}p_i~f(x_i) \leq f(\sum_{i}{}p_i~x_i)$. Como a função $\log_2$ é côncava, podemos aplicar a Desigualdade de Jansen ao resultado obtido anteriormente.
-
+    Pela desigualdade de Jensen, se uma função $f:M\to\mathbb{R}$ é
+    côncava, então $\sum_{m\in M} p(m) f(x_m) \leq f(\sum_{m\in M}
+    p(m)~x_m)$ para quaisquer $x_m$ positivos. Como a função $\log_b$
+    é côncava, podemos aplicar a desigualdade de Jansen ao resultado
+    obtido anteriormente para deduzir que
 \begin{equation*}
-\sum_{m \in M, w \in W^+}^{}p(m) \log_2 \frac{2^{-l(w)}}{p(m)}  \leq \log_2(\sum_{m \in M, w \in W^+}{}2^{-l(w)})
+  \sum_{m \in M}^{}p(m) \log_b  \left(\frac{b^{-l(C(m))}}{p(m)}\right)
+  \leq
+  \log_b\left(\sum_{m \in M} b^{-l(C(m))}\right)
 \end{equation*}
-
-Agora aplicamos a desigualdade de Kraft-McMillan, e concluímos que:
-
+Agora, aplicamos a desigualdade de Kraft-McMillan, e concluímos que
 \begin{equation*}
-H(M, p) - l_a(C) \leq \log_2(\sum_{m \in M, w \in W^+}{}2^{-l(w)}) \Rightarrow H(M, p) - l_a(C) \leq 0.
+  H(M, p, b) - l_a(C)
+  \leq
+  \log_b 1 = 0,
 \end{equation*}
+como queríamos demonstrar.
 \end{proof}
 
 
