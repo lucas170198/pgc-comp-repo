@@ -329,13 +329,36 @@ Note que a desigualdade é valida para qualquer $k > 0$ inteiro. Aproximando \em
 
 \end{proof}
 
+A seguir vamos ver a relação de entropia com comprimento médio
+ótimo. Primeiramente, veremos que a entropia é um limitante inferior
+para o comprimento médio de códigos unicamente decodificáveis.
 
-\begin{lemma}[Entropia como limite inferior para o comprimento médio] Dado um conjunto de mensagens \emph{M} associado a uma distribuição de probabilidades \emph{p} e um código unicamente decodificável \emph{C}.
+\begin{lemma}[Entropia como limite inferior]
+  \label{lem:entropia_inf}
+  Dados um conjunto finito $M$ e uma função de probabilidade $p$ para
+  $M$, vale que
 \begin{equation*}
-H(M, p) \leq l_a(C)
+  H(M, p, b) \leq l_a(C),
 \end{equation*}
+para todo código unicamente decodificável $C:M\to W^+$ tal que $|W| =
+b$.
+\end{lemma}
 
-\begin{proof}
+Po outro lado, veremos também que um código de comprimento médio ótimo
+tem valor no máximo a entropia+1.
+
+\begin{lemma}[Entropia como limite superior]
+  \label{lem:entropia_sup}
+  Dados um conjunto finito $M$ e uma função de probabilidade $p$ para
+  $M$, existe um código $C:M\to W^+$ livre de prefixo tal que
+  \begin{equation*}
+    l_a(C) \leq H(M, p, b) + 1
+  \end{equation*}
+  onde $b = |W|$.
+
+  A seguir apresentamos as demonstrações dos lemas acima.
+  
+  \begin{proof}[Prova do Lema~\ref{lem:entropia_inf}]
 Queremos provar que $H(M, p) - l_a(C) \leq 0$, dado que  $H(M, p) \leq l_a(C) \Leftrightarrow H(M, p) - l_a(C) \leq 0$.
 
 Substituindo a equação~\ref{eq:entropy} em \emph{H(M, p)} e~\ref{eq:code_len} em \emph{$l_a(C)$}, temos:
@@ -358,18 +381,10 @@ Agora aplicamos a desigualdade de Kraft-McMillan, e concluímos que:
 \begin{equation*}
 H(M, p) - l_a(C) \leq \log_2(\sum_{m \in M, w \in W^+}{}2^{-l(w)}) \Rightarrow H(M, p) - l_a(C) \leq 0.
 \end{equation*}
-
-
 \end{proof}
 
-\end{lemma}
 
-\begin{lemma}[Entropia como limite superior para o comprimento médio de um código livre de prefixo ótimo] Dado um conjunto de mensagens \emph{M} associado a uma distribuição de probabilidades \emph{p} e um código livre de prefixo ótimo \emph{C}.
-\begin{equation*}
-l_a(C) \leq H(M, p) + 1
-\end{equation*}
-
-\begin{proof}
+\begin{proof}[Prova do Lema~\ref{lem:entropia_sup}]
 Sem perda de generalidade, para cada mensagem $m \in M$ faça \emph{l(m)} = $\left \lceil{\log_2 \frac{1}{p(m)} }\right \rceil $. Temos que:
 \begin{align*}
 \sum_{m \in M}^{} 2^{-l(m)} &= \sum_{m \in M}^{} 2^{-\left \lceil{\log_2 \frac{1}{p(m)} }\right \rceil} \\
