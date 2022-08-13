@@ -263,8 +263,42 @@ A seguir apresentamos a demonstração da Desigualdade de
 Kraft-McMillan.
 
 \begin{proof}[Prova do Teorema~\ref{thm:kraftmc}]
+    Primeiramente, mostraremos a equação~\eqref{eq:cond_kraft_nec}.
+    
+    Seja $C:M\to W^+$ um código unicamente decodificável. Seja $b :=
+    |M|$. Seja $l_{\max} = \max_{m\in M} l(C(m))$. Seja $k$ um inteiro
+    positivo. Seja
+    \begin{equation*}
+      W_k := \left\{ C^+(m_1\dotsm m_k):
+      m_1,..., m_k \in M\right\}
+    \end{equation*}
+    e seja
+    \begin{equation*}
+      W_{k,j} := \left\{
+      w \in W_k: l(w) = j
+      \right\},
+    \end{equation*}
+    para $j\in \mathbb{N}$. Temos que
+    \begin{align*}
+      \left(\sum_{m\in M} b^{-l(C(m))}\right)^k
+      &= \prod_{i=1}^k \sum_{m_i \in M} b^{-l(C(m_i))} \\
+      &= \sum_{m_1,..., m_k \in M} b^{-\sum_{i=1}^{k} l(C(m_i))} \\
+      &= \sum_{w\in W_k} b^{-l(w)}\\
+      &= \sum_{j=1}^{k \cdot l_{\max}} |W_{k,j}| \cdot b^{-j}\\
+      &\leq \sum_{j=1}^{k \cdot l_{\max}} b^j \cdot b^{-j},
+      \quad\text{ pois }|W_{k,j}|\leq b^j\\
+      & = k \cdot l_{\max}
+    \end{align*}
+Logo,
+\begin{equation*}
+\sum_{m\in M} b^{-l(C(m))} \leq (k \cdot l_{max})^ \frac{1}{k},
+\end{equation*}
+para todo $k$ inteiro positivo. Como $\lim_{k\to\infty} (k \cdot l_{max})^ \frac{1}{k} = 1$, temos que
+\begin{equation*}
+\sum_{m\in M} b^{-l(C(m))} \leq 1.
+\end{equation*}
 
-\item \textbf{Desigualdade de Kraft}
+\textbf{Desigualdade de Kraft}
 Sem perda de generalidade, suponha que os elementos de \emph{L} estão ordenados de maneira em que:
 \begin{align*}
 l_1 \leq l_2 \leq ... \leq l_n
@@ -297,35 +331,6 @@ Substituindo \emph{n} em \emph{j}, chegamos a desigualdade de Kraft.
 \end{equation*}
 
 Note que os argumentos utilizados para a construção da prova possuem dupla-equivalência, portando concluem a prova nos dois sentidos.
-
-\item \textbf{Kraft-McMillan}
-Suponha um código \textbf{unicamente decodificável} \emph{C} qualquer, e faça $l_{max}$ = $\max_{w}l(w)$.
-
-Agora considere uma sequência de \emph{k} palavras-código de \textbf{\emph{C} : $\emph{M} \rightarrow \emph{W}^+$} (onde \emph{k} é um inteiro positivo). Observe que:
-
-\begin{align*}
-(\sum_{w \in W^+}^{}2^{-l(w)})^k &= (\sum_{w_1}^{}2^{-l(w_1)}) \cdot (\sum_{w_2}^{}2^{-l(w_2)}) \cdot ... \cdot (\sum_{w_k}^{}2^{-l(w_k)}) \\
-&= \sum_{w_1}^{} \sum_{w_2}^{} ... \sum_{w_k}^{} \prod_{j = 1}^{k} 2^{-l(w_j)} \\
-&= \sum_{w_1,..., w_k}^{} 2^{- \sum_{j=1}^{k} l(w_j)} \\
-&= \sum_{w_k}^{} 2^{-l(w^k)} \\
-&= \sum_{j=1}^{k \cdot l_{max}} |\{w_k | l(w_k) = j\}| \cdot 2^{-j}.
-\end{align*}
-
-Sabemos que existem $2^{j}$ palavras-código de tamanho \emph{j}, isto é, $|\{w_k | l(w_k) = j\}| = 2^j$. Para que o código seja unicamente decodificável obtemos o seguinte limite superior:
-\begin{equation*}
-(\sum_{w \in W^+}^{}2^{-l(w)})^k \leq \sum_{j=1}^{k \cdot l_{max}} 2^j \cdot 2^{-j} = k \cdot l_{max}
-\end{equation*}
-
-Logo,
-\begin{equation*}
-\sum_{w \in W^+}^{}2^{-l(w)} \leq (k \cdot l_{max})^ \frac{1}{k}
-\end{equation*}
-
-Note que a desigualdade é valida para qualquer $k > 0$ inteiro. Aproximando \emph{k} ao infinito, obtemos a desigualdade de Kraft-McMillan.
-
-\begin{equation*}
-\sum_{w \in W^+}^{}2^{-l(w)} \leq \lim_{k\to\infty} (k \cdot l_{max})^ \frac{1}{k} = 1.
-\end{equation*}
 
 \end{proof}
 
