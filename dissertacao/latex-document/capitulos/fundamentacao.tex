@@ -298,40 +298,48 @@ para todo $k$ inteiro positivo. Como $\lim_{k\to\infty} (k \cdot l_{max})^ \frac
 \sum_{m\in M} b^{-l(C(m))} \leq 1.
 \end{equation*}
 
-\textbf{Desigualdade de Kraft}
-Sem perda de generalidade, suponha que os elementos de \emph{L} estão ordenados de maneira em que:
+Agora vamos provar que a condição~\eqref{eq:cond_kraft_suf} é
+suficiente para a existência de um código livre de prefixo com
+comprimentos dados por~$f$. Seja $f: M\to\mathbb{N}$
+satisfazendo~\eqref{eq:cond_kraft_suf}. Seja $(m_1,\dotsc, m_n)$ tal
+que $M = \{m_1,\dotsc, m_n\}$ e $f(m_1) \leq \dotsm \leq f(m_n)$. Seja
+$l_i := f(m_i)$ para todo $i\in\{1,\dotsc,n\}$.
+
+Agora vamos construir um código livre de prefixo $C$ em uma ordem
+crescente de tamanho, de maneira em que $l(m_i) = l_i$. Seja $l_{\max}$
+o maior valor de $l_i$.
+
+\begin{itemize}
+  \item Para $j$ de $1$ a $l_{\max}$, defina $W_j$ como todas as
+    palavras em $W^+$ de comprimento~$j$ e defina $P_j :=
+    \varnothing$.
+  \item Para $i$ de 1 a $n$, faça
+    \begin{itemize}
+    \item seja $C(m_i)$ qualquer palavra em $W_{l_i}\setminus P_{l_i}$,
+    \item adicione $C(m_i)$ a $P_{l_i}$ e adicione todas as palavras que
+      têm $C(m_i)$ como prefixo a cada $P_{l_j}$ com $j>i$.
+    \end{itemize}
+\end{itemize}
+
+O procedimento acima produz um código livre de prefixo $C$ desde que
+$P_{l_i}$ não seja o conjunto $W_{l_i}$ inteiro para cada
+$i\in\{1,\dotsc,n\}$. Ou seja, podemos pensar em $P_{l_i}$ como um
+conjunto de palavras proibidas para $m_i$. Seja $b = |W|$. Note que
+inicialmente $W_{l_i}$ tem tamanho $b^{l_i}$ e $P_{l_i}$ é vazio, pois
+nenhuma palavra é proibida.  Para cada $k<i$, ao atribuir um código de
+$W_{l_{k}}$ para $m_k$, adicionamos $b^{l_i - l_k}$ palavras a
+$P_{l_i}$.
+
+Suponha para uma contradição que o procedimento falha em atribuir uma
+palavra-código para $m_i$. Então
+\begin{equation*}
+b^{l_i} = |P_{l_i}| = \sum_{k=1}^{i-1} b^{l_i - l_k}.
+\end{equation*}
+Portanto, dividindo os dois lados por $b^{l_i}$, obtemos
 \begin{align*}
-l_1 \leq l_2 \leq ... \leq l_n
+  1 = \sum_{k=1}^{i-1} b^{- l_k} <  \sum_{k=1}^{n} b^{- l_k} = \sum_{m\in M} b^{-f(m)}
 \end{align*}
-Agora vamos construir um código livre de prefixo em uma ordem crescente de tamanho, de maneira em que $l(w_i) = l_i$. Sabemos que um código é livre de prefixo se e somente se ,existe uma palavra-código $w_j$  tal que nenhuma das palavras-código anteriores $(w_1, w_2, w_{j-1})$ são prefixo de $w_j$.
-
-Sem as restrições de prefixo, uma palavra-código de tamanho $l_j$ poderia ser construída de $2^{l_j}$ maneiras diferentes. Com a restrição apresentada anteriormente, considerando uma palavra $w_k$ anterior a $w_j$ (i.e, $k < j$), existem $2^{l_j - l_k}$ possíveis palavras-código em que $w_k$ seria um prefixo, e que portanto não podem pertencer ao código. Chamaremos tal conjunto de "palavras-código proibidas". Vale notar que os elementos do conjunto de palavras-código proibidas são excludentes entre si, pois se duas palavras-código menores que \emph{j} fossem prefixo da mesma palavra-código, elas seriam prefixos entre si. 
-
-Dito isto, podemos definir o tamanho do conjunto de palavras-código proibida para $w_j$.
-\begin{equation*}
-\sum_{i=1}^{j-1} 2^{l_j - l_i}
-\end{equation*}
-
-A construção do código livre de prefixo é possível se e somente se, existir ao menos uma palavra-código de tamanho $j > 1$ que não está contida no conjunto das palavras-código proibidas.
-\begin{equation*}
-2^{l_j} > \sum_{i=1}^{j-1} 2^{l_j - l_i}
-\end{equation*}
-
-Como o domínio do problema apresentado está restrito aos inteiros não negativos, podemos afirmar que:
-\begin{align*}
-2^{l_j} > \sum_{i=1}^{j-1} 2^{l_j - l_i} &= 2^{l_j} \geq \sum_{i=1}^{j-1} 2^{l_j - l_i} + 1 \\
-&= 2^{l_j} \geq \sum_{i=1}^{j} 2^{l_j - l_i} \\
-&= 1 \geq \sum_{i=1}^{j} 2^{-l_i} \\
-&=  \sum_{i=1}^{j} 2^{-l_i} \leq 1
-\end{align*}
-
-Substituindo \emph{n} em \emph{j}, chegamos a desigualdade de Kraft.
-\begin{equation*}
-\sum_{l \in L}^{} 2^{-l} \leq 1.
-\end{equation*}
-
-Note que os argumentos utilizados para a construção da prova possuem dupla-equivalência, portando concluem a prova nos dois sentidos.
-
+o que contradiz o fato que a condição~\eqref{eq:cond_kraft_suf} é satisfeita.
 \end{proof}
 
 A seguir vamos ver a relação de entropia com comprimento médio
