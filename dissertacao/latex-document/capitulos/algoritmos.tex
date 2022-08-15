@@ -3,10 +3,10 @@
 % ---
 
 Os algoritmos de compressão podem ser categorizadas em duas diferentes classes: os de compressão \textbf{com perda} e \textbf{sem perda}. 
-Os \textbf{algoritmos de compressão com perda} admitem uma baixa porcentagem de perda de informações durante a codificação para obter maior performance, muito uteis na transmissão de dados em streaming por exemplo. 
+Os \textbf{algoritmos de compressão com perda} admitem uma baixa porcentagem de perda de informações durante a codificação para obter maior performance, muito úteis na transmissão de dados em streaming por exemplo. 
 Nos \textbf{algoritmos de compressão sem perda} o processo de codificação deve ser capaz de recuperar os dados em sua totalidade, geralmente utilizados em casos onde não pode haver perda de informações (como por exemplo, compressão de arquivos de texto).
 
-Neste capítulo serão apresentados dois dos principais algoritmos de compressão sem perda (\textbf{Código de Huffman} e \textbf{Lempel-Ziv 77}), bem como algumas variações uteis para o propósito do presente trabalho.
+Neste capítulo serão apresentados dois dos principais algoritmos de compressão sem perda (\textbf{Código de Huffman} e \textbf{Lempel-Ziv 77}), bem como algumas variações úteis para o propósito do presente trabalho.
 
 \pagebreak
 
@@ -14,8 +14,10 @@ Neste capítulo serão apresentados dois dos principais algoritmos de compressã
 O \textbf{algoritmo de Huffman} (desenvolvido por David Huffman em 1952) é um dos componentes mais utilizados em algoritmos de compressão sem perda, servindo como base para algoritmos como o Deflate (utilizado amplamente na web).
 Os códigos gerados a partir do algoritmos de Huffman são chamados \textbf{Códigos de Huffman}.
 
-O código de Huffman é descrito em termos de como ele gera uma árvore de código livre de prefixo. 
-Considere o conjunto de símbolos $M$, com $p_i$ sendo a probabilidade associada a $m_i$
+O código de Huffman é descrito em termos de como ele gera uma árvore
+de código livre de prefixo.  Considere o conjunto de símbolos $M$ e,
+para cada símbolo $m_i\in M$, seja $p_i$ a probabilidade associada a
+$m_i$.
 
 \begin{algorithm}[H]
 \caption{Algoritmo de Huffman} \label{alg:huff}
@@ -26,7 +28,7 @@ Considere o conjunto de símbolos $M$, com $p_i$ sendo a probabilidade associada
 		\State $node \gets newNode()$
 		\State $node.weight \gets p_i$ \Comment{$w_i = p_i$}
 		\State $T.root \gets node$
-		\State $Forest.append(T)$ \Comment{Adiciona um nova arvore na floresta}
+		\State $Forest.append(T)$ \Comment{Adiciona um nova árvore na floresta}
 	\EndFor \\
 	
 	\While{$Forest.size > 1$}
@@ -43,9 +45,8 @@ Considere o conjunto de símbolos $M$, com $p_i$ sendo a probabilidade associada
 \end{algorithm}
 
 \subsection{Análise assintótica}
-Seja $n$ o tamanho do conjunto de símbolos $M$. 
-Para que o algoritmo percorra toda a floresta, formada por uma árvore para cada $m \in M$, serão necessárias $n$ interações (onde $n$ é o tamanho do conjto $M$).
-Considerando que as funções \emph{ExtractMin()} e \emph{.append()} foram construídas a partir de uma fila de prioridades de \textbf{heap}, o algoritmo será executado em  $O(n \log_2 n)$.
+
+Seja $n$ o tamanho do conjunto de símbolos $M$. Para que o algoritmo percorra toda a floresta, formada por uma árvore para cada $m \in M$, serão necessárias $n$ iterações. Considerando que as funções \emph{ExtractMin()} e \emph{.append()} foram construídas a partir de uma fila de prioridades de \textbf{heap} e essas operações podem ser realizadas em tempo $O(\log_2 n)$, o algoritmo será executado em tempo $O(n\log_2 n)$.
 
 \subsection{Corretude}
 O teorema a seguir (escrito por Huffman TODO REF ARTIGO) mostra  que os códigos de Huffman são ótimos e livres de prefixo.
