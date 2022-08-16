@@ -15,9 +15,11 @@ O \textbf{algoritmo de Huffman} (desenvolvido por David Huffman em 1952) é um d
 Os códigos gerados a partir do algoritmos de Huffman são chamados \textbf{Códigos de Huffman}.
 
 O código de Huffman é descrito em termos de como ele gera uma árvore
-de código livre de prefixo.  Considere o conjunto de símbolos $M$ e,
-para cada símbolo $m_i\in M$, seja $p_i$ a probabilidade associada a
-$m_i$.
+de código livre de prefixo com alfabeto código $W = \{0,1\}$. A árvore
+é binária e assumimos rótulo $0$ nas arestas de um nó para um filho da
+esquerda e rótulo $1$ nas arestas de um nó para um filho da direita.
+Considere o conjunto de símbolos $M$ e, para cada símbolo $m_i\in M$,
+seja $p_i$ a probabilidade associada a $m_i$.
 
 \begin{algorithm}[H]
 \caption{Algoritmo de Huffman} \label{alg:huff}
@@ -49,50 +51,101 @@ $m_i$.
 Seja $n$ o tamanho do conjunto de símbolos $M$. Para que o algoritmo percorra toda a floresta, formada por uma árvore para cada $m \in M$, serão necessárias $n$ iterações. Considerando que as funções \emph{ExtractMin()} e \emph{.append()} foram construídas a partir de uma fila de prioridades de \textbf{heap} e essas operações podem ser realizadas em tempo $O(\log_2 n)$, o algoritmo será executado em tempo $O(n\log_2 n)$.
 
 \subsection{Corretude}
-O teorema a seguir (escrito por Huffman TODO REF ARTIGO) mostra  que os códigos de Huffman são ótimos e livres de prefixo.
+O teorema a seguir (escrito por Huffman~\ref{TODO REF ARTIGO}) afirma
+que os códigos de Huffman minimizam o comprimento médio, ou seja, são
+ótimos dentre os códigos livres de prefixo.
 
+Nesta seção, considere um alfabeto de origem $M = \{m_1,\dotsc, m_n\}$
+com probabilidade $p_i$ para cada símbolo~$m_i$ e alfabeto código $W =
+\{0,1\}$. Dizemos que um código $C: M\to W^+$ livre de prefixo é
+\textbf{ótimo} se $l_a(C) \leq l_a(C')$ para todo código $C': M\to
+W^+$ livre de prefixo.
 
-\begin{lemma} \label{lemma:dist_prob_avg_size} Seja $C$ um código ótimo livre de prefixo, com $\{ p_1, p_2,..., p_n\}$ sendo a distribuição de probabilidades associada ao código. 
-Se $p_i > p_j$ então $l(w_i) \leq l(w_j)$
-
-\begin{proof} 
-Para efeito de contradição, assuma que $l(w_i) > l(w_j)$. 
-Agora construa um novo código $C'$, trocando $w_i$ por $w_j$. Dado $l_a$ como o comprimento médio do código $C$, o código $C'$ terá o seguinte comprimento:
-\begin{align*}
-l'_a &= l_a + p_j(l(w_i) - l(w_j)) + p_i(l(w_j) - l(w_i)) \\
-&= l_a + (p_j - p_i)(l(w_i) - l(w_j)) 
-\end{align*}
-
-Pelas suposições feitas anteriormente o termo $(p_j - p_i)(l(w_i) - l(w_j))$ seria negativo, contradizendo o fato do código $C$ ser um código ótimo e livre de prefixo (pois neste caso $l'_a > l_a$).
-
-\textbf{Nota*} : Perceba que em uma árvore de Huffman, o tamanho da palavra código $w_i$ também representa seu nível na árvore.
-\end{proof}
-\end{lemma}
-
-\begin{theorem} O algoritmo de Huffman gera um código ótimo livre de prefixo.
-\begin{proof}
-A prova se dará por indução sobre o número de mensagens pertencentes ao código. 
-Vamos mostrar que se o Algoritmo de Huffman gera um código livre de prefixo ótimo para qualquer distribuição de probabilidades com $n$ símbolos, então o mesmo ocorre para $n + 1$ símbolos.
-
-\item \textbf{Caso Base.} Para n = 2 o teorema é trivialmente satisfeito considerando um código que atribui um bit pra cada símbolo do código.
-
-\item \textbf{Passo indutivo}. Pelo lema \ref{lemma:dist_prob_avg_size} sabemos que as menores probabilidades estão nos menores níveis da árvore de Huffman (por ser uma árvore binária completa, o seu menor nível deve possuir ao menos dois nós). 
-Já que esses nós possuiriam o mesmo tamanho, podemos muda-los de posição sem afetar o tamanho médio do código, concluindo assim que estes são nós \textbf{irmãos}.\\
-Agora defina um conjunto de símbolos $M$ de tamanho $n + 1$ onde $T$ é a árvore de prefixo ótima construída a partir do Algoritmo de Huffman aplicado em $M$.
-Vamos chamar os dois nós de menor probabilidade na árvore de $x$ e $y$ (que pelo argumento anterior, são nós irmãos). 
-Construiremos uma nova árvore $T'$ a partir de $T$ removendo os nós $x$ e $y$, fazendo assim que o pai destes nós, que chamaremos de $z$, seja o de menor probabilidade (de acordo com a definição do Algoritmo de Huffman, $p_z = p_y + p_x$).
- Considere $k$ como a profundidade de $z$, temos:
-
-\begin{align*}
-l_a(T) &= l_a(T') + p_x(k + 1) + py(k + 1) - p_z k \\
-&= l_a(T') + p_x + p_y
-\end{align*}
-
-Sabemos pela hipótese de indução que $l_a(T')$ é mínimo, pois $T'$ tem o tamanho $n$ e foi gerada pelo algoritmo de Huffman. 
-Note que independente da ordem que forem inseridos, os nós $x$ e $y$ irão adicionar a constante $p_z = p_x + p_y$ no peso médio do código. 
-Como $l_a(T')$ é mínimo para um conjunto de símbolos de tamanho $n$ e seu nó de menor peso tem distribuição de probabilidade $p_z$, $l_a(T)$ também é mínimo para o conjunto de símbolos $M$ e logo $T$ é ótimo e livre de prefixo. 
-\end{proof}
+\begin{theorem}
+  \label{thm:otimo_huffman}
+  Seja $C_{H}$ um código gerado pelo algoritmo de Huffman. Temos que
+  $C_{H}$ é ótimo.
 \end{theorem}
+
+Antes de provar o teorema, começamos com uma simples observação.
+  
+\begin{lemma} \label{lemma:dist_prob_avg_size} Seja $C:M\to W^+$ um código livre de prefixo ótimo. Para todo $i,j \in\{1,\dotsc, n\}$, se $p_i > p_j$, então $l(C(m_i)) \leq l(C(m_j))$
+\end{lemma}
+  \begin{proof}
+    Sejam $i,j \in\{1,\dotsc, n\}$ e suponha que $p_i > p_j$.  Seja
+    $w_i = C(m_i)$ e seja $w_j = C(m_j)$. Para efeito de contradição,
+    assuma que $l(w_i) > l(w_j)$.  Agora construa um novo código $C'$,
+    trocando $w_i$ por $w_j$. Ou seja, $C'(m_k) = C(m_k)$ para todo $k
+    \in \{1,\dotsc, n\} \setminus \{i,j\}$, $C'(m_i) = w_j$ e $C'(m_j)
+    = w_i$.  Dado o comprimento médio $l_a(C')$ é
+ \begin{align*}
+   l_a(C') &= l_a(C) + p_j\cdot(l(w_i) - l(w_j)) + p_i\cdot(l(w_j) - l(w_i)) \\
+   &= l_a(C) + (p_j - p_i)(l(w_i) - l(w_j))\\
+   &< l_a(C),
+ \end{align*}
+ pois $p_j - p_i < 0$ e $l(w_i) - l(w_j)>0$. Isso contradiz o fato do
+ código $C$ ser ótimo.
+  \end{proof}
+
+\noindent \textbf{Nota:} Perceba que em uma árvore de Huffman, o
+comprimento de uma palavra-código também representa seu nível na árvore.
+
+\begin{proof}[Prova do Teorema~\ref{thm:otimo_huffman}]
+A prova se dará por indução sobre o tamanho $n$ de $M$. Para a base,
+tome $n=2$. Nesse caso, o resultado é trivialmente verdadeiro
+considerando que o algoritmo de Hufman gera um código que atribui um
+bit pra cada símbolo de~$M$. Assuma então que $n>2$ para o passo
+indutivo. Sejam $x$ e $y$ nós associados a símbolos $m_a$ e $m_b$
+respectivamente tais que $p_a \leq p_b \leq p_i$ para todo $i \in
+\{1,\dotsc,n\}\setminus\{a,b\}$. Ou seja, $x$ e $y$ poderiam ser os
+nós escolhidos como o primeiro par pelo algoritmo de Huffman.
+
+Seja $m'$ um novo símbolo com probabilidade $p_a+p_b$ e seja $M' =
+(M\cup\{m'\})\setminus\{m_a, m_b\}$. Note que $|M'| < n$. Seja $T'$
+uma árvore obtida pelo algoritmo de Huffman para $M'$. Por hipótese de
+indução o código $C'$ da árvore $T'$ é ótimo para $M'$. A árvore $T$
+obtida pelo algoritmo de Huffman é a árvore $T'$ adicionando os nós
+$x$ e $y$ como filhos do nó associado a $m'$. Seja $C$ o código da
+árvore $T$.
+
+Agora iremos comparar com um código ótimo. Afirmamos que
+\begin{equation}
+ \label{irmaos}
+\text{Existe um código $C^*$ livre de prefixo ótimo com árvore $T^*$
+  tal que $x$ e $y$ são \textbf{irmãos}.}
+\end{equation}
+Seja $z$ o pai de $x$ e de $y$ em $T^*$. Note que a árvore obtida a
+partir $T^*$ pela remoção de $x$ e $y$ e associando $z$ ao símbolo
+$m'$ (de probabilidade $p_a+p_b$) gera um código $C^{**}$ para $M'$. Pela
+otimalidade de $C'$, temos que
+\begin{equation*}
+  l_a(C^*)
+  =
+   l_a(C^{**})+p_a+p_b
+  \geq
+  l_a(C')+p_a+p_b
+  =
+  l_a(C),
+\end{equation*}
+o que mostra a otimalidade de $C$.
+
+
+Finalmente provamos a afirmação em~\eqref{irmaos}.  Dado um código
+$C''$ livre de prefixo ótimo com árvore $T''$, pelo
+lema~\ref{lemma:dist_prob_avg_size}, sabemos que os símbolos com as
+menores probabilidades estão nos menores níveis de $T''$ (ou seja,
+associados a palavras-código de maior comprimento). Portanto, $x$ e
+$y$ são folhas em $T''$. Seja $w \in\{x,y\}$ tal que $w$ é $x$ se o
+nível de $x$ é menor ou igual ao nível de $y$ e seja $v$ o nó em
+$\{x,y\}\setminus\{w\}$. (Note que $w$ só pode ser $y$ no caso em que
+$p_a = p_b$, pelo lema~\ref{lemma:dist_prob_avg_size}). Seja $z$ o pai
+de $w$. Se $w$ é o único filho de $z$, então poderíamos mudar $w$ para
+$z$ (pois $z$ não é associado a nenhum símbolo dado que $C''$ é livre
+de prefixo). Portanto, $w$ tem um nó \textbf{irmão} $w'$. Se $w'$ não
+é $v$, trocar $w'$ com $v$ gera um código de comprimento menor ou
+igual ao de $C''$ pelo lema~\ref{lemma:dist_prob_avg_size}. 
+\end{proof}
+
 
 \section{Lempel-Ziv 77 (LZ77)}
 
