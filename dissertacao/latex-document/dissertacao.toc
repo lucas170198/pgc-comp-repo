@@ -37,17 +37,21 @@
 \contentsline {part}{\partnumberline {III}\MakeTextUppercase {Aplicação: Melhoria na compressão de dados textuais através da Clusterização}}{27}{part.3}%
 \setlength {\cftchapterindent }{0em} \setlength {\cftchapternumwidth }{\cftlastnumwidth }
 \contentsline {chapter}{\chapternumberline {4}\MakeTextUppercase {Clusterização como pré-processamento na compressão de textos}}{29}{chapter.4}%
-\contentsline {section}{\numberline {4.1}Base de dados analisada}{30}{section.4.1}%
-\contentsline {section}{\numberline {4.2}Compressão de textos}{30}{section.4.2}%
-\contentsline {section}{\numberline {4.3}Partição de dados}{30}{section.4.3}%
-\contentsline {subsection}{\numberline {4.3.1}Partição aleatória}{30}{subsection.4.3.1}%
-\contentsline {subsection}{\numberline {4.3.2}Clusterizacao}{30}{subsection.4.3.2}%
-\contentsline {section}{\numberline {4.4}Resultados}{30}{section.4.4}%
-\contentsline {subsection}{\numberline {4.4.1}Metodologia}{30}{subsection.4.4.1}%
-\contentsline {subsection}{\numberline {4.4.2}Resultados pré clusterizacao}{30}{subsection.4.4.2}%
-\contentsline {subsection}{\numberline {4.4.3}Resultados pós clusterizacao}{30}{subsection.4.4.3}%
-\contentsline {section}{\numberline {4.5}Conclusao}{30}{section.4.5}%
-\contentsline {section}{\numberline {4.6}Trabalhos relacionados e melhorias}{30}{section.4.6}%
+\contentsline {section}{\numberline {4.1}Escolha e tratamento de dados}{30}{section.4.1}%
+\contentsline {subsection}{\numberline {4.1.1}Criação do dataframe principal}{30}{subsection.4.1.1}%
+\contentsline {subsection}{\numberline {4.1.2}Sanitização das colunas}{30}{subsection.4.1.2}%
+\contentsline {section}{\numberline {4.2}Compressão de textos}{32}{section.4.2}%
+\contentsline {subsection}{\numberline {4.2.1}Classes auxiliares}{32}{subsection.4.2.1}%
+\contentsline {subsection}{\numberline {4.2.2}Compressão baseada em palavras}{33}{subsection.4.2.2}%
+\contentsline {section}{\numberline {4.3}Partição de dados}{34}{section.4.3}%
+\contentsline {subsection}{\numberline {4.3.1}Partição aleatória}{35}{subsection.4.3.1}%
+\contentsline {subsection}{\numberline {4.3.2}Clusterizacao}{35}{subsection.4.3.2}%
+\contentsline {section}{\numberline {4.4}Resultados}{35}{section.4.4}%
+\contentsline {subsection}{\numberline {4.4.1}Metodologia}{35}{subsection.4.4.1}%
+\contentsline {subsection}{\numberline {4.4.2}Resultados pré clusterizacao}{35}{subsection.4.4.2}%
+\contentsline {subsection}{\numberline {4.4.3}Resultados pós clusterizacao}{35}{subsection.4.4.3}%
+\contentsline {section}{\numberline {4.5}Conclusao}{35}{section.4.5}%
+\contentsline {section}{\numberline {4.6}Trabalhos relacionados e melhorias}{35}{section.4.6}%
 \vspace {\cftbeforechapterskip }
 \setlength {\cftchapterindent }{\cftlastnumwidth } \setlength {\cftchapternumwidth }{2em}
-\contentsline {chapter}{\MakeTextUppercase {Refer\^encias}}{31}{section*.20}%
+\contentsline {chapter}{\MakeTextUppercase {Refer\^encias}}{37}{section*.21}%
