@@ -150,9 +150,9 @@ igual ao de $C''$ pelo lema~\ref{lemma:dist_prob_avg_size}.
 \section{Lempel-Ziv 77 (LZ77)}
 
 \subsection{Algoritmos de Lempel-Ziv}
-Nos anos de 1977 e 1978, Jacob Ziv e Abraham Lempel publicaram dois artigos apresentando os algoritmos \textbf{LZ77} e \textbf{LZ88}, que serviriam como base para uma família de algoritmos de compressão (conforme mostrado na Figura~\ref{fig:lz77}), chamados de algoritmos de \textbf{Lempel-Ziv}.
+Nos anos de 1977 e 1978, Jacob Ziv e Abraham Lempel publicaram dois artigos apresentando os algoritmos \textbf{LZ77} e \textbf{LZ78}, que serviriam como base para uma família de algoritmos de compressão (conforme mostrado na Figura~\ref{fig:lz77}), chamados de algoritmos de \textbf{Lempel-Ziv}.
 Os algoritmos de Lempel-Ziv realizam o processo de compressão baseado em um \textbf{dicionário} de mensagens vistas anteriormente (diferente do \nameref{alg:huff}, que utiliza a probabilidade associada a cada símbolo). 
-Tanto o LZ77 quanto o LZ78 tem um funcionamento parecido, que se resume em substituir partes da entrada por referências à partes iguais anteriormente processadas, e diferem na maneira em que procuram por repetições a serem substituídas. 
+Tanto o LZ77 quanto o LZ78 têm um funcionamento parecido, que se resume em substituir partes da entrada por referências a partes iguais anteriormente processadas, e diferem na maneira em que procuram por repetições a serem substituídas. 
 
 \begin{figure}[h]
    \centering
@@ -169,12 +169,12 @@ A mensagem à esquerda do cursor é chamada de \textbf{dicionário}, e contém t
 A ideia geral do algoritmo é substituir as mensagens do \emph{lookahead buffer} por \textbf{tokens}, onde cada \emph{token} é constituído por uma \emph{tupla} que ``aponta''  para a maior mensagem correspondente a cadeia no início do \emph{lookahead buffer}.
 
 A \emph{tupla} que constitui os \emph{tokens} é formada por três valores:
-Um valor inteiro que indica quantas posições para trás o \emph{cursor} deve retornar até encontrar o início da cadeia, 
+um valor inteiro que indica quantas posições para trás o \emph{cursor} deve retornar até encontrar o início da cadeia, 
 um segundo valor inteiro indicando o tamanho da cadeia,
 e um caracter (preenchido com $m_{cursor}$ ou $null$ para \textbf{tokens não vazios}).
 
-Os \emph{tolkens} podem ser vazios, quando não encontramos nenhuma mensagem correspondente, neste caso, os dois primeiros valores da \emph{tupla} são preenchidos com zeros.
-Por exemplo, se durante a compressão de um texto encontrássemos o símbolo ``a'' pela primeira vez (isso é, não existe correspondência pra ele no \emph{dicionário}), a saída seria o \emph{token vazio} $(0, 0, ``a'')$.
+Os \emph{tokens} podem ser vazios, quando não encontramos nenhuma mensagem correspondente, neste caso, os dois primeiros valores da \emph{tupla} são preenchidos com zeros.
+Por exemplo, se durante a compressão de um texto encontrássemos o símbolo ``a'' pela primeira vez (isso é, não existe correspondência pra ele no \emph{dicionário}), a saída seria o \emph{token vazio} $(0, 0, $``a''$)$.
 
 \begin{algorithm}[H]
 \caption{Algoritmo Lempel-Ziv 77} \label{alg:lz77}
