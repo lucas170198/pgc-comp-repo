@@ -342,12 +342,16 @@ Fica claro que as versões baseadas em palavra e clusterizadas via \emph{k-means
 Este dado já era esperado, já que o aumento de símbolos semelhantes leva a mais \emph{tokenizações}, e por consequência maior tempo de processamento.
 
 \section{Conclusão}
-Neste trabalho, combinamos o uso da compressão \textbf{baseada} em palavras com a clusterização.
+Neste trabalho, combinamos o uso da compressão \textbf{baseada} em palavras com a clusterização, em busca de uma melhora na taxa de compressão para base textuais.
 Os resultados experimentais confirmam as hipóteses levantadas previamente, 
-e chega-se a conclusão de que a clusterização impacta \texbf{positivamente} a \textbf{taxa de compressão} de textos.
+e chega-se a conclusão de que a clusterização impacta \textbf{positivamente} a \textbf{taxa de compressão} de textos.
 Entretanto, os experimentos também mostram um aumento nos recursos consumidos (tanto pelo pré-processamento, quanto pela compressão em si).
-Os resultados apresentados neste trabalho podem ser úteis na implementação de ferramentas de compressão otimizadas, principalmente para grande bases de dados textuais.
-\section{Trabalhos relacionados e melhorias}
+Espera-se resultados apresentados neste trabalho sejam úteis na implementação de ferramentas de compressão otimizadas, principalmente para grande bases de dados textuais.
+
+\section{Trabalhos futuros}
+O intuito principal deste trabalho era apresentar a clusterização como potencializador para alguns algoritmos clássicos de compressão sem perda.
+Algoritmos mais modernos (como BZip e WBW) otimizados especificamente para grandes textos, podem trazer resultados ainda melhores com a compressão.
+Utilizar outros métodos de clusterização mais complexos (como a clusterização hierárquica), também podem trazer resultados diferentes para os testes.
 
 
 

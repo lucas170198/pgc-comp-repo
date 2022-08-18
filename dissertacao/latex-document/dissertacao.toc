@@ -50,7 +50,7 @@
 \contentsline {subsection}{\numberline {4.4.1}Taxa de compressão}{37}{subsection.4.4.1}%
 \contentsline {subsection}{\numberline {4.4.2}Tempo de execução}{38}{subsection.4.4.2}%
 \contentsline {section}{\numberline {4.5}Conclusão}{39}{section.4.5}%
-\contentsline {section}{\numberline {4.6}Trabalhos relacionados e melhorias}{39}{section.4.6}%
+\contentsline {section}{\numberline {4.6}Trabalhos futuros}{39}{section.4.6}%
 \vspace {\cftbeforechapterskip }
 \setlength {\cftchapterindent }{\cftlastnumwidth } \setlength {\cftchapternumwidth }{2em}
 \contentsline {chapter}{\MakeTextUppercase {Refer\^encias}}{41}{section*.26}%
