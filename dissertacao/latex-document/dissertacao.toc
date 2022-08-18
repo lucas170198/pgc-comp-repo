@@ -4,53 +4,53 @@
 \setlength {\cftchapterindent }{\cftlastnumwidth } \setlength {\cftchapternumwidth }{2em}
 \contentsline {part}{\partnumberline {I}\MakeTextUppercase {Fundamentação Teórica}}{3}{part.1}%
 \setlength {\cftchapterindent }{0em} \setlength {\cftchapternumwidth }{\cftlastnumwidth }
-\contentsline {chapter}{\chapternumberline {1}\MakeTextUppercase {Conceitos e definições fundamentais em compressão de dados}}{5}{chapter.1}%
+\contentsline {chapter}{\chapternumberline {1}\MakeTextUppercase {Conceitos, definições e resultados fundamentais em compressão de dados}}{5}{chapter.1}%
 \contentsline {section}{\numberline {1.1}Código}{5}{section.1.1}%
 \contentsline {subsection}{\numberline {1.1.1}Códigos unicamente decodificáveis e livres de prefixo}{6}{subsection.1.1.1}%
-\contentsline {section}{\numberline {1.2}Relações fundamentais com a Teoria da Informação}{6}{section.1.2}%
-\contentsline {subsection}{\numberline {1.2.1}Distribuição de Probabilidade e Esperança}{7}{subsection.1.2.1}%
-\contentsline {subsection}{\numberline {1.2.2}Comprimento médio do código}{7}{subsection.1.2.2}%
-\contentsline {subsection}{\numberline {1.2.3}Entropia}{8}{subsection.1.2.3}%
-\contentsline {subsection}{\numberline {1.2.4}Comprimento de Código e Entropia}{8}{subsection.1.2.4}%
-\contentsline {part}{\partnumberline {II}\MakeTextUppercase {Algoritmos de compressão e clusterização}}{13}{part.2}%
+\contentsline {section}{\numberline {1.2}Relações fundamentais com a Teoria da Informação}{7}{section.1.2}%
+\contentsline {subsection}{\numberline {1.2.1}Conceitos básicos em Probabilidade}{7}{subsection.1.2.1}%
+\contentsline {subsection}{\numberline {1.2.2}Comprimento médio do código}{8}{subsection.1.2.2}%
+\contentsline {subsection}{\numberline {1.2.3}Entropia}{9}{subsection.1.2.3}%
+\contentsline {subsection}{\numberline {1.2.4}Comprimento de Código e Entropia}{9}{subsection.1.2.4}%
+\contentsline {part}{\partnumberline {II}\MakeTextUppercase {Algoritmos de compressão e pré-processamento}}{15}{part.2}%
 \setlength {\cftchapterindent }{0em} \setlength {\cftchapternumwidth }{\cftlastnumwidth }
-\contentsline {chapter}{\chapternumberline {2}\MakeTextUppercase {Algoritmos de compressão sem perda}}{15}{chapter.2}%
-\contentsline {section}{\numberline {2.1}Código de Huffman}{16}{section.2.1}%
-\contentsline {subsection}{\numberline {2.1.1}Análise assintótica}{16}{subsection.2.1.1}%
-\contentsline {subsection}{\numberline {2.1.2}Corretude}{17}{subsection.2.1.2}%
-\contentsline {section}{\numberline {2.2}Lempel-Ziv 77 (LZ77)}{18}{section.2.2}%
-\contentsline {subsection}{\numberline {2.2.1}Algoritmos de Lempel-Ziv}{18}{subsection.2.2.1}%
-\contentsline {subsection}{\numberline {2.2.2}Descrição do LZ77}{18}{subsection.2.2.2}%
-\contentsline {subsection}{\numberline {2.2.3}Função ``\emph {findLongestMatch}'' }{19}{subsection.2.2.3}%
-\contentsline {subsection}{\numberline {2.2.4}Melhorias na performance da função ``\emph {findLongestMatch}'' }{20}{subsection.2.2.4}%
-\contentsline {section}{\numberline {2.3}Compressão baseada em palavras}{20}{section.2.3}%
-\contentsline {subsection}{\numberline {2.3.1}Huffword}{21}{subsection.2.3.1}%
-\contentsline {subsection}{\numberline {2.3.2}WLZ77}{21}{subsection.2.3.2}%
+\contentsline {chapter}{\chapternumberline {2}\MakeTextUppercase {Algoritmos de compressão sem perda}}{17}{chapter.2}%
+\contentsline {section}{\numberline {2.1}Código de Huffman}{18}{section.2.1}%
+\contentsline {subsection}{\numberline {2.1.1}Análise assintótica}{18}{subsection.2.1.1}%
+\contentsline {subsection}{\numberline {2.1.2}Corretude}{19}{subsection.2.1.2}%
+\contentsline {section}{\numberline {2.2}Lempel-Ziv 77 (LZ77)}{20}{section.2.2}%
+\contentsline {subsection}{\numberline {2.2.1}Algoritmos de Lempel-Ziv}{20}{subsection.2.2.1}%
+\contentsline {subsection}{\numberline {2.2.2}Descrição do LZ77}{20}{subsection.2.2.2}%
+\contentsline {subsection}{\numberline {2.2.3}Função ``\emph {findLongestMatch}'' }{22}{subsection.2.2.3}%
+\contentsline {subsection}{\numberline {2.2.4}Melhorias na performance da função ``\emph {findLongestMatch}'' }{22}{subsection.2.2.4}%
+\contentsline {section}{\numberline {2.3}Compressão baseada em palavras}{22}{section.2.3}%
+\contentsline {subsection}{\numberline {2.3.1}Huffword}{23}{subsection.2.3.1}%
+\contentsline {subsection}{\numberline {2.3.2}WLZ77}{23}{subsection.2.3.2}%
 \setlength {\cftchapterindent }{0em} \setlength {\cftchapternumwidth }{\cftlastnumwidth }
-\contentsline {chapter}{\chapternumberline {3}\MakeTextUppercase {Clusterização de dados aplicada a textos}}{23}{chapter.3}%
-\contentsline {section}{\numberline {3.1}Similaridade em dados textuais}{24}{section.3.1}%
-\contentsline {subsection}{\numberline {3.1.1}Vetorização TF-IDF}{24}{subsection.3.1.1}%
-\contentsline {section}{\numberline {3.2}Redução de Dimensionalidade}{25}{section.3.2}%
-\contentsline {subsection}{\numberline {3.2.1}PCA}{25}{subsection.3.2.1}%
-\contentsline {section}{\numberline {3.3}Clusterização K-means}{25}{section.3.3}%
-\contentsline {subsection}{\numberline {3.3.1}Método de elbow}{26}{subsection.3.3.1}%
-\contentsline {part}{\partnumberline {III}\MakeTextUppercase {Aplicação: Melhoria na compressão de dados textuais através da Clusterização}}{27}{part.3}%
+\contentsline {chapter}{\chapternumberline {3}\MakeTextUppercase {Clusterização de dados aplicada a textos}}{25}{chapter.3}%
+\contentsline {section}{\numberline {3.1}Similaridade em dados textuais}{26}{section.3.1}%
+\contentsline {subsection}{\numberline {3.1.1}Vetorização TF-IDF}{26}{subsection.3.1.1}%
+\contentsline {section}{\numberline {3.2}Redução de Dimensionalidade}{27}{section.3.2}%
+\contentsline {subsection}{\numberline {3.2.1}PCA}{27}{subsection.3.2.1}%
+\contentsline {section}{\numberline {3.3}Clusterização K-means}{27}{section.3.3}%
+\contentsline {subsection}{\numberline {3.3.1}Método de elbow}{28}{subsection.3.3.1}%
+\contentsline {part}{\partnumberline {III}\MakeTextUppercase {Aplicação: Melhoria na compressão de dados textuais através da Clusterização}}{29}{part.3}%
 \setlength {\cftchapterindent }{0em} \setlength {\cftchapternumwidth }{\cftlastnumwidth }
-\contentsline {chapter}{\chapternumberline {4}\MakeTextUppercase {Clusterização como pré-processamento na compressão de textos}}{29}{chapter.4}%
-\contentsline {section}{\numberline {4.1}Escolha e tratamento de dados}{30}{section.4.1}%
-\contentsline {subsection}{\numberline {4.1.1}Criação do dataframe principal}{30}{subsection.4.1.1}%
-\contentsline {subsection}{\numberline {4.1.2}Sanitização das colunas}{30}{subsection.4.1.2}%
-\contentsline {section}{\numberline {4.2}Compressão de textos}{32}{section.4.2}%
-\contentsline {subsection}{\numberline {4.2.1}Classes auxiliares}{32}{subsection.4.2.1}%
-\contentsline {subsection}{\numberline {4.2.2}Compressão baseada em palavras}{33}{subsection.4.2.2}%
-\contentsline {section}{\numberline {4.3}Partição de dados}{34}{section.4.3}%
-\contentsline {subsection}{\numberline {4.3.1}Partição aleatória}{35}{subsection.4.3.1}%
-\contentsline {subsection}{\numberline {4.3.2}Clusterização}{35}{subsection.4.3.2}%
-\contentsline {section}{\numberline {4.4}Resultados}{37}{section.4.4}%
-\contentsline {subsection}{\numberline {4.4.1}Taxa de compressão}{37}{subsection.4.4.1}%
-\contentsline {subsection}{\numberline {4.4.2}Tempo de execução}{38}{subsection.4.4.2}%
-\contentsline {section}{\numberline {4.5}Conclusão}{39}{section.4.5}%
-\contentsline {section}{\numberline {4.6}Trabalhos futuros}{39}{section.4.6}%
+\contentsline {chapter}{\chapternumberline {4}\MakeTextUppercase {Clusterização como pré-processamento na compressão de textos}}{31}{chapter.4}%
+\contentsline {section}{\numberline {4.1}Escolha e tratamento de dados}{32}{section.4.1}%
+\contentsline {subsection}{\numberline {4.1.1}Criação do dataframe principal}{32}{subsection.4.1.1}%
+\contentsline {subsection}{\numberline {4.1.2}Sanitização das colunas}{32}{subsection.4.1.2}%
+\contentsline {section}{\numberline {4.2}Compressão de textos}{34}{section.4.2}%
+\contentsline {subsection}{\numberline {4.2.1}Classes auxiliares}{34}{subsection.4.2.1}%
+\contentsline {subsection}{\numberline {4.2.2}Compressão baseada em palavras}{35}{subsection.4.2.2}%
+\contentsline {section}{\numberline {4.3}Partição de dados}{36}{section.4.3}%
+\contentsline {subsection}{\numberline {4.3.1}Partição aleatória}{37}{subsection.4.3.1}%
+\contentsline {subsection}{\numberline {4.3.2}Clusterização}{37}{subsection.4.3.2}%
+\contentsline {section}{\numberline {4.4}Resultados}{39}{section.4.4}%
+\contentsline {subsection}{\numberline {4.4.1}Taxa de compressão}{39}{subsection.4.4.1}%
+\contentsline {subsection}{\numberline {4.4.2}Tempo de execução}{40}{subsection.4.4.2}%
+\contentsline {section}{\numberline {4.5}Conclusão}{41}{section.4.5}%
+\contentsline {section}{\numberline {4.6}Trabalhos futuros}{41}{section.4.6}%
 \vspace {\cftbeforechapterskip }
 \setlength {\cftchapterindent }{\cftlastnumwidth } \setlength {\cftchapternumwidth }{2em}
-\contentsline {chapter}{\MakeTextUppercase {Refer\^encias}}{41}{section*.26}%
+\contentsline {chapter}{\MakeTextUppercase {Refer\^encias}}{43}{section*.26}%
