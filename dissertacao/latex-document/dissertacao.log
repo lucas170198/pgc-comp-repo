@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2021) (preloaded format=pdflatex 2022.2.24)  18 AUG 2022 01:40
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2021) (preloaded format=pdflatex 2022.2.24)  18 AUG 2022 12:16
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1202,31 +1202,34 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 [6]
 \openout2 = `capitulos/introducao.aux'.
 
- (./capitulos/introducao.tex)pdfTeX warning (ext4): destination with the same i
-dentifier (name{page.1}) has been already used, duplicate ignored
+ (./capitulos/introducao.tex
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+pdfTeX warning (ext4): destination with the same identifier (name{page.1}) has 
+been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.32 
+      [1
+
+
+
+])pdfTeX warning (ext4): destination with the same identifier (name{page.2}) ha
+s been already used, duplicate ignored
 <to be read again> 
                    \relax 
 l.201 \include{capitulos/introducao}
-                                     [1
-
-
-
-]pdfTeX warning (ext4): destination with the same identifier (name{page.2}) has
- been already used, duplicate ignored
-<to be read again> 
-                   \relax 
-l.204 \part
-           {Fundamentação Teórica} [2
-
-
-
-]pdfTeX warning (ext4): destination with the same identifier (name{page.3}) has
- been already used, duplicate ignored
+                                     [2]pdfTeX warning (ext4): destination with
+ the same identifier (name{page.3}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
 l.204 \part{Fundamentação Teórica}
-                                      [3]pdfTeX warning (ext4): destination wit
-h the same identifier (name{page.4}) has been already used, duplicate ignored
+                                      [3
+
+
+
+]pdfTeX warning (ext4): destination with the same identifier (name{page.4}) has
+ been already used, duplicate ignored
 <to be read again> 
                    \relax 
 l.204 \part{Fundamentação Teórica}
@@ -1255,7 +1258,7 @@ l.59
                    \relax 
 l.110 
        [6]
-<figs/prefixtree.png, id=187, 332.24126pt x 221.82875pt>
+<figs/prefixtree.png, id=185, 332.24126pt x 221.82875pt>
 File: figs/prefixtree.png Graphic file (type png)
 <use figs/prefixtree.png>
 Package pdftex.def Info: figs/prefixtree.png  used on input line 113.
@@ -1286,7 +1289,7 @@ LaTeX Warning: Reference `TODO REF ARTIGO' on page 18 undefined on input line 5
 4.
 
 [18] [19]
-<figs/lz77fam.png, id=284, 450.68375pt x 155.58125pt>
+<figs/lz77fam.png, id=282, 450.68375pt x 155.58125pt>
 File: figs/lz77fam.png Graphic file (type png)
 <use figs/lz77fam.png>
 Package pdftex.def Info: figs/lz77fam.png  used on input line 159.
@@ -1304,7 +1307,7 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
  [21 <./figs/lz77fam.png>] [22] [23] [24
 
 ]
-<figs/cluster_h.png, id=313, 853.1875pt x 694.595pt>
+<figs/cluster_h.png, id=311, 853.1875pt x 694.595pt>
 File: figs/cluster_h.png Graphic file (type png)
 <use figs/cluster_h.png>
 Package pdftex.def Info: figs/cluster_h.png  used on input line 262.
@@ -1313,12 +1316,12 @@ Package pdftex.def Info: figs/cluster_h.png  used on input line 262.
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [25 <./figs/cluster_h.png (PNG copy)>] [26] [27]
-<figs/kmeans.png, id=338, 404.51125pt x 450.68375pt>
+<figs/kmeans.png, id=336, 404.51125pt x 450.68375pt>
 File: figs/kmeans.png Graphic file (type png)
 <use figs/kmeans.png>
 Package pdftex.def Info: figs/kmeans.png  used on input line 337.
 (pdftex.def)             Requested size: 161.80162pt x 180.2703pt.
-<figs/elbowex.png, id=340, 820.06375pt x 374.39874pt>
+<figs/elbowex.png, id=338, 820.06375pt x 374.39874pt>
 File: figs/elbowex.png Graphic file (type png)
 <use figs/elbowex.png>
 Package pdftex.def Info: figs/elbowex.png  used on input line 354.
@@ -1343,7 +1346,7 @@ File: lstlang1.sty 2020/03/24 1.8d listings language file
 Package hyperref Info: bookmark level for unknown lstlisting defaults to 0 on i
 nput line 38.
  [32]
-<figs/wordcloud1.png, id=382, 517.935pt x 302.12875pt>
+<figs/wordcloud1.png, id=380, 517.935pt x 302.12875pt>
 File: figs/wordcloud1.png Graphic file (type png)
 <use figs/wordcloud1.png>
 Package pdftex.def Info: figs/wordcloud1.png  used on input line 101.
@@ -1356,7 +1359,7 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 Underfull \vbox (badness 1337) has occurred while \output is active []
 
  [36]
-<figs/elbowgraph.png, id=513, 383.4325pt x 279.0425pt>
+<figs/elbowgraph.png, id=511, 383.4325pt x 279.0425pt>
 File: figs/elbowgraph.png Graphic file (type png)
 <use figs/elbowgraph.png>
 Package pdftex.def Info: figs/elbowgraph.png  used on input line 257.
@@ -1369,7 +1372,7 @@ Overfull \hbox (24.2099pt too wide) in paragraph at lines 262--266
 n:cluster:KMeans$\T1/lmr/m/n/12 (-20) .
  []
 
-<figs/clustercloud.png, id=538, 383.4325pt x 248.93pt>
+<figs/clustercloud.png, id=536, 383.4325pt x 248.93pt>
 File: figs/clustercloud.png Graphic file (type png)
 <use figs/clustercloud.png>
 Package pdftex.def Info: figs/clustercloud.png  used on input line 278.
@@ -1381,7 +1384,7 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 
 LaTeX Warning: Command \~ invalid in math mode on input line 293.
 
-<figs/graphfinal.png, id=552, 719.68875pt x 481.8pt>
+<figs/graphfinal.png, id=550, 719.68875pt x 481.8pt>
 File: figs/graphfinal.png Graphic file (type png)
 <use figs/graphfinal.png>
 Package pdftex.def Info: figs/graphfinal.png  used on input line 299.
@@ -1424,11 +1427,11 @@ Package rerunfilecheck Info: File `dissertacao.brf' has not changed.
 (rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
  ) 
 Here is how much of TeX's memory you used:
- 22242 strings out of 478994
- 335188 string characters out of 5858184
- 1209284 words of memory out of 5000000
- 38598 multiletter control sequences out of 15000+600000
- 549583 words of font info for 307 fonts, out of 8000000 for 9000
+ 22247 strings out of 478994
+ 335254 string characters out of 5858184
+ 1209034 words of memory out of 5000000
+ 38603 multiletter control sequences out of 15000+600000
+ 549680 words of font info for 308 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  86i,13n,88p,970b,1926s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/local/texlive/2021/texmf-dist/fonts/enc/dvips/lm/lm-rm.enc}{/usr/local/
@@ -1453,10 +1456,10 @@ lmssbx10.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/lm/lmsso12.
 pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/lm/lmsy10.pfb></usr/
 local/texlive/2021/texmf-dist/fonts/type1/public/lm/lmsy8.pfb></usr/local/texli
 ve/2021/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on dissertacao.pdf (51 pages, 1002986 bytes).
+Output written on dissertacao.pdf (51 pages, 1005918 bytes).
 PDF statistics:
- 877 PDF objects out of 1000 (max. 8388607)
- 780 compressed objects within 8 object streams
- 294 named destinations out of 1000 (max. 500000)
+ 875 PDF objects out of 1000 (max. 8388607)
+ 778 compressed objects within 8 object streams
+ 292 named destinations out of 1000 (max. 500000)
  82371 words of extra memory for PDF output out of 89155 (max. 10000000)
 

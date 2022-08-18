@@ -53,4 +53,4 @@
 \contentsline {section}{\numberline {4.6}Trabalhos futuros}{41}{section.4.6}%
 \vspace {\cftbeforechapterskip }
 \setlength {\cftchapterindent }{\cftlastnumwidth } \setlength {\cftchapternumwidth }{2em}
-\contentsline {chapter}{\MakeTextUppercase {Refer\^encias}}{43}{section*.26}%
+\contentsline {chapter}{\MakeTextUppercase {Refer\^encias}}{43}{section*.24}%
