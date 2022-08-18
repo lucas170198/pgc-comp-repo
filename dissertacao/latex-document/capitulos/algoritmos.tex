@@ -2,7 +2,7 @@
 \chapter{Algoritmos de compressão sem perda}\label{cap:comp}
 % ---
 
-Os algoritmos de compressão podem ser categorizadas em duas diferentes classes: os de compressão \textbf{com perda} e \textbf{sem perda}. 
+Os algoritmos de compressão podem ser categorizados em duas diferentes classes: os de compressão \textbf{com perda} e \textbf{sem perda}. 
 Os \textbf{algoritmos de compressão com perda} admitem uma baixa porcentagem de perda de informações durante a codificação para obter maior performance, muito úteis na transmissão de dados em streaming por exemplo. 
 Nos \textbf{algoritmos de compressão sem perda} o processo de codificação deve ser capaz de recuperar os dados em sua totalidade, geralmente utilizados em casos onde não pode haver perda de informações (como por exemplo, compressão de arquivos de texto).
 
@@ -87,8 +87,7 @@ Antes de provar o teorema, começamos com uma simples observação.
  código $C$ ser ótimo.
   \end{proof}
 
-\noindent \textbf{Nota:} Perceba que em uma árvore de Huffman, o
-comprimento de uma palavra-código também representa seu nível na árvore.
+\noindent \textbf{Nota:} Perceba que em uma árvore de Huffman, o comprimento de uma palavra-código também representa seu nível na árvore.
 
 \begin{proof}[Prova do Teorema~\ref{thm:otimo_huffman}]
 A prova se dará por indução sobre o tamanho $n$ de $M$. Para a base,
@@ -97,8 +96,7 @@ considerando que o algoritmo de Hufman gera um código que atribui um
 bit pra cada símbolo de~$M$. Assuma então que $n>2$ para o passo
 indutivo. Sejam $x$ e $y$ nós associados a símbolos $m_a$ e $m_b$
 respectivamente tais que $p_a \leq p_b \leq p_i$ para todo $i \in
-\{1,\dotsc,n\}\setminus\{a,b\}$. Ou seja, $x$ e $y$ poderiam ser os
-nós escolhidos como o primeiro par pelo algoritmo de Huffman.
+\{1,\dotsc,n\}\setminus\{a,b\}$. Ou seja, $x$ e $y$ poderiam ser os nós escolhidos como o primeiro par pelo algoritmo de Huffman.
 
 Seja $m'$ um novo símbolo com probabilidade $p_a+p_b$ e seja $M' =
 (M\cup\{m'\})\setminus\{m_a, m_b\}$. Note que $|M'| < n$. Seja $T'$
@@ -165,7 +163,7 @@ Tanto o LZ77 quanto o LZ78 têm um funcionamento parecido, que se resume em subs
 O LZ77 e suas variações utilizam a técnica de \emph{janela deslizante} para encontrar mensagens correspondentes. 
 A janela é dividida em duas partes separadas por um \emph{cursor} (que se move conforme novas mensagens são codificadas).
 
-A mensagem à esquerda do cursor é chamada de \textbf{dicionário}, e contém todos os símbolos já codificadas. Já a mensagem à direita do \emph{cursor} é chamada de \textbf{lookahead buffer}.
+A mensagem à esquerda do cursor é chamada de \textbf{dicionário}, e contém todos os símbolos já codificados. Já a mensagem à direita do \emph{cursor} é chamada de \textbf{lookahead buffer}.
 A ideia geral do algoritmo é substituir as mensagens do \emph{lookahead buffer} por \textbf{tokens}, onde cada \emph{token} é constituído por uma \emph{tupla} que ``aponta''  para a maior mensagem correspondente a cadeia no início do \emph{lookahead buffer}.
 
 A \emph{tupla} que constitui os \emph{tokens} é formada por três valores:
@@ -198,7 +196,7 @@ Por exemplo, se durante a compressão de um texto encontrássemos o símbolo ``a
 
 \subsection{Função ``\emph{findLongestMatch}'' }
 O \emph{LZ77} possui um processo de decodificação muito eficiente, porém consome muitos recursos computacionais na codificação. 
-Isto é, ele é mais eficiente para casos onde pretende-se decodificar o arquivo múltiplas vezes, ou ainda decodifica-lo numa máquina com menor poder computacional. 
+Isto é, ele é mais eficiente para casos onde pretende-se decodificar o arquivo múltiplas vezes, ou ainda decodificá-lo numa máquina com menor poder computacional. 
 O ``gargalo'' da compressão está na técnica de busca pelo \emph{dicionário} para encontrar a mensagem correspondentes mais longa.
 
 O método convencional utilizado é a \textbf{busca linear}, que consiste em comparar cada posição no dicionário com o \emph{lookahead buffer} e selecionar a maior correspondência encontrada. 
@@ -208,16 +206,16 @@ A busca será executada $M + N$ vezes, isto é, a complexidade geral do algoritm
 \subsection{Melhorias na performance da função ``\emph{findLongestMatch}'' }
 
 Uma das possíveis abordagens para melhorar a busca linear é utilizar estruturas de dados auxiliares, que indexam os símbolos do dicionário para tornar a busca mais rápida.
-(TODO: Citacao do artigo) testa diferentes estruturas de dados (arvores trie, hash tables, arvores binárias de busca entre outros). 
-Para este projeto utilizaremos a \textbf{lista ligada} como estrutura de dados auxiliar (principalmente por possuir uma implementação mais simples). 
+(TODO: Citacao do artigo) testa diferentes estruturas de dados (árvores trie, hash tables, árvores binárias de busca entre outros). 
+Para este trabalho utilizaremos a \textbf{lista ligada} como estrutura de dados auxiliar (principalmente por possuir uma implementação mais simples). 
 
-Para construir uma estrutura de dados auxiliar com lista ligada, podemos criar uma lista para cada símbolo no dicionário, que contenha os indicies onde o símbolo pode ser encontrado.  
-Para limitar a janela de busca, podemos construir a lista como uma \emph{fila}, onde ao atingirmos a capacidade máxima da janela de busca, removemos o menor indicie (que estaria no inicio da fila). 
+Para construir uma estrutura de dados auxiliar com lista ligada, podemos criar uma lista para cada símbolo no dicionário, que contenha os índices onde o símbolo pode ser encontrado.  
+Para limitar a janela de busca, podemos construir a lista como uma \emph{fila}, onde ao atingirmos a capacidade máxima da janela de busca, removemos o menor índice (que estaria no início da fila). 
 Note que, o tamanho máximo da lista depende da quantidade de bits que queremos utilizar para construir o \emph{token}.
 
-Encontramos a maior mensagem correspondente, comparando o \emph{lookahead buffer} com as cadeias de símbolos iniciadas a partir de indicies contidos na lista que corresponde ao primeiro símbolo do \emph{lookahead buffer}.
-Neste contexto, o pior caso ocorrerá quando todos os símbolos no dicionário forem iguais, pois todos as posições no dicionário seriam checadas (levando a uma performance equivalente a da busca linear).
-Entretanto, para uma base de dados de texto real com grande quantidade de dados isso raramente aconteceria, e apenas uma quantidade $K \ll N$ de possíveis mensagens seriam checadas.
+Encontramos a maior mensagem correspondente, comparando o \emph{lookahead buffer} com as cadeias de símbolos iniciadas a partir de índices contidos na lista que corresponde ao primeiro símbolo do \emph{lookahead buffer}.
+Neste contexto, o pior caso ocorrerá quando todos os símbolos no dicionário forem iguais, pois todas as posições no dicionário seriam checadas (levando a uma performance equivalente a da busca linear).
+Entretanto, para uma base de dados de texto real com grande quantidade de dados isso raramente acontece, e apenas uma quantidade $K \ll N$ de possíveis mensagens são realmente checadas.
 
 \section{Compressão baseada em palavras}
 A implementação padrão para a maioria dos algoritmos de compressão utiliza como \emph{alfabeto de origem} elementos de 8 bits (também conhecidos como \textbf{\emph{caracteres}}).
@@ -235,8 +233,8 @@ O método de compressão \emph{Huffword} é uma modificação da implementação
 Desenvolvido por Moffat e Zobel (Incluir referencia) em 1994, ele utiliza \emph{palavras} em seu alfabeto de origem.
 
 O algoritmo funciona de maneira bem similar à implementação canônica, o arquivo é pré-processado separando as \emph{palavras} e os \emph{separadores} como duas entradas distintas.
-Depois o algoritmo de Huffman canônico é aplicado a cada uma das partes, sendo que as probabilidades agora estão associadas as palavras e não mais aos caracteres. 
-A codificação associada a entrada também é armazenada em duas \emph{strings} distintas, assim como as tabelas de códigos também são destintas.
+Depois o algoritmo de Huffman canônico é aplicado a cada uma das partes, sendo que as probabilidades agora estão associadas às palavras e não mais aos caracteres. 
+A codificação associada a entrada também é armazenada em duas \emph{strings} distintas, assim como as tabelas de códigos também são distintas.
  
  \subsection{WLZ77}
  (TODO REF ARTIGO) implementa a versão do LZ77 baseado em palavras (também chamado WLZ77) aplicando uma ideia semelhante à apresentada anteriormente . 
@@ -244,7 +242,6 @@ A codificação associada a entrada também é armazenada em duas \emph{strings}
  Ao contrário do ~\nameref{sub:huffw} as palavras e separadores são processados simultaneamente pela implementação canônica do LZ77, gerando uma sequência única de \emph{tokens}.
  
  Vale notar que, neste caso, o último elemento da \emph{tupla} no token não é mais um caractere e sim uma palavra. Isso significa que para o caso dos \emph{tokens vazios}, o tamanho do \emph{token} irá variar de acordo com o tamanho da palavra.
- 
  
  % ---
  \chapter{Clusterização de dados aplicada a textos}\label{cap:clus}
@@ -268,21 +265,21 @@ A codificação associada a entrada também é armazenada em duas \emph{strings}
  
  \section{Similaridade em dados textuais}
  Conforme introduzido anteriormente, definir uma métrica de similaridade entre os objetos é essencial para o funcionamento dos algoritmos de clusterização.
- Para o propósito deste projeto, iremos explorar técnicas que extraem essa similaridades em dados textuais.
+ Para o propósito deste trabalho, iremos explorar técnicas que extraem essa similaridade em dados textuais.
  
- Para uma base dados textual,  utilizaremos o termo \textbf{``texto bruto''}  para se referir ao conteúdo de cada registro na base de dados. 
+ Para uma base de dados textual,  utilizaremos o termo \textbf{``texto bruto''}  para se referir ao conteúdo de cada registro na base de dados. 
  Também adotaremos o termo \textbf{documento} para partições dos dados (por exemplo, uma linha da tabela).
- Estenderemos a definição de \emph{palavras} e \emph{separadores} utilizadas no capítulo anterior, definidas sob um ponto de vista linguístico (não relacionados diretamente a notações de conjuntos definida no capítulo ~\ref{chapter:fund}).
+ Estenderemos a definição de \emph{palavras} e \emph{separadores} utilizadas no capítulo anterior, definidas sob um ponto de vista linguístico (não relacionados diretamente a notação de conjuntos definida no capítulo ~\ref{chapter:fund}).
  
  \subsection{Vetorização TF-IDF}
-Analise de texto é umas das aplicação mais exploradas no campo dos sistemas inteligentes.
+Análise de texto é umas das aplicações mais exploradas no campo dos sistemas inteligentes.
 Porém, pode ser uma tarefa difícil utilizar texto bruto como entrada para os algoritmos de \emph{machine learning}. 
 Geralmente, tais algoritmos ``lidam melhor'' com características numéricas.
  
 O processo de transformar documentos em vetores de características numéricas é conhecido como \textbf{vetorização}. 
 Em geral, procuramos uma medida que atribua pesos a cada palavra, de acordo com a sua ``importância'' no documento.
 
-Poderíamos atribuir pesos as palavras de maneira direta e intuitiva, atrelando o peso diretamente a frequência em que aquela palavra ocorre em um documento.
+Poderíamos atribuir pesos às palavras de maneira direta e intuitiva, atrelando o peso diretamente a frequência em que aquela palavra ocorre em um documento.
 Chamamos esta medida de \textbf{TF} (\emph{term frequency}).
 
 \begin{equation}\label{eq:tf}
@@ -314,10 +311,9 @@ reduzir a dimensionalidade significa procurar variáveis que possuem dependênci
 No geral, busca-se manter apenas características relevantes aos dados, reduzindo sua complexidade e o poder computacional necessário para processar estes dados.
 
  \subsection{PCA}
- PCA (ou \emph{principal component analysis}) é formada por um procedimento algébrico, 
+ O PCA (ou \emph{principal component analysis}) é formado por um procedimento algébrico, 
  que reduz as variáveis correlacionadas em um conjunto de variáveis não relacionadas (linearmente) chamadas \emph{principal components} (PCs), iterativamente.
- 
-No contexto da clusterização, o PCA é utilizado principalmente para transformar dados com muitas dimensões em uma representação com menores dimensões (usualmente duas dimensões, facilitando a análise gráfica dos dados).
+ No contexto da clusterização, o PCA é utilizado principalmente para transformar dados com muitas dimensões em uma representação com menores dimensões (usualmente duas dimensões, facilitando a análise gráfica dos dados).
  
  
  \section{Clusterização K-means}
@@ -355,6 +351,7 @@ Podemos definir o k-means da seguinte forma:
     \caption{Método de elbow}
     \label{fig:elbow}
 \end{figure}
+
  
  
 

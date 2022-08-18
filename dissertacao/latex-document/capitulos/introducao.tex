@@ -6,7 +6,7 @@
 \chapter*[Introdução]{Introdução}
 
 Em um mundo cada vez mais informatizado, a demanda por armazenamento e transmissão de grandes quantidades de dados cresce exponencialmente.  
-Algoritmos de compressão de dados são amplamente utilizados por protocolos de transmissão de informações e por em sistemas de banco de dados, isso porque o processo de compressão permite a redução total de dados para representar uma certa informação.
+Algoritmos de compressão de dados são amplamente utilizados por protocolos de transmissão de informações e em sistemas de banco de dados, isso porque o processo de compressão permite a redução total de dados para representar uma certa informação.
 
 Um algoritmo de compressão pode ser classificado como sendo \textbf{com perda}, quando reconstrói apenas uma aproximação do conteúdo original. 
 Esses algoritmos são comumente utilizados na compressão de mídias como vídeos, imagens e áudio, onde a perda de alguns bits não tem uma interferência relevante na recuperação do conteúdo original. 
@@ -18,19 +18,17 @@ Já os \textbf{baseados em dicionários} tem como ideia central encontrar padrõ
 
 Classificamos a compressão de dados como uma sub-área da Teoria da Informação, já que todos os resultados e limites teóricos para os algoritmos são fundamentados pela mesma. 
 De fato, todo algoritmo de compressão assume que a mensagem possui um certo nível de redundância, e toma vantagem desse fato para representar a informação de maneira mais eficiente. 
-Portanto, podemos supor que a \textbf{taxa de compressão} de um algoritmo está intimamente relacionada com a sua entropia (esse assunto será melhor detalhado durante a apresentação dos conceitos fundamentais na monografia), o que nos dá um indício de que \textbf{minimizar a entropia}, pode \textbf{maximizar} a eficiência na compressão.
+Portanto, podemos supor que a \textbf{taxa de compressão} de um algoritmo está intimamente relacionada com a sua entropia (esse assunto será melhor detalhado durante em capítulos posteriores), o que nos dá um indício de que \textbf{minimizar a entropia}, pode \textbf{maximizar} a eficiência na compressão.
 
 O foco deste trabalho, estará justamente em explorar de maneira empírica essa relação entre a entropia associada a um texto e a taxa de compressão, utilizando técnicas de pré-processamento para minimização da entropia. 
 Vamos utilizar técnicas de clusterização de dados para minimizar a entropia da base que será experimentada a fim de otimizar o processo de compressão.
-Através deste trabalho espera-se validar a hipótese que a clusterização pode ser utilizada como um método de melhoria em algoritmos de compressão de textos, bem como apresentar os fundamentos teóricos que sustentam esta hipótese.
+Através deste trabalho espera-se validar a hipótese de que a clusterização pode ser utilizada como um método de melhoria em algoritmos de compressão de textos, bem como apresentar os fundamentos teóricos que sustentam esta hipótese.
 
-O texto a seguir é divido em três partes.
+O texto está dividido em três partes.
  A primeira parte apresenta a definição de código, entropia e a relação entre esses conceitos, através de lemas e teoremas que fundamentam estes resultados.
- A segunda parte apresenta os algoritmos de compressão utilizados no trabalho (Huffman, Huffword, LZ77, WLZ77), bem como alguns detalhes de implementação e otimizações que serão utilizadas posteriormente.
+ A segunda parte apresenta os algoritmos de compressão utilizados no trabalho (Huffman, Huffword, LZ77, WLZ 77), bem como alguns detalhes de implementação e otimizações que serão utilizadas posteriormente.
  Ainda nesta mesma parte, são apresentados alguns conceitos básicos e definições fundamentais para o entendimento do método de clusterização (\emph{k-means}) que será aplicado como pré-processamento.
  A parte final do trabalho apresenta o experimento que testa a clusterização como um método de melhoria na taxa de compressão dos algoritmos apresentados, detalhando as tecnologias e métodos utilizados, bem como os resultados obtidos.
  
- Observa-se que em algumas das demonstrações omitidas nos textos utilizados como base, serão incluídas por elaboração do autor deste texto (e devidamente indicadas como autorais), como parte do esforço intelectual para a construção deste trabalho.
- Por fim, a ideia geral do trabalho foi concebida para explorar os aspectos diversos do conhecimento adquirido durante o curso de Bacharelado em Ciência da Computação , esperamos que este texto possa transmitir isto ao leitor de maneira clara e objetiva.
- 
- 
+ Observa-se que, algumas das demonstrações omitidas nos textos utilizados como base, foram incluídas por elaboração do autor deste texto (e devidamente indicadas como autorais), como parte do esforço intelectual para a construção deste trabalho.
+ Por fim, a ideia geral do trabalho foi concebida para explorar os aspectos diversos do conhecimento adquirido durante o curso de Bacharelado em Ciência da Computação, esperamos que este texto possa transmitir isto ao leitor de maneira clara e objetiva.

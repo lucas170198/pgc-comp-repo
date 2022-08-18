@@ -1,3 +1,4 @@
+
 \chapter{Clusterização como pré-processamento na compressão de textos}
 Nos capítulos anteriores, construímos a estrutura teórica necessária para compreender a \emph{compressão de texto} e sua relação com a \emph{teoria da informação}.
 Fica claro que os algoritmos apresentados, tomam vantagem de alguma redundância presente na mensagem para representar a informação de maneira mais eficiente.
@@ -8,7 +9,7 @@ O capítulo~\ref{cap:clus} apresenta uma técnica para organizar o texto em \emp
 Neste capítulo, exploraremos de maneira empírica a relação entre a entropia associada a um texto e a taxa de compressão dos algoritmos apresentados no capítulo~\ref{cap:comp}.
 
 A seguir, será descrito um experimento que utiliza a \textbf{clusterização} como pré-processamento de uma base de dados textual, visando uma melhora na performance dos algoritmos de compressão \emph{sem perda}.
-Foram realizados experimentos utilizando ou não o pré-processamento, afim de medir o impacto da clusterização para os algoritmos testados (que serão listados em seções posteriores).
+Foram realizados experimentos utilizando ou não o pré-processamento, a fim de medir o impacto da clusterização para os algoritmos testados (que serão listados em seções posteriores).
 
 Todo o experimento foi desenvolvido em \emph{Python} (principalmente ao seu vasto ferramental para manipulação de dados) e o código está disponível no GitHub [TODO REF GITHUB].
 O código fonte está organizado nas seguintes camadas:
@@ -24,15 +25,15 @@ Para a realização do experimento, a escolha da base de dados é uma etapa prim
 É necessária uma base de dados robusta, com uma grande quantidade de \textbf{texto} e que permita a criação de \emph{clusters} contendo assuntos diversos.
 
 Para o experimento, foi selecionada a base de dados ``\emph{Transfer Learning o Stack Exchange Tags}'', que está disponível no \emph{kaggle}.
-Trata-se de um conjunto de dados extraídos do website \emph{Stack Exchange} (um grande forum online, com conteúdo de diversos assuntos e uma grande variedade de dados textuais).
+Trata-se de um conjunto de dados extraídos do website \emph{Stack Exchange} (um grande fórum online, com conteúdo de diversos assuntos e uma grande variedade de dados textuais).
 
-As principais informações contidas na base de dados são o título das questões, o conteúdo da questões (em formato HTML) e as \emph{tags} que classificam o conteúdo em diferentes tópicos (biologia, culinária, criptografia, robótica e viagem).
+As principais informações contidas na base de dados são o título das questões, o conteúdo da questão (em formato HTML) e as \emph{tags} que classificam o conteúdo em diferentes tópicos (biologia, culinária, criptografia, robótica e viagem).
 O tamanho total da base de dados original é de aproximadamente \textbf{50MB}. 
 
 \subsection{Criação do dataframe principal}
 Os dados extraídos do \emph{kaggle} estavam originalmente separados em arquivos \emph{csv}, um para cada tópico.
 Os arquivos foram concatenados e somados em um único \emph{dataframe}, utilizando a biblioteca $pandas$.
-Para cada arquivo, foram selecionadas \textbf{1500} linhas (devido as limitações do hardware utilizado para o teste), o \emph{dataframe} final gerado possuí aproximadamente \textbf{7MB} de informação.
+Para cada arquivo, foram selecionadas \textbf{1500} linhas (devido às limitações do hardware utilizado para o teste), o \emph{dataframe} final gerado possui aproximadamente \textbf{7MB} de informação.
 
 
 \begin{lstlisting}[language=Python, caption=Carregando base de dados]
@@ -50,7 +51,7 @@ df = p.concat(frames)
 \subsection{Sanitização das colunas}
 Como parte da preparação dos dados para o experimento, as colunas do \emph{dataframe} foram \textbf{sanitizadas}.
 O processo de sanitização consiste em remover as \emph{stopwords}, pontuações, tags \emph{html} e outras informações que podem ser problemáticas para o experimento (principalmente na etapa de clusterização).
-A partir da sanitização, novas colunas foram geradas no \emph{dataframe} (contendo o pré-fixo ``sanitized').
+A partir da sanitização, novas colunas foram geradas no \emph{dataframe} (contendo o prefixo ``sanitized').
 
 \begin{lstlisting}[language=Python, caption=Sanitização do texto]
 from wordcloud import STOPWORDS
@@ -107,8 +108,8 @@ A Imagem~\ref{fig:wordcloud1} demonstra a representação gráfica das palavras 
 Os testes foram realizados com dois algoritmos clássicos de compressão \emph{sem perda} e suas versões baseadas em palavras (\textbf{Huffman}, \textbf{Huffword}, \textbf{LZ77}, \textbf{WLZ77}).
 Neste conjunto de algoritmos estão presente algoritmos baseados em \emph{probabilidades associadas} e \emph{dicionários}
 Os testes foram realizados sobre quatro algoritmos de compressão \textbf{sem perda} (apresentados no capítulo~\ref{cap:comp}), sendo dois baseados em \emph{caracteres} e os outros dois em \emph{palavras}
-Uma hipótese razoável a ser validada é que com a versão baseado em palavras, o impacto da clusterização na taxa de compressão seja mais significativo.
-A seguir, serão descritos alguns detalhes específicos da implementação dos compressores para o experimento (dando ênfase nos detalhes não contidos nos algoritmos em pseudo-código apresentados no capítulo~\ref{cap:comp}).
+Uma hipótese razoável a ser validada é que com a versão baseada em palavras, o impacto da clusterização na taxa de compressão seja mais significativo.
+A seguir, serão descritos alguns detalhes específicos da implementação dos compressores para o experimento (dando ênfase nos detalhes não contidos nos algoritmos em pseudocódigo apresentados no capítulo~\ref{cap:comp}).
 
 \subsection{Classes auxiliares}
 Para facilitar a reutilização de código na aplicação dos diferentes compressores, foi criada a classe auxiliar (\emph{TextCompressor}).
@@ -212,10 +213,10 @@ Em ambos os casos, cada algoritmo de compressão foi executado sobre as $n$ part
 
 \subsection{Partição aleatória} \label{ssec:randomp}
 Para o teste com partição aleatória, o \emph{dataframe} original foi dividido em $n$ partes iguais.
-É importante que tais divisões sejam aleatórias, afim de evitar possíveis ruídos no teste.
+É importante que tais divisões sejam aleatórias, a fim de evitar possíveis ruídos no teste.
 
 Para garantir a aleatoriedade, foi utilizado o método $.sample()$ da biblioteca $pandas$. 
-Este método cria uma amostra aleatória de items para um determinado eixo do objeto. 
+Este método cria uma amostra aleatória de itens para um determinado eixo do objeto. 
 O parâmetro $frac=1$ faz com que o método retorne uma amostra com todos os dados originais (porém de maneira randômica).
 Em seguida, o vetor foi fracionado pela função $array\_split()$ da biblioteca $numpy$.
 
@@ -293,7 +294,7 @@ Definimos a \textbf{taxa de compressão} como uma comparação entre o tamanho d
 taxa~de~compressão = \frac{tamanho~do~documento~codificado}{tamanho~do~documento~original}
 \end{equation}\label{eq:tf}
 
-Definimos $\Delta$ como a métrica impacto da clusterização na taxa de compressão, que é obtida pela diferença entre os resultados com e sem a clusterização.
+Definimos $\Delta$ como o impacto da clusterização na taxa de compressão, que é obtido pela diferença entre os resultados com e sem a clusterização.
  \begin{figure}[H]
    \centering
    \includegraphics[scale=0.60]{figs/graphfinal.png}
@@ -315,11 +316,11 @@ Definimos $\Delta$ como a métrica impacto da clusterização na taxa de compres
 \end{table}
 
 Conforme previsto no capítulo~\ref{cap:comp}, a tabela~\ref{tab:resultcomp} mostra que a clusterização teve um maior impacto nos algoritmos baseados em \textbf{palavras}.
-Em especial, o maior $\Delta$ foi alcançado para o \emph{Huffword}, onde foi \textbf{alcançado uma melhoria de quase 4\%}. Curiosamente, a versão baseada em palavras do LZ77 se mostrou menos efetiva no geral do que sua versão canônica.
+Em especial, o maior $\Delta$ foi alcançado para o \emph{Huffword},com uma melhoria de \textbf{quase 4\%}. Curiosamente, a versão baseada em palavras do LZ77 se mostrou menos efetiva no geral do que sua versão canônica.
 
 \subsection{Tempo de execução}
 Outra métrica que auxilia na comparação entre os algoritmos é o \textbf{tempo de execução}.
-Para isso, foi utilizada o comando \emph{\%time\%} do \emph{jupyter notebook} (que mede o tempo de execução da célula em que o comando foi inserido).
+Para isso, foi utilizado o comando \emph{\%time\%} do \emph{jupyter notebook} (que mede o tempo de execução da célula em que o comando foi inserido).
 
 \begin{table}[H]
    \centering
@@ -338,21 +339,17 @@ Para isso, foi utilizada o comando \emph{\%time\%} do \emph{jupyter notebook} (q
   \end{tabular}
 \end{table}
 
-Fica claro que as versões baseadas em palavra e clusterizadas via \emph{k-means}, consomem mais tempo de execução.
+Fica claro que as versões baseadas em palavras e clusterizadas via \emph{k-means}, consomem mais tempo de execução.
 Este dado já era esperado, já que o aumento de símbolos semelhantes leva a mais \emph{tokenizações}, e por consequência maior tempo de processamento.
 
 \section{Conclusão}
 Neste trabalho, combinamos o uso da compressão \textbf{baseada} em palavras com a clusterização, em busca de uma melhora na taxa de compressão para base textuais.
 Os resultados experimentais confirmam as hipóteses levantadas previamente, 
-e chega-se a conclusão de que a clusterização impacta \textbf{positivamente} a \textbf{taxa de compressão} de textos.
-Entretanto, os experimentos também mostram um aumento nos recursos consumidos (tanto pelo pré-processamento, quanto pela compressão em si).
-Espera-se resultados apresentados neste trabalho sejam úteis na implementação de ferramentas de compressão otimizadas, principalmente para grande bases de dados textuais.
+e chega-se à conclusão de que a clusterização impacta \textbf{positivamente} a \textbf{taxa de compressão} de textos.
+Entretanto, os experimentos também mostraram um aumento nos recursos consumidos (tanto pelo pré-processamento, quanto pela compressão em si).
+Espera-se que os resultados apresentados neste trabalho sejam úteis na implementação de ferramentas de compressão otimizadas, principalmente para grandes bases de dados textuais.
 
 \section{Trabalhos futuros}
 O intuito principal deste trabalho era apresentar a clusterização como potencializador para alguns algoritmos clássicos de compressão sem perda.
-Algoritmos mais modernos (como BZip e WBW) otimizados especificamente para grandes textos, podem trazer resultados ainda melhores com a compressão.
+Algoritmos mais modernos (como BZip e WBW), otimizados especificamente para grandes textos, podem trazer resultados ainda melhores com a compressão.
 Utilizar outros métodos de clusterização mais complexos (como a clusterização hierárquica), também podem trazer resultados diferentes para os testes.
-
-
-
-

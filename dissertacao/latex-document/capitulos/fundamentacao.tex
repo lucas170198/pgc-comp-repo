@@ -62,7 +62,7 @@ Todavia, no contexto de compressão de dados procuramos construir códigos que p
 %Um código é \textbf{distinto} se pode ser representado como uma função \textbf{bijetora}, i.e, $\forall$ $m_1$, $m_2$ $\in$ M, \emph{C($m_1$)} $\neq$ \emph{C($m_2$)}.
 Dado um alfabeto de origem $M$, chamamos as palavras em $M^+$ de
 \textbf{mensagens}. De fato, queremos codificar e decodificar
-mensanges utilizando códigos e não somente símbolos isolados. Podemos
+mensagens utilizando códigos e não somente símbolos isolados. Podemos
 estender código para mensagens naturalmente da forma a seguir. Dado um
 código $C\colon M\to W^+$, defina \textbf{código estendido} $C^+: M^+\to W^+$ por
 \begin{equation*}
@@ -76,8 +76,8 @@ Um código $C\colon M\to W^+$ é dito \textbf{unicamente decodificável}
 se $C^+$ é uma função injetora. Ou seja, toda mensagem é mapeada para
 uma palavra única.
 
-Um \textbf{código livre de prefixo} é um código em que nenhuma
-palavra-código é prefixo de outra. Uma palavra $w_1\dotsm w_k$ é
+Um \textbf{código livre de prefixo} é um código em que nenhuma palavra-código é prefixo de outra. 
+Uma palavra $w_1\dotsm w_k$ é
 \textbf{prefixo} de uma palavra $v_1\dotsm v_\ell$ se $k\leq \ell$ e
 $w_1\dotsm w_k = v_1\dotsm v_k$. Ou seja, um código $C\colon M\to W^+$
 é livre de prefixo se vale que, para quaisquer $m,m' \in M$ distintos,
@@ -89,8 +89,7 @@ nenhuma cadeia que é prefixo de outra, portanto é considerado um
 \textbf{código livre de prefixo}.  Códigos livres de prefixo não
 apenas são unicamente decodificáveis como podem ser
 \emph{decodificados instantaneamente}, pois, ao processar uma cadeia
-de sequência de palavras-código podemos decodificar cada uma delas sem
-precisar verificar o início da seguinte.
+de sequência de palavras-código podemos decodificar cada uma delas sem precisar verificar o início da seguinte.
 
 Todo código $C\colon M\to W^+$ pode ser representado por uma árvore
 $T(C)$ onde
@@ -117,10 +116,10 @@ Tabela~\ref{tab:vcode} (claramente um código livre de prefixo).
 % ----------------------------------------------------------------------------
 % Probabilidade -------------------------
 \section{Relações fundamentais com a Teoria da Informação}
-A codificação é comumente divida em duas componentes diferentes: \emph{modelo} e \emph{codificador}. 
+A codificação é comumente dividida em duas componentes diferentes:\emph{modelo} e \emph{codificador}. 
 O \emph{modelo} identifica a distribuição de probabilidade das mensagens baseado em sua semântica e estrutura. 
 O \emph{codificador} toma vantagem de um possível \emph{enviesamento (bias)} apontado pela modelagem, e utiliza as probabilidades associadas para reduzir a quantidade de dados necessária para representar a mesma informação (substituindo os símbolos que ocorrem com maior frequência por palavras-código menores).
-Isso significa que, a codificação está diretamente ligada às probabilidades associadas a cada símbolo do alfabeto de origem.
+Isso significa que a codificação está diretamente ligada às probabilidades associadas a cada símbolo do alfabeto de origem.
 
 Nesta seção, vamos construir o embasamento teórico necessário para entender a relação entre as probabilidades associadas e o comprimento das mensagens, e consequentemente criar uma noção dos parâmetros que devem ser maximizados ou minimizados para alcançar uma codificação eficiente.
 
@@ -199,7 +198,7 @@ H(X, p, b) = \sum_{x \in im_X}^{} p(x) \log_b \frac{1}{p(x)},
 \end{equation}
 onde $b$ é comumente tomado como $2$, mas pode assumir valores inteiros maiores do que~$2$.
 
-Por esta definição temos que quanto menor o enviesamento da função de distribuição de probabilidade relacionada ao sistema, maior a sua entropia. Em outras palavras, a entropia de um sistema esta intimamente ligada a sua ``desordem''.
+Por esta definição temos que quanto menor o enviesamento da função de distribuição de probabilidade relacionada ao sistema, maior a sua entropia. Em outras palavras, a entropia de um sistema está intimamente ligada a sua ``desordem''.
 
 Shannon~\ref{} aplica o mesmo conceito de entropia no contexto da Teoria da Informação, ``substituindo'' o conjunto de estados pelo conjunto de símbolos $M$, isto é, $M$ é interpretado como um conjunto de possíveis símbolos, tendo como $p(m)$ a probabilidade de cada $m \in M$.
 Baseado na mesma premissa, Shannon mede a informação de cada símbolo da seguinte forma
@@ -232,8 +231,8 @@ A seguir, será mostrado como podemos relacionar o comprimento médio de um cód
 \end{theorem}
 
 Antes de apresentar a demonstração do teorema~\ref{thm:kraftmc}, vamos
-explorar as suas consequências para comprimentos de códigos
-ótimos. Uma de suas consequências principais é que o valor da solução
+explorar as suas consequências para comprimentos de códigos ótimos. 
+Uma de suas consequências principais é que o valor da solução
 ótima para o problema de otimização~\ref{eq:prog_code_len}
 \begin{equation*} 
   \begin{array}{rl}
@@ -358,8 +357,7 @@ para todo código unicamente decodificável $C:M\to W^+$ tal que $|W| =
 b$.
 \end{lemma}
 
-Po outro lado, veremos também que um código de comprimento médio ótimo
-tem valor no máximo a entropia somada com $1$.
+Por outro lado, veremos também que um código de comprimento médio ótimo tem valor no máximo a entropia somada com $1$.
 
 \begin{lemma}[Entropia como limite superior]
   \label{lem:entropia_sup}
@@ -400,7 +398,7 @@ tem valor no máximo a entropia somada com $1$.
     Pela desigualdade de Jensen, se uma função $f:M\to\mathbb{R}$ é
     côncava, então $\sum_{m\in M} p(m) f(x_m) \leq f(\sum_{m\in M}
     p(m)~x_m)$ para quaisquer $x_m$ positivos. Como a função $\log_b$
-    é côncava, podemos aplicar a desigualdade de Jansen ao resultado
+    é côncava, podemos aplicar a desigualdade de Jensen ao resultado
     obtido anteriormente para deduzir que
 \begin{equation*}
   \sum_{m \in M}^{}p(m) \log_b  \left(\frac{b^{-l(C(m))}}{p(m)}\right)
@@ -418,7 +416,7 @@ como queríamos demonstrar.
 
 
   \begin{proof}[Prova do Lema~\ref{lem:entropia_sup}]
-    Seja $(M,p)$ um espaço de probabilidade finit. Podemos assumir que
+    Seja $(M,p)$ um espaço de probabilidade finita. Podemos assumir que
     $p(m)>0$ para todo $M$, pois elementos de $M$ com probabilidade
     zero podem ser ignorados.
 

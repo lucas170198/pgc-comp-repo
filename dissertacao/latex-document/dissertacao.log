@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2021) (preloaded format=pdflatex 2022.2.24)  18 AUG 2022 12:16
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2021) (preloaded format=pdflatex 2022.2.24)  18 AUG 2022 20:34
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1256,16 +1256,16 @@ l.59
  been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.110 
+l.109 
        [6]
 <figs/prefixtree.png, id=185, 332.24126pt x 221.82875pt>
 File: figs/prefixtree.png Graphic file (type png)
 <use figs/prefixtree.png>
-Package pdftex.def Info: figs/prefixtree.png  used on input line 113.
+Package pdftex.def Info: figs/prefixtree.png  used on input line 112.
 (pdftex.def)             Requested size: 249.18031pt x 166.37114pt.
  [7 <./figs/prefixtree.png>] [8]
 
-LaTeX Warning: Reference `' on page 9 undefined on input line 204.
+LaTeX Warning: Reference `' on page 9 undefined on input line 203.
 
 [9] [10] [11] [12]) [13] [14
 
@@ -1292,7 +1292,7 @@ LaTeX Warning: Reference `TODO REF ARTIGO' on page 18 undefined on input line 5
 <figs/lz77fam.png, id=282, 450.68375pt x 155.58125pt>
 File: figs/lz77fam.png Graphic file (type png)
 <use figs/lz77fam.png>
-Package pdftex.def Info: figs/lz77fam.png  used on input line 159.
+Package pdftex.def Info: figs/lz77fam.png  used on input line 157.
 (pdftex.def)             Requested size: 338.01196pt x 116.68564pt.
 
 
@@ -1300,7 +1300,7 @@ LaTeX Warning: `h' float specifier changed to `ht'.
 
 [20]
 LaTeX Font Info:    Font shape `T1/lmss/m/it' in size <14.4> not available
-(Font)              Font shape `T1/lmss/m/sl' tried instead on input line 199.
+(Font)              Font shape `T1/lmss/m/sl' tried instead on input line 197.
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
@@ -1310,23 +1310,28 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 <figs/cluster_h.png, id=311, 853.1875pt x 694.595pt>
 File: figs/cluster_h.png Graphic file (type png)
 <use figs/cluster_h.png>
-Package pdftex.def Info: figs/cluster_h.png  used on input line 262.
+Package pdftex.def Info: figs/cluster_h.png  used on input line 259.
 (pdftex.def)             Requested size: 426.59271pt x 347.29665pt.
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [25 <./figs/cluster_h.png (PNG copy)>] [26] [27]
-<figs/kmeans.png, id=336, 404.51125pt x 450.68375pt>
+ [25 <./figs/cluster_h.png (PNG copy)>]
+Underfull \vbox (badness 1005) has occurred while \output is active []
+
+ [26]
+[27]
+<figs/kmeans.png, id=335, 404.51125pt x 450.68375pt>
 File: figs/kmeans.png Graphic file (type png)
 <use figs/kmeans.png>
-Package pdftex.def Info: figs/kmeans.png  used on input line 337.
+Package pdftex.def Info: figs/kmeans.png  used on input line 333.
 (pdftex.def)             Requested size: 161.80162pt x 180.2703pt.
-<figs/elbowex.png, id=338, 820.06375pt x 374.39874pt>
+<figs/elbowex.png, id=337, 820.06375pt x 374.39874pt>
 File: figs/elbowex.png Graphic file (type png)
 <use figs/elbowex.png>
-Package pdftex.def Info: figs/elbowex.png  used on input line 354.
+Package pdftex.def Info: figs/elbowex.png  used on input line 350.
 (pdftex.def)             Requested size: 328.01968pt x 149.75684pt.
-) [28 <./figs/kmeans.png (PNG copy)> <./figs/elbowex.png (PNG copy)>] [29
+) [28 <./figs/kmeans.png (PNG copy)> <./figs/elbowex.png (PNG copy)>]
+[29
 
 
 
@@ -1344,12 +1349,12 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 File: lstlang1.sty 2020/03/24 1.8d listings language file
 )
 Package hyperref Info: bookmark level for unknown lstlisting defaults to 0 on i
-nput line 38.
+nput line 39.
  [32]
 <figs/wordcloud1.png, id=380, 517.935pt x 302.12875pt>
 File: figs/wordcloud1.png Graphic file (type png)
 <use figs/wordcloud1.png>
-Package pdftex.def Info: figs/wordcloud1.png  used on input line 101.
+Package pdftex.def Info: figs/wordcloud1.png  used on input line 102.
 (pdftex.def)             Requested size: 258.96686pt x 151.064pt.
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
@@ -1362,11 +1367,11 @@ Underfull \vbox (badness 1337) has occurred while \output is active []
 <figs/elbowgraph.png, id=511, 383.4325pt x 279.0425pt>
 File: figs/elbowgraph.png Graphic file (type png)
 <use figs/elbowgraph.png>
-Package pdftex.def Info: figs/elbowgraph.png  used on input line 257.
+Package pdftex.def Info: figs/elbowgraph.png  used on input line 258.
 (pdftex.def)             Requested size: 287.57367pt x 209.28136pt.
 
 [37]
-Overfull \hbox (24.2099pt too wide) in paragraph at lines 262--266
+Overfull \hbox (24.2099pt too wide) in paragraph at lines 263--267
 []\T1/lmr/m/n/12 (-20) Por fim, o \T1/lmr/m/it/12 (-20) k-means \T1/lmr/m/n/12 
 (-20) é apli-cado a base de da-dos atra-vés do ob-jeto $\OML/lmm/m/it/12 sklear
 n:cluster:KMeans$\T1/lmr/m/n/12 (-20) .
@@ -1375,28 +1380,28 @@ n:cluster:KMeans$\T1/lmr/m/n/12 (-20) .
 <figs/clustercloud.png, id=536, 383.4325pt x 248.93pt>
 File: figs/clustercloud.png Graphic file (type png)
 <use figs/clustercloud.png>
-Package pdftex.def Info: figs/clustercloud.png  used on input line 278.
+Package pdftex.def Info: figs/clustercloud.png  used on input line 279.
 (pdftex.def)             Requested size: 325.91916pt x 211.59149pt.
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [38 <./figs/elbowgraph.png>]
 
-LaTeX Warning: Command \~ invalid in math mode on input line 293.
+LaTeX Warning: Command \~ invalid in math mode on input line 294.
 
 <figs/graphfinal.png, id=550, 719.68875pt x 481.8pt>
 File: figs/graphfinal.png Graphic file (type png)
 <use figs/graphfinal.png>
-Package pdftex.def Info: figs/graphfinal.png  used on input line 299.
+Package pdftex.def Info: figs/graphfinal.png  used on input line 300.
 (pdftex.def)             Requested size: 431.81659pt x 289.08221pt.
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [39 <./figs/clustercloud.png>]
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <10.95> on input line 309.
+(Font)              <10.95> on input line 310.
 
-Underfull \vbox (badness 3758) has occurred while \output is active []
+Underfull \vbox (badness 8151) has occurred while \output is active []
 
  [40 <./figs/graphfinal.png>]) [41] (./dissertacao.brf)
 \tf@brf=\write5
@@ -1427,11 +1432,11 @@ Package rerunfilecheck Info: File `dissertacao.brf' has not changed.
 (rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
  ) 
 Here is how much of TeX's memory you used:
- 22247 strings out of 478994
- 335254 string characters out of 5858184
- 1209034 words of memory out of 5000000
+ 22245 strings out of 478994
+ 335234 string characters out of 5858184
+ 1209033 words of memory out of 5000000
  38603 multiletter control sequences out of 15000+600000
- 549680 words of font info for 308 fonts, out of 8000000 for 9000
+ 549519 words of font info for 307 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  86i,13n,88p,970b,1926s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/local/texlive/2021/texmf-dist/fonts/enc/dvips/lm/lm-rm.enc}{/usr/local/
@@ -1456,7 +1461,7 @@ lmssbx10.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/lm/lmsso12.
 pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/lm/lmsy10.pfb></usr/
 local/texlive/2021/texmf-dist/fonts/type1/public/lm/lmsy8.pfb></usr/local/texli
 ve/2021/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on dissertacao.pdf (51 pages, 1005918 bytes).
+Output written on dissertacao.pdf (51 pages, 1005876 bytes).
 PDF statistics:
  875 PDF objects out of 1000 (max. 8388607)
  778 compressed objects within 8 object streams
