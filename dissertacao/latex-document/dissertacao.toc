@@ -45,13 +45,12 @@
 \contentsline {subsection}{\numberline {4.2.2}Compressão baseada em palavras}{33}{subsection.4.2.2}%
 \contentsline {section}{\numberline {4.3}Partição de dados}{34}{section.4.3}%
 \contentsline {subsection}{\numberline {4.3.1}Partição aleatória}{35}{subsection.4.3.1}%
-\contentsline {subsection}{\numberline {4.3.2}Clusterizacao}{35}{subsection.4.3.2}%
-\contentsline {section}{\numberline {4.4}Resultados}{35}{section.4.4}%
-\contentsline {subsection}{\numberline {4.4.1}Metodologia}{35}{subsection.4.4.1}%
-\contentsline {subsection}{\numberline {4.4.2}Resultados pré clusterizacao}{35}{subsection.4.4.2}%
-\contentsline {subsection}{\numberline {4.4.3}Resultados pós clusterizacao}{35}{subsection.4.4.3}%
-\contentsline {section}{\numberline {4.5}Conclusao}{35}{section.4.5}%
-\contentsline {section}{\numberline {4.6}Trabalhos relacionados e melhorias}{35}{section.4.6}%
+\contentsline {subsection}{\numberline {4.3.2}Clusterização}{35}{subsection.4.3.2}%
+\contentsline {section}{\numberline {4.4}Resultados}{37}{section.4.4}%
+\contentsline {subsection}{\numberline {4.4.1}Taxa de compressão}{37}{subsection.4.4.1}%
+\contentsline {subsection}{\numberline {4.4.2}Tempo de execução}{38}{subsection.4.4.2}%
+\contentsline {section}{\numberline {4.5}Conclusão}{39}{section.4.5}%
+\contentsline {section}{\numberline {4.6}Trabalhos relacionados e melhorias}{39}{section.4.6}%
 \vspace {\cftbeforechapterskip }
 \setlength {\cftchapterindent }{\cftlastnumwidth } \setlength {\cftchapternumwidth }{2em}
-\contentsline {chapter}{\MakeTextUppercase {Refer\^encias}}{37}{section*.21}%
+\contentsline {chapter}{\MakeTextUppercase {Refer\^encias}}{41}{section*.26}%
