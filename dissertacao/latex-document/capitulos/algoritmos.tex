@@ -11,7 +11,7 @@ Neste capítulo serão apresentados dois dos principais algoritmos de compressã
 \pagebreak
 
 \section{Código de Huffman} \label{sec:huff}
-O \textbf{algoritmo de Huffman} (desenvolvido por David Huffman em 1952) é um dos componentes mais utilizados em algoritmos de compressão sem perda, servindo como base para algoritmos como o Deflate (utilizado amplamente na web).
+O \textbf{algoritmo de Huffman} (desenvolvido por David Huffman em 1952 \cite{Huff}) é um dos componentes mais utilizados em algoritmos de compressão sem perda, servindo como base para algoritmos como o Deflate (utilizado amplamente na web).
 Os códigos gerados a partir do algoritmos de Huffman são chamados \textbf{Códigos de Huffman}.
 
 O código de Huffman é descrito em termos de como ele gera uma árvore
@@ -48,10 +48,10 @@ seja $p_i$ a probabilidade associada a $m_i$.
 
 \subsection{Análise assintótica}
 
-Seja $n$ o tamanho do conjunto de símbolos $M$. Para que o algoritmo percorra toda a floresta, formada por uma árvore para cada $m \in M$, serão necessárias $n$ iterações. Considerando que as funções \emph{ExtractMin()} e \emph{.append()} foram construídas a partir de uma fila de prioridades de \textbf{heap} e essas operações podem ser realizadas em tempo $O(\log_2 n)$, o algoritmo será executado em tempo $O(n\log_2 n)$.
+Seja $n$ o tamanho do conjunto de símbolos $M$. Para que o algoritmo percorra toda a floresta, formada por uma árvore para cada $m \in M$, serão necessárias $n$ iterações. Considerando que as funções \emph{ExtractMin()} e \emph{.append()} foram construídas a partir de uma fila de prioridades de \textbf{heap} e essas operações podem ser realizadas em tempo $O(\log_2 n)$, o algoritmo será executado em tempo $O(n\log_2 n)$ \cite{Ble}.
 
 \subsection{Corretude}
-O teorema a seguir (escrito por Huffman~\ref{TODO REF ARTIGO}) afirma
+O teorema a seguir (escrito por Huffman, 1952 \cite{Huff}) afirma
 que os códigos de Huffman minimizam o comprimento médio, ou seja, são
 ótimos dentre os códigos livres de prefixo.
 
@@ -89,7 +89,7 @@ Antes de provar o teorema, começamos com uma simples observação.
 
 \noindent \textbf{Nota:} Perceba que em uma árvore de Huffman, o comprimento de uma palavra-código também representa seu nível na árvore.
 
-\begin{proof}[Prova do Teorema~\ref{thm:otimo_huffman}]
+\begin{proof}[Prova do Teorema~\ref{thm:otimo_huffman} (Blelloch, 2013 \cite{Ble})]
 A prova se dará por indução sobre o tamanho $n$ de $M$. Para a base,
 tome $n=2$. Nesse caso, o resultado é trivialmente verdadeiro
 considerando que o algoritmo de Hufman gera um código que atribui um
@@ -148,7 +148,7 @@ igual ao de $C''$ pelo lema~\ref{lemma:dist_prob_avg_size}.
 \section{Lempel-Ziv 77 (LZ77)}
 
 \subsection{Algoritmos de Lempel-Ziv}
-Nos anos de 1977 e 1978, Jacob Ziv e Abraham Lempel publicaram dois artigos apresentando os algoritmos \textbf{LZ77} e \textbf{LZ78}, que serviriam como base para uma família de algoritmos de compressão (conforme mostrado na Figura~\ref{fig:lz77}), chamados de algoritmos de \textbf{Lempel-Ziv}.
+Nos anos de 1977 e 1978, Jacob Ziv e Abraham Lempel publicaram dois artigos apresentando os algoritmos \textbf{LZ77} e \textbf{LZ78} \cite{LZ}, que serviriam como base para uma família de algoritmos de compressão (conforme mostrado na Figura~\ref{fig:lz77}), chamados de algoritmos de \textbf{Lempel-Ziv}.
 Os algoritmos de Lempel-Ziv realizam o processo de compressão baseado em um \textbf{dicionário} de mensagens vistas anteriormente (diferente do \nameref{alg:huff}, que utiliza a probabilidade associada a cada símbolo). 
 Tanto o LZ77 quanto o LZ78 têm um funcionamento parecido, que se resume em substituir partes da entrada por referências a partes iguais anteriormente processadas, e diferem na maneira em que procuram por repetições a serem substituídas. 
 
@@ -206,7 +206,7 @@ A busca será executada $M + N$ vezes, isto é, a complexidade geral do algoritm
 \subsection{Melhorias na performance da função ``\emph{findLongestMatch}'' }
 
 Uma das possíveis abordagens para melhorar a busca linear é utilizar estruturas de dados auxiliares, que indexam os símbolos do dicionário para tornar a busca mais rápida.
-(TODO: Citacao do artigo) testa diferentes estruturas de dados (árvores trie, hash tables, árvores binárias de busca entre outros). 
+Bell (1993) \cite{TD}  testa diferentes estruturas de dados (árvores trie, hash tables, árvores binárias de busca entre outros). 
 Para este trabalho utilizaremos a \textbf{lista ligada} como estrutura de dados auxiliar (principalmente por possuir uma implementação mais simples). 
 
 Para construir uma estrutura de dados auxiliar com lista ligada, podemos criar uma lista para cada símbolo no dicionário, que contenha os índices onde o símbolo pode ser encontrado.  
@@ -225,19 +225,19 @@ Em contrapartida, se definirmos cada símbolo do \emph{alfabeto de origem} como 
 Quando a natureza dos dados é previamente conhecida, podemos tomar vantagem da sua estrutura para definir os símbolos de uma maneira mais eficiente. 
 Em especial, linguagens ``faladas'' possuem uma estrutura hierárquica bem definida, que vai desde o agrupamento de letras em sílabas, silabas em palavras, palavras em frases e assim por diante. 
 
-Neste contexto, definiremos uma \textbf{\emph{palavra}} como uma sequência maximal de \emph{caracteres} alfanuméricos, divididos por sequências de caracteres não alfanuméricos chamados \emph{separadores} (baseado na definição feita por Bentley et al. TODO referencia).
+Neste contexto, definiremos uma \textbf{\emph{palavra}} como uma sequência maximal de \emph{caracteres} alfanuméricos, divididos por sequências de caracteres não alfanuméricos chamados \emph{separadores} (baseado na definição feita por Bentley (1986) \cite{Bentley}).
 A compressão baseada em palavras é uma modificação dos algoritmos de compressão clássicos, que considera cada palavra como um símbolo (i.e, o \emph{alfabeto de origem} passa a ser composto por \emph{palavras}, não por \emph{caracteres}).
 
 \subsection{Huffword} \label{sub:huffw}
 O método de compressão \emph{Huffword} é uma modificação da implementação canônica do \emph{código de Huffman}. 
-Desenvolvido por Moffat e Zobel (Incluir referencia) em 1994, ele utiliza \emph{palavras} em seu alfabeto de origem.
+Desenvolvido por Moffat e Zobel (1994) \cite{Moffat}, ele utiliza \emph{palavras} em seu alfabeto de origem.
 
 O algoritmo funciona de maneira bem similar à implementação canônica, o arquivo é pré-processado separando as \emph{palavras} e os \emph{separadores} como duas entradas distintas.
 Depois o algoritmo de Huffman canônico é aplicado a cada uma das partes, sendo que as probabilidades agora estão associadas às palavras e não mais aos caracteres. 
 A codificação associada a entrada também é armazenada em duas \emph{strings} distintas, assim como as tabelas de códigos também são distintas.
  
  \subsection{WLZ77}
- (TODO REF ARTIGO) implementa a versão do LZ77 baseado em palavras (também chamado WLZ77) aplicando uma ideia semelhante à apresentada anteriormente . 
+Platos (2008) \cite{Platos} implementa a versão do LZ77 baseado em palavras (também chamado WLZ77) aplicando uma ideia semelhante à apresentada anteriormente . 
  O arquivo é pré-processado para obter uma lista de \emph{palavras} e \emph{separadores}. 
  Ao contrário do ~\nameref{sub:huffw} as palavras e separadores são processados simultaneamente pela implementação canônica do LZ77, gerando uma sequência única de \emph{tokens}.
  
@@ -250,7 +250,7 @@ A codificação associada a entrada também é armazenada em duas \emph{strings}
  O processo de clusterização de dados consiste em agrupar os objetos (que compõe o conjunto de dados) em $n$ diferentes \textbf{agrupamentos} (clusters), de maneira em que os objetos de um mesmo grupo sejam similares e os de grupos diferentes dissimilares.
  Para isto, faz-se essencial uma definição clara da similaridade entre os objetos, que pode variar dependendo da natureza do dado em análise.
  
- Podemos construir o processo de clusterização de diferentes maneiras: Na \textbf{clusterização sem sobreposição} cada objeto deve pertencer a exatamente um cluster. 
+ Podemos construir o processo de clusterização de diferentes maneiras \cite{Goog2}: Na \textbf{clusterização sem sobreposição} cada objeto deve pertencer a exatamente um cluster. 
  Em contrapartida podemos agrupar os objetos permitindo algumas sobreposições. 
  Podemos ainda clusterizar dados por \textbf{hierarquia}, onde os dados são organizados em níveis (quase como uma árvore).
  
@@ -276,7 +276,7 @@ Análise de texto é umas das aplicações mais exploradas no campo dos sistemas
 Porém, pode ser uma tarefa difícil utilizar texto bruto como entrada para os algoritmos de \emph{machine learning}. 
 Geralmente, tais algoritmos ``lidam melhor'' com características numéricas.
  
-O processo de transformar documentos em vetores de características numéricas é conhecido como \textbf{vetorização}. 
+O processo de transformar documentos em vetores de características numéricas é conhecido como \textbf{vetorização} \cite{Qaiser}. 
 Em geral, procuramos uma medida que atribua pesos a cada palavra, de acordo com a sua ``importância'' no documento.
 
 Poderíamos atribuir pesos às palavras de maneira direta e intuitiva, atrelando o peso diretamente a frequência em que aquela palavra ocorre em um documento.
@@ -291,7 +291,7 @@ Onde $t$ é a palavra (ou termo) alvo da medição, e $d$ é o documento que con
 Entretanto, algumas palavras (como ``and'' ou ``him'' no inglês) adicionam pouca ou nenhuma informação relevante para o texto em si, apesar de sua alta frequência, essas palavras são conhecidas como \textbf{\emph{stop words}}.
 Remover as \emph{stop words} pode diminuir ruídos nos dados utilizados para o modelo de classificação, sendo um recurso muito importante para a construção de clusters com maior significado semântico.
 
-Para compensar este fator, o \textbf{IDF} (\emph{inverse document frequency}) pondera o quão ``incomum'' é um determinado termo entre diferentes documentos, atribuindo valores baixos a termos que se repetem muito em diferentes documentos.
+Para compensar este fator, o \textbf{IDF} (\emph{inverse document frequency}) pondera o quão ``incomum'' é um determinado termo entre diferentes documentos, atribuindo valores baixos a termos que se repetem muito em diferentes documentos \cite{Qaiser}.
 
 \begin{equation}\label{eq:idf}
 idf(t, D) = \log \frac{len(D)}{count(d \in D : t \in d)}
@@ -312,12 +312,12 @@ No geral, busca-se manter apenas características relevantes aos dados, reduzind
 
  \subsection{PCA}
  O PCA (ou \emph{principal component analysis}) é formado por um procedimento algébrico, 
- que reduz as variáveis correlacionadas em um conjunto de variáveis não relacionadas (linearmente) chamadas \emph{principal components} (PCs), iterativamente.
+ que reduz as variáveis correlacionadas em um conjunto de variáveis não relacionadas (linearmente) chamadas \emph{principal components} (PCs), iterativamente \cite{Jolliffe}.
  No contexto da clusterização, o PCA é utilizado principalmente para transformar dados com muitas dimensões em uma representação com menores dimensões (usualmente duas dimensões, facilitando a análise gráfica dos dados).
  
  
  \section{Clusterização K-means}
-O método de clusterização \emph{k-means} (ou algoritmo de Lloyd's) é um algoritmo iterativo que particiona os dados em $k$ clusters, definidos por \textbf{pontos centrais} (onde $k$ é uma das entradas para o algoritmo).
+O método de clusterização \emph{k-means} (ou algoritmo de Lloyd's \cite{Lloyd}) é um algoritmo iterativo que particiona os dados em $k$ clusters, definidos por \textbf{pontos centrais} (onde $k$ é uma das entradas para o algoritmo).
 A ideia em geral é encontrar os melhores $k$ pontos centrais, isto é, posicionar estes pontos de maneira a minimizar a distância dos dados aos pontos centrais mais próximos. 
 Podemos definir o k-means da seguinte forma:
  \begin{enumerate}
@@ -338,7 +338,7 @@ Podemos definir o k-means da seguinte forma:
  
  \subsection{Método de elbow}\label{ssec:elbow}
  O resultado do \emph{k-means} é diretamente afetado pelo número de clusters definidos na inicialização do algoritmo.
- Existem diversas formas para determinar o número ``ideal'' de clusters, uma delas é o \textbf{método de elbow}.
+ Existem diversas formas para determinar o número ``ideal'' de clusters, uma delas é o \textbf{método de elbow} \cite{Humaira}.
  
  Neste método, executa-se o \emph{k-means} para um range pré-definido de valores em $k$. 
  Depois disso, calcula-se a soma das distâncias quadráticas (também chamada de \textbf{inércia}) de cada ponto para o seu respectivo ponto central.
