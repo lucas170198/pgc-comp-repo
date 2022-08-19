@@ -52,14 +52,13 @@ poderíamos definir um código $C$ da seguinte forma:
 Neste exemplo, o \textbf{comprimento} da palavra-código associado à
 letra ``b''~é dado por $l(C(b)) = l(01) = 2$.
 
-As palavras-código associadas a cada símbolo podem ter um tamanho \emph{fixo} ou \emph{variável}.
+As palavras-código associadas a cada símbolo podem ter um tamanho \emph{fixo} ou \emph{variável} \cite{HL}.
 Códigos nos quais palavras-código possuem um comprimento fixo são chamados de \textbf{códigos de comprimento fixo}, enquanto os que possuem alfabetos de comprimento variáveis são chamados \textbf{códigos de comprimento variável}. Note que o exemplo anterior é um código de comprimento variável. 
 Provavelmente o exemplo mais conhecido de código de \textbf{comprimento fixo} seja código ASCII, que mapeia 64 símbolos alfa-numéricos (ou 256 em sua versão estendida) para palavras-código de 8 bits. 
-Todavia, no contexto de compressão de dados procuramos construir códigos que podem variar em seu comprimento baseados na sua probabilidade associada, a fim de reduzir o tamanho médio da \emph{string} original ao codificá-la.
+Todavia, no contexto de compressão de dados procuramos construir códigos que podem variar em seu comprimento baseados na sua probabilidade associada, a fim de reduzir o tamanho médio da \emph{string} original ao codificá-la \cite{HL}.
 
 \subsection{Códigos unicamente decodificáveis e livres de prefixo}
 
-%Um código é \textbf{distinto} se pode ser representado como uma função \textbf{bijetora}, i.e, $\forall$ $m_1$, $m_2$ $\in$ M, \emph{C($m_1$)} $\neq$ \emph{C($m_2$)}.
 Dado um alfabeto de origem $M$, chamamos as palavras em $M^+$ de
 \textbf{mensagens}. De fato, queremos codificar e decodificar
 mensagens utilizando códigos e não somente símbolos isolados. Podemos
@@ -74,7 +73,7 @@ onde $\textrm{concat}(\cdot)$ é a função de concatenação de sequências.
 
 Um código $C\colon M\to W^+$ é dito \textbf{unicamente decodificável}
 se $C^+$ é uma função injetora. Ou seja, toda mensagem é mapeada para
-uma palavra única.
+uma palavra única \cite{Ble}.
 
 Um \textbf{código livre de prefixo} é um código em que nenhuma palavra-código é prefixo de outra. 
 Uma palavra $w_1\dotsm w_k$ é
@@ -91,8 +90,7 @@ apenas são unicamente decodificáveis como podem ser
 \emph{decodificados instantaneamente}, pois, ao processar uma cadeia
 de sequência de palavras-código podemos decodificar cada uma delas sem precisar verificar o início da seguinte.
 
-Todo código $C\colon M\to W^+$ pode ser representado por uma árvore
-$T(C)$ onde
+Todo código $C\colon M\to W^+$ pode ser representado por uma árvore $T(C)$ onde \cite{Ble}
 \begin{itemize}
 \item as arestas são rotuladas por símbolos de $W$ e,
 \item cada símbolo $m \in M$ é associado a um nó $v(m)$ da árvore,
@@ -118,7 +116,7 @@ Tabela~\ref{tab:vcode} (claramente um código livre de prefixo).
 \section{Relações fundamentais com a Teoria da Informação}
 A codificação é comumente dividida em duas componentes diferentes:\emph{modelo} e \emph{codificador}. 
 O \emph{modelo} identifica a distribuição de probabilidade das mensagens baseado em sua semântica e estrutura. 
-O \emph{codificador} toma vantagem de um possível \emph{enviesamento (bias)} apontado pela modelagem, e utiliza as probabilidades associadas para reduzir a quantidade de dados necessária para representar a mesma informação (substituindo os símbolos que ocorrem com maior frequência por palavras-código menores).
+O \emph{codificador} toma vantagem de um possível \emph{enviesamento (bias)} apontado pela modelagem, e utiliza as probabilidades associadas para reduzir a quantidade de dados necessária para representar a mesma informação (substituindo os símbolos que ocorrem com maior frequência por palavras-código menores) \cite{HL}.
 Isso significa que a codificação está diretamente ligada às probabilidades associadas a cada símbolo do alfabeto de origem.
 
 Nesta seção, vamos construir o embasamento teórico necessário para entender a relação entre as probabilidades associadas e o comprimento das mensagens, e consequentemente criar uma noção dos parâmetros que devem ser maximizados ou minimizados para alcançar uma codificação eficiente.
@@ -133,14 +131,14 @@ $\sum_{\omega \in \Omega} P(\omega) = 1$.
 O conjunto $\Omega$ é chamado de \textbf{espaço amostral} e $P$ é
 chamada de \textbf{função de probabilidade}. Um \textbf{evento} $E$ é
 um sunconjunto de $\Omega$ e sua probabilidade é definida como $P(E)
-:= \sum_{\omega \in E} P(\omega)$.
+:= \sum_{\omega \in E} P(\omega)$ \cite{BT}.
 
 Uma \textbf{variável aleatória} $X$ associa um número real a cada
 um dos elementos de $\Omega$. Em outras palavras, $X$ é uma
 função que mapeia os elementos do espaço amostral para números
 reais. Uma variável aleatória é chamada \textbf{discreta} quando os
 valores dos experimentos associados a ela são números finitos ou ao
-menos infinitos que podem ser contados.
+menos infinitos que podem ser contados \cite{BT}.
 
 Podemos descrever melhor uma variável aleatória $X$, atribuindo
 probabilidades sobre os valores que esta pode assumir. Esses valores
@@ -157,7 +155,7 @@ $P(\{\omega\in \Omega: X(\omega) = x\})$. Note que a pré-imagem de $X$
 \end{equation}
 onde $im_X$ denota a imagem de $X$.
 
-O \textbf{valor esperado} (ou \textbf{esperança}) da variável aleatória $X$ é definido como
+O \textbf{valor esperado} (ou \textbf{esperança}) da variável aleatória $X$ é definido como \cite{BT}:
 \begin{equation} \label{eq:exp_val}
 \textbf{E}[X] = \sum_{x ~\in ~im_X}^{} xp_X(x).
 \end{equation}
@@ -191,7 +189,7 @@ Assim, temos o seguinte problema de otimização
 \subsection{Entropia}
 A \textbf{entropia de Shannon} aplica as noções de entropia física
 (que representa a aleatoriedade de um sistema) à Teoria da
-Informação. Dada uma variável aleatória $X$ com distribuição de
+Informação \cite{Ble}. Dada uma variável aleatória $X$ com distribuição de
 probabilidade $p$, definimos \textbf{entropia} de $X$ como
 \begin{equation} \label{eq:entropy}
 H(X, p, b) = \sum_{x \in im_X}^{} p(x) \log_b \frac{1}{p(x)},
@@ -200,7 +198,7 @@ onde $b$ é comumente tomado como $2$, mas pode assumir valores inteiros maiores
 
 Por esta definição temos que quanto menor o enviesamento da função de distribuição de probabilidade relacionada ao sistema, maior a sua entropia. Em outras palavras, a entropia de um sistema está intimamente ligada a sua ``desordem''.
 
-Shannon~\ref{} aplica o mesmo conceito de entropia no contexto da Teoria da Informação, ``substituindo'' o conjunto de estados pelo conjunto de símbolos $M$, isto é, $M$ é interpretado como um conjunto de possíveis símbolos, tendo como $p(m)$ a probabilidade de cada $m \in M$.
+Shannon (1948)~\cite{Shan} aplica o mesmo conceito de entropia no contexto da Teoria da Informação, ``substituindo'' o conjunto de estados pelo conjunto de símbolos $M$, isto é, $M$ é interpretado como um conjunto de possíveis símbolos, tendo como $p(m)$ a probabilidade de cada $m \in M$.
 Baseado na mesma premissa, Shannon mede a informação de cada símbolo da seguinte forma
 \begin{equation} \label{label:info_quantity}
 \emph{i(m,b)} = \log_b \frac{1}{p(m)}.
@@ -262,7 +260,7 @@ todos os códigos unicamente decodificáveis.
 A seguir apresentamos a demonstração da Desigualdade de
 Kraft-McMillan.
 
-\begin{proof}[Prova do Teorema~\ref{thm:kraftmc}]
+\begin{proof}[Prova do Teorema~\ref{thm:kraftmc} (Autoral)]
     Primeiramente, mostraremos a equação~\eqref{eq:cond_kraft_nec}.
     
     Seja $C:M\to W^+$ um código unicamente decodificável. Seja $b :=
@@ -371,7 +369,7 @@ Por outro lado, veremos também que um código de comprimento médio ótimo tem 
 
   A seguir apresentamos as demonstrações dos lemas acima.
   
-  \begin{proof}[Prova do Lema~\ref{lem:entropia_inf}]
+  \begin{proof}[Prova do Lema~\ref{lem:entropia_inf} (Blelloch, 2013 \cite{Ble})]
     Seja $C:M\to W^+$ um código unicamente decodificável e seja $b :=
     |W|$. Seja $p$ uma função de probabilidade para $M$. Queremos
     provar que $H(M, p,b) - l_a(C) \leq 0$.
@@ -415,7 +413,7 @@ como queríamos demonstrar.
 \end{proof}
 
 
-  \begin{proof}[Prova do Lema~\ref{lem:entropia_sup}]
+  \begin{proof}[Prova do Lema~\ref{lem:entropia_sup} (Blelloch, 2013 \cite{Ble})]
     Seja $(M,p)$ um espaço de probabilidade finita. Podemos assumir que
     $p(m)>0$ para todo $M$, pois elementos de $M$ com probabilidade
     zero podem ser ignorados.
