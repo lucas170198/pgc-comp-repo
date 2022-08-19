@@ -1,9 +1,9 @@
-PWD /Users/geo_zuza/Downloads/Template UFABC
+PWD /Users/lucasamorim/Documents/gitrepos/pgc-comp-repo/dissertacao/latex-document
 INPUT /usr/local/texlive/2021/texmf.cnf
 INPUT /usr/local/texlive/2021/texmf-dist/web2c/texmf.cnf
 INPUT /usr/local/texlive/2021/texmf-var/web2c/pdftex/pdflatex.fmt
-INPUT /Users/geo_zuza/Downloads/Template UFABC/dissertacao.tex
-OUTPUT /Users/geo_zuza/Downloads/Template UFABC/dissertacao.log
+INPUT /Users/lucasamorim/Documents/gitrepos/pgc-comp-repo/dissertacao/latex-document/dissertacao.tex
+OUTPUT /Users/lucasamorim/Documents/gitrepos/pgc-comp-repo/dissertacao/latex-document/dissertacao.log
 INPUT /usr/local/texlive/2021/texmf-dist/tex/latex/abntex2/abntex2.cls
 INPUT /usr/local/texlive/2021/texmf-dist/tex/latex/abntex2/abntex2.cls
 INPUT /usr/local/texlive/2021/texmf-dist/tex/latex/abntex2/abntex2.cls
@@ -845,6 +845,89 @@ INPUT /usr/local/texlive/2021/texmf-dist/tex/latex/amscls/amsthm.sty
 INPUT /usr/local/texlive/2021/texmf-dist/tex/latex/amscls/amsthm.sty
 INPUT /usr/local/texlive/2021/texmf-dist/tex/latex/amscls/amsthm.sty
 INPUT /usr/local/texlive/2021/texmf-dist/tex/latex/amscls/amsthm.sty
+INPUT /usr/local/texlive/2021/texmf-dist/tex/latex/algorithms/algorithm.sty
+INPUT /usr/local/texlive/2021/texmf-dist/tex/latex/algorithms/algorithm.sty
+INPUT /usr/local/texlive/2021/texmf-dist/tex/latex/algorithms/algorithm.sty
+INPUT /usr/local/texlive/2021/texmf-dist/tex/latex/algorithms/algorithm.sty
+INPUT /usr/local/texlive/2021/texmf-dist/tex/latex/algorithms/algorithm.sty
+INPUT /usr/local/texlive/2021/texmf-dist/tex/latex/algorithms/algorithm.sty
+INPUT /usr/local/texlive/2021/texmf-dist/tex/latex/algorithms/algorithm.sty
+INPUT /usr/local/texlive/2021/texmf-dist/tex/latex/algorithms/algorithm.sty
+INPUT /usr/local/texlive/2021/texmf-dist/tex/latex/algorithms/algorithm.sty
+INPUT /usr/local/texlive/2021/texmf-dist/tex/latex/algorithms/algorithm.sty
+INPUT /usr/local/texlive/2021/texmf-dist/tex/latex/algorithms/algorithm.sty
+INPUT /usr/local/texlive/2021/texmf-dist/tex/latex/float/float.sty
+INPUT /usr/local/texlive/2021/texmf-dist/tex/latex/float/float.sty
+INPUT /usr/local/texlive/2021/texmf-dist/tex/latex/float/float.sty
+INPUT /usr/local/texlive/2021/texmf-dist/tex/latex/float/float.sty
+INPUT /usr/local/texlive/2021/texmf-dist/tex/latex/float/float.sty
+INPUT /usr/local/texlive/2021/texmf-dist/tex/latex/float/float.sty
+INPUT /usr/local/texlive/2021/texmf-dist/tex/latex/float/float.sty
+INPUT /usr/local/texlive/2021/texmf-dist/tex/latex/float/float.sty
+INPUT /usr/local/texlive/2021/texmf-dist/tex/latex/float/float.sty
+INPUT /usr/local/texlive/2021/texmf-dist/tex/latex/float/float.sty
+INPUT /usr/local/texlive/2021/texmf-dist/tex/latex/float/float.sty
+INPUT /usr/local/texlive/2021/texmf-dist/tex/latex/base/ifthen.sty
+INPUT /usr/local/texlive/2021/texmf-dist/tex/latex/algorithmicx/algpseudocode.sty
+INPUT /usr/local/texlive/2021/texmf-dist/tex/latex/algorithmicx/algpseudocode.sty
+INPUT /usr/local/texlive/2021/texmf-dist/tex/latex/algorithmicx/algpseudocode.sty
+INPUT /usr/local/texlive/2021/texmf-dist/tex/latex/algorithmicx/algpseudocode.sty
+INPUT /usr/local/texlive/2021/texmf-dist/tex/latex/algorithmicx/algpseudocode.sty
+INPUT /usr/local/texlive/2021/texmf-dist/tex/latex/algorithmicx/algpseudocode.sty
+INPUT /usr/local/texlive/2021/texmf-dist/tex/latex/algorithmicx/algpseudocode.sty
+INPUT /usr/local/texlive/2021/texmf-dist/tex/latex/algorithmicx/algpseudocode.sty
+INPUT /usr/local/texlive/2021/texmf-dist/tex/latex/algorithmicx/algpseudocode.sty
+INPUT /usr/local/texlive/2021/texmf-dist/tex/latex/algorithmicx/algpseudocode.sty
+INPUT /usr/local/texlive/2021/texmf-dist/tex/latex/algorithmicx/algpseudocode.sty
+INPUT /usr/local/texlive/2021/texmf-dist/tex/latex/base/ifthen.sty
+INPUT /usr/local/texlive/2021/texmf-dist/tex/latex/algorithmicx/algorithmicx.sty
+INPUT /usr/local/texlive/2021/texmf-dist/tex/latex/algorithmicx/algorithmicx.sty
+INPUT /usr/local/texlive/2021/texmf-dist/tex/latex/algorithmicx/algorithmicx.sty
+INPUT /usr/local/texlive/2021/texmf-dist/tex/latex/algorithmicx/algorithmicx.sty
+INPUT /usr/local/texlive/2021/texmf-dist/tex/latex/algorithmicx/algorithmicx.sty
+INPUT /usr/local/texlive/2021/texmf-dist/tex/latex/algorithmicx/algorithmicx.sty
+INPUT /usr/local/texlive/2021/texmf-dist/tex/latex/algorithmicx/algorithmicx.sty
+INPUT /usr/local/texlive/2021/texmf-dist/tex/latex/algorithmicx/algorithmicx.sty
+INPUT /usr/local/texlive/2021/texmf-dist/tex/latex/algorithmicx/algorithmicx.sty
+INPUT /usr/local/texlive/2021/texmf-dist/tex/latex/algorithmicx/algorithmicx.sty
+INPUT /usr/local/texlive/2021/texmf-dist/tex/latex/algorithmicx/algorithmicx.sty
+INPUT /usr/local/texlive/2021/texmf-dist/tex/latex/base/ifthen.sty
+INPUT /usr/local/texlive/2021/texmf-dist/tex/latex/float/float.sty
+INPUT /usr/local/texlive/2021/texmf-dist/tex/latex/listings/listings.sty
+INPUT /usr/local/texlive/2021/texmf-dist/tex/latex/listings/listings.sty
+INPUT /usr/local/texlive/2021/texmf-dist/tex/latex/listings/listings.sty
+INPUT /usr/local/texlive/2021/texmf-dist/tex/latex/listings/listings.sty
+INPUT /usr/local/texlive/2021/texmf-dist/tex/latex/listings/listings.sty
+INPUT /usr/local/texlive/2021/texmf-dist/tex/latex/listings/listings.sty
+INPUT /usr/local/texlive/2021/texmf-dist/tex/latex/listings/listings.sty
+INPUT /usr/local/texlive/2021/texmf-dist/tex/latex/listings/listings.sty
+INPUT /usr/local/texlive/2021/texmf-dist/tex/latex/listings/listings.sty
+INPUT /usr/local/texlive/2021/texmf-dist/tex/latex/listings/listings.sty
+INPUT /usr/local/texlive/2021/texmf-dist/tex/latex/listings/listings.sty
+INPUT /usr/local/texlive/2021/texmf-dist/tex/latex/graphics/keyval.sty
+INPUT /usr/local/texlive/2021/texmf-dist/tex/latex/listings/lstmisc.sty
+INPUT /usr/local/texlive/2021/texmf-dist/tex/latex/listings/lstmisc.sty
+INPUT /usr/local/texlive/2021/texmf-dist/tex/latex/listings/lstmisc.sty
+INPUT /usr/local/texlive/2021/texmf-dist/tex/latex/listings/lstmisc.sty
+INPUT /usr/local/texlive/2021/texmf-dist/tex/latex/listings/listings.cfg
+INPUT /usr/local/texlive/2021/texmf-dist/tex/latex/listings/listings.cfg
+INPUT /usr/local/texlive/2021/texmf-dist/tex/latex/listings/listings.cfg
+INPUT /usr/local/texlive/2021/texmf-dist/tex/latex/listings/listings.cfg
+INPUT /usr/local/texlive/2021/texmf-dist/tex/latex/xcolor/xcolor.sty
+INPUT /usr/local/texlive/2021/texmf-dist/tex/latex/xcolor/xcolor.sty
+INPUT /usr/local/texlive/2021/texmf-dist/tex/latex/xcolor/xcolor.sty
+INPUT /usr/local/texlive/2021/texmf-dist/tex/latex/xcolor/xcolor.sty
+INPUT /usr/local/texlive/2021/texmf-dist/tex/latex/xcolor/xcolor.sty
+INPUT /usr/local/texlive/2021/texmf-dist/tex/latex/xcolor/xcolor.sty
+INPUT /usr/local/texlive/2021/texmf-dist/tex/latex/xcolor/xcolor.sty
+INPUT /usr/local/texlive/2021/texmf-dist/tex/latex/xcolor/xcolor.sty
+INPUT /usr/local/texlive/2021/texmf-dist/tex/latex/xcolor/xcolor.sty
+INPUT /usr/local/texlive/2021/texmf-dist/tex/latex/xcolor/xcolor.sty
+INPUT /usr/local/texlive/2021/texmf-dist/tex/latex/xcolor/xcolor.sty
+INPUT /usr/local/texlive/2021/texmf-dist/tex/latex/graphics-cfg/color.cfg
+INPUT /usr/local/texlive/2021/texmf-dist/tex/latex/graphics-cfg/color.cfg
+INPUT /usr/local/texlive/2021/texmf-dist/tex/latex/graphics-cfg/color.cfg
+INPUT /usr/local/texlive/2021/texmf-dist/tex/latex/graphics-cfg/color.cfg
 INPUT /usr/local/texlive/2021/texmf-dist/tex/latex/hyperref/backref.sty
 INPUT /usr/local/texlive/2021/texmf-dist/tex/latex/hyperref/backref.sty
 INPUT /usr/local/texlive/2021/texmf-dist/tex/latex/hyperref/backref.sty
@@ -924,65 +1007,71 @@ INPUT /usr/local/texlive/2021/texmf-dist/tex/latex/relsize/relsize.sty
 INPUT /usr/local/texlive/2021/texmf-dist/tex/latex/relsize/relsize.sty
 INPUT /usr/local/texlive/2021/texmf-dist/tex/latex/relsize/relsize.sty
 INPUT /usr/local/texlive/2021/texmf-dist/tex/latex/relsize/relsize.sty
-INPUT /Users/geo_zuza/Downloads/Template UFABC/extras/conf_citacoes.tex
-INPUT /Users/geo_zuza/Downloads/Template UFABC/extras/conf_citacoes.tex
-INPUT /Users/geo_zuza/Downloads/Template UFABC/extras/conf_citacoes.tex
-INPUT /Users/geo_zuza/Downloads/Template UFABC/extras/conf_citacoes.tex
-INPUT /Users/geo_zuza/Downloads/Template UFABC/extras/conf_citacoes.tex
-OUTPUT /Users/geo_zuza/Downloads/Template UFABC/extras/conf_citacoes.aux
-INPUT /Users/geo_zuza/Downloads/Template UFABC/extras/conf_citacoes.tex
-INPUT /Users/geo_zuza/Downloads/Template UFABC/extras/conf_citacoes.tex
-INPUT /Users/geo_zuza/Downloads/Template UFABC/extras/conf_citacoes.tex
-INPUT /Users/geo_zuza/Downloads/Template UFABC/extras/conf_citacoes.tex
-INPUT /Users/geo_zuza/Downloads/Template UFABC/extras/conf_citacoes.tex
-INPUT /Users/geo_zuza/Downloads/Template UFABC/extras/conf_citacoes.tex
-INPUT /Users/geo_zuza/Downloads/Template UFABC/extras/conf_citacoes.tex
-INPUT /Users/geo_zuza/Downloads/Template UFABC/extras/conf_citacoes.tex
-INPUT /Users/geo_zuza/Downloads/Template UFABC/extras/dados.tex
-INPUT /Users/geo_zuza/Downloads/Template UFABC/extras/dados.tex
-INPUT /Users/geo_zuza/Downloads/Template UFABC/extras/dados.tex
-INPUT /Users/geo_zuza/Downloads/Template UFABC/extras/dados.tex
-INPUT /Users/geo_zuza/Downloads/Template UFABC/extras/dados.tex
-OUTPUT /Users/geo_zuza/Downloads/Template UFABC/extras/dados.aux
-INPUT /Users/geo_zuza/Downloads/Template UFABC/extras/dados.tex
-INPUT /Users/geo_zuza/Downloads/Template UFABC/extras/dados.tex
-INPUT /Users/geo_zuza/Downloads/Template UFABC/extras/dados.tex
-INPUT /Users/geo_zuza/Downloads/Template UFABC/extras/dados.tex
-INPUT /Users/geo_zuza/Downloads/Template UFABC/extras/dados.tex
-INPUT /Users/geo_zuza/Downloads/Template UFABC/extras/dados.tex
-INPUT /Users/geo_zuza/Downloads/Template UFABC/extras/dados.tex
-INPUT /Users/geo_zuza/Downloads/Template UFABC/extras/dados.tex
-INPUT /Users/geo_zuza/Downloads/Template UFABC/extras/conf_pdf.tex
-INPUT /Users/geo_zuza/Downloads/Template UFABC/extras/conf_pdf.tex
-INPUT /Users/geo_zuza/Downloads/Template UFABC/extras/conf_pdf.tex
-INPUT /Users/geo_zuza/Downloads/Template UFABC/extras/conf_pdf.tex
-INPUT /Users/geo_zuza/Downloads/Template UFABC/extras/conf_pdf.tex
-OUTPUT /Users/geo_zuza/Downloads/Template UFABC/extras/conf_pdf.aux
-INPUT /Users/geo_zuza/Downloads/Template UFABC/extras/conf_pdf.tex
-INPUT /Users/geo_zuza/Downloads/Template UFABC/extras/conf_pdf.tex
-INPUT /Users/geo_zuza/Downloads/Template UFABC/extras/conf_pdf.tex
-INPUT /Users/geo_zuza/Downloads/Template UFABC/extras/conf_pdf.tex
-INPUT /Users/geo_zuza/Downloads/Template UFABC/extras/conf_pdf.tex
-INPUT /Users/geo_zuza/Downloads/Template UFABC/extras/conf_pdf.tex
-INPUT /Users/geo_zuza/Downloads/Template UFABC/extras/conf_pdf.tex
-INPUT /Users/geo_zuza/Downloads/Template UFABC/extras/conf_pdf.tex
-OUTPUT /Users/geo_zuza/Downloads/Template UFABC/dissertacao.idx
-INPUT /Users/geo_zuza/Downloads/Template UFABC/dissertacao.aux
-INPUT /Users/geo_zuza/Downloads/Template UFABC/dissertacao.aux
-INPUT /Users/geo_zuza/Downloads/Template UFABC/dissertacao.aux
-INPUT /Users/geo_zuza/Downloads/Template UFABC/pretextual/capa.aux
-INPUT /Users/geo_zuza/Downloads/Template UFABC/pretextual/capa.aux
-INPUT /Users/geo_zuza/Downloads/Template UFABC/pretextual/capa.aux
-INPUT /Users/geo_zuza/Downloads/Template UFABC/pretextual/resumos.aux
-INPUT /Users/geo_zuza/Downloads/Template UFABC/pretextual/resumos.aux
-INPUT /Users/geo_zuza/Downloads/Template UFABC/pretextual/resumos.aux
-INPUT /Users/geo_zuza/Downloads/Template UFABC/capitulos/introducao.aux
-INPUT /Users/geo_zuza/Downloads/Template UFABC/capitulos/introducao.aux
-INPUT /Users/geo_zuza/Downloads/Template UFABC/capitulos/introducao.aux
-INPUT /Users/geo_zuza/Downloads/Template UFABC/capitulos/fundamentacao.aux
-INPUT /Users/geo_zuza/Downloads/Template UFABC/capitulos/fundamentacao.aux
-INPUT /Users/geo_zuza/Downloads/Template UFABC/capitulos/fundamentacao.aux
-OUTPUT /Users/geo_zuza/Downloads/Template UFABC/dissertacao.aux
+INPUT /Users/lucasamorim/Documents/gitrepos/pgc-comp-repo/dissertacao/latex-document/extras/conf_citacoes.tex
+INPUT /Users/lucasamorim/Documents/gitrepos/pgc-comp-repo/dissertacao/latex-document/extras/conf_citacoes.tex
+INPUT /Users/lucasamorim/Documents/gitrepos/pgc-comp-repo/dissertacao/latex-document/extras/conf_citacoes.tex
+INPUT /Users/lucasamorim/Documents/gitrepos/pgc-comp-repo/dissertacao/latex-document/extras/conf_citacoes.tex
+INPUT /Users/lucasamorim/Documents/gitrepos/pgc-comp-repo/dissertacao/latex-document/extras/conf_citacoes.tex
+OUTPUT /Users/lucasamorim/Documents/gitrepos/pgc-comp-repo/dissertacao/latex-document/extras/conf_citacoes.aux
+INPUT /Users/lucasamorim/Documents/gitrepos/pgc-comp-repo/dissertacao/latex-document/extras/conf_citacoes.tex
+INPUT /Users/lucasamorim/Documents/gitrepos/pgc-comp-repo/dissertacao/latex-document/extras/conf_citacoes.tex
+INPUT /Users/lucasamorim/Documents/gitrepos/pgc-comp-repo/dissertacao/latex-document/extras/conf_citacoes.tex
+INPUT /Users/lucasamorim/Documents/gitrepos/pgc-comp-repo/dissertacao/latex-document/extras/conf_citacoes.tex
+INPUT /Users/lucasamorim/Documents/gitrepos/pgc-comp-repo/dissertacao/latex-document/extras/conf_citacoes.tex
+INPUT /Users/lucasamorim/Documents/gitrepos/pgc-comp-repo/dissertacao/latex-document/extras/conf_citacoes.tex
+INPUT /Users/lucasamorim/Documents/gitrepos/pgc-comp-repo/dissertacao/latex-document/extras/conf_citacoes.tex
+INPUT /Users/lucasamorim/Documents/gitrepos/pgc-comp-repo/dissertacao/latex-document/extras/conf_citacoes.tex
+INPUT /Users/lucasamorim/Documents/gitrepos/pgc-comp-repo/dissertacao/latex-document/extras/dados.tex
+INPUT /Users/lucasamorim/Documents/gitrepos/pgc-comp-repo/dissertacao/latex-document/extras/dados.tex
+INPUT /Users/lucasamorim/Documents/gitrepos/pgc-comp-repo/dissertacao/latex-document/extras/dados.tex
+INPUT /Users/lucasamorim/Documents/gitrepos/pgc-comp-repo/dissertacao/latex-document/extras/dados.tex
+INPUT /Users/lucasamorim/Documents/gitrepos/pgc-comp-repo/dissertacao/latex-document/extras/dados.tex
+OUTPUT /Users/lucasamorim/Documents/gitrepos/pgc-comp-repo/dissertacao/latex-document/extras/dados.aux
+INPUT /Users/lucasamorim/Documents/gitrepos/pgc-comp-repo/dissertacao/latex-document/extras/dados.tex
+INPUT /Users/lucasamorim/Documents/gitrepos/pgc-comp-repo/dissertacao/latex-document/extras/dados.tex
+INPUT /Users/lucasamorim/Documents/gitrepos/pgc-comp-repo/dissertacao/latex-document/extras/dados.tex
+INPUT /Users/lucasamorim/Documents/gitrepos/pgc-comp-repo/dissertacao/latex-document/extras/dados.tex
+INPUT /Users/lucasamorim/Documents/gitrepos/pgc-comp-repo/dissertacao/latex-document/extras/dados.tex
+INPUT /Users/lucasamorim/Documents/gitrepos/pgc-comp-repo/dissertacao/latex-document/extras/dados.tex
+INPUT /Users/lucasamorim/Documents/gitrepos/pgc-comp-repo/dissertacao/latex-document/extras/dados.tex
+INPUT /Users/lucasamorim/Documents/gitrepos/pgc-comp-repo/dissertacao/latex-document/extras/dados.tex
+INPUT /Users/lucasamorim/Documents/gitrepos/pgc-comp-repo/dissertacao/latex-document/extras/conf_pdf.tex
+INPUT /Users/lucasamorim/Documents/gitrepos/pgc-comp-repo/dissertacao/latex-document/extras/conf_pdf.tex
+INPUT /Users/lucasamorim/Documents/gitrepos/pgc-comp-repo/dissertacao/latex-document/extras/conf_pdf.tex
+INPUT /Users/lucasamorim/Documents/gitrepos/pgc-comp-repo/dissertacao/latex-document/extras/conf_pdf.tex
+INPUT /Users/lucasamorim/Documents/gitrepos/pgc-comp-repo/dissertacao/latex-document/extras/conf_pdf.tex
+OUTPUT /Users/lucasamorim/Documents/gitrepos/pgc-comp-repo/dissertacao/latex-document/extras/conf_pdf.aux
+INPUT /Users/lucasamorim/Documents/gitrepos/pgc-comp-repo/dissertacao/latex-document/extras/conf_pdf.tex
+INPUT /Users/lucasamorim/Documents/gitrepos/pgc-comp-repo/dissertacao/latex-document/extras/conf_pdf.tex
+INPUT /Users/lucasamorim/Documents/gitrepos/pgc-comp-repo/dissertacao/latex-document/extras/conf_pdf.tex
+INPUT /Users/lucasamorim/Documents/gitrepos/pgc-comp-repo/dissertacao/latex-document/extras/conf_pdf.tex
+INPUT /Users/lucasamorim/Documents/gitrepos/pgc-comp-repo/dissertacao/latex-document/extras/conf_pdf.tex
+INPUT /Users/lucasamorim/Documents/gitrepos/pgc-comp-repo/dissertacao/latex-document/extras/conf_pdf.tex
+INPUT /Users/lucasamorim/Documents/gitrepos/pgc-comp-repo/dissertacao/latex-document/extras/conf_pdf.tex
+INPUT /Users/lucasamorim/Documents/gitrepos/pgc-comp-repo/dissertacao/latex-document/extras/conf_pdf.tex
+OUTPUT /Users/lucasamorim/Documents/gitrepos/pgc-comp-repo/dissertacao/latex-document/dissertacao.idx
+INPUT /Users/lucasamorim/Documents/gitrepos/pgc-comp-repo/dissertacao/latex-document/dissertacao.aux
+INPUT /Users/lucasamorim/Documents/gitrepos/pgc-comp-repo/dissertacao/latex-document/dissertacao.aux
+INPUT /Users/lucasamorim/Documents/gitrepos/pgc-comp-repo/dissertacao/latex-document/dissertacao.aux
+INPUT /Users/lucasamorim/Documents/gitrepos/pgc-comp-repo/dissertacao/latex-document/pretextual/capa.aux
+INPUT /Users/lucasamorim/Documents/gitrepos/pgc-comp-repo/dissertacao/latex-document/pretextual/capa.aux
+INPUT /Users/lucasamorim/Documents/gitrepos/pgc-comp-repo/dissertacao/latex-document/pretextual/capa.aux
+INPUT /Users/lucasamorim/Documents/gitrepos/pgc-comp-repo/dissertacao/latex-document/pretextual/resumos.aux
+INPUT /Users/lucasamorim/Documents/gitrepos/pgc-comp-repo/dissertacao/latex-document/pretextual/resumos.aux
+INPUT /Users/lucasamorim/Documents/gitrepos/pgc-comp-repo/dissertacao/latex-document/pretextual/resumos.aux
+INPUT /Users/lucasamorim/Documents/gitrepos/pgc-comp-repo/dissertacao/latex-document/capitulos/introducao.aux
+INPUT /Users/lucasamorim/Documents/gitrepos/pgc-comp-repo/dissertacao/latex-document/capitulos/introducao.aux
+INPUT /Users/lucasamorim/Documents/gitrepos/pgc-comp-repo/dissertacao/latex-document/capitulos/introducao.aux
+INPUT /Users/lucasamorim/Documents/gitrepos/pgc-comp-repo/dissertacao/latex-document/capitulos/fundamentacao.aux
+INPUT /Users/lucasamorim/Documents/gitrepos/pgc-comp-repo/dissertacao/latex-document/capitulos/fundamentacao.aux
+INPUT /Users/lucasamorim/Documents/gitrepos/pgc-comp-repo/dissertacao/latex-document/capitulos/fundamentacao.aux
+INPUT /Users/lucasamorim/Documents/gitrepos/pgc-comp-repo/dissertacao/latex-document/capitulos/algoritmos.aux
+INPUT /Users/lucasamorim/Documents/gitrepos/pgc-comp-repo/dissertacao/latex-document/capitulos/algoritmos.aux
+INPUT /Users/lucasamorim/Documents/gitrepos/pgc-comp-repo/dissertacao/latex-document/capitulos/algoritmos.aux
+INPUT /Users/lucasamorim/Documents/gitrepos/pgc-comp-repo/dissertacao/latex-document/capitulos/aplicacao.aux
+INPUT /Users/lucasamorim/Documents/gitrepos/pgc-comp-repo/dissertacao/latex-document/capitulos/aplicacao.aux
+INPUT /Users/lucasamorim/Documents/gitrepos/pgc-comp-repo/dissertacao/latex-document/capitulos/aplicacao.aux
+OUTPUT /Users/lucasamorim/Documents/gitrepos/pgc-comp-repo/dissertacao/latex-document/dissertacao.aux
 INPUT /usr/local/texlive/2021/texmf-dist/tex/latex/graphics/color.sty
 INPUT /usr/local/texlive/2021/texmf-dist/tex/latex/hyperref/nameref.sty
 INPUT /usr/local/texlive/2021/texmf-dist/tex/latex/hyperref/nameref.sty
@@ -1021,7 +1110,7 @@ INPUT /usr/local/texlive/2021/texmf-dist/tex/generic/gettitlestring/gettitlestri
 INPUT /usr/local/texlive/2021/texmf-dist/tex/generic/gettitlestring/gettitlestring.sty
 INPUT /usr/local/texlive/2021/texmf-dist/tex/latex/kvoptions/kvoptions.sty
 INPUT /usr/local/texlive/2021/texmf-dist/tex/generic/ltxcmds/ltxcmds.sty
-OUTPUT /Users/geo_zuza/Downloads/Template UFABC/dissertacao.pdf
+OUTPUT /Users/lucasamorim/Documents/gitrepos/pgc-comp-repo/dissertacao/latex-document/dissertacao.pdf
 INPUT /usr/local/texlive/2021/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 INPUT /usr/local/texlive/2021/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 INPUT /usr/local/texlive/2021/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
@@ -1045,25 +1134,25 @@ INPUT /usr/local/texlive/2021/texmf-dist/tex/latex/microtype/mt-cmr.cfg
 INPUT /usr/local/texlive/2021/texmf-dist/tex/latex/microtype/mt-cmr.cfg
 INPUT /usr/local/texlive/2021/texmf-dist/tex/latex/microtype/mt-cmr.cfg
 INPUT /usr/local/texlive/2021/texmf-dist/tex/latex/microtype/mt-cmr.cfg
-INPUT /Users/geo_zuza/Downloads/Template UFABC/pretextual/capa.tex
-INPUT /Users/geo_zuza/Downloads/Template UFABC/pretextual/capa.tex
-INPUT /Users/geo_zuza/Downloads/Template UFABC/pretextual/capa.tex
-INPUT /Users/geo_zuza/Downloads/Template UFABC/pretextual/capa.tex
-INPUT /Users/geo_zuza/Downloads/Template UFABC/pretextual/capa.tex
-OUTPUT /Users/geo_zuza/Downloads/Template UFABC/pretextual/capa.aux
-INPUT /Users/geo_zuza/Downloads/Template UFABC/pretextual/capa.tex
-INPUT /Users/geo_zuza/Downloads/Template UFABC/pretextual/capa.tex
-INPUT /Users/geo_zuza/Downloads/Template UFABC/pretextual/capa.tex
-INPUT /Users/geo_zuza/Downloads/Template UFABC/pretextual/capa.tex
-INPUT /Users/geo_zuza/Downloads/Template UFABC/pretextual/capa.tex
-INPUT /Users/geo_zuza/Downloads/Template UFABC/pretextual/capa.tex
-INPUT /Users/geo_zuza/Downloads/Template UFABC/pretextual/capa.tex
-INPUT /Users/geo_zuza/Downloads/Template UFABC/pretextual/capa.tex
-INPUT /Users/geo_zuza/Downloads/Template UFABC/figs/logo.png
-INPUT /Users/geo_zuza/Downloads/Template UFABC/figs/logo.png
-INPUT /Users/geo_zuza/Downloads/Template UFABC/figs/logo.png
-INPUT /Users/geo_zuza/Downloads/Template UFABC/figs/logo.png
-INPUT /Users/geo_zuza/Downloads/Template UFABC/figs/logo.png
+INPUT /Users/lucasamorim/Documents/gitrepos/pgc-comp-repo/dissertacao/latex-document/pretextual/capa.tex
+INPUT /Users/lucasamorim/Documents/gitrepos/pgc-comp-repo/dissertacao/latex-document/pretextual/capa.tex
+INPUT /Users/lucasamorim/Documents/gitrepos/pgc-comp-repo/dissertacao/latex-document/pretextual/capa.tex
+INPUT /Users/lucasamorim/Documents/gitrepos/pgc-comp-repo/dissertacao/latex-document/pretextual/capa.tex
+INPUT /Users/lucasamorim/Documents/gitrepos/pgc-comp-repo/dissertacao/latex-document/pretextual/capa.tex
+OUTPUT /Users/lucasamorim/Documents/gitrepos/pgc-comp-repo/dissertacao/latex-document/pretextual/capa.aux
+INPUT /Users/lucasamorim/Documents/gitrepos/pgc-comp-repo/dissertacao/latex-document/pretextual/capa.tex
+INPUT /Users/lucasamorim/Documents/gitrepos/pgc-comp-repo/dissertacao/latex-document/pretextual/capa.tex
+INPUT /Users/lucasamorim/Documents/gitrepos/pgc-comp-repo/dissertacao/latex-document/pretextual/capa.tex
+INPUT /Users/lucasamorim/Documents/gitrepos/pgc-comp-repo/dissertacao/latex-document/pretextual/capa.tex
+INPUT /Users/lucasamorim/Documents/gitrepos/pgc-comp-repo/dissertacao/latex-document/pretextual/capa.tex
+INPUT /Users/lucasamorim/Documents/gitrepos/pgc-comp-repo/dissertacao/latex-document/pretextual/capa.tex
+INPUT /Users/lucasamorim/Documents/gitrepos/pgc-comp-repo/dissertacao/latex-document/pretextual/capa.tex
+INPUT /Users/lucasamorim/Documents/gitrepos/pgc-comp-repo/dissertacao/latex-document/pretextual/capa.tex
+INPUT /Users/lucasamorim/Documents/gitrepos/pgc-comp-repo/dissertacao/latex-document/figs/logo.png
+INPUT /Users/lucasamorim/Documents/gitrepos/pgc-comp-repo/dissertacao/latex-document/figs/logo.png
+INPUT /Users/lucasamorim/Documents/gitrepos/pgc-comp-repo/dissertacao/latex-document/figs/logo.png
+INPUT /Users/lucasamorim/Documents/gitrepos/pgc-comp-repo/dissertacao/latex-document/figs/logo.png
+INPUT /Users/lucasamorim/Documents/gitrepos/pgc-comp-repo/dissertacao/latex-document/figs/logo.png
 INPUT /usr/local/texlive/2021/texmf-dist/tex/latex/lm/t1lmss.fd
 INPUT /usr/local/texlive/2021/texmf-dist/tex/latex/lm/t1lmss.fd
 INPUT /usr/local/texlive/2021/texmf-dist/tex/latex/lm/t1lmss.fd
@@ -1137,24 +1226,25 @@ INPUT /usr/local/texlive/2021/texmf-dist/tex/latex/lm/ts1lmr.fd
 INPUT /usr/local/texlive/2021/texmf-dist/tex/latex/lm/ts1lmr.fd
 INPUT /usr/local/texlive/2021/texmf-dist/tex/latex/lm/ts1lmr.fd
 INPUT /usr/local/texlive/2021/texmf-dist/fonts/tfm/public/lm/ts1-lmr12.tfm
-INPUT /Users/geo_zuza/Downloads/Template UFABC/pretextual/resumos.tex
-INPUT /Users/geo_zuza/Downloads/Template UFABC/pretextual/resumos.tex
-INPUT /Users/geo_zuza/Downloads/Template UFABC/pretextual/resumos.tex
-INPUT /Users/geo_zuza/Downloads/Template UFABC/pretextual/resumos.tex
-INPUT /Users/geo_zuza/Downloads/Template UFABC/pretextual/resumos.tex
-OUTPUT /Users/geo_zuza/Downloads/Template UFABC/pretextual/resumos.aux
-INPUT /Users/geo_zuza/Downloads/Template UFABC/pretextual/resumos.tex
-INPUT /Users/geo_zuza/Downloads/Template UFABC/pretextual/resumos.tex
-INPUT /Users/geo_zuza/Downloads/Template UFABC/pretextual/resumos.tex
-INPUT /Users/geo_zuza/Downloads/Template UFABC/pretextual/resumos.tex
-INPUT /Users/geo_zuza/Downloads/Template UFABC/pretextual/resumos.tex
-INPUT /Users/geo_zuza/Downloads/Template UFABC/pretextual/resumos.tex
-INPUT /Users/geo_zuza/Downloads/Template UFABC/pretextual/resumos.tex
-INPUT /Users/geo_zuza/Downloads/Template UFABC/pretextual/resumos.tex
+INPUT /Users/lucasamorim/Documents/gitrepos/pgc-comp-repo/dissertacao/latex-document/pretextual/resumos.tex
+INPUT /Users/lucasamorim/Documents/gitrepos/pgc-comp-repo/dissertacao/latex-document/pretextual/resumos.tex
+INPUT /Users/lucasamorim/Documents/gitrepos/pgc-comp-repo/dissertacao/latex-document/pretextual/resumos.tex
+INPUT /Users/lucasamorim/Documents/gitrepos/pgc-comp-repo/dissertacao/latex-document/pretextual/resumos.tex
+INPUT /Users/lucasamorim/Documents/gitrepos/pgc-comp-repo/dissertacao/latex-document/pretextual/resumos.tex
+OUTPUT /Users/lucasamorim/Documents/gitrepos/pgc-comp-repo/dissertacao/latex-document/pretextual/resumos.aux
+INPUT /Users/lucasamorim/Documents/gitrepos/pgc-comp-repo/dissertacao/latex-document/pretextual/resumos.tex
+INPUT /Users/lucasamorim/Documents/gitrepos/pgc-comp-repo/dissertacao/latex-document/pretextual/resumos.tex
+INPUT /Users/lucasamorim/Documents/gitrepos/pgc-comp-repo/dissertacao/latex-document/pretextual/resumos.tex
+INPUT /Users/lucasamorim/Documents/gitrepos/pgc-comp-repo/dissertacao/latex-document/pretextual/resumos.tex
+INPUT /Users/lucasamorim/Documents/gitrepos/pgc-comp-repo/dissertacao/latex-document/pretextual/resumos.tex
+INPUT /Users/lucasamorim/Documents/gitrepos/pgc-comp-repo/dissertacao/latex-document/pretextual/resumos.tex
+INPUT /Users/lucasamorim/Documents/gitrepos/pgc-comp-repo/dissertacao/latex-document/pretextual/resumos.tex
+INPUT /Users/lucasamorim/Documents/gitrepos/pgc-comp-repo/dissertacao/latex-document/pretextual/resumos.tex
 INPUT /usr/local/texlive/2021/texmf-dist/fonts/tfm/public/lm/ec-lmss17.tfm
-INPUT /Users/geo_zuza/Downloads/Template UFABC/dissertacao.toc
-INPUT /Users/geo_zuza/Downloads/Template UFABC/dissertacao.toc
-INPUT /Users/geo_zuza/Downloads/Template UFABC/dissertacao.toc
+INPUT /usr/local/texlive/2021/texmf-dist/fonts/tfm/public/lm/ec-lmri12.tfm
+INPUT /Users/lucasamorim/Documents/gitrepos/pgc-comp-repo/dissertacao/latex-document/dissertacao.toc
+INPUT /Users/lucasamorim/Documents/gitrepos/pgc-comp-repo/dissertacao/latex-document/dissertacao.toc
+INPUT /Users/lucasamorim/Documents/gitrepos/pgc-comp-repo/dissertacao/latex-document/dissertacao.toc
 INPUT /usr/local/texlive/2021/texmf-dist/fonts/tfm/public/lm/rm-lmr12.tfm
 INPUT /usr/local/texlive/2021/texmf-dist/fonts/tfm/public/lm/rm-lmr10.tfm
 INPUT /usr/local/texlive/2021/texmf-dist/fonts/tfm/public/lm/rm-lmr7.tfm
@@ -1173,92 +1263,193 @@ INPUT /usr/local/texlive/2021/texmf-dist/fonts/tfm/public/amsfonts/symbols/msbm7
 INPUT /usr/local/texlive/2021/texmf-dist/fonts/tfm/public/rsfs/rsfs10.tfm
 INPUT /usr/local/texlive/2021/texmf-dist/fonts/tfm/public/rsfs/rsfs10.tfm
 INPUT /usr/local/texlive/2021/texmf-dist/fonts/tfm/public/rsfs/rsfs7.tfm
-INPUT /Users/geo_zuza/Downloads/Template UFABC/capitulos/introducao.tex
-INPUT /Users/geo_zuza/Downloads/Template UFABC/capitulos/introducao.tex
-INPUT /Users/geo_zuza/Downloads/Template UFABC/capitulos/introducao.tex
-INPUT /Users/geo_zuza/Downloads/Template UFABC/capitulos/introducao.tex
-INPUT /Users/geo_zuza/Downloads/Template UFABC/capitulos/introducao.tex
-OUTPUT /Users/geo_zuza/Downloads/Template UFABC/capitulos/introducao.aux
-INPUT /Users/geo_zuza/Downloads/Template UFABC/capitulos/introducao.tex
-INPUT /Users/geo_zuza/Downloads/Template UFABC/capitulos/introducao.tex
-INPUT /Users/geo_zuza/Downloads/Template UFABC/capitulos/introducao.tex
-INPUT /Users/geo_zuza/Downloads/Template UFABC/capitulos/introducao.tex
-INPUT /Users/geo_zuza/Downloads/Template UFABC/capitulos/introducao.tex
-INPUT /Users/geo_zuza/Downloads/Template UFABC/capitulos/introducao.tex
-INPUT /Users/geo_zuza/Downloads/Template UFABC/capitulos/introducao.tex
-INPUT /Users/geo_zuza/Downloads/Template UFABC/capitulos/introducao.tex
-INPUT /usr/local/texlive/2021/texmf-dist/fonts/tfm/public/lm/ec-lmss17.tfm
-INPUT /Users/geo_zuza/Downloads/Template UFABC/figs/logo.png
-INPUT /Users/geo_zuza/Downloads/Template UFABC/figs/logo.png
-INPUT /Users/geo_zuza/Downloads/Template UFABC/figs/logo.png
-INPUT /usr/local/texlive/2021/texmf-dist/fonts/tfm/public/lm/ec-lmr10.tfm
+INPUT /usr/local/texlive/2021/texmf-dist/fonts/tfm/public/lm/ec-lmsso12.tfm
+INPUT /Users/lucasamorim/Documents/gitrepos/pgc-comp-repo/dissertacao/latex-document/capitulos/introducao.tex
+INPUT /Users/lucasamorim/Documents/gitrepos/pgc-comp-repo/dissertacao/latex-document/capitulos/introducao.tex
+INPUT /Users/lucasamorim/Documents/gitrepos/pgc-comp-repo/dissertacao/latex-document/capitulos/introducao.tex
+INPUT /Users/lucasamorim/Documents/gitrepos/pgc-comp-repo/dissertacao/latex-document/capitulos/introducao.tex
+INPUT /Users/lucasamorim/Documents/gitrepos/pgc-comp-repo/dissertacao/latex-document/capitulos/introducao.tex
+OUTPUT /Users/lucasamorim/Documents/gitrepos/pgc-comp-repo/dissertacao/latex-document/capitulos/introducao.aux
+INPUT /Users/lucasamorim/Documents/gitrepos/pgc-comp-repo/dissertacao/latex-document/capitulos/introducao.tex
+INPUT /Users/lucasamorim/Documents/gitrepos/pgc-comp-repo/dissertacao/latex-document/capitulos/introducao.tex
+INPUT /Users/lucasamorim/Documents/gitrepos/pgc-comp-repo/dissertacao/latex-document/capitulos/introducao.tex
+INPUT /Users/lucasamorim/Documents/gitrepos/pgc-comp-repo/dissertacao/latex-document/capitulos/introducao.tex
+INPUT /Users/lucasamorim/Documents/gitrepos/pgc-comp-repo/dissertacao/latex-document/capitulos/introducao.tex
+INPUT /Users/lucasamorim/Documents/gitrepos/pgc-comp-repo/dissertacao/latex-document/capitulos/introducao.tex
+INPUT /Users/lucasamorim/Documents/gitrepos/pgc-comp-repo/dissertacao/latex-document/capitulos/introducao.tex
+INPUT /Users/lucasamorim/Documents/gitrepos/pgc-comp-repo/dissertacao/latex-document/capitulos/introducao.tex
 INPUT /usr/local/texlive/2021/texmf-dist/fonts/tfm/public/lm/ec-lmr10.tfm
 INPUT /usr/local/texlive/2021/texmf-dist/fonts/tfm/public/lm/ec-lmri10.tfm
-INPUT /Users/geo_zuza/Downloads/Template UFABC/capitulos/fundamentacao.tex
-INPUT /Users/geo_zuza/Downloads/Template UFABC/capitulos/fundamentacao.tex
-INPUT /Users/geo_zuza/Downloads/Template UFABC/capitulos/fundamentacao.tex
-INPUT /Users/geo_zuza/Downloads/Template UFABC/capitulos/fundamentacao.tex
-INPUT /Users/geo_zuza/Downloads/Template UFABC/capitulos/fundamentacao.tex
-OUTPUT /Users/geo_zuza/Downloads/Template UFABC/capitulos/fundamentacao.aux
-INPUT /Users/geo_zuza/Downloads/Template UFABC/capitulos/fundamentacao.tex
-INPUT /Users/geo_zuza/Downloads/Template UFABC/capitulos/fundamentacao.tex
-INPUT /Users/geo_zuza/Downloads/Template UFABC/capitulos/fundamentacao.tex
-INPUT /Users/geo_zuza/Downloads/Template UFABC/capitulos/fundamentacao.tex
-INPUT /Users/geo_zuza/Downloads/Template UFABC/capitulos/fundamentacao.tex
-INPUT /Users/geo_zuza/Downloads/Template UFABC/capitulos/fundamentacao.tex
-INPUT /Users/geo_zuza/Downloads/Template UFABC/capitulos/fundamentacao.tex
-INPUT /Users/geo_zuza/Downloads/Template UFABC/capitulos/fundamentacao.tex
-INPUT /usr/local/texlive/2021/texmf-dist/fonts/tfm/public/lm/ec-lmri12.tfm
+INPUT /Users/lucasamorim/Documents/gitrepos/pgc-comp-repo/dissertacao/latex-document/capitulos/fundamentacao.tex
+INPUT /Users/lucasamorim/Documents/gitrepos/pgc-comp-repo/dissertacao/latex-document/capitulos/fundamentacao.tex
+INPUT /Users/lucasamorim/Documents/gitrepos/pgc-comp-repo/dissertacao/latex-document/capitulos/fundamentacao.tex
+INPUT /Users/lucasamorim/Documents/gitrepos/pgc-comp-repo/dissertacao/latex-document/capitulos/fundamentacao.tex
+INPUT /Users/lucasamorim/Documents/gitrepos/pgc-comp-repo/dissertacao/latex-document/capitulos/fundamentacao.tex
+OUTPUT /Users/lucasamorim/Documents/gitrepos/pgc-comp-repo/dissertacao/latex-document/capitulos/fundamentacao.aux
+INPUT /Users/lucasamorim/Documents/gitrepos/pgc-comp-repo/dissertacao/latex-document/capitulos/fundamentacao.tex
+INPUT /Users/lucasamorim/Documents/gitrepos/pgc-comp-repo/dissertacao/latex-document/capitulos/fundamentacao.tex
+INPUT /Users/lucasamorim/Documents/gitrepos/pgc-comp-repo/dissertacao/latex-document/capitulos/fundamentacao.tex
+INPUT /Users/lucasamorim/Documents/gitrepos/pgc-comp-repo/dissertacao/latex-document/capitulos/fundamentacao.tex
+INPUT /Users/lucasamorim/Documents/gitrepos/pgc-comp-repo/dissertacao/latex-document/capitulos/fundamentacao.tex
+INPUT /Users/lucasamorim/Documents/gitrepos/pgc-comp-repo/dissertacao/latex-document/capitulos/fundamentacao.tex
+INPUT /Users/lucasamorim/Documents/gitrepos/pgc-comp-repo/dissertacao/latex-document/capitulos/fundamentacao.tex
+INPUT /Users/lucasamorim/Documents/gitrepos/pgc-comp-repo/dissertacao/latex-document/capitulos/fundamentacao.tex
+INPUT /usr/local/texlive/2021/texmf-dist/fonts/tfm/public/lm/ec-lmss17.tfm
 INPUT /usr/local/texlive/2021/texmf-dist/fonts/tfm/public/lm/ec-lmr8.tfm
 INPUT /usr/local/texlive/2021/texmf-dist/fonts/tfm/public/lm/ec-lmri8.tfm
 INPUT /usr/local/texlive/2021/texmf-dist/fonts/tfm/public/lm/ec-lmr6.tfm
 INPUT /usr/local/texlive/2021/texmf-dist/fonts/tfm/public/lm/ec-lmri7.tfm
-INPUT /usr/local/texlive/2021/texmf-dist/fonts/tfm/public/lm/ec-lmbxi10.tfm
+INPUT /usr/local/texlive/2021/texmf-dist/fonts/tfm/public/lm/ec-lmr10.tfm
+INPUT /usr/local/texlive/2021/texmf-dist/fonts/tfm/public/lm/ts1-lmr12.tfm
+INPUT /Users/lucasamorim/Documents/gitrepos/pgc-comp-repo/dissertacao/latex-document/figs/prefixtree.png
+INPUT /Users/lucasamorim/Documents/gitrepos/pgc-comp-repo/dissertacao/latex-document/figs/prefixtree.png
+INPUT /Users/lucasamorim/Documents/gitrepos/pgc-comp-repo/dissertacao/latex-document/figs/prefixtree.png
+INPUT /Users/lucasamorim/Documents/gitrepos/pgc-comp-repo/dissertacao/latex-document/figs/prefixtree.png
+INPUT /Users/lucasamorim/Documents/gitrepos/pgc-comp-repo/dissertacao/latex-document/figs/prefixtree.png
 INPUT /usr/local/texlive/2021/texmf-dist/fonts/tfm/public/lm/ec-lmbx8.tfm
-INPUT /usr/local/texlive/2021/texmf-dist/fonts/tfm/public/lm/ec-lmbxi10.tfm
 INPUT /usr/local/texlive/2021/texmf-dist/fonts/tfm/public/lm/ec-lmbx6.tfm
+INPUT /usr/local/texlive/2021/texmf-dist/fonts/tfm/public/lm/rm-lmbx12.tfm
+INPUT /usr/local/texlive/2021/texmf-dist/fonts/tfm/public/lm/rm-lmbx8.tfm
+INPUT /usr/local/texlive/2021/texmf-dist/fonts/tfm/public/lm/rm-lmbx6.tfm
+INPUT /Users/lucasamorim/Documents/gitrepos/pgc-comp-repo/dissertacao/latex-document/capitulos/algoritmos.tex
+INPUT /Users/lucasamorim/Documents/gitrepos/pgc-comp-repo/dissertacao/latex-document/capitulos/algoritmos.tex
+INPUT /Users/lucasamorim/Documents/gitrepos/pgc-comp-repo/dissertacao/latex-document/capitulos/algoritmos.tex
+INPUT /Users/lucasamorim/Documents/gitrepos/pgc-comp-repo/dissertacao/latex-document/capitulos/algoritmos.tex
+INPUT /Users/lucasamorim/Documents/gitrepos/pgc-comp-repo/dissertacao/latex-document/capitulos/algoritmos.tex
+OUTPUT /Users/lucasamorim/Documents/gitrepos/pgc-comp-repo/dissertacao/latex-document/capitulos/algoritmos.aux
+INPUT /Users/lucasamorim/Documents/gitrepos/pgc-comp-repo/dissertacao/latex-document/capitulos/algoritmos.tex
+INPUT /Users/lucasamorim/Documents/gitrepos/pgc-comp-repo/dissertacao/latex-document/capitulos/algoritmos.tex
+INPUT /Users/lucasamorim/Documents/gitrepos/pgc-comp-repo/dissertacao/latex-document/capitulos/algoritmos.tex
+INPUT /Users/lucasamorim/Documents/gitrepos/pgc-comp-repo/dissertacao/latex-document/capitulos/algoritmos.tex
+INPUT /Users/lucasamorim/Documents/gitrepos/pgc-comp-repo/dissertacao/latex-document/capitulos/algoritmos.tex
+INPUT /Users/lucasamorim/Documents/gitrepos/pgc-comp-repo/dissertacao/latex-document/capitulos/algoritmos.tex
+INPUT /Users/lucasamorim/Documents/gitrepos/pgc-comp-repo/dissertacao/latex-document/capitulos/algoritmos.tex
+INPUT /Users/lucasamorim/Documents/gitrepos/pgc-comp-repo/dissertacao/latex-document/capitulos/algoritmos.tex
+INPUT /usr/local/texlive/2021/texmf-dist/fonts/tfm/public/lm/rm-lmr5.tfm
+INPUT /usr/local/texlive/2021/texmf-dist/fonts/tfm/public/lm/lmmi5.tfm
+INPUT /usr/local/texlive/2021/texmf-dist/fonts/tfm/public/lm/lmsy5.tfm
+INPUT /usr/local/texlive/2021/texmf-dist/fonts/tfm/public/lm/rm-lmbx5.tfm
+INPUT /usr/local/texlive/2021/texmf-dist/fonts/tfm/public/amsfonts/symbols/msam5.tfm
+INPUT /usr/local/texlive/2021/texmf-dist/fonts/tfm/public/amsfonts/symbols/msbm5.tfm
+INPUT /usr/local/texlive/2021/texmf-dist/fonts/tfm/public/rsfs/rsfs5.tfm
+INPUT /Users/lucasamorim/Documents/gitrepos/pgc-comp-repo/dissertacao/latex-document/figs/lz77fam.png
+INPUT /Users/lucasamorim/Documents/gitrepos/pgc-comp-repo/dissertacao/latex-document/figs/lz77fam.png
+INPUT /Users/lucasamorim/Documents/gitrepos/pgc-comp-repo/dissertacao/latex-document/figs/lz77fam.png
+INPUT /Users/lucasamorim/Documents/gitrepos/pgc-comp-repo/dissertacao/latex-document/figs/lz77fam.png
+INPUT /Users/lucasamorim/Documents/gitrepos/pgc-comp-repo/dissertacao/latex-document/figs/lz77fam.png
+INPUT /usr/local/texlive/2021/texmf-dist/fonts/tfm/public/lm/ec-lmsso12.tfm
 INPUT /usr/local/texlive/2021/texmf-dist/fonts/tfm/public/lm/ec-lmbxi10.tfm
-INPUT /Users/geo_zuza/Downloads/Template UFABC/dissertacao.brf
-INPUT /Users/geo_zuza/Downloads/Template UFABC/dissertacao.brf
-INPUT /Users/geo_zuza/Downloads/Template UFABC/dissertacao.brf
-INPUT /Users/geo_zuza/Downloads/Template UFABC/dissertacao.brf
-INPUT /Users/geo_zuza/Downloads/Template UFABC/dissertacao.brf
-OUTPUT /Users/geo_zuza/Downloads/Template UFABC/dissertacao.brf
-OUTPUT /Users/geo_zuza/Downloads/Template UFABC/dissertacao.toc
-INPUT /Users/geo_zuza/Downloads/Template UFABC/dissertacao.aux
-INPUT /Users/geo_zuza/Downloads/Template UFABC/pretextual/capa.aux
-INPUT /Users/geo_zuza/Downloads/Template UFABC/pretextual/capa.aux
-INPUT /Users/geo_zuza/Downloads/Template UFABC/pretextual/capa.aux
-INPUT /Users/geo_zuza/Downloads/Template UFABC/pretextual/resumos.aux
-INPUT /Users/geo_zuza/Downloads/Template UFABC/pretextual/resumos.aux
-INPUT /Users/geo_zuza/Downloads/Template UFABC/pretextual/resumos.aux
-INPUT /Users/geo_zuza/Downloads/Template UFABC/capitulos/introducao.aux
-INPUT /Users/geo_zuza/Downloads/Template UFABC/capitulos/introducao.aux
-INPUT /Users/geo_zuza/Downloads/Template UFABC/capitulos/introducao.aux
-INPUT /Users/geo_zuza/Downloads/Template UFABC/capitulos/fundamentacao.aux
-INPUT /Users/geo_zuza/Downloads/Template UFABC/capitulos/fundamentacao.aux
-INPUT /Users/geo_zuza/Downloads/Template UFABC/capitulos/fundamentacao.aux
-INPUT /Users/geo_zuza/Downloads/Template UFABC/dissertacao.brf
-INPUT /Users/geo_zuza/Downloads/Template UFABC/dissertacao.brf
-INPUT /usr/local/texlive/2021/texmf-dist/fonts/enc/dvips/lm/lm-ec.enc
-INPUT /usr/local/texlive/2021/texmf-dist/fonts/enc/dvips/lm/lm-mathsy.enc
-INPUT /usr/local/texlive/2021/texmf-dist/fonts/enc/dvips/lm/lm-mathit.enc
-INPUT /usr/local/texlive/2021/texmf-dist/fonts/enc/dvips/lm/lm-mathex.enc
+INPUT /Users/lucasamorim/Documents/gitrepos/pgc-comp-repo/dissertacao/latex-document/figs/cluster_h.png
+INPUT /Users/lucasamorim/Documents/gitrepos/pgc-comp-repo/dissertacao/latex-document/figs/cluster_h.png
+INPUT /Users/lucasamorim/Documents/gitrepos/pgc-comp-repo/dissertacao/latex-document/figs/cluster_h.png
+INPUT /Users/lucasamorim/Documents/gitrepos/pgc-comp-repo/dissertacao/latex-document/figs/cluster_h.png
+INPUT /Users/lucasamorim/Documents/gitrepos/pgc-comp-repo/dissertacao/latex-document/figs/cluster_h.png
+INPUT /Users/lucasamorim/Documents/gitrepos/pgc-comp-repo/dissertacao/latex-document/figs/kmeans.png
+INPUT /Users/lucasamorim/Documents/gitrepos/pgc-comp-repo/dissertacao/latex-document/figs/kmeans.png
+INPUT /Users/lucasamorim/Documents/gitrepos/pgc-comp-repo/dissertacao/latex-document/figs/kmeans.png
+INPUT /Users/lucasamorim/Documents/gitrepos/pgc-comp-repo/dissertacao/latex-document/figs/kmeans.png
+INPUT /Users/lucasamorim/Documents/gitrepos/pgc-comp-repo/dissertacao/latex-document/figs/kmeans.png
+INPUT /Users/lucasamorim/Documents/gitrepos/pgc-comp-repo/dissertacao/latex-document/figs/elbowex.png
+INPUT /Users/lucasamorim/Documents/gitrepos/pgc-comp-repo/dissertacao/latex-document/figs/elbowex.png
+INPUT /Users/lucasamorim/Documents/gitrepos/pgc-comp-repo/dissertacao/latex-document/figs/elbowex.png
+INPUT /Users/lucasamorim/Documents/gitrepos/pgc-comp-repo/dissertacao/latex-document/figs/elbowex.png
+INPUT /Users/lucasamorim/Documents/gitrepos/pgc-comp-repo/dissertacao/latex-document/figs/elbowex.png
+INPUT /Users/lucasamorim/Documents/gitrepos/pgc-comp-repo/dissertacao/latex-document/capitulos/aplicacao.tex
+INPUT /Users/lucasamorim/Documents/gitrepos/pgc-comp-repo/dissertacao/latex-document/capitulos/aplicacao.tex
+INPUT /Users/lucasamorim/Documents/gitrepos/pgc-comp-repo/dissertacao/latex-document/capitulos/aplicacao.tex
+INPUT /Users/lucasamorim/Documents/gitrepos/pgc-comp-repo/dissertacao/latex-document/capitulos/aplicacao.tex
+INPUT /Users/lucasamorim/Documents/gitrepos/pgc-comp-repo/dissertacao/latex-document/capitulos/aplicacao.tex
+OUTPUT /Users/lucasamorim/Documents/gitrepos/pgc-comp-repo/dissertacao/latex-document/capitulos/aplicacao.aux
+INPUT /Users/lucasamorim/Documents/gitrepos/pgc-comp-repo/dissertacao/latex-document/capitulos/aplicacao.tex
+INPUT /Users/lucasamorim/Documents/gitrepos/pgc-comp-repo/dissertacao/latex-document/capitulos/aplicacao.tex
+INPUT /Users/lucasamorim/Documents/gitrepos/pgc-comp-repo/dissertacao/latex-document/capitulos/aplicacao.tex
+INPUT /Users/lucasamorim/Documents/gitrepos/pgc-comp-repo/dissertacao/latex-document/capitulos/aplicacao.tex
+INPUT /Users/lucasamorim/Documents/gitrepos/pgc-comp-repo/dissertacao/latex-document/capitulos/aplicacao.tex
+INPUT /Users/lucasamorim/Documents/gitrepos/pgc-comp-repo/dissertacao/latex-document/capitulos/aplicacao.tex
+INPUT /Users/lucasamorim/Documents/gitrepos/pgc-comp-repo/dissertacao/latex-document/capitulos/aplicacao.tex
+INPUT /Users/lucasamorim/Documents/gitrepos/pgc-comp-repo/dissertacao/latex-document/capitulos/aplicacao.tex
+INPUT /usr/local/texlive/2021/texmf-dist/tex/latex/listings/lstlang1.sty
+INPUT /usr/local/texlive/2021/texmf-dist/tex/latex/listings/lstlang1.sty
+INPUT /usr/local/texlive/2021/texmf-dist/tex/latex/listings/lstlang1.sty
+INPUT /usr/local/texlive/2021/texmf-dist/tex/latex/listings/lstlang1.sty
+INPUT /usr/local/texlive/2021/texmf-dist/fonts/tfm/public/lm/ts1-lmr10.tfm
+INPUT /Users/lucasamorim/Documents/gitrepos/pgc-comp-repo/dissertacao/latex-document/figs/wordcloud1.png
+INPUT /Users/lucasamorim/Documents/gitrepos/pgc-comp-repo/dissertacao/latex-document/figs/wordcloud1.png
+INPUT /Users/lucasamorim/Documents/gitrepos/pgc-comp-repo/dissertacao/latex-document/figs/wordcloud1.png
+INPUT /Users/lucasamorim/Documents/gitrepos/pgc-comp-repo/dissertacao/latex-document/figs/wordcloud1.png
+INPUT /Users/lucasamorim/Documents/gitrepos/pgc-comp-repo/dissertacao/latex-document/figs/wordcloud1.png
+INPUT /Users/lucasamorim/Documents/gitrepos/pgc-comp-repo/dissertacao/latex-document/figs/elbowgraph.png
+INPUT /Users/lucasamorim/Documents/gitrepos/pgc-comp-repo/dissertacao/latex-document/figs/elbowgraph.png
+INPUT /Users/lucasamorim/Documents/gitrepos/pgc-comp-repo/dissertacao/latex-document/figs/elbowgraph.png
+INPUT /Users/lucasamorim/Documents/gitrepos/pgc-comp-repo/dissertacao/latex-document/figs/elbowgraph.png
+INPUT /Users/lucasamorim/Documents/gitrepos/pgc-comp-repo/dissertacao/latex-document/figs/elbowgraph.png
+INPUT /Users/lucasamorim/Documents/gitrepos/pgc-comp-repo/dissertacao/latex-document/figs/clustercloud.png
+INPUT /Users/lucasamorim/Documents/gitrepos/pgc-comp-repo/dissertacao/latex-document/figs/clustercloud.png
+INPUT /Users/lucasamorim/Documents/gitrepos/pgc-comp-repo/dissertacao/latex-document/figs/clustercloud.png
+INPUT /Users/lucasamorim/Documents/gitrepos/pgc-comp-repo/dissertacao/latex-document/figs/clustercloud.png
+INPUT /Users/lucasamorim/Documents/gitrepos/pgc-comp-repo/dissertacao/latex-document/figs/clustercloud.png
+INPUT /Users/lucasamorim/Documents/gitrepos/pgc-comp-repo/dissertacao/latex-document/figs/graphfinal.png
+INPUT /Users/lucasamorim/Documents/gitrepos/pgc-comp-repo/dissertacao/latex-document/figs/graphfinal.png
+INPUT /Users/lucasamorim/Documents/gitrepos/pgc-comp-repo/dissertacao/latex-document/figs/graphfinal.png
+INPUT /Users/lucasamorim/Documents/gitrepos/pgc-comp-repo/dissertacao/latex-document/figs/graphfinal.png
+INPUT /Users/lucasamorim/Documents/gitrepos/pgc-comp-repo/dissertacao/latex-document/figs/graphfinal.png
+INPUT /usr/local/texlive/2021/texmf-dist/fonts/tfm/public/lm/rm-lmr10.tfm
+INPUT /usr/local/texlive/2021/texmf-dist/fonts/tfm/public/lm/lmmi10.tfm
+INPUT /usr/local/texlive/2021/texmf-dist/fonts/tfm/public/lm/lmsy10.tfm
+INPUT /usr/local/texlive/2021/texmf-dist/fonts/tfm/public/lm/rm-lmbx10.tfm
+INPUT /usr/local/texlive/2021/texmf-dist/fonts/tfm/public/amsfonts/symbols/msam10.tfm
+INPUT /usr/local/texlive/2021/texmf-dist/fonts/tfm/public/amsfonts/symbols/msbm10.tfm
+INPUT /usr/local/texlive/2021/texmf-dist/fonts/tfm/public/rsfs/rsfs10.tfm
+INPUT /Users/lucasamorim/Documents/gitrepos/pgc-comp-repo/dissertacao/latex-document/dissertacao.brf
+INPUT /Users/lucasamorim/Documents/gitrepos/pgc-comp-repo/dissertacao/latex-document/dissertacao.brf
+INPUT /Users/lucasamorim/Documents/gitrepos/pgc-comp-repo/dissertacao/latex-document/dissertacao.brf
+INPUT /Users/lucasamorim/Documents/gitrepos/pgc-comp-repo/dissertacao/latex-document/dissertacao.brf
+INPUT /Users/lucasamorim/Documents/gitrepos/pgc-comp-repo/dissertacao/latex-document/dissertacao.brf
+OUTPUT /Users/lucasamorim/Documents/gitrepos/pgc-comp-repo/dissertacao/latex-document/dissertacao.brf
+OUTPUT /Users/lucasamorim/Documents/gitrepos/pgc-comp-repo/dissertacao/latex-document/dissertacao.toc
+INPUT /Users/lucasamorim/Documents/gitrepos/pgc-comp-repo/dissertacao/latex-document/dissertacao.aux
+INPUT /Users/lucasamorim/Documents/gitrepos/pgc-comp-repo/dissertacao/latex-document/pretextual/capa.aux
+INPUT /Users/lucasamorim/Documents/gitrepos/pgc-comp-repo/dissertacao/latex-document/pretextual/capa.aux
+INPUT /Users/lucasamorim/Documents/gitrepos/pgc-comp-repo/dissertacao/latex-document/pretextual/capa.aux
+INPUT /Users/lucasamorim/Documents/gitrepos/pgc-comp-repo/dissertacao/latex-document/pretextual/resumos.aux
+INPUT /Users/lucasamorim/Documents/gitrepos/pgc-comp-repo/dissertacao/latex-document/pretextual/resumos.aux
+INPUT /Users/lucasamorim/Documents/gitrepos/pgc-comp-repo/dissertacao/latex-document/pretextual/resumos.aux
+INPUT /Users/lucasamorim/Documents/gitrepos/pgc-comp-repo/dissertacao/latex-document/capitulos/introducao.aux
+INPUT /Users/lucasamorim/Documents/gitrepos/pgc-comp-repo/dissertacao/latex-document/capitulos/introducao.aux
+INPUT /Users/lucasamorim/Documents/gitrepos/pgc-comp-repo/dissertacao/latex-document/capitulos/introducao.aux
+INPUT /Users/lucasamorim/Documents/gitrepos/pgc-comp-repo/dissertacao/latex-document/capitulos/fundamentacao.aux
+INPUT /Users/lucasamorim/Documents/gitrepos/pgc-comp-repo/dissertacao/latex-document/capitulos/fundamentacao.aux
+INPUT /Users/lucasamorim/Documents/gitrepos/pgc-comp-repo/dissertacao/latex-document/capitulos/fundamentacao.aux
+INPUT /Users/lucasamorim/Documents/gitrepos/pgc-comp-repo/dissertacao/latex-document/capitulos/algoritmos.aux
+INPUT /Users/lucasamorim/Documents/gitrepos/pgc-comp-repo/dissertacao/latex-document/capitulos/algoritmos.aux
+INPUT /Users/lucasamorim/Documents/gitrepos/pgc-comp-repo/dissertacao/latex-document/capitulos/algoritmos.aux
+INPUT /Users/lucasamorim/Documents/gitrepos/pgc-comp-repo/dissertacao/latex-document/capitulos/aplicacao.aux
+INPUT /Users/lucasamorim/Documents/gitrepos/pgc-comp-repo/dissertacao/latex-document/capitulos/aplicacao.aux
+INPUT /Users/lucasamorim/Documents/gitrepos/pgc-comp-repo/dissertacao/latex-document/capitulos/aplicacao.aux
+INPUT /Users/lucasamorim/Documents/gitrepos/pgc-comp-repo/dissertacao/latex-document/dissertacao.brf
+INPUT /Users/lucasamorim/Documents/gitrepos/pgc-comp-repo/dissertacao/latex-document/dissertacao.brf
 INPUT /usr/local/texlive/2021/texmf-dist/fonts/enc/dvips/lm/lm-rm.enc
 INPUT /usr/local/texlive/2021/texmf-dist/fonts/enc/dvips/lm/lm-ts1.enc
+INPUT /usr/local/texlive/2021/texmf-dist/fonts/enc/dvips/lm/lm-ec.enc
+INPUT /usr/local/texlive/2021/texmf-dist/fonts/enc/dvips/lm/lm-mathit.enc
+INPUT /usr/local/texlive/2021/texmf-dist/fonts/enc/dvips/lm/lm-mathsy.enc
+INPUT /usr/local/texlive/2021/texmf-dist/fonts/enc/dvips/lm/lm-mathex.enc
 INPUT /usr/local/texlive/2021/texmf-dist/fonts/type1/public/lm/lmbx12.pfb
 INPUT /usr/local/texlive/2021/texmf-dist/fonts/type1/public/lm/lmbxi10.pfb
 INPUT /usr/local/texlive/2021/texmf-dist/fonts/type1/public/lm/lmex10.pfb
 INPUT /usr/local/texlive/2021/texmf-dist/fonts/type1/public/lm/lmmi12.pfb
+INPUT /usr/local/texlive/2021/texmf-dist/fonts/type1/public/lm/lmmi6.pfb
 INPUT /usr/local/texlive/2021/texmf-dist/fonts/type1/public/lm/lmmi8.pfb
 INPUT /usr/local/texlive/2021/texmf-dist/fonts/type1/public/lm/lmr10.pfb
 INPUT /usr/local/texlive/2021/texmf-dist/fonts/type1/public/lm/lmr12.pfb
+INPUT /usr/local/texlive/2021/texmf-dist/fonts/type1/public/lm/lmr6.pfb
 INPUT /usr/local/texlive/2021/texmf-dist/fonts/type1/public/lm/lmr8.pfb
 INPUT /usr/local/texlive/2021/texmf-dist/fonts/type1/public/lm/lmri10.pfb
 INPUT /usr/local/texlive/2021/texmf-dist/fonts/type1/public/lm/lmri12.pfb
 INPUT /usr/local/texlive/2021/texmf-dist/fonts/type1/public/lm/lmss12.pfb
 INPUT /usr/local/texlive/2021/texmf-dist/fonts/type1/public/lm/lmss17.pfb
 INPUT /usr/local/texlive/2021/texmf-dist/fonts/type1/public/lm/lmssbx10.pfb
+INPUT /usr/local/texlive/2021/texmf-dist/fonts/type1/public/lm/lmsso12.pfb
 INPUT /usr/local/texlive/2021/texmf-dist/fonts/type1/public/lm/lmsy10.pfb
 INPUT /usr/local/texlive/2021/texmf-dist/fonts/type1/public/lm/lmsy8.pfb
 INPUT /usr/local/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb

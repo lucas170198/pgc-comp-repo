@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2021) (preloaded format=pdflatex 2022.2.24)  18 AUG 2022 20:34
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2021) (preloaded format=pdflatex 2022.2.24)  18 AUG 2022 21:10
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -909,28 +909,10 @@ Package xcolor Info: Model `wave' substituted by `hsb' on input line 1371.
 (/usr/local/texlive/2021/texmf-dist/tex/latex/hyperref/backref.sty
 Package: backref 2021/02/04 v1.41 Bibliographical back referencing
 )
-(/usr/local/texlive/2021/texmf-dist/tex/latex/abntex2/abntex2cite.sty
-Package: abntex2cite 2018/11/24 v-1.9.7 abnTeX2
-
-(/usr/local/texlive/2021/texmf-dist/tex/latex/abntex2/abntex2abrev.sty)
-\minimumbiblabelwidth=\skip273
-\ABCIauxlen=\skip274
-\c@ABCIaux=\count370
-\c@ABCImax=\count371
-
-(/usr/local/texlive/2021/texmf-dist/tex/generic/iftex/ifpdf.sty
-Package: ifpdf 2019/10/25 v3.4 ifpdf legacy package. Use iftex instead.
-)
-(/usr/local/texlive/2021/texmf-dist/tex/generic/iftex/ifxetex.sty
-Package: ifxetex 2019/10/25 v0.7 ifxetex legacy package. Use iftex instead.
-)
-(/usr/local/texlive/2021/texmf-dist/tex/latex/relsize/relsize.sty
-Package: relsize 2013/03/29 ver 4.1
-)
-\biblabelsep=\skip275
-LaTeX Info: Redefining \newblock on input line 591.
-LaTeX Info: Redefining \cite on input line 618.
-\ABCItoken=\toks44
+(/usr/local/texlive/2021/texmf-dist/tex/latex/cite/cite.sty
+LaTeX Info: Redefining \cite on input line 302.
+LaTeX Info: Redefining \nocite on input line 332.
+Package: cite 2015/02/27  v 5.5
 )
 \@input{extras/conf_citacoes.aux}
 \openout2 = `extras/conf_citacoes.aux'.
@@ -951,8 +933,8 @@ Package hyperref Info: Option `colorlinks' set `true' on input line 22.
 
 
 Writing index file dissertacao.idx 
-\c@theorem=\count372
-\c@corollary=\count373
+\c@theorem=\count370
+\c@corollary=\count371
 (./dissertacao.aux (./pretextual/capa.aux) (./pretextual/resumos.aux)
 (./capitulos/introducao.aux) (./capitulos/fundamentacao.aux)
 (./capitulos/algoritmos.aux) (./capitulos/aplicacao.aux
@@ -968,25 +950,25 @@ LaTeX Warning: Label `tab:vcode' multiply defined.
 ))
 \openout1 = `dissertacao.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 128.
-LaTeX Font Info:    ... okay on input line 128.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 128.
-LaTeX Font Info:    ... okay on input line 128.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 128.
-LaTeX Font Info:    ... okay on input line 128.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 128.
-LaTeX Font Info:    ... okay on input line 128.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 128.
-LaTeX Font Info:    ... okay on input line 128.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 128.
-LaTeX Font Info:    ... okay on input line 128.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 128.
-LaTeX Font Info:    ... okay on input line 128.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 128.
-LaTeX Font Info:    ... okay on input line 128.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 128.
-LaTeX Font Info:    ... okay on input line 128.
-Package hyperref Info: Link coloring ON on input line 128.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 129.
+LaTeX Font Info:    ... okay on input line 129.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 129.
+LaTeX Font Info:    ... okay on input line 129.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 129.
+LaTeX Font Info:    ... okay on input line 129.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 129.
+LaTeX Font Info:    ... okay on input line 129.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 129.
+LaTeX Font Info:    ... okay on input line 129.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 129.
+LaTeX Font Info:    ... okay on input line 129.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 129.
+LaTeX Font Info:    ... okay on input line 129.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 129.
+LaTeX Font Info:    ... okay on input line 129.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 129.
+LaTeX Font Info:    ... okay on input line 129.
+Package hyperref Info: Link coloring ON on input line 129.
  (/usr/local/texlive/2021/texmf-dist/tex/latex/hyperref/nameref.sty
 Package: nameref 2021-04-02 v2.47 Cross-referencing by name of section
 
@@ -997,32 +979,32 @@ Package: refcount 2019/12/15 v3.6 Data extraction from label references (HO)
 ty
 Package: gettitlestring 2019/12/15 v1.6 Cleanup title references (HO)
 )
-\c@section@level=\count374
+\c@section@level=\count372
 )
 Redoing nameref's sectioning
 Redoing nameref's label
-LaTeX Info: Redefining \nameref on input line 128.
-LaTeX Info: Redefining \ref on input line 128.
-LaTeX Info: Redefining \pageref on input line 128.
-LaTeX Info: Redefining \nameref on input line 128.
+LaTeX Info: Redefining \nameref on input line 129.
+LaTeX Info: Redefining \ref on input line 129.
+LaTeX Info: Redefining \pageref on input line 129.
+LaTeX Info: Redefining \nameref on input line 129.
 \myptabbox=\box62
-\myptabboxwidth=\skip276
+\myptabboxwidth=\skip273
 Package lastpage Info: Please have a look at the pageslts package at
 (lastpage)             https://www.ctan.org/pkg/pageslts
-(lastpage)             ! on input line 128.
+(lastpage)             ! on input line 129.
 (/usr/local/texlive/2021/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count375
+\scratchcounter=\count373
 \scratchdimen=\dimen275
 \scratchbox=\box63
-\nofMPsegments=\count376
-\nofMParguments=\count377
-\everyMPshowfont=\toks45
-\MPscratchCnt=\count378
+\nofMPsegments=\count374
+\nofMParguments=\count375
+\everyMPshowfont=\toks44
+\MPscratchCnt=\count376
 \MPscratchDim=\dimen276
-\MPnumerator=\count379
-\makeMPintoPDFobject=\count380
-\everyMPtoPDFconversion=\toks46
+\MPnumerator=\count377
+\makeMPintoPDFobject=\count378
+\everyMPtoPDFconversion=\toks45
 ) (/usr/local/texlive/2021/texmf-dist/tex/latex/epstopdf-pkg/epstopdf-base.sty
 Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
 Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 4
@@ -1037,14 +1019,14 @@ Package caption Info: subfig package v1.3 is loaded.
 Package caption Info: float package is loaded.
 Package caption Info: listings package is loaded.
 Package caption Info: End \AtBeginDocument code.
-LaTeX Info: Redefining \microtypecontext on input line 128.
+LaTeX Info: Redefining \microtypecontext on input line 129.
 Package microtype Info: Generating PDF output.
 Package microtype Info: Character protrusion enabled (level 2).
 Package microtype Info: Using default protrusion set `alltext'.
 Package microtype Info: Automatic font expansion enabled (level 2),
 (microtype)             stretch: 20, shrink: 20, step: 1, non-selected.
 Package microtype Info: Using default expansion set `alltext-nott'.
-LaTeX Info: Redefining \showhyphens on input line 128.
+LaTeX Info: Redefining \showhyphens on input line 129.
 Package microtype Info: No adjustment of tracking.
 Package microtype Info: No adjustment of interword spacing.
 Package microtype Info: No adjustment of character kerning.
@@ -1053,7 +1035,7 @@ Package microtype Info: No adjustment of character kerning.
 File: mt-cmr.cfg 2013/05/19 v2.2 microtype config. file: Computer Modern Roman 
 (RS)
 )
-\c@lstlisting=\count381
+\c@lstlisting=\count379
 \openout2 = `pretextual/capa.aux'.
 
 
@@ -1091,35 +1073,35 @@ logo.png>]
 
 ])
 LaTeX Font Info:    Trying to load font information for OT1+lmr on input line 1
-43.
+44.
  (/usr/local/texlive/2021/texmf-dist/tex/latex/lm/ot1lmr.fd
 File: ot1lmr.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
 LaTeX Font Info:    Trying to load font information for OML+lmm on input line 1
-43.
+44.
 
 (/usr/local/texlive/2021/texmf-dist/tex/latex/lm/omllmm.fd
 File: omllmm.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
 LaTeX Font Info:    Trying to load font information for OMS+lmsy on input line 
-143.
+144.
 
 (/usr/local/texlive/2021/texmf-dist/tex/latex/lm/omslmsy.fd
 File: omslmsy.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
 LaTeX Font Info:    Trying to load font information for OMX+lmex on input line 
-143.
+144.
 
 (/usr/local/texlive/2021/texmf-dist/tex/latex/lm/omxlmex.fd
 File: omxlmex.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <12> on input line 143.
+(Font)              <12> on input line 144.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <8> on input line 143.
+(Font)              <8> on input line 144.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <6> on input line 143.
-LaTeX Font Info:    Trying to load font information for U+msa on input line 143
+(Font)              <6> on input line 144.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 144
 .
 
 (/usr/local/texlive/2021/texmf-dist/tex/latex/amsfonts/umsa.fd
@@ -1128,7 +1110,7 @@ File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 (/usr/local/texlive/2021/texmf-dist/tex/latex/microtype/mt-msa.cfg
 File: mt-msa.cfg 2006/02/04 v1.1 microtype config. file: AMS symbols (a) (RS)
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 143
+LaTeX Font Info:    Trying to load font information for U+msb on input line 144
 .
 
 (/usr/local/texlive/2021/texmf-dist/tex/latex/amsfonts/umsb.fd
@@ -1138,13 +1120,13 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 File: mt-msb.cfg 2005/06/01 v1.0 microtype config. file: AMS symbols (b) (RS)
 )
 LaTeX Font Info:    Trying to load font information for U+rsfs on input line 14
-3.
+4.
 
 (/usr/local/texlive/2021/texmf-dist/tex/latex/jknapltx/ursfs.fd
 File: ursfs.fd 1998/03/24 rsfs font definition file (jk)
 )
 LaTeX Font Info:    Trying to load font information for TS1+lmr on input line 1
-43.
+44.
 
 (/usr/local/texlive/2021/texmf-dist/tex/latex/lm/ts1lmr.fd
 File: ts1lmr.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
@@ -1152,7 +1134,7 @@ File: ts1lmr.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
  been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.143 
+l.144 
        [1
 
 
@@ -1209,7 +1191,7 @@ pdfTeX warning (ext4): destination with the same identifier (name{page.1}) has
 been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.32 
+l.31 
       [1
 
 
@@ -1218,12 +1200,12 @@ l.32
 s been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.201 \include{capitulos/introducao}
+l.202 \include{capitulos/introducao}
                                      [2]pdfTeX warning (ext4): destination with
  the same identifier (name{page.3}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.204 \part{Fundamentação Teórica}
+l.205 \part{Fundamentação Teórica}
                                       [3
 
 
@@ -1232,7 +1214,7 @@ l.204 \part{Fundamentação Teórica}
  been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.204 \part{Fundamentação Teórica}
+l.205 \part{Fundamentação Teórica}
                                       [4]
 \openout2 = `capitulos/fundamentacao.aux'.
 
@@ -1258,7 +1240,7 @@ l.59
                    \relax 
 l.109 
        [6]
-<figs/prefixtree.png, id=185, 332.24126pt x 221.82875pt>
+<figs/prefixtree.png, id=193, 332.24126pt x 221.82875pt>
 File: figs/prefixtree.png Graphic file (type png)
 <use figs/prefixtree.png>
 Package pdftex.def Info: figs/prefixtree.png  used on input line 112.
@@ -1289,7 +1271,7 @@ LaTeX Warning: Reference `TODO REF ARTIGO' on page 18 undefined on input line 5
 4.
 
 [18] [19]
-<figs/lz77fam.png, id=282, 450.68375pt x 155.58125pt>
+<figs/lz77fam.png, id=290, 450.68375pt x 155.58125pt>
 File: figs/lz77fam.png Graphic file (type png)
 <use figs/lz77fam.png>
 Package pdftex.def Info: figs/lz77fam.png  used on input line 157.
@@ -1307,7 +1289,7 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
  [21 <./figs/lz77fam.png>] [22] [23] [24
 
 ]
-<figs/cluster_h.png, id=311, 853.1875pt x 694.595pt>
+<figs/cluster_h.png, id=319, 853.1875pt x 694.595pt>
 File: figs/cluster_h.png Graphic file (type png)
 <use figs/cluster_h.png>
 Package pdftex.def Info: figs/cluster_h.png  used on input line 259.
@@ -1320,12 +1302,12 @@ Underfull \vbox (badness 1005) has occurred while \output is active []
 
  [26]
 [27]
-<figs/kmeans.png, id=335, 404.51125pt x 450.68375pt>
+<figs/kmeans.png, id=343, 404.51125pt x 450.68375pt>
 File: figs/kmeans.png Graphic file (type png)
 <use figs/kmeans.png>
 Package pdftex.def Info: figs/kmeans.png  used on input line 333.
 (pdftex.def)             Requested size: 161.80162pt x 180.2703pt.
-<figs/elbowex.png, id=337, 820.06375pt x 374.39874pt>
+<figs/elbowex.png, id=345, 820.06375pt x 374.39874pt>
 File: figs/elbowex.png Graphic file (type png)
 <use figs/elbowex.png>
 Package pdftex.def Info: figs/elbowex.png  used on input line 350.
@@ -1351,7 +1333,7 @@ File: lstlang1.sty 2020/03/24 1.8d listings language file
 Package hyperref Info: bookmark level for unknown lstlisting defaults to 0 on i
 nput line 39.
  [32]
-<figs/wordcloud1.png, id=380, 517.935pt x 302.12875pt>
+<figs/wordcloud1.png, id=388, 517.935pt x 302.12875pt>
 File: figs/wordcloud1.png Graphic file (type png)
 <use figs/wordcloud1.png>
 Package pdftex.def Info: figs/wordcloud1.png  used on input line 102.
@@ -1364,7 +1346,7 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 Underfull \vbox (badness 1337) has occurred while \output is active []
 
  [36]
-<figs/elbowgraph.png, id=511, 383.4325pt x 279.0425pt>
+<figs/elbowgraph.png, id=519, 383.4325pt x 279.0425pt>
 File: figs/elbowgraph.png Graphic file (type png)
 <use figs/elbowgraph.png>
 Package pdftex.def Info: figs/elbowgraph.png  used on input line 258.
@@ -1377,7 +1359,7 @@ Overfull \hbox (24.2099pt too wide) in paragraph at lines 263--267
 n:cluster:KMeans$\T1/lmr/m/n/12 (-20) .
  []
 
-<figs/clustercloud.png, id=536, 383.4325pt x 248.93pt>
+<figs/clustercloud.png, id=544, 383.4325pt x 248.93pt>
 File: figs/clustercloud.png Graphic file (type png)
 <use figs/clustercloud.png>
 Package pdftex.def Info: figs/clustercloud.png  used on input line 279.
@@ -1389,7 +1371,7 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 
 LaTeX Warning: Command \~ invalid in math mode on input line 294.
 
-<figs/graphfinal.png, id=550, 719.68875pt x 481.8pt>
+<figs/graphfinal.png, id=558, 719.68875pt x 481.8pt>
 File: figs/graphfinal.png Graphic file (type png)
 <use figs/graphfinal.png>
 Package pdftex.def Info: figs/graphfinal.png  used on input line 300.
@@ -1413,6 +1395,45 @@ Underfull \vbox (badness 8151) has occurred while \output is active []
 
 ]
 bibitemlist
+LaTeX Font Info:    Trying to load font information for T1+lmtt on input line 2
+47.
+(/usr/local/texlive/2021/texmf-dist/tex/latex/lm/t1lmtt.fd
+File: t1lmtt.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
+)
+Package microtype Info: Loading generic protrusion settings for font family
+(microtype)             `lmtt' (encoding: T1).
+(microtype)             For optimal results, create family-specific settings.
+(microtype)             See the microtype manual for details.
+
+Underfull \hbox (badness 10000) in paragraph at lines 251--251
+[]\T1/lmr/m/n/12 (+20) COMPRESSION Te-ch-ni-ques; Cam-bridge Uni-ver-sity, Rasp
+-berry Pi Foun-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 251--251
+\T1/lmr/m/n/12 (+20) da-ti-o-nand Na-ti-o-nal Cen-tre for Com-pu-ting edu-ca-ti
+on; Dis-po-n�-vel em :
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 251--251
+\T1/lmr/m/n/12 (+20) <[][]$\T1/lmtt/m/n/12 https : / / isaaccomputerscience . o
+rg / concepts / data _ compr _ loss ? examBoard =
+ []
+
+
+Underfull \hbox (badness 1831) in paragraph at lines 255--255
+[]\T1/lmr/m/n/12 (+20) COMPACTA��O de da-dos; Mi-cro-soft Docs. 2021; Dis-po-n�
+-vel em: <[][]$\T1/lmtt/m/n/12 https :
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 255--255
+\T1/lmtt/m/n/12 / / docs . microsoft . com / pt-[]br / sql / relational-[]datab
+ases / data-[]compression /
+ []
+
 
 AED: lastpage setting LastPage
 [43]
@@ -1428,20 +1449,25 @@ LaTeX Warning: There were undefined references.
 
 LaTeX Warning: There were multiply-defined labels.
 
-Package rerunfilecheck Info: File `dissertacao.brf' has not changed.
-(rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
+
+Package rerunfilecheck Warning: File `dissertacao.brf' has changed.
+(rerunfilecheck)                Rerun to get bibliographical references right.
+
+Package rerunfilecheck Info: Checksums for `dissertacao.brf':
+(rerunfilecheck)             Before: AE545A0F133CCD5E585EC4773D077B2D;178
+(rerunfilecheck)             After:  B42C0AA893F3E4137F4D35F873AEC83D;182.
  ) 
 Here is how much of TeX's memory you used:
- 22245 strings out of 478994
- 335234 string characters out of 5858184
- 1209033 words of memory out of 5000000
- 38603 multiletter control sequences out of 15000+600000
- 549519 words of font info for 307 fonts, out of 8000000 for 9000
+ 22047 strings out of 478994
+ 331842 string characters out of 5858184
+ 1204792 words of memory out of 5000000
+ 38407 multiletter control sequences out of 15000+600000
+ 549837 words of font info for 308 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  86i,13n,88p,970b,1926s stack positions out of 5000i,500n,10000p,200000b,80000s
-{/usr/local/texlive/2021/texmf-dist/fonts/enc/dvips/lm/lm-rm.enc}{/usr/local/
-texlive/2021/texmf-dist/fonts/enc/dvips/lm/lm-ts1.enc}{/usr/local/texlive/2021/
-texmf-dist/fonts/enc/dvips/lm/lm-ec.enc}{/usr/local/texlive/2021/texmf-dist/fon
+{/usr/local/texlive/2021/texmf-dist/fonts/enc/dvips/lm/lm-ec.enc}{/usr/local/
+texlive/2021/texmf-dist/fonts/enc/dvips/lm/lm-rm.enc}{/usr/local/texlive/2021/t
+exmf-dist/fonts/enc/dvips/lm/lm-ts1.enc}{/usr/local/texlive/2021/texmf-dist/fon
 ts/enc/dvips/lm/lm-mathit.enc}{/usr/local/texlive/2021/texmf-dist/fonts/enc/dvi
 ps/lm/lm-mathsy.enc}{/usr/local/texlive/2021/texmf-dist/fonts/enc/dvips/lm/lm-m
 athex.enc}</usr/local/texlive/2021/texmf-dist/fonts/type1/public/lm/lmbx12.pfb>
@@ -1460,11 +1486,12 @@ public/lm/lmss17.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/lm/
 lmssbx10.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/lm/lmsso12.
 pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/lm/lmsy10.pfb></usr/
 local/texlive/2021/texmf-dist/fonts/type1/public/lm/lmsy8.pfb></usr/local/texli
-ve/2021/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on dissertacao.pdf (51 pages, 1005876 bytes).
+ve/2021/texmf-dist/fonts/type1/public/lm/lmtt12.pfb></usr/local/texlive/2021/te
+xmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
+Output written on dissertacao.pdf (51 pages, 1032252 bytes).
 PDF statistics:
- 875 PDF objects out of 1000 (max. 8388607)
- 778 compressed objects within 8 object streams
- 292 named destinations out of 1000 (max. 500000)
- 82371 words of extra memory for PDF output out of 89155 (max. 10000000)
+ 901 PDF objects out of 1000 (max. 8388607)
+ 802 compressed objects within 9 object streams
+ 296 named destinations out of 1000 (max. 500000)
+ 82883 words of extra memory for PDF output out of 89155 (max. 10000000)
 

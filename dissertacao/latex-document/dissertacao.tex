@@ -90,8 +90,9 @@
 % Pacotes de CITAÇÕES
 % ---------------------
 \usepackage[brazilian,hyperpageref]{backref}	% Paginas com as citações na bibl
-\usepackage[alf]{abntex2cite}				% Citações padrão ABNT (alfa)
+% \usepackage[alf]{abntex2cite}				% Citações padrão ABNT (alfa)
 %\usepackage[num]{abntex2cite}				% Citações padrão ABNT (numericas)
+ \usepackage{cite}
 % ---------------------
 
 % Configurações de CITAÇÕES para abntex2
@@ -230,15 +231,30 @@
 % ----------------------------------------------------------
 \postextual
 
-\begin{thebibliography}{9999}  
-\bibitem[HL]{D.S Hirschberg}HIRSCHBERG, D.S; LELEWER D.A;
+\begin{thebibliography}{9} 
+\bibitem{HL}HIRSCHBERG, D.S; LELEWER D.A;
 \emph{Data compression, }Computing Surveys 19.3, 1987.
 
-\bibitem[Ble]{Guy E. Blelloch}BLELLOCH G.E;
+\bibitem{Ble}BLELLOCH G.E;
 \emph{Introduction to Data Compression, } Carnegie Mellon, 2013
 
-\bibitem[BT]{Dimitri P. Bertsekas} BERTSEKAS D.P; TSITSIKLIS J.N;
+\bibitem{BT}BERTSEKAS D.P; TSITSIKLIS J.N;
 \emph{Introduction to Probability} M.I.T, Lecture Notes Course 6.041-6.431, 2000
+
+\bibitem{MDN}COMPRESSÃO em HTTP; 
+MDN Web Docs, 2021; 
+Disponível em: <\url{https://developer.mozilla.org/pt-BR/docs/Web/HTTP/Compression}>; Acesso em: 16 de dez de 2021.
+
+\bibitem{Camb}COMPRESSION Techniques; 
+Cambridge University, Raspberry Pi Foundationand National Centre for Computing education;
+ Disponível em : <\url{https://isaaccomputerscience.org/concepts/data_compr_loss?examBoard=all&stage=all.}> Acesso em: 30 de maio de 2022.
+ 
+\bibitem{MicDocs}COMPACTAÇÃO de dados; 
+Microsoft Docs. 2021; 
+Disponível em: <\url{https://docs.microsoft.com/pt-br/sql/relational-databases/data-compression/data-compression?view=sql-server-ver15}>; Acesso em: 16 de dez de 2021.
+
+\bibitem{Goog}CLUSTERING in Machine Learning; Google Developers; 
+Disponível em:  <\url{https://developers.google.com/machine-learning/clustering/overview}>; Acesso em: 30 de maio de 2022
 
 \end{thebibliography}
 	
