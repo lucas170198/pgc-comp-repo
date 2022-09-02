@@ -92,7 +92,7 @@ Antes de provar o teorema, começamos com uma simples observação.
 \begin{proof}[Prova do Teorema~\ref{thm:otimo_huffman} (Blelloch, 2013 \cite{Ble})]
 A prova se dará por indução sobre o tamanho $n$ de $M$. Para a base,
 tome $n=2$. Nesse caso, o resultado é trivialmente verdadeiro
-considerando que o algoritmo de Hufman gera um código que atribui um
+considerando que o algoritmo de Huffman gera um código que atribui um
 bit pra cada símbolo de~$M$. Suponha então que $n>2$ para o passo
 indutivo. Sejam $x$ e $y$ nós associados a símbolos $m_a$ e $m_b$
 respectivamente tais que $p_a \leq p_b \leq p_i$ para todo $i \in
@@ -208,7 +208,7 @@ A busca será executada $M + N$ vezes, isto é, a complexidade geral do algoritm
 
 Uma das possíveis abordagens para melhorar a busca linear é utilizar estruturas de dados auxiliares, que indexam os símbolos do dicionário para tornar a busca mais rápida.
 Bell (1993) \cite{TD}  testa diferentes estruturas de dados (árvores trie, hash tables, árvores binárias de busca entre outros). 
-A performance das estruturas diverge entre diferentes tipos de dados, e de que métrica está sendo priorizada (taxa de compressão ou tempo de execução).
+A performance das estruturas diverge entre diferentes tipos de dados testados, e apresenta \emph{tradeoffs} sobre a escolha de cada uma delas.
 Para este trabalho utilizaremos a \textbf{lista ligada} como estrutura de dados auxiliar, 
 pois ela oferece um bom aumento de performance sem um grande impacto no espaço de armazenamento necessário. 
 
@@ -268,7 +268,7 @@ Platos (2008) \cite{Platos} implementa a versão do LZ77 baseado em palavras (ta
  Estenderemos a definição de \emph{palavras} e \emph{separadores} utilizadas no capítulo anterior, definidas sob um ponto de vista linguístico (não relacionados diretamente a notação de conjuntos definida no capítulo ~\ref{chapter:fund}).
  
  \subsection{Vetorização TF-IDF}
-Análise de texto é umas das aplicações mais exploradas no campo dos sistemas inteligentes.
+Análise de texto é uma das aplicações mais exploradas no campo dos sistemas inteligentes.
 Porém, pode ser uma tarefa difícil utilizar texto bruto como entrada para os algoritmos de \emph{machine learning}. 
 Geralmente, tais algoritmos ``lidam melhor'' com características numéricas.
  
@@ -329,7 +329,7 @@ Podemos definir o k-means da seguinte forma:
  Depois disso, calcula-se a soma das distâncias quadráticas (também chamada de \textbf{inércia}) de cada ponto para o seu respectivo ponto central.
  0 resultado para cada $k$ é plotado em um gráfico de linha (conforme mostra a figura~\ref{fig:elbow}).
  Seleciona-se o número de clusters que corresponde ao ``cotovelo'' (elbow) do gráfico.
- Por intuição, sabemos que o resultado com maior "agrupamento" estará no menor $k$, entretando, 
+ Por intuição, sabemos que o resultado com maior "agrupamento" estará no menor $k$, entretanto, 
  selecionar o menor valor possível para $k$, certamente levaria a um \emph{overfitting} no modelo.
  
 \begin{figure}[H]
