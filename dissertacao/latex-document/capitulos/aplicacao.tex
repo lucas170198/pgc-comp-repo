@@ -11,7 +11,9 @@ Neste capítulo, exploraremos de maneira empírica a relação entre a entropia 
 A seguir, será descrito um experimento que utiliza a \textbf{clusterização} como pré-processamento de uma base de dados textual, visando uma melhora na performance dos algoritmos de compressão \emph{sem perda}.
 Foram realizados experimentos utilizando ou não o pré-processamento, a fim de medir o impacto da clusterização para os algoritmos testados (que serão listados em seções posteriores).
 
-Todo o experimento foi desenvolvido em \emph{Python} (principalmente ao seu vasto ferramental para manipulação de dados) e o código está disponível no GitHub \footnote{Repositório disponível em <https://github.com/lucas170198/pgc-comp-repo/tree/master/implementacao>}.
+Todo o experimento foi desenvolvido em \emph{Python} (devido ao seu vasto ferramental para manipulação de dados)
+ e o código está disponível no GitHub 
+ \footnote{Repositório disponível em <https://github.com/lucas170198/pgc-comp-repo/tree/master/implementacao>}.
 O código fonte está organizado nas seguintes camadas:
 \begin{itemize}
 	\item \textbf{dataset}: Contém os arquivos \emph{.csv} que serão carregados como base de dados.
@@ -288,7 +290,7 @@ Cada partição foi processada de maneira \textbf{individual}, portanto, a perfo
 
 Para compressão de dados sem perda o objetivo é reduzir o tamanho da mensagem, sem haver perda de informações.
 Assim, uma das principais métricas de sucesso nestes algoritmos é a \textbf{taxa de compressão}.
-Definimos a \textbf{taxa de compressão} como uma comparação entre o tamanho do documento codificado e o original.
+Definimos a \textbf{taxa de compressão} como a razão entre o tamanho do documento codificado e o original.
 
 \begin{equation}\label{eq:tf}
 taxa~de~compressão = \frac{tamanho~do~documento~codificado}{tamanho~do~documento~original}
@@ -339,8 +341,8 @@ Para isso, foi utilizado o comando \emph{\%time\%} do \emph{jupyter notebook} (q
   \end{tabular}
 \end{table}
 
-Fica claro que as versões baseadas em palavras e clusterizadas via \emph{k-means}, consomem mais tempo de execução.
-Este dado já era esperado, já que o aumento de símbolos semelhantes leva a mais \emph{tokenizações}, e por consequência maior tempo de processamento.
+Fica claro que as versões baseadas em palavras e clusterizadas via \emph{k-means} consomem mais tempo de execução.
+Este dado já era esperado, já que o aumento de símbolos semelhantes leva a mais \emph{tokenizações} e por consequência maior tempo de processamento.
 
 \section{Conclusão}
 Neste trabalho, combinamos o uso da compressão \textbf{baseada} em palavras com a clusterização, em busca de uma melhora na taxa de compressão para base textuais.

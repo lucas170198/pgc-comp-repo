@@ -4,19 +4,19 @@
 % ----------------------------------------------------------
 \chapter*[Introdução]{Introdução}
 
-Em um mundo cada vez mais informatizado, a demanda por armazenamento e transmissão de grandes quantidades de dados cresce exponencialmente.  
+Em um mundo cada vez mais informatizado, a demanda por armazenamento e transmissão de grandes quantidades de dados cresce "exponencialmente".  
 Algoritmos de compressão de dados são amplamente utilizados por protocolos de transmissão de informações \cite{MDN} e em sistemas de banco de dados \cite{MicDocs}, isso porque o processo de compressão permite a redução total de dados para representar uma certa informação.
 
 Um algoritmo de compressão pode ser classificado como sendo \textbf{com perda}, quando reconstrói apenas uma aproximação do conteúdo original. 
 Esses algoritmos são comumente utilizados na compressão de mídias como vídeos, imagens e áudio, onde a perda de alguns bits não tem uma interferência relevante na recuperação do conteúdo original. 
-Em contrapartida, os algoritmos do tipo \textbf{sem perda}, são aqueles em que o conteúdo original que foi comprimido é totalmente recuperado após a descompressão, sendo utilizados principalmente para em textos, onde uma simples troca de caracteres pode comprometer o significado do conteúdo original. 
+Em contrapartida, os algoritmos do tipo \textbf{sem perda}, são aqueles em que o conteúdo original que foi comprimido é totalmente recuperado após a descompressão, sendo utilizados principalmente em textos, onde uma simples troca de caracteres pode comprometer o significado do conteúdo original. 
 
 Existem diversos tipos de algoritmos de compressão sem perda, neste trabalho utilizaremos os \textbf{baseados em probabilidades} e \textbf{baseados em dicionários}. 
 Os algoritmos \textbf{baseados em probabilidade} constroem o código a partir das probabilidades de ocorrência de cada símbolo dentro do texto. 
 Já os \textbf{baseados em dicionários} tem como ideia central encontrar padrões nos dados substituindo esses padrões por tokens que ocupam "menos memória" \cite{Camb}.
 
 Classificamos a compressão de dados como uma sub-área da Teoria da Informação, já que todos os resultados e limites teóricos para os algoritmos são fundamentados pela mesma. 
-De fato, todo algoritmo de compressão assume que a mensagem possui um certo nível de redundância, e toma vantagem desse fato para representar a informação de maneira mais eficiente. 
+De fato, todo algoritmo de compressão supõe que a mensagem possui um certo nível de redundância, e toma vantagem desse fato para representar a informação de maneira mais eficiente. 
 Portanto, podemos supor que a \textbf{taxa de compressão} de um algoritmo está intimamente relacionada com a sua entropia (esse assunto será melhor detalhado durante em capítulos posteriores), o que nos dá um indício de que \textbf{minimizar a entropia}, pode \textbf{maximizar} a eficiência na compressão.
 
 O foco deste trabalho, estará justamente em explorar de maneira empírica essa relação entre a entropia associada a um texto e a taxa de compressão, utilizando técnicas de pré-processamento para minimização da entropia. 
@@ -30,4 +30,4 @@ O texto está dividido em três partes.
  A parte final do trabalho apresenta o experimento que testa a clusterização como um método de melhoria na taxa de compressão dos algoritmos apresentados, detalhando as tecnologias e métodos utilizados, bem como os resultados obtidos.
  
  Observa-se que, algumas das demonstrações omitidas nos textos utilizados como base, foram incluídas por elaboração do autor deste texto (e devidamente indicadas como autorais), como parte do esforço intelectual para a construção deste trabalho.
- Por fim, a ideia geral do trabalho foi concebida para explorar os aspectos diversos do conhecimento adquirido durante o curso de Bacharelado em Ciência da Computação, esperamos que este texto possa transmitir isto ao leitor de maneira clara e objetiva.
+ Por fim, a ideia geral do trabalho foi concebida para explorar os aspectos diversos do conhecimento adquirido durante o curso de Bacharelado em Ciência da Computação.

@@ -34,7 +34,7 @@ seja $p_i$ a probabilidade associada a $m_i$.
 	\EndFor \\
 	
 	\While{$Forest.size > 1$}
-		\State $T1 \gets ExtractMin(Forest)$ \Comment{Retorna a árvore cuja raiz é mínima, e retira da floresta}
+		\State $T1 \gets ExtractMin(Forest)$ \Comment{Devolve a árvore cuja raiz é mínima, e retira da floresta}
 		\State $T2 \gets ExtractMin(Forest)$
 		\State $HTree \gets newTree()$
 		\State $HTree.root \gets newNode()$ \\
@@ -51,14 +51,14 @@ seja $p_i$ a probabilidade associada a $m_i$.
 Seja $n$ o tamanho do conjunto de símbolos $M$. Para que o algoritmo percorra toda a floresta, formada por uma árvore para cada $m \in M$, serão necessárias $n$ iterações. Considerando que as funções \emph{ExtractMin()} e \emph{.append()} foram construídas a partir de uma fila de prioridades de \textbf{heap} e essas operações podem ser realizadas em tempo $O(\log_2 n)$, o algoritmo será executado em tempo $O(n\log_2 n)$ \cite{Ble}.
 
 \subsection{Corretude}
-O teorema a seguir (escrito por Huffman, 1952 \cite{Huff}) afirma
+O teorema a seguir (provado por Huffman, 1952 \cite{Huff}) afirma
 que os códigos de Huffman minimizam o comprimento médio, ou seja, são
 ótimos dentre os códigos livres de prefixo.
 
 Nesta seção, considere um alfabeto de origem $M = \{m_1,\dotsc, m_n\}$
 com probabilidade $p_i$ para cada símbolo~$m_i$ e alfabeto código $W =
 \{0,1\}$. Dizemos que um código $C: M\to W^+$ livre de prefixo é
-\textbf{ótimo} se $l_a(C) \leq l_a(C')$ para todo código $C': M\to
+\textbf{ótimo} se $\ell_a(C) \leq \ell_a(C')$ para todo código $C': M\to
 W^+$ livre de prefixo.
 
 \begin{theorem}
@@ -69,21 +69,21 @@ W^+$ livre de prefixo.
 
 Antes de provar o teorema, começamos com uma simples observação.
   
-\begin{lemma} \label{lemma:dist_prob_avg_size} Seja $C:M\to W^+$ um código livre de prefixo ótimo. Para todo $i,j \in\{1,\dotsc, n\}$, se $p_i > p_j$, então $l(C(m_i)) \leq l(C(m_j))$
+\begin{lemma} \label{lemma:dist_prob_avg_size} Seja $C:M\to W^+$ um código livre de prefixo ótimo. Para todo $i,j \in\{1,\dotsc, n\}$, se $p_i > p_j$, então $\ell(C(m_i)) \leq \ell(C(m_j))$
 \end{lemma}
   \begin{proof}
-    Sejam $i,j \in\{1,\dotsc, n\}$ e suponha que $p_i > p_j$.  Seja
+    Sejam $i,j \in\{1,\dotsc, n\}$ e suponha que $p_i \geq p_j$.  Seja
     $w_i = C(m_i)$ e seja $w_j = C(m_j)$. Para efeito de contradição,
-    assuma que $l(w_i) > l(w_j)$.  Agora construa um novo código $C'$,
+    suponha que $\ell(w_i) > \ell(w_j)$.  Agora construa um novo código $C'$,
     trocando $w_i$ por $w_j$. Ou seja, $C'(m_k) = C(m_k)$ para todo $k
     \in \{1,\dotsc, n\} \setminus \{i,j\}$, $C'(m_i) = w_j$ e $C'(m_j)
-    = w_i$.  Dado o comprimento médio $l_a(C')$ é
+    = w_i$.  Dado o comprimento médio $\ell_a(C')$ é
  \begin{align*}
-   l_a(C') &= l_a(C) + p_j\cdot(l(w_i) - l(w_j)) + p_i\cdot(l(w_j) - l(w_i)) \\
-   &= l_a(C) + (p_j - p_i)(l(w_i) - l(w_j))\\
-   &< l_a(C),
+   \ell_a(C') &= \ell_a(C) + p_j\cdot(\ell(w_i) - \ell(w_j)) + p_i\cdot(\ell(w_j) - \ell(w_i)) \\
+   &= \ell_a(C) + (p_j - p_i)(\ell(w_i) - \ell(w_j))\\
+   &< \ell_a(C),
  \end{align*}
- pois $p_j - p_i < 0$ e $l(w_i) - l(w_j)>0$. Isso contradiz o fato do
+ pois $p_j - p_i < 0$ e $\ell(w_i) - \ell(w_j)>0$. Isso contradiz o fato do
  código $C$ ser ótimo.
   \end{proof}
 
@@ -93,10 +93,10 @@ Antes de provar o teorema, começamos com uma simples observação.
 A prova se dará por indução sobre o tamanho $n$ de $M$. Para a base,
 tome $n=2$. Nesse caso, o resultado é trivialmente verdadeiro
 considerando que o algoritmo de Hufman gera um código que atribui um
-bit pra cada símbolo de~$M$. Assuma então que $n>2$ para o passo
+bit pra cada símbolo de~$M$. Suponha então que $n>2$ para o passo
 indutivo. Sejam $x$ e $y$ nós associados a símbolos $m_a$ e $m_b$
 respectivamente tais que $p_a \leq p_b \leq p_i$ para todo $i \in
-\{1,\dotsc,n\}\setminus\{a,b\}$. Ou seja, $x$ e $y$ poderiam ser os nós escolhidos como o primeiro par pelo algoritmo de Huffman.
+\{1,\dotsc,n\}\setminus\{a,b\}$, onde $a$ e $b$ são distintos. Ou seja, $x$ e $y$ poderiam ser os nós escolhidos como o primeiro par pelo algoritmo de Huffman.
 
 Seja $m'$ um novo símbolo com probabilidade $p_a+p_b$ e seja $M' =
 (M\cup\{m'\})\setminus\{m_a, m_b\}$. Note que $|M'| < n$. Seja $T'$
@@ -117,13 +117,13 @@ partir $T^*$ pela remoção de $x$ e $y$ e associando $z$ ao símbolo
 $m'$ (de probabilidade $p_a+p_b$) gera um código $C^{**}$ para $M'$. Pela
 otimalidade de $C'$, temos que
 \begin{equation*}
-  l_a(C^*)
+  \ell_a(C^*)
   =
-   l_a(C^{**})+p_a+p_b
+   \ell_a(C^{**})+p_a+p_b
   \geq
-  l_a(C')+p_a+p_b
+  \ell_a(C')+p_a+p_b
   =
-  l_a(C),
+  \ell_a(C),
 \end{equation*}
 o que mostra a otimalidade de $C$.
 
@@ -144,6 +144,7 @@ de prefixo). Portanto, $w$ tem um nó \textbf{irmão} $w'$. Se $w'$ não
 igual ao de $C''$ pelo lema~\ref{lemma:dist_prob_avg_size}. 
 \end{proof}
 
+\pagebreak
 
 \section{Lempel-Ziv 77 (LZ77)}
 
@@ -152,7 +153,7 @@ Nos anos de 1977 e 1978, Jacob Ziv e Abraham Lempel publicaram dois artigos apre
 Os algoritmos de Lempel-Ziv realizam o processo de compressão baseado em um \textbf{dicionário} de mensagens vistas anteriormente (diferente do \nameref{alg:huff}, que utiliza a probabilidade associada a cada símbolo). 
 Tanto o LZ77 quanto o LZ78 têm um funcionamento parecido, que se resume em substituir partes da entrada por referências a partes iguais anteriormente processadas, e diferem na maneira em que procuram por repetições a serem substituídas. 
 
-\begin{figure}[h]
+\begin{figure}[H]
    \centering
    \includegraphics[scale=0.75]{figs/lz77fam.png}
     \caption{Familia de algoritmos Lempel Ziv}
@@ -172,7 +173,7 @@ um segundo valor inteiro indicando o tamanho da cadeia,
 e um caracter (preenchido com $m_{cursor}$ ou $null$ para \textbf{tokens não vazios}).
 
 Os \emph{tokens} podem ser vazios, quando não encontramos nenhuma mensagem correspondente, neste caso, os dois primeiros valores da \emph{tupla} são preenchidos com zeros.
-Por exemplo, se durante a compressão de um texto encontrássemos o símbolo ``a'' pela primeira vez (isso é, não existe correspondência pra ele no \emph{dicionário}), a saída seria o \emph{token vazio} $(0, 0, $``a''$)$.
+Por exemplo, se durante a compressão de um texto encontrássemos o símbolo ``a'' pela primeira vez (isso é, não existe correspondência para ele no \emph{dicionário}), a saída seria o \emph{token vazio} $(0, 0, $``a''$)$.
 
 \begin{algorithm}[H]
 \caption{Algoritmo Lempel-Ziv 77} \label{alg:lz77}
@@ -182,7 +183,7 @@ Por exemplo, se durante a compressão de um texto encontrássemos o símbolo ``a
 	\State $tokens \gets []$
 
 	\While{$cursor < M.size()$}
-		\State $position, len \gets findLongestMatch(M, cursor)$ \Comment{Retorna a posição e tamanho da maior cadeia correspondente}
+		\State $position, len \gets findLongestMatch(M, cursor)$ \Comment{Devolve a posição e tamanho da maior cadeia correspondente}
 		\If{$len > 0$} \Comment{Cria novo token, que aponta para a cadeia encontrada}
 			\State $tokens.append([position, len, null])$
 			\State $cursor \gets cursor + len$
@@ -207,9 +208,11 @@ A busca será executada $M + N$ vezes, isto é, a complexidade geral do algoritm
 
 Uma das possíveis abordagens para melhorar a busca linear é utilizar estruturas de dados auxiliares, que indexam os símbolos do dicionário para tornar a busca mais rápida.
 Bell (1993) \cite{TD}  testa diferentes estruturas de dados (árvores trie, hash tables, árvores binárias de busca entre outros). 
-Para este trabalho utilizaremos a \textbf{lista ligada} como estrutura de dados auxiliar (principalmente por possuir uma implementação mais simples). 
+A performance das estruturas diverge entre diferentes tipos de dados, e de que métrica está sendo priorizada (taxa de compressão ou tempo de execução).
+Para este trabalho utilizaremos a \textbf{lista ligada} como estrutura de dados auxiliar, 
+pois ela oferece um bom aumento de performance sem um grande impacto no espaço de armazenamento necessário. 
 
-Para construir uma estrutura de dados auxiliar com lista ligada, podemos criar uma lista para cada símbolo no dicionário, que contenha os índices onde o símbolo pode ser encontrado.  
+Para construir uma estrutura de dados auxiliar com uma lista ligada, podemos criar uma lista para cada símbolo no dicionário, que contenha os índices onde o símbolo pode ser encontrado.  
 Para limitar a janela de busca, podemos construir a lista como uma \emph{fila}, onde ao atingirmos a capacidade máxima da janela de busca, removemos o menor índice (que estaria no início da fila). 
 Note que, o tamanho máximo da lista depende da quantidade de bits que queremos utilizar para construir o \emph{token}.
 
@@ -254,13 +257,6 @@ Platos (2008) \cite{Platos} implementa a versão do LZ77 baseado em palavras (ta
  Em contrapartida podemos agrupar os objetos permitindo algumas sobreposições. 
  Podemos ainda clusterizar dados por \textbf{hierarquia}, onde os dados são organizados em níveis (quase como uma árvore).
  
- \begin{figure}[H]
-   \centering
-   \includegraphics[scale=0.50]{figs/cluster_h.png}
-    \caption{Exemplo de agrupamento hierárquico}
-    \label{fig:clusterh}
- \end{figure}
- 
  \pagebreak
  
  \section{Similaridade em dados textuais}
@@ -282,7 +278,7 @@ Em geral, procuramos uma medida que atribua pesos a cada palavra, de acordo com 
 Poderíamos atribuir pesos às palavras de maneira direta e intuitiva, atrelando o peso diretamente a frequência em que aquela palavra ocorre em um documento.
 Chamamos esta medida de \textbf{TF} (\emph{term frequency}).
 
-\begin{equation}\label{eq:tf}
+\begin{equation}\label{eq:termf}
 tf(t, d) = \frac{count(t \in d)}{count(d)}
 \end{equation}
 
@@ -298,33 +294,22 @@ idf(t, D) = \log \frac{len(D)}{count(d \in D : t \in d)}
 \end{equation}
 
 
-A métrica \textbf{TF-IDF} multiplica as equações~\ref{eq:idf} e ~\ref{eq:tf}, de maneira que a informação da frequência de um termo é ponderada pela sua ``exclusividade'' entre os documentos.
+A métrica \textbf{TF-IDF} multiplica as equações~\ref{eq:idf} e ~\ref{eq:termf}, de maneira que a informação da frequência de um termo é ponderada pela sua ``exclusividade'' entre os documentos.
 Obtemos assim uma métrica que aproxima a zero os símbolos menos relevantes, e atribuí valores maiores a símbolos ``mais relevantes''.
 
 \begin{equation}
 tfidf(t, d, D) = tf(t, d) \times idf(t, D)
 \end{equation}
 
- \section{Redução de Dimensionalidade}
- Em casos em que a base de dados possuem uma quantidade elevadas de dimensões, 
-reduzir a dimensionalidade significa procurar variáveis que possuem dependência entre si.
-No geral, busca-se manter apenas características relevantes aos dados, reduzindo sua complexidade e o poder computacional necessário para processar estes dados.
-
- \subsection{PCA}
- O PCA (ou \emph{principal component analysis}) é formado por um procedimento algébrico, 
- que reduz as variáveis correlacionadas em um conjunto de variáveis não relacionadas (linearmente) chamadas \emph{principal components} (PCs), iterativamente \cite{Jolliffe}.
- No contexto da clusterização, o PCA é utilizado principalmente para transformar dados com muitas dimensões em uma representação com menores dimensões (usualmente duas dimensões, facilitando a análise gráfica dos dados).
- 
- 
  \section{Clusterização K-means}
 O método de clusterização \emph{k-means} (ou algoritmo de Lloyd's \cite{Lloyd}) é um algoritmo iterativo que particiona os dados em $k$ clusters, definidos por \textbf{pontos centrais} (onde $k$ é uma das entradas para o algoritmo).
-A ideia em geral é encontrar os melhores $k$ pontos centrais, isto é, posicionar estes pontos de maneira a minimizar a distância dos dados aos pontos centrais mais próximos. 
+A ideia em geral é encontrar $k$ pontos centrais posicionados de maneira a minimizar a distância dos dados aos pontos centrais mais próximos. 
 Podemos definir o k-means da seguinte forma:
  \begin{enumerate}
  	\item Escolha os $k$ primeiros pontos centrais. A escolha pode ser \textbf{aleatória}, ou utilizando o \emph{k-means++} (algoritmo para inicializar os pontos centrais).
 	\item Calcule a distância de cada dado em relação a cada ponto central.
 	\item Atribua cada dado ao ponto central mais próximo.
-	\item Calcule a distância média entre os pontos e seus respectivos centros para cada cluster, e obtenha novas localizações para os pontos centrais (de maneira a minimizar a distância média).
+	\item Calcule a distância média entre os pontos e seus respectivos centros para cada cluster, e obtenha novas localizações para os pontos centrais (diminuindo a distância média).
 	\item Repita os passos 2, 3, e 4 até que os clusters não mudem, ou atingir o número máximo de iterações.
 \end{enumerate}
  
@@ -344,6 +329,8 @@ Podemos definir o k-means da seguinte forma:
  Depois disso, calcula-se a soma das distâncias quadráticas (também chamada de \textbf{inércia}) de cada ponto para o seu respectivo ponto central.
  0 resultado para cada $k$ é plotado em um gráfico de linha (conforme mostra a figura~\ref{fig:elbow}).
  Seleciona-se o número de clusters que corresponde ao ``cotovelo'' (elbow) do gráfico.
+ Por intuição, sabemos que o resultado com maior "agrupamento" estará no menor $k$, entretando, 
+ selecionar o menor valor possível para $k$, certamente levaria a um \emph{overfitting} no modelo.
  
 \begin{figure}[H]
    \centering
